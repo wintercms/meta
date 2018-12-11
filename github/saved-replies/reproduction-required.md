@@ -1,0 +1,1 @@
+As per [the contribution guidelines](https://github.com/octobercms/october/blob/master/CONTRIBUTING.md#reporting-a-bug-with-octobercms), please provide the exact steps you are taking for the issue to occur. This will be used for peer review.

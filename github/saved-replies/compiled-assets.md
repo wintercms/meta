@@ -1,0 +1,1 @@
+Please do not modify compiled assets directly, instead modify the appropriate source file and then run `php artisan october:util compile assets` to compile them before submitting both the changed source files and the newly-compiled asset files in your PR.

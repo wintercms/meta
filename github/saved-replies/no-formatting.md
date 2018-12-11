@@ -1,0 +1,1 @@
+Changes simply for the sake of code formatting will not be accepted. Code formatting changes may be accepted within the same file when other functional changes are being applied, but not by themselves.
