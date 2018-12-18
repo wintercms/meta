@@ -54,10 +54,11 @@
 
 ## Performance Improvements:
 - Improved HasMany performance by no longer instantiating a full Collection object when getting the simple value for the relationship
+- Improved List performance by only loading necessary data for `getRecordUrl` instead of loading all model data for each row.
 
 ## Dependencies
 - jQuery updated from 2.0 to 3.3.1
-- jQuery Migrate was added, accessible with the '@jquery.migrate' alias
+- jQuery Migrate was added, included by default with the `@jquery` alias
 - Modernizr updated from 2.8.3 to 3.6.0
 - Moments.js & Timezone from 2.13.0 to 2.22.0
 - Raphaël updated from 2.1.2 to 2.2.7
