@@ -25,6 +25,8 @@
 - Added change detection on the relation controller so that dependsOn can be used on relation controller’s containing fields
 - Remove unused X-UA-Compatible meta tag from backend layout
 - Implemented SoftDeleting of backend users
+- Added ablitity to specify custom paginators for use with the database builder
+- Added `translator.beforeResolve` event to override language strings passed through the translator
 
 ## Bug Fixes:
 - Added a missing content-type header to CSV exports
@@ -39,14 +41,19 @@
 - Fixed minItems & maxItems support for Repeaters using groups
 - Prevent plugins that cannot be instantiated from being loaded (fixes issues with plugins that include reserved words in their namespaces crashing the whole application)
 - Improved CSS minification effectiveness
+- Fixed Queued event listeners
 
 ## Security Improvements
 - Escape output of various variables displayed in the backend to prevent theoretical XSS attacks
 - Prevent access to controllers of disabled plugins
+- Flush the entire session on logout, not just the authentication key
 
 ## Translation Improvements:
 - Minor improvements to the Slovak translation
 - Additions to the Dutch translation
+
+## Performance Improvements:
+- Improved HasMany performance by no longer instantiating a full Collection object when getting the simple value for the relationship
 
 ## Dependencies
 - jQuery updated from 2.0 to 3.3.1
