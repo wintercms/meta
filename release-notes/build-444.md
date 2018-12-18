@@ -27,6 +27,7 @@
 - Implemented SoftDeleting of backend users
 - Added ablitity to specify custom paginators for use with the database builder
 - Added `translator.beforeResolve` event to override language strings passed through the translator
+- Added `addPurgeable()` method to the base Halcyon model, automatically included dynamically added properties to the purgeable properties list.
 
 ## Bug Fixes:
 - Added a missing content-type header to CSV exports
