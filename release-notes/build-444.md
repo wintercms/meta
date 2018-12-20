@@ -20,7 +20,7 @@
 ## API Changes:
 - Added support for registerMailTemplates and registerMailPartials in the Plugin registration file
 - Added support for the `placeholder` property in the TagList FormWidget
-- Added '@framework.extras.js' and '@framework.extras.css' file specific aliases to the combiner (Previously they were both combined under the 'framework.js' alias which is still available)
+- Added `@framework.extras.js` and `@framework.extras.css` file specific aliases to the combiner (Previously they were both combined under the 'framework.js' alias which is still available)
 - Added translation support to the 'default' form field property
 - Added change detection on the relation controller so that dependsOn can be used on relation controller’s containing fields
 - Remove unused X-UA-Compatible meta tag from backend layout
