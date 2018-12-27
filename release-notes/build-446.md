@@ -14,3 +14,8 @@
 ## Translation Improvements:
 - Minor improvements to Brazilian Portugese translation
 - Improvements to Spanish translation
+
+## Community Improvements:
+- Updated the [OctoberCMS Contributing Guidelines](https://github.com/octobercms/october/blob/master/.github/CONTRIBUTING.md)
+- Added issue & PR templates
+- Moved Code of Conduct to it's own file
