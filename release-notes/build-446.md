@@ -9,6 +9,8 @@
 
 ## Bug Fixes:
 - Fixed issue with the backend upgrade process to Build 444 where the user model would be retrieved before running the migration that added the `deleted_at` column to the users table
+- Fixed support for the `placeholder` option on `richeditor` fields
 
 ## Translation Improvements:
 - Minor improvements to Brazilian Portugese translation
+- Improvements to Spanish translation
