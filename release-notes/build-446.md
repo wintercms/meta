@@ -10,6 +10,7 @@
 ## Bug Fixes:
 - Fixed issue with the backend upgrade process to Build 444 where the user model would be retrieved before running the migration that added the `deleted_at` column to the users table
 - Fixed support for the `placeholder` option on `richeditor` fields
+- Fixed issue where using the clear search button in a Search widget that was within an HTML form element would cause the form to submit
 
 ## Translation Improvements:
 - Minor improvements to Brazilian Portugese translation

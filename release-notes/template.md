@@ -18,5 +18,8 @@
 ## Performance Improvements:
 -
 
+## Community Improvements:
+-
+
 ## Dependencies
 -
