@@ -25,6 +25,7 @@ The OctoberCMS, OctoberRain, & RainLab GitHub organizations use the following sy
 | Status: Response Needed      | Issue / PR that requires / is waiting on a response from at least one of the participants                                      |
 | Status: Review Needed        | Issue / PR that requires review from a maintainer or trusted community member                                                  |
 | Status: Revision Needed      | Issue / PR that requires changes before it can be accepted                                                                     |
+| Status: Testing Needed       | Issue / PR that requires testing before it can be accepted                                                                     |
 
 
 ## Priorities
