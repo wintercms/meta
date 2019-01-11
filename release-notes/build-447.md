@@ -5,7 +5,7 @@
 
 ## API Changes:
 - Renamed the Lists widget's `prepareModel()` method to `prepareQuery()` instead.
-- Provided the containing FormWidget to FormField instances as $field->form to enable complex FormWidgets to correctly obtain their containing Form widget instance.
+- Provided the containing `Form` widget to `FormField` instances as `$field->getParent()` to enable complex FormWidgets to correctly obtain their containing `Form` widget instance.
 
 ## Bug Fixes:
 - Fixed issue when the user's current page number for the list widget no longer existed (for any number of reasons) causing them to become stuck on a non-existent page. Fixed by using the last available page number in that case.
