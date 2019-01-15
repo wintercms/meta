@@ -1,11 +1,11 @@
 # Build 447:
 
 ## UX/UI Improvements:
--
+- Added Backend 404 page, throw 404 instead of an exception on missing backend controller actions when debug mode is disabled.
 
 ## API Changes:
 - Renamed the Lists widget's `prepareModel()` method to `prepareQuery()` instead.
-- Provided the containing `Form` widget to `FormField` instances as `$field->getParent()` to enable complex FormWidgets to correctly obtain their containing `Form` widget instance.
+- Provided the containing `Form` widget to `FormWidgetBases` instances as `$widget->getParentForm()` to enable complex FormWidgets to correctly obtain their containing `Form` widget instance.
 
 ## Bug Fixes:
 - Fixed issue when the user's current page number for the list widget no longer existed (for any number of reasons) causing them to become stuck on a non-existent page. Fixed by using the last available page number in that case.
@@ -14,6 +14,7 @@
 - Fix the input trigger API where a `form` element doesn't exist
 - Fixed returning false from `model.beforeValidate` not halting the validation process.
 - Fixed FormWidgets not picking up the correct `previewMode` setting from their parent Form on AJAX requests that do not call the parent Form's `render()` method.
+- Reduced reliance on the CMS module from the Backend module to improve stability of instances that just use the Backend and System modules (i.e. web applications)
 
 ## Security Improvements
 -
