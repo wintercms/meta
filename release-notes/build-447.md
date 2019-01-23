@@ -12,6 +12,7 @@
 - Added `validateUserModel()` method to the AuthManager class to provide an opportunity to reject a user's login
 - Added `step`, `min`, & `max` options to the `number` field type.
 - Added support for the `recordfinder` FormWidget to be used without a relationship definition through the `useRelation: false` and `modelClass` config properties
+- Added support for the `brand.faviconPath` config option (and backend customization option) to load a custom favicon for the backend to use
 
 ## Bug Fixes:
 - Fixed issue when the user's current page number for the list widget no longer existed (for any number of reasons) causing them to become stuck on a non-existent page. Fixed by using the last available page number in that case.
@@ -24,6 +25,11 @@
 - Only translate default values when they are strings (not arrays as in the case of default values for Repeaters).
 - Fixed display of the "Clear search" button in various contexts
 - Improved error messages in the YAML parser
+- Fixed issue from Build 444 where tabs and tables were no longer horizontally scrollable on touch devices
+- Fixed issue with simplePaginate using Laravel's translation system for Next & Previous which doesn't work in October
+- Fixed insidious bug where HasOne relationship's `getSimpleValue` would return the key of the parent record, not of the actual related record.
+- Fixed issue introduced in Build 446 where some media URLs would contain the base folder twice in a row
+- Fixed issue with expanding / collapsing the side menu items within the backend settings section
 
 ## Security Improvements
 - Added escaping to more variables to prevent potential XSS attacks
