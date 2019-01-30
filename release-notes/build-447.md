@@ -13,6 +13,8 @@
 - Added `step`, `min`, & `max` options to the `number` field type.
 - Added support for the `recordfinder` FormWidget to be used without a relationship definition through the `useRelation: false` and `modelClass` config properties
 - Added support for the `brand.faviconPath` config option (and backend customization option) to load a custom favicon for the backend to use
+- Added support for the `data-request-url` attribute to change the URL that the AJAX API fires an AJAX request to
+- Added `getClassMethods()` method to the `ExtendableTrait` as a replacement for `get_class_methods()` to include the dynamic methods that are available within the class as well
 
 ## Bug Fixes:
 - Fixed issue when the user's current page number for the list widget no longer existed (for any number of reasons) causing them to become stuck on a non-existent page. Fixed by using the last available page number in that case.
@@ -30,6 +32,8 @@
 - Fixed insidious bug where HasOne relationship's `getSimpleValue` would return the key of the parent record, not of the actual related record.
 - Fixed issue introduced in Build 446 where some media URLs would contain the base folder twice in a row
 - Fixed issue with expanding / collapsing the side menu items within the backend settings section
+- Fixed the `Repeater`'s "Add item" (grouped mode) popover in a popup context
+- Fixed `dropdown`'s support for the `placeholder` attribute.
 
 ## Security Improvements
 - Added escaping to more variables to prevent potential XSS attacks
