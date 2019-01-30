@@ -38,17 +38,8 @@
 ## Security Improvements
 - Added escaping to more variables to prevent potential XSS attacks
 
-## Translation Improvements:
--
-
-## Performance Improvements:
--
-
 ## Community Improvements:
 - Now running automatic CI tests with PHP 7.3
 
 ## Documentation Improvements:
 - Added better documentation on how to register custom validation rules within plugins, credit to [Ben Thomson](https://github.com/bennothommo)
-
-## Dependencies
--
