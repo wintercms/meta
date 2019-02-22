@@ -8,9 +8,11 @@
 - Changed `filter.js` to fire AJAX requests on the filter control element instead of the closest `form` element
 - Changed the `datepicker` FormWidget when in mode `date` to send a DateTime string with zeroed time (according to the `app.timezone` configuration) using the client's timezone. This is a change from the previous behaviour of sending the current time.
 - Added ability to specify a `permissions` array when registering `ReportWidgets` to force the user to have at least one of the specified permissions to be able to utilize the `ReportWidget` in question.
-- Added support for `counter` and `counterLabel` to main menu items
+- Added support for `counter` and `counterLabel` to main menu items, `counter` will default to the sum of the relevant side menu `counter`s unless `counter` is set to false.
 - Added support for multi-line update messages in plugin's `version.yaml` file
 - Now firing the `backend.list.extendRecords` event from the `export()` method when `useList: true` in the `ImportExportController` behavior.
+- `abort(404)` now returns the backend 404 view when called in the backend (module and plugin backend controllers)
+- Added `plugin:list`, `plugin:disable Author.Plugin`, `plugin:enable Author.Plugin` Artisan CLI commands
 
 ## Bug Fixes:
 - Fixed field default values when adding new items with the `Repeater` or when using `minItems` over 0
@@ -28,6 +30,7 @@
 ## Translation Improvements:
 - Improved Hungarian translation
 - Improved Turkish translation
+- Improved French translation
 
 ## Performance Improvements:
 - Refactored `stripe-loading-indicator` to use CSS transforms instead of animating the `width` property to improve rendering performance.
