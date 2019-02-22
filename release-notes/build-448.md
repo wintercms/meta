@@ -23,6 +23,8 @@
 - Fixed issue with AJAX handlers in `ReportWidget`s, specifically related to issues with the widget aliases not being set correctly
 - Fixed issue with being unable to use the second datepicker field's popup for a daterange filter inside of a popup
 - Fixed issue with multibyte slugs, reduced default max length from 240 to 175 to account for the default DB charset of `utf8mb4`
+- Fixed the `hasMany` relationship when not using the model's primary key as the the relationship's key
+- Fixed issue where attempting to install plugins from the `october:install` CLI command wouldn't work due to plugins attempting to install themselves before October itself was configured.
 
 ## Security Improvements
 -
