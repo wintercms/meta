@@ -13,6 +13,7 @@
 - Now firing the `backend.list.extendRecords` event from the `export()` method when `useList: true` in the `ImportExportController` behavior.
 - `abort(404)` now returns the backend 404 view when called in the backend (module and plugin backend controllers)
 - Added `plugin:list`, `plugin:disable Author.Plugin`, `plugin:enable Author.Plugin` Artisan CLI commands
+- Added `backend.layout.extendHead` view event (passes `$layout = 'auth.htm' | 'default.htm'`)
 
 ## Bug Fixes:
 - Fixed field default values when adding new items with the `Repeater` or when using `minItems` over 0
