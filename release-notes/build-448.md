@@ -33,6 +33,7 @@
 - Improved Hungarian translation
 - Improved Turkish translation
 - Improved French translation
+- Improved Arabic translation
 
 ## Performance Improvements:
 - Refactored `stripe-loading-indicator` to use CSS transforms instead of animating the `width` property to improve rendering performance.
