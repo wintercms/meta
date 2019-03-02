@@ -14,6 +14,7 @@
 - `abort(404)` now returns the backend 404 view when called in the backend (module and plugin backend controllers)
 - Added `plugin:list`, `plugin:disable Author.Plugin`, `plugin:enable Author.Plugin` Artisan CLI commands
 - Added `backend.layout.extendHead` view event (passes `$layout = 'auth.htm' | 'default.htm'`)
+- Changed `Backend\Classes\Controller` to extend the base `Illuminate\Routing\Controller` class instead of being its own root class in order to support the `middleware()` method on the controllers.
 
 ## Bug Fixes:
 - Fixed field default values when adding new items with the `Repeater` or when using `minItems` over 0
@@ -26,6 +27,10 @@
 - Fixed issue with multibyte slugs, reduced default max length from 240 to 175 to account for the default DB charset of `utf8mb4`
 - Fixed the `hasMany` relationship when not using the model's primary key as the the relationship's key
 - Fixed issue where attempting to install plugins from the `october:install` CLI command wouldn't work due to plugins attempting to install themselves before October itself was configured.
+- Return a 500 response instead of a 200 response when an exception is thrown during the compiling of an asset file using the `AssetCombiner`
+- Fixed minor CSS bug in Firefox (user deleted message on the user detail's page)
+- Fixed issue when using the `Network\Http` class to send a POST request with an attached file
+- Fixed error "Invalid security token" when trying to login to the backend by instructing the browser to clear it's cache on signin and signout as well as unregistering any service workers on the login action
 
 ## Security Improvements
 -
