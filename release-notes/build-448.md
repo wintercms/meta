@@ -1,4 +1,4 @@
-# Build 448 (IN PROGRESS):
+# Build 448:
 
 ## UX/UI Improvements:
 - Improved consistency of file size displayed in the `FileUpload` FormWidget between upload and page load actions
@@ -29,11 +29,7 @@
 - Fixed issue where attempting to install plugins from the `october:install` CLI command wouldn't work due to plugins attempting to install themselves before October itself was configured.
 - Return a 500 response instead of a 200 response when an exception is thrown during the compiling of an asset file using the `AssetCombiner`
 - Fixed minor CSS bug in Firefox (user deleted message on the user detail's page)
-- Fixed issue when using the `Network\Http` class to send a POST request with an attached file
 - Fixed error "Invalid security token" when trying to login to the backend by instructing the browser to clear it's cache on signin and signout as well as unregistering any service workers on the login action
-
-## Security Improvements
--
 
 ## Translation Improvements:
 - Improved Hungarian translation
@@ -43,9 +39,3 @@
 
 ## Performance Improvements:
 - Refactored `stripe-loading-indicator` to use CSS transforms instead of animating the `width` property to improve rendering performance.
-
-## Community Improvements:
--
-
-## Dependencies
--
