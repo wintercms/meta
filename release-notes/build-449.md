@@ -39,3 +39,4 @@
 ## Dependencies
 - Fixed issue with Twig 2.7.4
 - Replaced all deprecated Twig PSR-0 class references with the new PSR-4 class references.
+- Updated Froala to 2.9.3
