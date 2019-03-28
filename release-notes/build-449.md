@@ -2,6 +2,10 @@
 
 ## UX/UI Improvements:
 - Redirect users with the `manage_theme_options` (but not the `manage_themes`) permission directly to the Customize theme page
+- Dashboard now uses a 12-column layout instead of a 10-column layout
+- Show a "not found" message when the image selected by a `mediafinder` FormWidget does not exist
+- Added link to backend updates page to see a detailed changelog for the current build
+- Minor improvements to the styling of the clear search button
 
 ## API Changes:
 - Support `enableDefaults` on repeaters using grouped mode
@@ -30,7 +34,7 @@
 -
 
 ## Community Improvements:
--
+- Added guidelines for updating JS dependencies used in the OctoberCMS core
 
 ## Dependencies
 - Fixed issue with Twig 2.7.4
