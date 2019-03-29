@@ -1,4 +1,4 @@
-# Build 449 (IN PROGRESS):
+# Build 449:
 
 ## UX/UI Improvements:
 - Redirect users with the `manage_theme_options` (but not the `manage_themes`) permission directly to the Customize theme page
@@ -23,15 +23,10 @@
 - Fixed issue where multiple `Filter` widgets could not exist on the same page at the same time.
 - Fixed support for migration files with extra `.`s in their file names (ex. `1.0.5.update_posts.php`)
 - Fixed issue where the popup loading indicator would sometimes not close after the request had finished loading
-
-## Security Improvements
--
+- Improved FireFox & IE11 support by fixing race conditions in backend JS
 
 ## Translation Improvements:
 - Improved French translation
-
-## Performance Improvements:
--
 
 ## Community Improvements:
 - Added guidelines for updating JS dependencies used in the OctoberCMS core
