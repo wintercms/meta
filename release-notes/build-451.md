@@ -13,7 +13,7 @@
 -
 
 ## Translation Improvements:
--
+- Improved Russian translation
 
 ## Performance Improvements:
 -
