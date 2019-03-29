@@ -1,7 +1,4 @@
-# Build 450 (IN PROGRESS):
-
-## UX/UI Improvements:
--
+# Build 450:
 
 ## API Changes:
 - `input()`, `get()`, & `post()` now pull values from the `Request` app container instead of directly from the PHP superglobals
@@ -9,19 +6,4 @@
 - All uses of of `exit()` or `die()` removed to support being run under a concurrent server (i.e. Swoole)
 
 ## Bug Fixes:
--
-
-## Security Improvements
--
-
-## Translation Improvements:
--
-
-## Performance Improvements:
--
-
-## Community Improvements:
--
-
-## Dependencies
--
+- Updated Froala license key
