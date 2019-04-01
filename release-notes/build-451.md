@@ -9,7 +9,7 @@
 ## Bug Fixes:
 - Fixed support for migration files in subdirectories
 - Fixed `colorpicker` FormWidgets being unable to be manually updated while inside of a popup modal
-- Fixed issue with getting request input from `get()` and `post()` that were introduced in Build 451.
+- Fixed issue with getting request input from `get()` and `post()` that were introduced in Build 450.
 - Fixed issue where grouped repeaters stopped working in Build 449
 
 ## Security Improvements
