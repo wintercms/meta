@@ -17,7 +17,7 @@
 -
 
 ## Translation Improvements:
--
+- Improved Arabic translation
 
 ## Performance Improvements:
 -
