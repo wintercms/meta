@@ -7,6 +7,7 @@
 - Added `oc.inputPreset.beforeUpdate` JS event to the `input.preset.js` logic
 - Added support for optional `$options` parameter to the `FormController`'s `formRenderField($name, $options)` method to be passed to the `Form` widget's `renderField($name, $options)` method.
 - Added `role="form"` attribute to output of `Form::open()`
+- Added automatic conversion of array notation to dot notation in validation rules (`attribute[nested]` to `attribute.nested`, etc)
 
 ## Bug Fixes:
 - Fixed issue with the `DataTable` FormWidget being unable to dynamically get dropdown options
