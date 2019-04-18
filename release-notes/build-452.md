@@ -8,6 +8,9 @@
 - Added support for optional `$options` parameter to the `FormController`'s `formRenderField($name, $options)` method to be passed to the `Form` widget's `renderField($name, $options)` method.
 - Added `role="form"` attribute to output of `Form::open()`
 - Added automatic conversion of array notation to dot notation in validation rules (`attribute[nested]` to `attribute.nested`, etc)
+- Added `cache` attribute to attributes supported by `addJs($script, $attributes)` to enable disabling the CloudFlare RocketLoader which causes issues in the backend.
+- Simplified how the `Repeater` FormWidget works internally which should resolve some sporadic issues.
+- Now using an embedded `Form` widget to process `FileUpload` file properties (like `title` and `description`). This enables dynamic extension of this form.
 
 ## Bug Fixes:
 - Fixed issue with the `DataTable` FormWidget being unable to dynamically get dropdown options
