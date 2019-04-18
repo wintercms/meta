@@ -11,6 +11,7 @@
 - Added `cache` attribute to attributes supported by `addJs($script, $attributes)` to enable disabling the CloudFlare RocketLoader which causes issues in the backend.
 - Simplified how the `Repeater` FormWidget works internally which should resolve some sporadic issues.
 - Now using an embedded `Form` widget to process `FileUpload` file properties (like `title` and `description`). This enables dynamic extension of this form.
+- Added automatic mimetype detection of `.svg` files as `image/svg+xml`
 
 ## Bug Fixes:
 - Fixed issue with the `DataTable` FormWidget being unable to dynamically get dropdown options
