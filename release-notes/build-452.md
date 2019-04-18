@@ -18,6 +18,7 @@
 - Fixed issue where the `text` filter used a hardcoded widget alias instead of `getEventHandler()` 
 - Fixed issue where when inserting an image with the `mediafinder` into a `richeditor` field, the image could sometimes be inserted at the top of the content instead of where the cursor was when it was originally selected
 - Fix ability to clear `RecordFinder` fields when `useRelation` is set to `false`
+- Fixed issues introduced in Build #449 with regards to the "Image not found" message showing up at incorrect times for the `MediaFinder` formwidget
 
 ## Security Improvements
 -
