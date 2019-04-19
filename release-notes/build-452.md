@@ -20,6 +20,7 @@
 - Fixed issue where when inserting an image with the `mediafinder` into a `richeditor` field, the image could sometimes be inserted at the top of the content instead of where the cursor was when it was originally selected
 - Fix ability to clear `RecordFinder` fields when `useRelation` is set to `false`
 - Fixed issues introduced in Build #449 with regards to the "Image not found" message showing up at incorrect times for the `MediaFinder` formwidget
+- Fixed a bug where `track-input` triggered requests could return incorrect results by waiting until input is finished to fire requests triggered by tracking input
 
 ## Security Improvements
 -
@@ -29,10 +30,12 @@
 - Improved Hungarian translation
 
 ## Performance Improvements:
--
+- Added preloading of all essential scripts in the backend to improve performance
+- Improved performance when utilizing remote storage drivers by caching the results of `hasFile()`.
+- Cached the parsed theme configuration to improve performance on subsequent page loads
 
 ## Community Improvements:
 -
 
 ## Dependencies
--
+- Updated jQuery from V3.3.1 to V3.4.0
