@@ -1,4 +1,4 @@
-# Build 452 (IN PROGRESS):
+# Build 452:
 
 ## UX/UI Improvements:
 - Force values that would overflow a `.form-control` container to wrap to the next line instead of overflowing the field
@@ -43,9 +43,6 @@
 - Added preloading of all essential scripts in the backend to improve performance
 - Improved performance when utilizing remote storage drivers by caching the results of `hasFile()`.
 - Cached the parsed theme configuration to improve performance on subsequent page loads
-
-## Community Improvements:
--
 
 ## Dependencies
 - Updated jQuery from V3.3.1 to V3.4.0
