@@ -1,0 +1,149 @@
+[
+	{
+		"name": "Type: Unconfirmed Bug",
+		"color": "F7C6C7",
+		"description": "Report that hasn't been verified / reproduced by a maintainer or trusted community member yet"
+    },
+    {
+		"name": "Type: Bug",
+		"color": "E11D21",
+		"description": "Report that has been identified / verified as an issue requiring resolution"
+    },
+    {
+		"name": "Type: Conceptual Enhancement",
+		"color": "BFE5BF",
+		"description": "Proposed enhancement that has not been implemented yet but is still in the discussion stage"
+    },
+    {
+		"name": "Type: Enhancement",
+		"color": "84B6EB",
+		"description": "Proposed enhancement that has been accepted / implemented"
+    },
+    {
+		"name": "Type: Maintenance",
+		"color": "FBCA04",
+		"description": "Minor maintenance to the code base (i.e. minor bug fixes, styling fixes, translation improvements)"
+    },
+    {
+		"name": "Type: Discussion",
+		"color": "006b75",
+		"description": "Issue that is meant for discussion between members of the community"
+    },
+    {
+		"name": "Type: Question",
+		"color": "CC317C",
+		"description": "Issue that is actually just a question"
+    },
+
+
+    {
+		"name": "Status: Abandoned",
+		"color": "000000",
+		"description": "Has not seen any activity in at least a month, used to prompt stakeholders to action"
+    },
+    {
+		"name": "Status: Accepted",
+		"color": "009800",
+		"description": "Enhancement that has been approved in theory."
+    },
+    {
+		"name": "Status: Blocked",
+		"color": "E11D21",
+		"description": "Blocked from progressing by something (usually another related issue / PR)"
+    },
+    {
+		"name": "Status: Completed",
+		"color": "006B75",
+		"description": "Fix is completed and merged into the dev branch; remaining open until it has been merged into master"
+    },
+    {
+		"name": "Status: In Progress",
+		"color": "CCCCCC",
+		"description": "Currently being worked on"
+    },
+    {
+		"name": "Status: On Hold",
+		"color": "E11D21",
+		"description": "Put on hold for now but will be worked on again in the future"
+    },
+    {
+		"name": "Status: Response Needed",
+		"color": "b60205",
+		"description": "Requires / is waiting on a response from at least one of the participants"
+    },
+    {
+		"name": "Status: Review Needed",
+		"color": "FBCA04",
+		"description": "Requires review from a maintainer or trusted community member"
+    },
+    {
+		"name": "Status: Revision Needed",
+		"color": "E11D21",
+		"description": "Requires changes before it can be accepted"
+    },
+    {
+		"name": "Status: Testing Needed",
+		"color": "7e45ef",
+        "description": "Requires testing before it can be accepted",
+        "aliases": [
+            "testing needed"
+        ]
+    },
+
+
+    {
+		"name": "Priority: Critical",
+		"color": "E11D21",
+		"description": "Critical issue that needs to get addressed immediately - breaking build, composer issue, security"
+    },
+    {
+		"name": "Priority: High",
+		"color": "EB6420",
+		"description": "Issue that should be resolved for inclusion in the next build"
+    },
+    {
+		"name": "Priority: Medium",
+		"color": "FBCA04",
+		"description": "Issue that is on the horizon to be addressed at some point"
+    },
+    {
+		"name": "Priority: Low",
+		"color": "009800",
+		"description": "Issue / PR that in theory would be accepted, but maintainers aren't planning on working on it"
+    },
+
+
+    {
+		"name": "duplicate",
+		"color": "BFD4F2",
+		"description": "Duplicate of another issue / PR and is being closed in favour of the other"
+    },
+    {
+		"name": "good first issue",
+		"color": "fef2c0",
+		"description": "Good candidate for newcomers to the project to begin contributing on"
+    },
+    {
+		"name": "hacktoberfest",
+		"color": "EB6420",
+		"description": "Good fit for Hacktoberfest contributions"
+    },
+    {
+		"name": "help wanted",
+		"color": "61d8af",
+		"description": "Makes the issue / PR show up in GitHub's list of Help Wanted issues / PRs"
+    },
+    {
+		"name": "third party",
+		"color": "CCCCCC",
+		"description": "Not related to the repository, it must be handled by a third party instead"
+    },
+    {
+		"name": "Website / Marketplace / Docs",
+		"color": "FBCA04",
+        "description": "Issue is related to the OctoberCMS.com marketplace or documentation",
+        "aliases": [
+			"website"
+		]
+    }
+]
