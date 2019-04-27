@@ -1,10 +1,4 @@
-# Build 453 (IN PROGRESS):
-
-## UX/UI Improvements:
--
-
-## API Changes:
--
+# Build 453:
 
 ## Bug Fixes:
 - Truncate URLs in the Request Log to 191 characters instead of 255 to reflect the default DB schema of utf8mb4
@@ -17,11 +11,5 @@
 ## Translation Improvements:
 - Improved Viatnamese & Serbian input preset character mapping
 
-## Performance Improvements:
--
-
 ## Community Improvements:
--
-
-## Dependencies
--
+- Setup a Discord server to experiment with potentially moving to Discord: https://discord.gg/GuBMYz9
