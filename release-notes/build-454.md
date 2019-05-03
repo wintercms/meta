@@ -7,3 +7,7 @@
 - Fixed issue where CSRF protection would prevent uploads directly in the RichEditor from succeeding by including the CSRF token in those requests
 - Fixed issue with scrolling backend lists on mobile devices
 - Fixed issue where the subject and / or user password in the user welcome email could be HTML encoded
+- Fixed typo in FormWidget's JS & CSS stub files
+
+## Translation Improvements:
+- Improved Finnish translation
