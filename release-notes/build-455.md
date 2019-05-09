@@ -1,7 +1,7 @@
 # Build 455 (WIP):
 
 ## UX/UI Improvements:
--
+- Implemented easy impersonation of backend users through the backend - feature controlled by the new `backend.impersonate_users` permission
 
 ## API Changes:
 - Changed the FileUpload FormWidget to process uploads with a `onUpload` AJAX handler instead of the `checkUploadPostback` method
