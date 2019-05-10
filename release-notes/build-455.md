@@ -6,6 +6,7 @@
 ## API Changes:
 - Changed the FileUpload FormWidget to process uploads with a `onUpload` AJAX handler instead of the `checkUploadPostback` method
 - Changed the default value of `cache.disableRequestCache` to be `null` which now disables the in memory request cache during CLI requests and enables it during HTTP requests. Other values are explicit `true` or `false`.
+- Brought the `AuthManager` and `User` classes more in line with Laravel's Auth library; full support is still a far ways off though.
 
 ## Bug Fixes:
 -
