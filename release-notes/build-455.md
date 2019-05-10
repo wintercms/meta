@@ -9,7 +9,7 @@
 - Brought the `AuthManager` and `User` classes more in line with Laravel's Auth library; full support is still a far ways off though.
 
 ## Bug Fixes:
--
+- Fixed issue with retaining transparency when making thumbnails for some image files
 
 ## Security Improvements
 -
