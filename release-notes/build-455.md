@@ -3,6 +3,7 @@
 ## UX/UI Improvements:
 - Implemented easy impersonation of backend users through the backend - feature controlled by the new `backend.impersonate_users` permission
 - Open `rowlink` rows in a new tab when the Command or Ctrl key is held down (previously only did it for the Ctrl key)
+- Added disabled style for `switch` field types
 
 ## API Changes:
 - Changed the FileUpload FormWidget to process uploads with a `onUpload` AJAX handler instead of the `checkUploadPostback` method
