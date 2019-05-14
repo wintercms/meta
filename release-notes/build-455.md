@@ -13,6 +13,8 @@
 
 ## Bug Fixes:
 - Fixed issue with retaining transparency when making thumbnails for some image files
+- Fixed issue that could cause potential data loss with complicated implementations of the Repeater formwidget.
+- Fixed issue where the DatePicker was ignoring the value of `ignoreTimezone` when in mode `date`
 
 ## Security Improvements
 -
