@@ -1,4 +1,4 @@
-# Build 455 (WIP):
+# Build 455:
 
 ## UX/UI Improvements:
 - Implemented easy impersonation of backend users through the backend - feature controlled by the new `backend.impersonate_users` permission
@@ -16,17 +16,5 @@
 - Fixed issue that could cause potential data loss with complicated implementations of the Repeater formwidget.
 - Fixed issue where the DatePicker was ignoring the value of `ignoreTimezone` when in mode `date`
 
-## Security Improvements
--
-
 ## Translation Improvements:
 - Improved Dutch translation
-
-## Performance Improvements:
--
-
-## Community Improvements:
--
-
-## Dependencies
--
