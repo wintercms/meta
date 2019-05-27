@@ -15,6 +15,7 @@
 - Added support for the `brand.faviconPath` config option (and backend customization option) to load a custom favicon for the backend to use
 - Added support for the `data-request-url` attribute to change the URL that the AJAX API fires an AJAX request to
 - Added `getClassMethods()` method to the `ExtendableTrait` as a replacement for `get_class_methods()` to include the dynamic methods that are available within the class as well
+- File models will now attempt to get the backend files controller path instead of the public path for private files. This may be a breaking change if you had previously misconfigured your server so that the private upload directory was publicly accessible and you were relying on private files being visible to public visitors.
 
 ## Bug Fixes:
 - Fixed issue when the user's current page number for the list widget no longer existed (for any number of reasons) causing them to become stuck on a non-existent page. Fixed by using the last available page number in that case.
