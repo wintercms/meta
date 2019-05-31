@@ -5,7 +5,7 @@
 - Added support for previewing SVG images in the Media Library
 
 ## API Changes:
--
+- Added `Url::buildUrl()` method (along with helper `http_build_url()`) as a polyfill for the PECL HTTP `http_build_url()` function.
 
 ## Bug Fixes:
 - Fixed issues with hasMany relationship management by reverting some performance PRs to that process that were causing issues.
