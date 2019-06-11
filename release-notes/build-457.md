@@ -17,6 +17,7 @@
 - Improved reliability of `jsonable` properties in models under conditions where they might be double de/encoded for one reason or another
 - Fixed broken path to the video thumbnail in the MediaManager widget
 - Fixed issue when attempting to interact with CMS assets in the backend caused by the recent addition of the `databaseTemplates` functionality
+- Improved unit tests for CMS urls
 
 ## Security Improvements
 -
