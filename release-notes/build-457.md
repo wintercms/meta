@@ -18,6 +18,8 @@
 - Fixed broken path to the video thumbnail in the MediaManager widget
 - Fixed issue when attempting to interact with CMS assets in the backend caused by the recent addition of the `databaseTemplates` functionality
 - Improved unit tests for CMS urls
+- Fixed long standing issue where loading indicators would remain in a loading state when an error or flash message was returned from a response forcing the user to reload the page to get back to a usable state
+- Improved error message displayed when using a custom Halcyon model that does not have a `dirName` set
 
 ## Security Improvements
 -
