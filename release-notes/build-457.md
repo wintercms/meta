@@ -20,6 +20,8 @@
 - Improved unit tests for CMS urls
 - Fixed long standing issue where loading indicators would remain in a loading state when an error or flash message was returned from a response forcing the user to reload the page to get back to a usable state
 - Improved error message displayed when using a custom Halcyon model that does not have a `dirName` set
+- Fixed issue introduced with 447 when trying to get the thumbnail for private files without specifying any options by using default options when generating thumbnails for private files
+- Improved handling for error states in the `RelationController` behavior
 
 ## Security Improvements
 -
