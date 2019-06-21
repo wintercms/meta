@@ -3,6 +3,7 @@
 ## UX/UI Improvements:
 - Now utilizing the selected `secondaryColor` brand setting for the border color on selected items in the Treeview control (pages list)
 - Added support for `cms.databaseTemplates` to the `october:env` command
+- Added support for preview mode to the Taglist FormWidget
 
 ## API Changes:
 - The `October\Rain\Database\Attach\File` model's `getPath()` now defines an optional `$fileName` parameter, any custom classes that extend this method must have their method signatures updated to match this change.
@@ -22,6 +23,8 @@
 - Improved error message displayed when using a custom Halcyon model that does not have a `dirName` set
 - Fixed issue introduced with 447 when trying to get the thumbnail for private files without specifying any options by using default options when generating thumbnails for private files
 - Improved handling for error states in the `RelationController` behavior
+- Fixed support for `files: true` as an AJAX framework option in newer browsers
+- Improved the unit tests by not relying on hardcoded absolute URLs
 
 ## Security Improvements
 -
@@ -31,6 +34,7 @@
 
 ## Performance Improvements:
 - When using Cloud storage drivers (ex. AWS or Rackspace) for `File`s that are marked as protected, the `Backend\Controllers\Files` controller's `getDownloadUrl()` and `getThumbUrl()` methods now return temporary URLs to the actual asset instead of a URL that proxies the entire asset through the framework to the browser. The amount of time the temporary URL is valid for is configurable by setting `cms.storage.uploads.temporaryUrlTTL` to a value in seconds (default 3600, an hour). This should dramatically improve performance of protected files that are located in storage drives that support the `getTemporaryUrl()` method - and it is recommended that if you heavily utilize that feature that you utilize a storage drive that supports that method.
+- Added support for the Priority Hints API supported in newer browsers for backend core assets and the `{% framework %}` tags
 
 ## Community Improvements:
 -
