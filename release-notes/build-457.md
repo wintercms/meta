@@ -9,6 +9,7 @@
 - The `October\Rain\Database\Attach\File` model's `getPath()` now defines an optional `$fileName` parameter, any custom classes that extend this method must have their method signatures updated to match this change.
 - The `getDisk()` method has been added to the `October\Rain\Database\Attach\File` model which enables running all storage related commands on the File's actual storage disk instead of the default storage disk.
 - Added new `Backend\Traits\PreferenceMaker` trait modelled after the `SessionMaker` trait that stores minor user preference changes (such as backend list configurations) in the user's preferences.
+- Added `cms.enableBackendServiceWorkers` (defaulting to false) to allow the use of Service Workers in the backend. They have been disabled by default for security purposes to prevent any frontend Service Workers from leaking into the backend.
 
 ## Bug Fixes:
 - Fixed support for JS plugins extending the RichEditor
@@ -37,7 +38,7 @@
 - Added support for the Priority Hints API supported in newer browsers for backend core assets and the `{% framework %}` tags
 
 ## Community Improvements:
--
+- Various improvements (performance and otherwise) made to the TravisCI integration with the main repos to make contributing to PRs a nicer experience
 
 ## Dependencies
 - Added inline_style and inline_class Froala plugins into the base Froala build
