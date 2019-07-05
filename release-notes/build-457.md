@@ -29,6 +29,7 @@
 - Improved the unit tests by not relying on hardcoded absolute URLs
 - Fixed support for saving Repeater data in Static Pages when a repeater item is deleted
 - Fixed support for custom Select2 options via the AJAX framework, also added new format for custom options to be returned in to preserve their order
+- Fixed issue where CMS templates with the same filenames (i.e. a partial and a page both called contact.htm) would be unable to be selected in the list of templates in the CMS section.
 
 ## Security Improvements
 - Backend ServiceWorkers have been disabled by default to prevent frontend ones from leaking into the backend unintentionally. See `cms.enableBackendServiceWorkers`
