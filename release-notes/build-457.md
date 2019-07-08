@@ -4,6 +4,8 @@
 - Now utilizing the selected `secondaryColor` brand setting for the border color on selected items in the Treeview control (pages list)
 - Added support for `cms.databaseTemplates` to the `october:env` command
 - Added support for preview mode to the Taglist FormWidget
+- Improved the visibility of the code editor buttons in the CMS section by changing their colour to one with more contrast
+- Disabled the theme config cache when application is in debug mode
 
 ## API Changes:
 - The `October\Rain\Database\Attach\File` model's `getPath()` now defines an optional `$fileName` parameter, any custom classes that extend this method must have their method signatures updated to match this change.
@@ -30,6 +32,7 @@
 - Fixed support for saving Repeater data in Static Pages when a repeater item is deleted
 - Fixed support for custom Select2 options via the AJAX framework, also added new format for custom options to be returned in to preserve their order
 - Fixed issue where CMS templates with the same filenames (i.e. a partial and a page both called contact.htm) would be unable to be selected in the list of templates in the CMS section.
+- Fixed the centering of no record message in lists when tree mode is enabled.
 
 ## Security Improvements
 - Backend ServiceWorkers have been disabled by default to prevent frontend ones from leaking into the backend unintentionally. See `cms.enableBackendServiceWorkers`
