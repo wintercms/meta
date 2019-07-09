@@ -13,6 +13,7 @@
 - Added new `Backend\Traits\PreferenceMaker` trait modelled after the `SessionMaker` trait that stores minor user preference changes (such as backend list configurations) in the user's preferences.
 - Added `cms.enableBackendServiceWorkers` (defaulting to false) to allow the use of Service Workers in the backend. They have been disabled by default for security purposes to prevent any frontend Service Workers from leaking into the backend.
 - Plugin dependencies defined in the plugin registration class `$require` property are now case insensitive.
+- Removed support for the invalid `type: relation` column configuration, previously this would warn that is was invalid in the system log and convert to `type: text` automatically. Recommended replacement is to use whatever type the data actually is and then use the `relation:` property to specify the relationship you want to get the value from.
 
 ## Bug Fixes:
 - Fixed support for JS plugins extending the RichEditor
@@ -33,6 +34,10 @@
 - Fixed support for custom Select2 options via the AJAX framework, also added new format for custom options to be returned in to preserve their order
 - Fixed issue where CMS templates with the same filenames (i.e. a partial and a page both called contact.htm) would be unable to be selected in the list of templates in the CMS section.
 - Fixed the centering of no record message in lists when tree mode is enabled.
+- Stopped minifying CSS rules inside of parenthesis, fixes issue where calc() rules with pixel values were breaking after being run through the asset combiner.
+- Fixed support for `ReportWidgets` using the `objectList` property type for their properties.
+- Fixed support for `Auth::id()`, there was a typo in the method that rendered it unusable previously.
+- Fixed bug when attempting to sort by the `any_template` (Template) column in the CMS Theme Log. To sort by template, change the list setup to show the "Old Template" and "New Template" columns and sort by those instead.
 
 ## Security Improvements
 - Backend ServiceWorkers have been disabled by default to prevent frontend ones from leaking into the backend unintentionally. See `cms.enableBackendServiceWorkers`
