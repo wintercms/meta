@@ -6,6 +6,8 @@
 - Added support for preview mode to the Taglist FormWidget
 - Improved the visibility of the code editor buttons in the CMS section by changing their colour to one with more contrast
 - Disabled the theme config cache when application is in debug mode
+- Improved the styling of the colour picker when `allowEmpty: true`
+- Improved screen reader accessibility for tabs and improved keyboard navigation in the backend
 
 ## API Changes:
 - The `October\Rain\Database\Attach\File` model's `getPath()` now defines an optional `$fileName` parameter, any custom classes that extend this method must have their method signatures updated to match this change.
@@ -40,6 +42,7 @@
 - Fixed support for `Auth::id()`, there was a typo in the method that rendered it unusable previously.
 - Fixed bug when attempting to sort by the `any_template` (Template) column in the CMS Theme Log. To sort by template, change the list setup to show the "Old Template" and "New Template" columns and sort by those instead.
 - Fixed inspector option values not being translated.
+- Fixed `DataFeed` support for Postgres
 
 ## Security Improvements
 - Backend ServiceWorkers have been disabled by default to prevent frontend ones from leaking into the backend unintentionally. See `cms.enableBackendServiceWorkers`
@@ -48,6 +51,7 @@
 - Improved the Brazilian Portuguese translation
 - Improved the Chinese translation
 - Improved the Spanish translation
+- Improved the Russian translation
 
 ## Performance Improvements:
 - When using Cloud storage drivers (ex. AWS or Rackspace) for `File`s that are marked as protected, the `Backend\Controllers\Files` controller's `getDownloadUrl()` and `getThumbUrl()` methods now return temporary URLs to the actual asset instead of a URL that proxies the entire asset through the framework to the browser. The amount of time the temporary URL is valid for is configurable by setting `cms.storage.uploads.temporaryUrlTTL` to a value in seconds (default 3600, an hour). This should dramatically improve performance of protected files that are located in storage drives that support the `getTemporaryUrl()` method - and it is recommended that if you heavily utilize that feature that you utilize a storage drive that supports that method.
@@ -55,8 +59,10 @@
 
 ## Community Improvements:
 - Various improvements (performance and otherwise) made to the TravisCI integration with the main repos to make contributing to PRs a nicer experience
-- Various improvements to the automated testsuite
+- Various improvements to the automated testsuite (including a new style checker, the existing code base has been cleaned up to conform to the style checker. It may be made more strict in the future, for now all PRs are required to adhere to it)
 - Added documentation for the `theme:sync` command and for the `--relative` option for the `october:mirror` command
 
 ## Dependencies
 - Added inline_style and inline_class Froala plugins into the base Froala build
+- Added polyfill for `:focus-visible` CSS selector to the backend (https://github.com/WICG/focus-visible)
+- Added polyfill for `event.key` in JS events to the backend (https://github.com/cvan/keyboardevent-key-polyfill)
