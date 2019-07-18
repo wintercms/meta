@@ -43,6 +43,7 @@
 - Fixed bug when attempting to sort by the `any_template` (Template) column in the CMS Theme Log. To sort by template, change the list setup to show the "Old Template" and "New Template" columns and sort by those instead.
 - Fixed inspector option values not being translated.
 - Fixed `DataFeed` support for Postgres
+- Fixed minor issues with poorly structured HTML from the `dump()` Twig function
 
 ## Security Improvements
 - Backend ServiceWorkers have been disabled by default to prevent frontend ones from leaking into the backend unintentionally. See `cms.enableBackendServiceWorkers`
