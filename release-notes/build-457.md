@@ -19,6 +19,7 @@
 - Added a `is_countable()` polyfill to the library for PHP < 7.3
 - Disabled global jQuery AJAX events by default in favour of just the `framework.js` ones. Previously both would fire leading to conflicts between what parameters jQuery sends vs what the AJAX framework. If access to the jQuery AJAX events is required, pass `ajaxGlobal: true` to the options for `$.request(handler, options)` or add `data-request-ajax-global` for the Data Attributes AJAX API.
 - Third parameter `$options` added to `Zip::make()` that passes the options onto `Zip->add()`. In addition, the `includeHidden` option has been added which specifies that all hidden files (dot files) from the source should be included in the final Zip destination.
+- Added `maxFilesize` option to the `FileUpload` FormWidget, defaults to the `upload_max_filesize` from the server
 
 ## Bug Fixes:
 - Fixed support for JS plugins extending the RichEditor
