@@ -1,4 +1,4 @@
-# Build 457 (WIP):
+# Build 457:
 
 ## UX/UI Improvements:
 - Now utilizing the selected `secondaryColor` brand setting for the border color on selected items in the Treeview control (pages list)
