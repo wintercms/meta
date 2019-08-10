@@ -17,6 +17,8 @@
 - Fixed minor issue where the editable part of the RichEditor FormWidget didn't fully fill the height of the control
 - Fixed issue where calling isset() on CMS page codebase object properties wouldn't give the same result as actually accessing them.
 - Fixed "widget not bound to controller" error for nested repeaters.
+- Improved support for previewMode being passed down to Repeaters and NestedForms
+- Fixed an issue where using unsupported database drivers would thrown an incorrect exception
 
 ## Security Improvements
 -
