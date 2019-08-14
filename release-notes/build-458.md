@@ -1,4 +1,4 @@
-# Build 458 (WIP):
+# Build 458:
 
 ## UX/UI Improvements:
 - The link to "Access Logs" in the System Dashboard Widget is now hidden when the user doesn't have access to view those logs.
@@ -20,18 +20,9 @@
 - Improved support for previewMode being passed down to Repeaters and NestedForms
 - Fixed an issue where using unsupported database drivers would thrown an incorrect exception
 
-## Security Improvements
--
-
 ## Translation Improvements:
 - Added Thai translation
-
-## Performance Improvements:
--
 
 ## Community Improvements:
 - Added documentation for the DataTable FormWidget
 - Added an issue template for marketplace issues
-
-## Dependencies
--
