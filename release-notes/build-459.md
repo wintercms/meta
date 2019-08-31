@@ -3,7 +3,7 @@
 ## UX/UI Improvements:
 - The theme Delete button is now hidden for the currently active theme as you cannot delete the active theme anyways.
 - Added a warning to the System Status dashboard ReportWidget when debug mode is enabled as debug should never be enabled in production.
-- Invalid menu items now throw a ValidationException when debug mode is enabled and log and error instead when debug is disabled.
+- Invalid menu items now throw a ValidationException when debug mode is enabled and log an error instead when debug is disabled.
 - Added support for Repeater item titles to be pulled from dropdown field types.
 - Added the Validation trait to model stubs when calling `create:model`.
 
@@ -24,7 +24,7 @@
 - Improved Arabic translation
 
 ## Performance Improvements:
--
+- The file extension has been added to the end of asset combiner URLs (ex. /combine/asqw3ljkqw421323.js or /combine/lkj23jlk13j1l.css) in order to allow CDNs to more easily identify the URL as cacheable to improve overall site performance.
 
 ## Community Improvements:
 - Added documentation on keeping local forks of the OctoberCMS codebase up to date with upstream.
