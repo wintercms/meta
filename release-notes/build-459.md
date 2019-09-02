@@ -16,6 +16,7 @@
 
 ## Bug Fixes:
 - Fixed issue where the `TagList` FormWidget in `mode: relation` wasn't respecting relationship constraints (`conditions` and `scope`) set on the relationship definition.
+- Fixed issue where using the `::class` magic constant in database migrations would cause them to break due to flawed parsing logic.
 
 ## Security Improvements
 -
