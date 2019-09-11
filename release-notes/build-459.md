@@ -6,6 +6,7 @@
 - Invalid menu items now throw a ValidationException when debug mode is enabled and log an error instead when debug is disabled.
 - Added support for Repeater item titles to be pulled from dropdown field types.
 - Added the Validation trait to model stubs when calling `create:model`.
+- Made the CodeEditor fullscreen button easier to see by increasing the contrast.
 
 ## API Changes:
 - When setting relationship values model mutator methods (`'set' . $attribute . 'Attribute'`) are now taken into account meaning that you can control how specific relationship values are set by defining a custom mutator method for the relationship.
@@ -17,6 +18,11 @@
 ## Bug Fixes:
 - Fixed issue where the `TagList` FormWidget in `mode: relation` wasn't respecting relationship constraints (`conditions` and `scope`) set on the relationship definition.
 - Fixed issue where using the `::class` magic constant in database migrations would cause them to break due to flawed parsing logic.
+- Fixed use of Storage::url() for local disks that haven't been configured correctly
+- Moved the translation for plugin's "By $author" text in the plugin update view to the System module instead of the CMS module to support installations without the CMS module enabled or installed.
+- Removed old "Holly Hack" for IE5-IE7 support, we don't support those browsers anymore.
+- Fixed Theme importing/exporting that was broken as of 457-458.
+- Fixed issue where the session expiring would throw a vague exception when attempting to check the CSRF token instead of just throwing a general CSRF invalid error message.
 
 ## Security Improvements
 -
@@ -29,6 +35,7 @@
 
 ## Community Improvements:
 - Added documentation on keeping local forks of the OctoberCMS codebase up to date with upstream.
+- Improved the CONTRIBUTING.md guide
 
 ## Dependencies
 - Updated to v1.8.0 of Spectrum.js (Note: October was already using 1.8.0, however jQuery API updates were made without the vendor tagging a new release)
