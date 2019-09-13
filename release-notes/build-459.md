@@ -1,4 +1,4 @@
-# Build 459 (WIP):
+# Build 459:
 
 ## UX/UI Improvements:
 - The theme Delete button is now hidden for the currently active theme as you cannot delete the active theme anyways.
@@ -23,9 +23,7 @@
 - Removed old "Holly Hack" for IE5-IE7 support, we don't support those browsers anymore.
 - Fixed Theme importing/exporting that was broken as of 457-458.
 - Fixed issue where the session expiring would throw a vague exception when attempting to check the CSRF token instead of just throwing a general CSRF invalid error message.
-
-## Security Improvements
--
+- Fixed issue where multiple instances of the PermissionEditor could not exist on a single page.
 
 ## Translation Improvements:
 - Improved Arabic translation
@@ -36,6 +34,8 @@
 ## Community Improvements:
 - Added documentation on keeping local forks of the OctoberCMS codebase up to date with upstream.
 - Improved the CONTRIBUTING.md guide
+- Added security policy
+- Added documentation for testing pull requests
 
 ## Dependencies
 - Updated to v1.8.0 of Spectrum.js (Note: October was already using 1.8.0, however jQuery API updates were made without the vendor tagging a new release)
