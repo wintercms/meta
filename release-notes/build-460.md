@@ -6,6 +6,7 @@
 - Added keyboard support to lists
 - Improved the UX of checkbox lists "Select All", "Select None" bulk actions
 - Changed the cursor to be a `grab` cursor when hovering over table headers to indicate that they are a scrollable container
+- Made the record "Delete" button consistent across the core backend controllers by replacing User Roles & User Groups delete buttons with the standard trash can icon button
 
 ## API Changes:
 - `media.file.upload` event now passes the `$path` argument by reference.
