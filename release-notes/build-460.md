@@ -37,10 +37,11 @@
 - In instances where there is only one theme present and its code matches the code set in cms.activeTheme the database will no longer be asked what the currently active theme is, it will just be assumed that the only one present is the active theme.
 
 ## Community Improvements:
-- Switched to using GitHub actions instead of Travis for CI on the main octobercms/october repository
+- Switched to using GitHub actions instead of Travis for CI on the main octobercms/october and octobercms/library repositories
 - Added initial frontend testing suite under `tests/js`
 
 ## Dependencies
 - Updated Dropzone from v4.0.1 to v5.5.1
 - Updated Modernizr from v3.6.0 to v3.7.1
 - Updated jQuery.Mousewheel from v3.1.9 to v3.2.0
+- Updated Mustache from v2.0.0 to v2.3.2
