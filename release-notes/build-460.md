@@ -28,6 +28,7 @@
 
 ## Translation Improvements:
 - Improved Polish translation
+- Improved Chinese translation
 
 ## Performance Improvements:
 - Very minor performance improvement calling `JSON.parse()` instead of `$.parseJSON()` in core JS
