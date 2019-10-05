@@ -10,7 +10,6 @@
 
 ## API Changes:
 - `media.file.upload` event now passes the `$path` argument by reference.
-- Added new global JS function `ocJSON()` to framework.js (also available in separate `framework.parser.js`) for parsing loose JSON safely
 - Added ability to specify a LESS file to be used as a default backend brand CSS override with the config item `brand.customLessPath`
 - Updated references to deprecated `event.which` and other methods of determining the selected keys to the new `event.key`
 - Added new method `removePermission($owner, $code)` to the BackendAuth manager class to enable plugins to dynamically remove permissions from the available list registered with the BackendAuth manager class.
@@ -25,9 +24,11 @@
 - Removed caching of Theme configuration, this is now handled by `YAML::parseFile()` caching which simplifies the Theme processing code and fixes some bugs related to cache invalidation
 - Fixed issue with trying to create multiple CMS templates at once
 - Fixed issue where the cached classes file would not be removed along with the cached services file when running `php artisan clear-compiled`
+- Fixed issue with PHP 7.0 compatibility introduced with new `PreferenceMaker` trait in Build 457
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
+- Added new global JS function `ocJSON()` to framework.js for parsing loose JSON safely
 
 ## Translation Improvements:
 - Improved Polish translation
