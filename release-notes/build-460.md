@@ -7,6 +7,9 @@
 - Improved the UX of checkbox lists "Select All", "Select None" bulk actions
 - Changed the cursor to be a `grab` cursor when hovering over table headers to indicate that they are a scrollable container
 - Made the record "Delete" button consistent across the core backend controllers by replacing User Roles & User Groups delete buttons with the standard trash can icon button
+- Fixed issue where form tabs would initially be unstyled until the JS had loaded and initialized them
+- Added support for making radio fields display inline by adding `cssClass: 'inline-options'` to their properties
+- Added auto detection of the field `required` property for fields that have `required_if` model validation rules
 
 ## API Changes:
 - `media.file.upload` event now passes the `$path` argument by reference.
@@ -16,6 +19,7 @@
 - Added support for SparkPost mail driver
 - Added support for a string option to be provided to `October\Rain\Network\Http->setOption($option, $value)` as long as it corresponds to a valid `CURLOPT_` constant
 - Added `getConfig($value, $default = null)` method to the `Backend\Classes\ListColumn` class to mirror what's available on the `Backend\Classes\FormField` class
+- Added `order` option to the `relation` FormWidget to allow relation options to be ordered by a custom order statement.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
@@ -25,6 +29,8 @@
 - Fixed issue with trying to create multiple CMS templates at once
 - Fixed issue where the cached classes file would not be removed along with the cached services file when running `php artisan clear-compiled`
 - Fixed issue with PHP 7.0 compatibility introduced with new `PreferenceMaker` trait in Build 457
+- Fixed issue where message subjects set in Mail callback functions were not available to the system mail layouts because the layouts were generated before the callback was called. Note that this was accomplished by calling the callback before content is added to the message instead of after, so it could be considered a breaking change
+- Fix styling for switch fields that are required
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
