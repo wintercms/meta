@@ -20,6 +20,8 @@
 - Added support for a string option to be provided to `October\Rain\Network\Http->setOption($option, $value)` as long as it corresponds to a valid `CURLOPT_` constant
 - Added `getConfig($value, $default = null)` method to the `Backend\Classes\ListColumn` class to mirror what's available on the `Backend\Classes\FormField` class
 - Added `order` option to the `relation` FormWidget to allow relation options to be ordered by a custom order statement.
+- Added `email` field type (`type: email`)
+- Documented newly available `services.mailgun.endpoint` config item in `config/services.php`
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
@@ -31,6 +33,7 @@
 - Fixed issue with PHP 7.0 compatibility introduced with new `PreferenceMaker` trait in Build 457
 - Fixed issue where message subjects set in Mail callback functions were not available to the system mail layouts because the layouts were generated before the callback was called. Note that this was accomplished by calling the callback before content is added to the message instead of after, so it could be considered a breaking change
 - Fix styling for switch fields that are required
+- Return a 403 response when a frontend AJAX request fails the CSRF check instead of failing silently
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
@@ -39,6 +42,7 @@
 ## Translation Improvements:
 - Improved Polish translation
 - Improved Chinese translation
+- Improved French translation
 
 ## Performance Improvements:
 - Very minor performance improvement calling `JSON.parse()` instead of `$.parseJSON()` in core JS
