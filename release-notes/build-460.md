@@ -32,8 +32,11 @@
 - Fixed issue where the cached classes file would not be removed along with the cached services file when running `php artisan clear-compiled`
 - Fixed issue with PHP 7.0 compatibility introduced with new `PreferenceMaker` trait in Build 457
 - Fixed issue where message subjects set in Mail callback functions were not available to the system mail layouts because the layouts were generated before the callback was called. Note that this was accomplished by calling the callback before content is added to the message instead of after, so it could be considered a breaking change
-- Fix styling for switch fields that are required
+- Fixed styling for switch fields that are required
 - Return a 403 response when a frontend AJAX request fails the CSRF check instead of failing silently
+- Fixed bug where '0' was returned as NULL from `$this->param()` but returned as `'0'` from `{{ this.param.slug }}`
+- Fixed issue where updating a record through a RelationController would not trigger a change event on the RelationController field like creating a record would by triggering the change event on successful update
+- Fixed issue where FormWidgets in Repeaters that made orphaned AJAX requests (AJAX requests fired on an element outside of the repeater's markup structure, ex. from a popup modal instead) were not being initialized which was causing the orphaned requests to fail
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
