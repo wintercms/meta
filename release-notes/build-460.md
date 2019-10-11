@@ -22,6 +22,8 @@
 - Added `order` option to the `relation` FormWidget to allow relation options to be ordered by a custom order statement.
 - Added `email` field type (`type: email`)
 - Documented newly available `services.mailgun.endpoint` config item in `config/services.php`
+- Replaced existing handling of disabling CloudFlare's rocket loader on backend scripts by adding a new event (`system.assets.beforeAddAsset`) that is listened to by the `HeathDutton.CloudFlare` plugin. Recommend any CloudFlare users using Rocket Loader to use that plugin going forward
+- Added support for `permissions` property on form fields, list columns, and list filter scopes. Property supports either a single string or an array of permissions that the current backend user must have access to at least one of in order to access the field / column / filter scope.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
@@ -37,6 +39,7 @@
 - Fixed bug where '0' was returned as NULL from `$this->param()` but returned as `'0'` from `{{ this.param.slug }}`
 - Fixed issue where updating a record through a RelationController would not trigger a change event on the RelationController field like creating a record would by triggering the change event on successful update
 - Fixed issue where FormWidgets in Repeaters that made orphaned AJAX requests (AJAX requests fired on an element outside of the repeater's markup structure, ex. from a popup modal instead) were not being initialized which was causing the orphaned requests to fail
+- Fixed issue where the `databaseTemplates` feature from Build 456 wouldn't support templates in subfolders. Nesting limit is still 2 (`/template-type/subfolder1/template.htm`) but the issue where it was just 1 when `databaseTemplates` was enabled has been fixed.
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
@@ -46,6 +49,11 @@
 - Improved Polish translation
 - Improved Chinese translation
 - Improved French translation
+- Improved Dutch translation
+- Improved Portuguese translation
+- Improved Hungarian translation
+- Improved Russian translation
+- Added a translation key for the Repeater's "Add new item" text (`backend::lang.repeater.add_new_item`)
 
 ## Performance Improvements:
 - Very minor performance improvement calling `JSON.parse()` instead of `$.parseJSON()` in core JS
