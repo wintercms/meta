@@ -26,6 +26,7 @@
 - Added support for `permissions` property on form fields, list columns, and list filter scopes. Property supports either a single string or an array of permissions that the current backend user must have access to at least one of in order to access the field / column / filter scope.
 - Added support for `mode: switch` to the `Backend\FormWidgets\PermissionEditor` FormWidget that defines permissions as either expliclity allowed (1) or denied (-1).
 - Added support for `availablePermissions` property to the `Backend\FormWidgets\PermissionEditor` FormWidget that accepts an array of permission codes to filter the list of permission codes to be managed by that widget instance down to.
+- Added support for the `CURLOPT_POSTFIELDS` cURL option to be manually overriden when using the `October\Rain\Network\Http` wrapper.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
