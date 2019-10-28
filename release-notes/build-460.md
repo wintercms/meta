@@ -27,6 +27,7 @@
 - Added support for `mode: switch` to the `Backend\FormWidgets\PermissionEditor` FormWidget that defines permissions as either expliclity allowed (1) or denied (-1).
 - Added support for `availablePermissions` property to the `Backend\FormWidgets\PermissionEditor` FormWidget that accepts an array of permission codes to filter the list of permission codes to be managed by that widget instance down to.
 - Added `clear-full`, `clear-left`, and `clear-right` CSS classes that can be used to apply clearfixes to form fields by adding them to the field's `cssClass` property
+- Added support for the `CURLOPT_POSTFIELDS` cURL option to be manually overriden when using the `October\Rain\Network\Http` wrapper.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
