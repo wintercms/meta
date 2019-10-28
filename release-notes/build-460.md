@@ -26,6 +26,7 @@
 - Added support for `permissions` property on form fields, list columns, and list filter scopes. Property supports either a single string or an array of permissions that the current backend user must have access to at least one of in order to access the field / column / filter scope.
 - Added support for `mode: switch` to the `Backend\FormWidgets\PermissionEditor` FormWidget that defines permissions as either expliclity allowed (1) or denied (-1).
 - Added support for `availablePermissions` property to the `Backend\FormWidgets\PermissionEditor` FormWidget that accepts an array of permission codes to filter the list of permission codes to be managed by that widget instance down to.
+- Added `clear-full`, `clear-left`, and `clear-right` CSS classes that can be used to apply clearfixes to form fields by adding them to the field's `cssClass` property
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
@@ -37,7 +38,6 @@
 - Fixed issue with PHP 7.0 compatibility introduced with new `PreferenceMaker` trait in Build 457
 - Fixed issue where message subjects set in Mail callback functions were not available to the system mail layouts because the layouts were generated before the callback was called. Note that this was accomplished by calling the callback before content is added to the message instead of after, so it could be considered a breaking change
 - Fixed styling for switch fields that are required
-- Return a 403 response when a frontend AJAX request fails the CSRF check instead of failing silently
 - Fixed bug where '0' was returned as NULL from `$this->param()` but returned as `'0'` from `{{ this.param.slug }}`
 - Fixed issue where updating a record through a RelationController would not trigger a change event on the RelationController field like creating a record would by triggering the change event on successful update
 - Fixed issue where FormWidgets in Repeaters that made orphaned AJAX requests (AJAX requests fired on an element outside of the repeater's markup structure, ex. from a popup modal instead) were not being initialized which was causing the orphaned requests to fail
@@ -48,6 +48,8 @@
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
 - Added new global JS function `ocJSON()` to framework.js for parsing loose JSON safely
+- Return a 403 response when a frontend AJAX request fails the CSRF check instead of failing silently
+- Added support for XSRF cookies as a fallback for when a CSRF token is not included in an AJAX request
 
 ## Translation Improvements:
 - Improved Polish translation
