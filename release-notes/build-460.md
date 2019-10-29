@@ -45,6 +45,7 @@
 - Fixed issue where the `databaseTemplates` feature from Build 456 wouldn't support templates in subfolders. Nesting limit is still 2 (`/template-type/subfolder1/template.htm`) but the issue where it was just 1 when `databaseTemplates` was enabled has been fixed.
 - Fixed issue where the `change` event was not triggered on removing a recordfinder's value with the clear button
 - Improved default email branding styles compatibility with Outlook mail clients by preventing harsh word breaks.
+- Fixed issue where the Model class would try to trim an attribute that was a PHP resource (pgsql:bytea) by simplifying the trim detection logic to just use `is_string` instead of checking if value wasn't every other type of variable available.
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
