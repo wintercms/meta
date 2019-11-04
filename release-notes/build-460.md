@@ -46,6 +46,7 @@
 - Fixed issue where the `change` event was not triggered on removing a recordfinder's value with the clear button
 - Improved default email branding styles compatibility with Outlook mail clients by preventing harsh word breaks.
 - Fixed issue where the Model class would try to trim an attribute that was a PHP resource (pgsql:bytea) by simplifying the trim detection logic to just use `is_string` instead of checking if value wasn't every other type of variable available.
+- Fixed issue where an infinite loop could occur when trying to resolve a circular required_with or required_if validation rule chain.
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
