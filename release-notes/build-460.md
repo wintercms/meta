@@ -12,6 +12,9 @@
 - Added auto detection of the field `required` property for fields that have `required_if` model validation rules
 
 ## API Changes:
+- Cookies are no longer serialized. This brings the behavior back in line with Laravel's default behavior as of the 5.5.42 update. **IMPORTANT**: If you are passing non-scalar values to `Cookie::set()` (i.e. objects & arrays) then you will need to change your code so that those values are JSON encoded / decoded before and after being stored in the cookie.
+- Added new `System\Traits\ResponseMaker` trait to the base `Backend\Classes\Controller` class (and the `Cms\Classes\Controller` controller). Adds the following methods: `setStatusCode($code)`, `getStatusCode()`, `setResponse($response)`, `setResponseHeader($key, $values, $replace = true)`, `setResponseCookie($cookie)`, `getResponseHeaders()`, and `makeResponse($contents)`.
+- `media.file.upload` event now passes the `$path` argument by reference.
 - `media.file.upload` event now passes the `$path` argument by reference.
 - Added ability to specify a LESS file to be used as a default backend brand CSS override with the config item `brand.customLessPath`
 - Updated references to deprecated `event.which` and other methods of determining the selected keys to the new `event.key`
@@ -47,12 +50,15 @@
 - Improved default email branding styles compatibility with Outlook mail clients by preventing harsh word breaks.
 - Fixed issue where the Model class would try to trim an attribute that was a PHP resource (pgsql:bytea) by simplifying the trim detection logic to just use `is_string` instead of checking if value wasn't every other type of variable available.
 - Fixed issue where an infinite loop could occur when trying to resolve a circular required_with or required_if validation rule chain.
+- Fixed issue where having no class lists configured for the RichEditor markup class options would break the RichEditor.
+- Fixed issue where the `model.beforeSave` event would be fired twice under some conditions when using a HasOneOrMany relationship.
+- Fixed PHP fatal error under some cases where `argv` is not available in the server variables.
+- Fixed issue where the FileUpload FormWidget was checking if the file model was protected before generating the URL to the file even though the File model itself handles that operation since Build 447.
+- Fixed issue where the mediafinder formwidget wouldn't work when the user didn't have access to the Media Manager by switching the formwidget to preview mode under those conditions
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
 - Added new global JS function `ocJSON()` to framework.js for parsing loose JSON safely
-- Return a 403 response when a frontend AJAX request fails the CSRF check instead of failing silently
-- Added support for XSRF cookies as a fallback for when a CSRF token is not included in an AJAX request
 
 ## Translation Improvements:
 - Improved Polish translation
