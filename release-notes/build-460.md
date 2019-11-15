@@ -31,6 +31,7 @@
 - Added support for `availablePermissions` property to the `Backend\FormWidgets\PermissionEditor` FormWidget that accepts an array of permission codes to filter the list of permission codes to be managed by that widget instance down to.
 - Added `clear-full`, `clear-left`, and `clear-right` CSS classes that can be used to apply clearfixes to form fields by adding them to the field's `cssClass` property
 - Added support for the `CURLOPT_POSTFIELDS` cURL option to be manually overriden when using the `October\Rain\Network\Http` wrapper.
+- Added support for `dependsOn` to filter scopes of `type: group`. All current filter scopes (including their current values) will be passed to the options method as an array of scope objects to be used in redetermining the available options to provide when the scopes that are targeted with `dependsOn` are updated.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
