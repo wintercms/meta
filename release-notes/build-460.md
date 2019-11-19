@@ -70,6 +70,7 @@
 - Improved Portuguese translation
 - Improved Hungarian translation
 - Improved Russian translation
+- Improved Czech translation
 - Added a translation key for the Repeater's "Add new item" text (`backend::lang.repeater.add_new_item`)
 
 ## Performance Improvements:
