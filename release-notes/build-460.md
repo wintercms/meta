@@ -57,6 +57,9 @@
 - Fixed issue where the FileUpload FormWidget was checking if the file model was protected before generating the URL to the file even though the File model itself handles that operation since Build 447.
 - Fixed issue where the mediafinder formwidget wouldn't work when the user didn't have access to the Media Manager by switching the formwidget to preview mode under those conditions
 - Fixed issue where text in an error message popup could not be selected for copy-pasting.
+- Fixed issue with parsing the select2 options format over AJAX requests introduced in Build 457.
+- Fixed conflict between input.trigger.js & filter.js that caused filter popup buttons to disappear when searching for records in a group filter popup.
+- Fixed faulty type cast for belongsToMany deferring bindings table when using PostgreSQL
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
@@ -71,6 +74,7 @@
 - Improved Hungarian translation
 - Improved Russian translation
 - Improved Czech translation
+- Improved Slovak translation
 - Added a translation key for the Repeater's "Add new item" text (`backend::lang.repeater.add_new_item`)
 
 ## Performance Improvements:
