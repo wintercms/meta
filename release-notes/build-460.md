@@ -32,6 +32,7 @@
 - Added `clear-full`, `clear-left`, and `clear-right` CSS classes that can be used to apply clearfixes to form fields by adding them to the field's `cssClass` property
 - Added support for the `CURLOPT_POSTFIELDS` cURL option to be manually overriden when using the `October\Rain\Network\Http` wrapper.
 - Added support for `dependsOn` to filter scopes of `type: group`. All current filter scopes (including their current values) will be passed to the options method as an array of scope objects to be used in redetermining the available options to provide when the scopes that are targeted with `dependsOn` are updated.
+- Added support for unregistered translation strings to still have the replacement engine run on them
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
@@ -87,9 +88,9 @@
 - Switched to using GitHub actions instead of Travis for CI on the main octobercms/october and octobercms/library repositories
 - Added GitHub action to auto archive issues / pull requests after a month of inactivity
 - Added initial frontend testing suite under `tests/js`
+- Added API docs for `backend.page.beforeDisplay`, `backend.menu.extendItems`, `backend.user.login`, `backend.beforeRoute`, `backend.route`, `cms.beforeRoute`, `cms.route`, `cms.block.render`, `cms.combiner.beforePrepare`, `system.settings.extendItems`, and `system.extendConfigFile`
 
 ## Dependencies
 - Updated Dropzone from v4.0.1 to v5.5.1
-- Updated Modernizr from v3.6.0 to v3.7.1
 - Updated jQuery.Mousewheel from v3.1.9 to v3.2.0
 - Updated Mustache from v2.0.0 to v2.3.2
