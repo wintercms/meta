@@ -61,6 +61,9 @@
 - Fixed issue with parsing the select2 options format over AJAX requests introduced in Build 457.
 - Fixed conflict between input.trigger.js & filter.js that caused filter popup buttons to disappear when searching for records in a group filter popup.
 - Fixed faulty type cast for belongsToMany deferring bindings table when using PostgreSQL
+- Fixed support for `0` in the numberrange filter
+- Fixed support for mobile devices (touch screens) in the jquery.sortable.js plugin
+- Fixed issue introduced in Build 459 where some server configurations could cause the AssetCombiner to stop working
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
