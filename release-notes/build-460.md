@@ -33,6 +33,7 @@
 - Added support for the `CURLOPT_POSTFIELDS` cURL option to be manually overriden when using the `October\Rain\Network\Http` wrapper.
 - Added support for `dependsOn` to filter scopes of `type: group`. All current filter scopes (including their current values) will be passed to the options method as an array of scope objects to be used in redetermining the available options to provide when the scopes that are targeted with `dependsOn` are updated.
 - Added support for unregistered translation strings to still have the replacement engine run on them
+- Added support for minimum or maximum values in number range filter to be left unspecified - this is treated as an "at least" minimum value or "at most" maximum value filter.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
@@ -61,9 +62,9 @@
 - Fixed issue with parsing the select2 options format over AJAX requests introduced in Build 457.
 - Fixed conflict between input.trigger.js & filter.js that caused filter popup buttons to disappear when searching for records in a group filter popup.
 - Fixed faulty type cast for belongsToMany deferring bindings table when using PostgreSQL
-- Fixed support for `0` in the numberrange filter
 - Fixed support for mobile devices (touch screens) in the jquery.sortable.js plugin
 - Fixed issue introduced in Build 459 where some server configurations could cause the AssetCombiner to stop working
+- Fixed issue with number range filter not working with a value of `0` for either the minimum or maximum value.
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
