@@ -65,6 +65,8 @@
 - Fixed support for mobile devices (touch screens) in the jquery.sortable.js plugin
 - Fixed issue introduced in Build 459 where some server configurations could cause the AssetCombiner to stop working
 - Fixed issue with number range filter not working with a value of `0` for either the minimum or maximum value.
+- Fixed issue where attempting to sort by a column that isn't actually supported as a sortable column by the database could cause the session to enter an invalid state where it would be impossible to remove that column sorting preference.
+- Fixed issue where changing just the "time" field on a `datepicker` FormWidget wouldn't trigger the JS `change` event on the field
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
