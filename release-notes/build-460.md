@@ -34,6 +34,7 @@
 - Added support for `dependsOn` to filter scopes of `type: group`. All current filter scopes (including their current values) will be passed to the options method as an array of scope objects to be used in redetermining the available options to provide when the scopes that are targeted with `dependsOn` are updated.
 - Added support for unregistered translation strings to still have the replacement engine run on them
 - Added support for minimum or maximum values in number range filter to be left unspecified - this is treated as an "at least" minimum value or "at most" maximum value filter.
+- If a List widget column is sorted, this sorting is applied exclusively, allowing users to sort records even if ordering is applied externally - for example, as a default order in a relation.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
