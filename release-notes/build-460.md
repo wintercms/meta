@@ -71,6 +71,7 @@
 - Fixed issue with the numberrange filter on PostgreSQL when attempting to filter the range by infinity in either direction.
 - Fixed issue where a custom sorting constraint on a relationship definition could cause the RelationController's Lists widget to no longer support users choosing their own columns to sort by.
 - Fixed longstanding issue where attempting to return a response from `App::error()` would fail with `FormatException not found`.
+- Fixed an infinite loop that could occur when using the field Parser functionality to define a repeater variable that defines its fields in an external file.
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
