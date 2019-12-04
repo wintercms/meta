@@ -34,7 +34,7 @@
 - Added support for `dependsOn` to filter scopes of `type: group`. All current filter scopes (including their current values) will be passed to the options method as an array of scope objects to be used in redetermining the available options to provide when the scopes that are targeted with `dependsOn` are updated.
 - Added support for unregistered translation strings to still have the replacement engine run on them
 - Added support for minimum or maximum values in number range filter to be left unspecified - this is treated as an "at least" minimum value or "at most" maximum value filter.
-- If a List widget column is sorted, this sorting is applied exclusively, allowing users to sort records even if ordering is applied externally - for example, as a default order in a relation.
+- Added `getSortColumn()` and `getSortDirection()` public methods to the `Lists` widget.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
@@ -69,6 +69,7 @@
 - Fixed issue where attempting to sort by a column that isn't actually supported as a sortable column by the database could cause the session to enter an invalid state where it would be impossible to remove that column sorting preference.
 - Fixed issue where changing just the "time" field on a `datepicker` FormWidget wouldn't trigger the JS `change` event on the field.
 - Fixed issue with the numberrange filter on PostgreSQL when attempting to filter the range by infinity in either direction.
+- Fixed issue where a custom sorting constraint on a relationship definition could cause the RelationController's Lists widget to no longer support users choosing their own columns to sort by.
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
