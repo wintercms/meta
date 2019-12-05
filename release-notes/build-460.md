@@ -35,6 +35,7 @@
 - Added support for unregistered translation strings to still have the replacement engine run on them
 - Added support for minimum or maximum values in number range filter to be left unspecified - this is treated as an "at least" minimum value or "at most" maximum value filter.
 - Added `getSortColumn()` and `getSortDirection()` public methods to the `Lists` widget.
+- Added two more valid characters to filenames managed by the MediaLibrary, `'` and `&`.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
@@ -69,10 +70,11 @@
 - Fixed issue where attempting to sort by a column that isn't actually supported as a sortable column by the database could cause the session to enter an invalid state where it would be impossible to remove that column sorting preference.
 - Fixed issue where changing just the "time" field on a `datepicker` FormWidget wouldn't trigger the JS `change` event on the field.
 - Fixed issue with the numberrange filter on PostgreSQL when attempting to filter the range by infinity in either direction.
-- Fixed issue where a custom sorting constraint on a relationship definition could cause the RelationController's Lists widget to no longer support users choosing their own columns to sort by.
+- Fixed issue where a custom sorting constraint on a relationship definition could cause the RelationController's Lists widget to no longer support users choosing their own columns to sort by. This also fixed a related issue where sorting by pivot data in the RelationController would throw an exception when trying to add a new record.
 - Fixed longstanding issue where attempting to return a response from `App::error()` would fail with `FormatException not found`.
 - Fixed an infinite loop that could occur when using the field Parser functionality to define a repeater variable that defines its fields in an external file.
 - Fixed a race condition that could occur when clearing a `recordfinder` field's value where having fields that `dependsOn` that `recordfinder` field would receive the old value in the AJAX refresh.
+- Fixed issue where emails sent with `Mail::queue` would ignore the subject set in the mail template and instead use `Mailable` as their subject if a custom subject wasn't set in the callback.
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
