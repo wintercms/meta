@@ -1,4 +1,4 @@
-# Build 460 (WIP):
+# Build 460:
 
 ## UX/UI Improvements:
 - Moved CodeEditor's full screen buttons to the bottom of the widget.
@@ -14,7 +14,6 @@
 ## API Changes:
 - Cookies are no longer serialized. This brings the behavior back in line with Laravel's default behavior as of the 5.5.42 update. **IMPORTANT**: If you are passing non-scalar values to `Cookie::set()` (i.e. objects & arrays) then you will need to change your code so that those values are JSON encoded / decoded before and after being stored in the cookie.
 - Added new `System\Traits\ResponseMaker` trait to the base `Backend\Classes\Controller` class (and the `Cms\Classes\Controller` controller). Adds the following methods: `setStatusCode($code)`, `getStatusCode()`, `setResponse($response)`, `setResponseHeader($key, $values, $replace = true)`, `setResponseCookie($cookie)`, `getResponseHeaders()`, and `makeResponse($contents)`.
-- `media.file.upload` event now passes the `$path` argument by reference.
 - `media.file.upload` event now passes the `$path` argument by reference.
 - Added ability to specify a LESS file to be used as a default backend brand CSS override with the config item `brand.customLessPath`
 - Updated references to deprecated `event.which` and other methods of determining the selected keys to the new `event.key`
