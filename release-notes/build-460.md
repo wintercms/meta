@@ -74,6 +74,7 @@
 - Fixed an infinite loop that could occur when using the field Parser functionality to define a repeater variable that defines its fields in an external file.
 - Fixed a race condition that could occur when clearing a `recordfinder` field's value where having fields that `dependsOn` that `recordfinder` field would receive the old value in the AJAX refresh.
 - Fixed issue where emails sent with `Mail::queue` would ignore the subject set in the mail template and instead use `Mailable` as their subject if a custom subject wasn't set in the callback.
+- Fixed issue when attempting to use a dropdown inside of a DataTable inside of a popup modal.
 
 ## Security Improvements
 - Prevent tabnabbing that could theoretically occur from a backend user clicking the "Preview" button in the backend navigation and having the tab taken over by the frontend site
