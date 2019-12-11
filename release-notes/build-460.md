@@ -35,6 +35,7 @@
 - Added support for minimum or maximum values in number range filter to be left unspecified - this is treated as an "at least" minimum value or "at most" maximum value filter.
 - Added `getSortColumn()` and `getSortDirection()` public methods to the `Lists` widget.
 - Added two more valid characters to filenames managed by the MediaLibrary, `'` and `&`.
+- Added `parseClean()` method to `October\Rain\Parse\Markdown` that enables safe mode on the markdown parser used.
 
 ## Bug Fixes:
 - Reverted improvements to table column width handling on Chrome (specifically for long unbroken text values in columns) introduced in Build 444 as it was causing other issues on mobile.
