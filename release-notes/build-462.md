@@ -7,7 +7,7 @@
 -
 
 ## Bug Fixes:
--
+- Fixed janky behaviour with the javascript sortable plugin when sorting items on a scrollable container.
 
 ## Security Improvements
 -
