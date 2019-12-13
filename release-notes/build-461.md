@@ -1,4 +1,4 @@
-# Build 461 (WIP):
+# Build 461:
 
 ## UX/UI Improvements:
 - Set the CMS `codeeditor` field to readonly and added a warning message above it when safemode is enabled.
@@ -15,18 +15,15 @@
 ## Bug Fixes:
 - Fixed scrolling issue in the MediaManager that would occur on some browsers causing scrolled content to no longer become visible erratically.
 - Added smoother support for old serialized cookie data to retain sessions during the upgrade process.
-
-## Security Improvements
--
+- Fixed bug where repeaters with names that started with names of other repeaters on the same page would get confused by each other.
 
 ## Translation Improvements:
 - Added Slovenian translation
 
-## Performance Improvements:
--
-
 ## Community Improvements:
--
+- Switched to using Discord instead of Slack: https://discord.gg/gEKgwSZ
+- Launched Premium Support: https://octobercms.com/premium-support
 
 ## Dependencies
--
+- Minimum PHP version bumped from 7.0.0 to 7.0.8
+- Support for PHP 7.4 added
