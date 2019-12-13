@@ -15,6 +15,7 @@
 ## Bug Fixes:
 - Fixed scrolling issue in the MediaManager that would occur on some browsers causing scrolled content to no longer become visible erratically.
 - Added smoother support for old serialized cookie data to retain sessions during the upgrade process.
+- Fixed issue where similarly-named repeaters in a CMS page or layout would conflict when checking for AJAX actions on a child repeater.
 
 ## Security Improvements
 -
