@@ -25,9 +25,5 @@
 - Launched Premium Support: https://octobercms.com/premium-support
 
 ## Dependencies
-<<<<<<< HEAD
 - Minimum PHP version bumped from 7.0.0 to 7.0.8
 - Support for PHP 7.4 added
-=======
--
->>>>>>> dc157cd9c7313132fd802ee6e6ac2361bdcc3495
