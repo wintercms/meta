@@ -15,7 +15,7 @@
 ## Bug Fixes:
 - Fixed scrolling issue in the MediaManager that would occur on some browsers causing scrolled content to no longer become visible erratically.
 - Added smoother support for old serialized cookie data to retain sessions during the upgrade process.
-- Fixed bug where repeaters with names that started with names of other repeaters on the same page would get confused by each other.
+- Fixed issue where similarly-named repeaters in a CMS page or layout would conflict when checking for AJAX actions on a child repeater.
 
 ## Translation Improvements:
 - Added Slovenian translation
@@ -25,5 +25,9 @@
 - Launched Premium Support: https://octobercms.com/premium-support
 
 ## Dependencies
+<<<<<<< HEAD
 - Minimum PHP version bumped from 7.0.0 to 7.0.8
 - Support for PHP 7.4 added
+=======
+-
+>>>>>>> dc157cd9c7313132fd802ee6e6ac2361bdcc3495
