@@ -106,7 +106,7 @@ commit message. It is still preferred that pull requests are used for larger com
 <a name="october-cms-milestones"></a>
 
 The October CMS and Rain libraries use milestones to track which changes are to be released with
-each build. Although October CMS is a continously-developed evergreen project, milestones are
+each build. Although October CMS is a continuously-developed evergreen project, milestones are
 named in a version format like so in order to reflect the final "tag" that is made when a new
 build is released:
 
