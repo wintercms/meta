@@ -346,7 +346,7 @@ As with reviewing issues and PRs, RainLab plugins use the [same processes as Oct
 <a name="rainlab-standard-workflow"></a>
 
 The workflow for RainLab plugins is the [same as October](#october-cms-standard-workflow), except
-that maintainers may make changes to the `master` branch instead of the `develop` chance on an
+that maintainers may make changes to the `master` branch instead of the `develop` branch on an
 as-needed basis. As with October CMS, the primary mechanism for implementing changes is still
 recommended to be pull requests.
 
