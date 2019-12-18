@@ -44,7 +44,9 @@ The project has two levels of maintainership. The current membership of each rol
 - [@bennothommo](https://github.com/bennothommo) - Ben Thomson
 - [@mjauvin](https://github.com/mjauvin) - Marc Jauvin (RainLab Translate only)
 
-Where possible, the access to all protocols below will be dictated by the roles above.
+When defining which roles may action any of the protocols below, the term "maintainers" means 
+that any Maintainer or Lead Maintainer can be responsible. If a protocol is only for Lead 
+Maintainers, this distinction will be made instead.
 
 ## Main Philosophy
 
