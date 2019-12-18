@@ -29,12 +29,12 @@ the RainLab plugins are maintained.
 
 ## Roles
 
-The project has two levels of maintainership. The current membership (as of December 11th, 2019)
-is as follows:
+The project has two levels of maintainership. The current membership of each role
+(as of December 11th, 2019) is as follows:
 
 **Lead Maintainers**
 <a name="lead-maintainers"></a>
-- [@alekseybobkov](https://github.com/alekseybobkov) - Aleksey Bobkov
+
 - [@daftspunk](https://github.com/daftspunk) - Samuel Georges
 - [@LukeTowers](https://github.com/LukeTowers) - Luke Towers
 
@@ -180,7 +180,7 @@ correct base (you can use this
 for this).
 
 Pull requests should also indicate any issues that they resolve - this should be stipulated as
-"Fixes #..." followed by the issue number in the first comment of a pull request thread.
+"Fixes #..." followed by the issue number in the initial (opening) comment of a pull request thread.
 
 Maintainers have free reign to ask for clarification on issues and PRs and seek further information
 from the submitter. If more details are not forthcoming, maintainers may close the issue or PR. In
@@ -291,7 +291,7 @@ for October CMS, so this section will be more defining any *different* processes
 <a name="rainlab-main-branches"></a>
 
 All RainLab plugin repositories contain a `master` branch which is the combined efforts of all
-contributions to the plugin. Maintainers may make changes to the `master` branch on an as-needed
+contributions to the plugin. Maintainers may commit changes to the `master` branch on an as-needed
 basis, but as with the October CMS repositories, it is still preferred that substantial changes or
 new or changed features be done in pull requests.
 
@@ -346,7 +346,7 @@ As with reviewing issues and PRs, RainLab plugins use the [same processes as Oct
 <a name="rainlab-standard-workflow"></a>
 
 The workflow for RainLab plugins is the [same as October](#october-cms-standard-workflow), except
-that maintainers may make changes to the `master` branch instead of the `develop` branch on an
+that maintainers may commit changes to the `master` branch instead of the `develop` branch on an
 as-needed basis. As with October CMS, the primary mechanism for implementing changes is still
 recommended to be pull requests.
 
