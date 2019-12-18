@@ -33,7 +33,7 @@ The project has two levels of maintainership. The current membership (as of Dece
 is as follows:
 
 **Lead Maintainers**
-
+<a name="lead-maintainers"></a>
 - [@alekseybobkov](https://github.com/alekseybobkov) - Aleksey Bobkov
 - [@daftspunk](https://github.com/daftspunk) - Samuel Georges
 - [@LukeTowers](https://github.com/LukeTowers) - Luke Towers
@@ -85,7 +85,7 @@ specifically, they represent the most recent stable build and the most bleeding-
 available code, respectively.
 
 In general, the only time `master` is updated is when a new stable version of October CMS is
-released to the public. This process is done by the Lead Maintainers as part of their 
+released to the public. This process is done by the [Lead Maintainers](#lead-maintainers) as part of their 
 [Release Process](#october-cms-release-process).
 
 Direct commits to the `master` branch should not be done for the October CMS and Rain Library
@@ -133,7 +133,7 @@ features and fixes that are ready to be included in an upcoming build. A maintai
 a feature to be included in a build, which represents their intention to test and approve the
 feature or fix, and maintain it once it has been merged into the codebase.
 
-The Lead Maintainers will, when appropriate, deem a milestone to be locked from further changes
+The [Lead Maintainers](#lead-maintainers) will, when appropriate, deem a milestone to be locked from further changes
 except for bug fixes or maintenance in order to proceed with releasing the build. In these cases,
 no new issues or PRs should be assigned to the milestone unless they are a bug fix, or are some
 form of maintenance. No new features should be assigned to these milestones.
@@ -243,8 +243,8 @@ any issues with code quality or our test scenarios before it reaches the main br
 Maintainers should create a branch for their incoming changes - using the following format for
 the branch name:
 
-- `wip/` followed by the feature name in kebab-case for a new feature.
-- `fix/` followed by either a fix name in kebab-case, or alternatively, an issue number if the fix
+- `wip/` followed by the feature name in [kebab-case](https://en.wiktionary.org/wiki/kebab_case) for a new feature.
+- `fix/` followed by either a fix name in [kebab-case](https://en.wiktionary.org/wiki/kebab_case), or alternatively, an issue number if the fix
 is to resolve a reported issue on GitHub.
 
 Pull requests must be made to the `develop` branch and provide a succint description as the title
@@ -262,7 +262,7 @@ few circumstances exist where a commit straight to `develop` may be necessary:
 #### Release process
 <a name="october-cms-release-process"></a>
 
-The release process is one undertaken by the Lead Maintainers to release a new build of October CMS
+The release process is one undertaken by the [Lead Maintainers](#lead-maintainers) to release a new build of October CMS
 as an edge update or as a stable update. During this window, maintainers should not merge any code
 into the `develop` branch - however, they can continue to review and accept PRs for upcoming
 milestones.
@@ -355,7 +355,7 @@ recommended to be pull requests.
 
 The release process for RainLab plugins is different to October CMS in that all maintainers
 may release a new version of the RainLab plugins, and can action all the steps below (except for
-making a release stable on the marketplace - this must be done by a Lead Maintainer).
+making a release stable on the marketplace - this must be done by a [Lead Maintainer](#lead-maintainers).
 
 Before a new version is released, the maintainer should ensure that all tasks assigned to the new
 version's milestone are completed and merged into `master`. Once this is done, the maintainer should
