@@ -259,7 +259,7 @@ few circumstances exist where a commit straight to `develop` may be necessary:
 - Fixing parse errors or exceptions that may have been missed during code review of a PR.
 - Documentation fixes.
 - Fixing disclosed security vulnerabilities.
-- Minor tweaks that do not change any current behaviours of October CMS.
+- Minor tweaks / bug fixes that do not change any current behaviours of October CMS.
 
 #### Release process
 <a name="october-cms-release-process"></a>
