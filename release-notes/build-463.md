@@ -6,11 +6,12 @@
 
 ## API Changes:
 - `System\Classes\PluginManager->sortByDependencies()` is now deprecated as plugins are now sorted by key & dependencies by default.
+- Changed the `October\Rain\Database\Builder->simplePaginate()` signature to match `paginate()` (`$perPage, $currentPage, $columns, $pageName`)
 
 ## Bug Fixes:
 - Added support for tab lazy loading to all forms of tabs, not just primary tabs.
 - Fixed hard coded Form widget alias in the recently added tab lazy-loading functionality.
-- Fixed support for Laravel's Builder::paginate() signature `paginate($perPage, $columns, $pageName, $currentPage)` in addition to October's `paginate($perPage, $currentPage, $columns, $pageName)`
+- Fixed support for Laravel's Builder::paginate() signature `paginate($perPage, $columns, $pageName, $currentPage)` in addition to October's `paginate($perPage, $currentPage, $columns, $pageName)`. Additionally fixed support for Laravel's `simplePaginate()` signature.
 
 ## Security Improvements
 -
@@ -22,7 +23,7 @@
 -
 
 ## Community Improvements:
--
+- Updated minimum required PHP version for the installer to match Build 472's minimum of 7.0.8
 
 ## Dependencies
 -
