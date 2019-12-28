@@ -10,6 +10,7 @@
 ## Bug Fixes:
 - Added support for tab lazy loading to all forms of tabs, not just primary tabs.
 - Fixed hard coded Form widget alias in the recently added tab lazy-loading functionality.
+- Fixed support for Laravel's Builder::paginate() signature `paginate($perPage, $columns, $pageName, $currentPage)` in addition to October's `paginate($perPage, $currentPage, $columns, $pageName)`
 
 ## Security Improvements
 -
