@@ -213,11 +213,14 @@ The commit message should contain extra information about the merged PR if it is
 should include any justifications for the change and important info that might be required for
 future reference.
 
-As a show of appreciation for contributor submissions, we make sure that the committer is credited
-for the commit in the commit message - credit is given as a `Credit to @user` message provided at
-the bottom of the commit message. In addition, any fixed or referenced issues or PRs should be linked
-as well, tagged as either `Fixed:` or `Refs:` respectively. GitHub will automatically link any issue
-numbers added to the same repository, but external repositories should be linked as a URL.
+Users who have provided fixes or assistance in the form of PRs and commits are properly attributed
+in Git, however, if someone provides assistance outside of Git (ie. through Slack/Discord, or through
+the forums), it is generally polite to credit them in the commit. Credit should be provided in the 
+form of `Credit to @username` in the commit description.
+
+In addition, any fixed or referenced issues or PRs should be linked as well, tagged as either `Fixed:`
+or `Refs:` respectively. GitHub will automatically link any issue numbers added to the same
+repository, but external repositories should be linked as a URL.
 
 An example commit message is below:
 
