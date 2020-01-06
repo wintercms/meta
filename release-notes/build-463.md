@@ -3,6 +3,7 @@
 ## UX/UI Improvements:
 - Fixed display of checkbox lists when quickselect is selected.
 - Added new `october:passwd` Artisan command to change the password of a Backend user through the command-line.
+- Secondary branding colour is now applied to the active media filter in the MediaManager widget
 
 ## API Changes:
 - `System\Classes\PluginManager->sortByDependencies()` is now deprecated as plugins are now sorted by key & dependencies by default.
