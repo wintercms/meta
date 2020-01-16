@@ -1,7 +1,7 @@
 # Build 465:
 
 ## UX/UI Improvements:
--
+- The Event Log list now shows the entire first line of a logged error message, up to 500 characters maximum, in order to provide more context of errors in the list.
 
 ## API Changes:
 - Type hint for `registerSchedule` method in `PluginBase` updated to correctly hint the `Illuminate\Console\Scheduling\Schedule` object that is passed to it.
