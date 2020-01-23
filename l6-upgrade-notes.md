@@ -8,7 +8,7 @@ need to remain on build (build number before upgrade). Please note that the PHP 
 - The Carbon library, which provides date and time manipulation in October CMS, has been upgraded from version 1 to 2. This may
 be incompatible with some October CMS plugins and Laravel plugins in use. You will need to upgrade your plugins to a version
 that uses Carbon v2, if available. If no version is available, you will need to remain on build (build number before upgrade)
-or cease using that particular plugin.
+or cease using that particular plugin. If you wish to upgrade your plugin to support Carbon 2, please [review the upgrade guide](https://carbon.nesbot.com/docs/#api-carbon-2).
 - Cache TTL (time-to-live) values that are specified as an integer are treated as seconds now, as opposed to minutes, when
 operating directly with a cache repository. If you interact with the cache directly, we recommend that you use `DateTime` or `Carbon` instances to define when your data is to expire. If you wish to continue using integers, you will need to multiply
 your integer values by 60 to get the number of seconds. This does not affect the `cms.urlCacheTtl` and `cms.parsedPageCacheTTL` configuration values, which will continue to use minutes.
