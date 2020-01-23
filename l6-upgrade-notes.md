@@ -12,6 +12,7 @@ or cease using that particular plugin. If you wish to upgrade your plugin to sup
 - Cache TTL (time-to-live) values that are specified as an integer are treated as seconds now, as opposed to minutes, when
 operating directly with a cache repository. If you interact with the cache directly, we recommend that you use `DateTime` or `Carbon` instances to define when your data is to expire. If you wish to continue using integers, you will need to multiply
 your integer values by 60 to get the number of seconds. This does not affect the `cms.urlCacheTtl` and `cms.parsedPageCacheTTL` configuration values, which will continue to use minutes.
+- The default rules of the base User model (`October\Rain\Auth\Models\User`) have been updated - in particular, passwords must be at least 8 characters long, and emails must be at least 6 characters long. If you extend this class with your own implementation, you will need to ensure that these rules fit your validation requirements, or that you have replaced the `$rules` property with your own ruleset.
 -
 
 ## Required changes
