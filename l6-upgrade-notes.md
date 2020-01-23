@@ -9,7 +9,10 @@ need to remain on build (build number before upgrade). Please note that the PHP 
 be incompatible with some October CMS plugins and Laravel plugins in use. You will need to upgrade your plugins to a version
 that uses Carbon v2, if available. If no version is available, you will need to remain on build (build number before upgrade)
 or cease using that particular plugin.
-- 
+- Cache TTL (time-to-live) values that are specified as an integer are treated as seconds now, as opposed to minutes, when
+operating directly with a cache repository. If you interact with the cache directly, we recommend that you use `DateTime` or `Carbon` instances to define when your data is to expire. If you wish to continue using integers, you will need to multiply
+your integer values by 60 to get the number of seconds. This does not affect the `cms.urlCacheTtl` and `cms.parsedPageCacheTTL` configuration values, which will continue to use minutes.
+-
 
 ## Required changes
 
