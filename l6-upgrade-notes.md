@@ -25,7 +25,7 @@ Instructions marked with a `√` can be performed immediately to ensure forward 
 
 ## Testing instructions:
 
-If you would like to help with the upgrade process please make the following changes in your composer.json file and then run composer update
+If you would like to help with the upgrade process please make the following changes in your composer.json file and then run `composer update`.
 
 ```json
 "require": {
@@ -93,7 +93,7 @@ If you are using `.env` files with a variable that has a `#` inside of an unquot
 
 If you have any `#` characters inside of unquoted environment variables please update them to be quoted instead (ex. `DB_PASS=23das#sdfas` must be updated to `DB_PASS="23das#sdfas"`).
 
-Additionally, `putenv()` no longer changes the value returned by calls to `env()` as the `env` helper is now considered read-only. If dynamically changing configuration is required, it is recommened to use Config values instead as they can be dynamically changed with `Config::set()`
+Additionally, `putenv()` no longer changes the value returned by calls to `env()` as the `env` helper is now considered read-only. If dynamically changing configuration is required, it is recommended to use Config values instead as they can be dynamically changed with `Config::set()`
 
 ### Using any Laravel based packages
 
