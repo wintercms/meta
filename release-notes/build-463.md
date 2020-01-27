@@ -1,4 +1,4 @@
-# Build 463 (WIP):
+# Build 463:
 
 ## UX/UI Improvements:
 - Fixed display of checkbox lists when quickselect is selected.
@@ -21,17 +21,5 @@
 - Fixed issue where errors thrown during the page processing of the RelationController would be silently consumed without being reported to the user.
 - Fixed issue where popups can still be interacted with when they are in a loading state using `data-popup-load-indicator`.
 
-## Security Improvements
--
-
-## Translation Improvements:
--
-
-## Performance Improvements:
--
-
-## Community Improvements:
+## Dependencies:
 - Updated minimum required PHP version for the installer to match Build 472's minimum of 7.0.8
-
-## Dependencies
--
