@@ -12,7 +12,7 @@ Instructions marked with a `√` can be performed immediately to ensure forward 
 
 * Build 4XX is available as a test update from 15th Febraury 2020. Stable release date to be announced.
 
-## New system requirements:
+## New system requirements: (`√`)
 
 - PHP 7.2.9 or greater (recommended PHP 7.4)
 - SQLite 3.7.11 or greater (recommended SQLite 3.8.8+)
@@ -48,7 +48,7 @@ If you would like to help with the upgrade process please make the following cha
 
 Any required code changes are described below in sections based on related functionality that you may or may not be using. If you are using the described functionality, please review the section and make the required changes.
 
-### Git repositories
+### Git repositories (`√`)
 
 If you track your project in a Git repository, you will need to add the `storage/framework/cache/data/.gitignore` file to your project with the following contents:
 
@@ -87,7 +87,7 @@ Some new configuration files have been made available as part of the Laravel 6 u
   - [`config/hashing.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/hashing.php)
   - [`config/logging.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/logging.php)
 
-### Environment variables (`.env` files)
+### Environment variables (`.env` files) (`√`)
 
 If you are using `.env` files with a variable that has a `#` inside of an unquoted value; that will now be treated as a comment due to an upgrade to the `phpdotenv` library used for parsing them.
 
@@ -105,7 +105,7 @@ Cache TTL (time-to-live) values that are specified as an integer are treated as 
 
 >**NOTE**: This does not affect the `cms.urlCacheTtl` and `cms.parsedPageCacheTTL` configuration values, which will continue to use minutes.
 
-### String-based primary keys in models
+### String-based primary keys in models (`√`)
 
 If you are using string based primary keys for your models add `protected $keyType = 'string';` to the model class definition to prevent performance optimizations meant for integer key types from negatively affecting your code.
 
@@ -115,9 +115,9 @@ The Carbon library has been upgraded from version 1 to version 2. While this sho
 
 ### Using Symfony directly
 
-Symfony has been upgraded to version 4. If interacting directly with it, please [review the upgrade guide](https://github.com/symfony/symfony/blob/master/UPGRADE-4.0.md)
+Symfony has been upgraded to version 4 (except for the Yaml subsystem). If interacting directly with it, please [review the upgrade guide](https://github.com/symfony/symfony/blob/master/UPGRADE-4.0.md)
 
-### Optional changes
+### Optional changes (`√`)
 
 The following files have been updated for Laravel 6, however, you may continue to use your current version of these files if you wish:
 
@@ -186,7 +186,7 @@ You then need to replace the contents of your project's `tests/` directory with 
 - [Symfony](https://github.com/symfony/symfony/blob/master/UPGRADE-4.0.md)
 - [phpdotenv](https://github.com/vlucas/phpdotenv/blob/master/UPGRADING.md#v2-to-v3)
 
-### PHP Upgrade Guides
+### PHP Upgrade Guides (`√`)
 
 **Migrating from PHP 7.0 to PHP 7.1**
 - [Deprecated features in PHP 7.1](https://www.php.net/manual/en/migration71.deprecated.php)
