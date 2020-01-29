@@ -21,7 +21,7 @@ Instructions marked with a `√` can be performed immediately to ensure forward 
 
 ## Known issues:
 
--
+- If using RainLab.Translate, ensure you update to v1.6.7 to resolve `Missing required parameters for [Route: ] [URI: en/{slug}].")`
 
 ## Testing instructions:
 
