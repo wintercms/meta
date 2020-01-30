@@ -7,6 +7,7 @@
 - Fixed a small typo when using number range filters with no value provided for the minimum.
 - Removed excess space from tab titles when hovering over them.
 - Added styling to distinguish a disabled unchecked checkbox from a enabled unchecked checkbox.
+- Added ability to middle mouse click on list rows to open them in a new tab.
 
 ## API Changes:
 - Type hint for `registerSchedule` method in `PluginBase` updated to correctly hint the `Illuminate\Console\Scheduling\Schedule` object that is passed to it.
