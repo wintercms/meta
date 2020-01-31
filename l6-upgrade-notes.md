@@ -124,9 +124,9 @@ The following files have been updated for Laravel 6, however, you may continue t
   - [`bootstrap/autoload.php`](https://github.com/octobercms/october/blob/wip/laravel-6/bootstrap/autoload.php)
   - [`artisan`](https://github.com/octobercms/october/blob/wip/laravel-6/artisan)
 
-### Unit Testing
+### October CMS Unit Testing
 
-If you are using unit testing, you will need to make some changes to your composer.json file, the `tests/` directory, and your unit tests themselves.
+If you are running unit testing for October CMS development, you will need to make some changes to your composer.json file and replace the `tests` folder in your installation to get the new browser tests and the updates to the unit tests.
 
 **composer.json** changes required:
 ```json
@@ -137,16 +137,13 @@ If you are using unit testing, you will need to make some changes to your compos
     "dms/phpunit-arraysubset-asserts": "^0.1.0",
     "meyfa/phpunit-assert-gd": "^2.0",
     "squizlabs/php_codesniffer": "3.*",
-    "jakub-onderka/php-parallel-lint": "^1.0"
+    "jakub-onderka/php-parallel-lint": "^1.0",
+    "laravel/dusk": "^5.8"
 },
 "autoload-dev": {
-    "classmap": [
-        "tests/concerns/InteractsWithAuthentication.php",
-        "tests/fixtures/backend/models/UserFixture.php",
-        "tests/TestCase.php",
-        "tests/UiTestCase.php",
-        "tests/PluginTestCase.php"
-    ]
+    "psr-4": {
+        "October\\Core\\Tests\\": "tests/"
+    }
 },
 "scripts": {
     "post-create-project-cmd": [
@@ -169,7 +166,29 @@ If you are using unit testing, you will need to make some changes to your compos
 },
 ```
 
-You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/wip/laravel-6/tests). Additionally, you will need to update any of your unit tests that have `setUp()` or `tearDown()` methods to also include a `: void` return type hint as the version of PHPUnit used now includes those type hints in the base classes.
+You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/wip/laravel-6/tests).
+
+## Plugin Unit Tests
+
+If your plugin contains unit tests, and was previously using the `PluginTestCase` class, you will need to make some adjustments to your unit tests in order to function with the Laravel 6 upgrade.
+
+- If you use `use PluginTestCase` to bring in the `PluginTestCase` class into your unit test class, please change this to `use October\Core\Tests\PluginTestCase`.
+- If you instead just simply extend the `PluginTestCase` class with your unit test class, you will need to instead extend `\October\Core\Tests\PluginTestCase` instead.
+- All `setUp` and `tearDown` methods in your unit test classes must now have the return type `void` specified to match PHPUnit 8's requirements.
+  - Change all `public function setUp()` methods to `public function setUp(): void`.
+  - Change all `public function tearDown()` methods to `public function tearDown(): void`.
+- The `syntaxCheck` attribute for the `<phpunit>` tag in your `phpunit.xml` file is now deprecated. This should be removed from your `phpunit.xml` file.
+
+In addition to the changes above, note the following deprecations in PHPUnit 8 - these will be thrown as warnings in your unit tests.
+
+- The `@expectedException` group of docblock annotations are now deprecated. Instead, you should call the following methods inside your unit test method, depending on the annotation:
+  - @expectedException: `$this->expectException(ClassName::class)`
+  - @expectedExceptionCode: `$this->expectExceptionCode(int)`
+  - @expectedExceptionMessage: `$this->expectExceptionMessage(string)`
+- The `assertInternalType()` method is no longer available. Instead, you should use the `arrayIs[Type]()` methods, where `Type` is the PHP variable type with a capital letter. For example, instead of `assertInternalType('string', ...)`, you should use `assertIsString`, or `assertInternalType('array', ...)` should be `assertIsArray`.
+- The `assertContains()` method no longer tests whether strings are inside strings - it now will only detect if an item is contained in an array. If you are using `assertContains()` in this fashion, you should instead use `assertStringContainsString()`.
+
+For more information on deprecations, see the [PHPUnit 8 release notes](https://github.com/sebastianbergmann/phpunit/blob/8.0.0/ChangeLog-8.0.md#800---2019-02-01). Note that although the `assertArraySubset()` method was deprecated, we are still maintaining the method through requiring the `dms/phpunit-arraysubset-asserts` library, so you may continue to use that assertion.
 
 ## Further reading
 
