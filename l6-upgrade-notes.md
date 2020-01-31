@@ -204,6 +204,7 @@ For more information on deprecations, see the [PHPUnit 8 release notes](https://
 - [Carbon](https://carbon.nesbot.com/docs/#api-carbon-2)
 - [Symfony](https://github.com/symfony/symfony/blob/master/UPGRADE-4.0.md)
 - [phpdotenv](https://github.com/vlucas/phpdotenv/blob/master/UPGRADING.md#v2-to-v3)
+- [PHPUnit](https://github.com/sebastianbergmann/phpunit/blob/8.0.0/ChangeLog-8.0.md#800---2019-02-01)
 
 ### PHP Upgrade Guides (`√`)
 
