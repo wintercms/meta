@@ -164,6 +164,21 @@ If you are running unit testing for October CMS development, you will need to ma
         "phpcs --colors -nq --report=\"full\" --extensions=\"php\""
     ]
 },
+"extra": {
+    "merge-plugin": {
+        "include": [
+            "plugins/*/*/composer.json"
+        ],
+        "recurse": true,
+        "replace": false,
+        "merge-dev": false
+    },
+    "laravel": {
+        "dont-discover": [
+            "laravel/dusk"
+        ]
+    }
+}
 ```
 
 You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/wip/laravel-6/tests).
