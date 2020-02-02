@@ -8,6 +8,7 @@
 - Removed excess space from tab titles when hovering over them.
 - Added styling to distinguish a disabled unchecked checkbox from a enabled unchecked checkbox.
 - Added ability to middle mouse click on list rows to open them in a new tab.
+- Added new `style` attribute for repeater widgets, which controls repeater item behaviour. Allows items to be expanded or collapsed on load, or allows a repeater to act as an "accordion" widget.
 
 ## API Changes:
 - Type hint for `registerSchedule` method in `PluginBase` updated to correctly hint the `Illuminate\Console\Scheduling\Schedule` object that is passed to it.
@@ -26,7 +27,7 @@
 -
 
 ## Translation Improvements:
--
+- Improved Slovakian translations.
 
 ## Performance Improvements:
 -
