@@ -133,7 +133,6 @@ If you are running unit testing for October CMS development, you will need to ma
 "require-dev": {
     "fzaninotto/faker": "^1.9",
     "phpunit/phpunit": "^8.0|^9.0",
-    "phpunit/phpunit-selenium": "dev-master",
     "dms/phpunit-arraysubset-asserts": "^0.1.0",
     "meyfa/phpunit-assert-gd": "^2.0",
     "squizlabs/php_codesniffer": "3.*",
