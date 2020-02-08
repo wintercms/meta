@@ -27,7 +27,8 @@
 -
 
 ## Translation Improvements:
-- Improved Slovakian translations.
+- Improved Slovakian translation.
+- Improved French translation.
 
 ## Performance Improvements:
 -
