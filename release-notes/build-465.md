@@ -23,6 +23,7 @@
 - Fixed an issue with composer.json which could cause some installations to load a version of Laravel newer than actually supported.
 - Fixed issue where un-elevated plugins weren't being loaded on any routes starting with /combine (should have been /combine/)
 - Fixed a change in default behavior where a recent update to Dropzone.js (used for uploading files) added a timeout property that defaults to 30 seconds. Timeout has been set to 0 (infinite) to retain the previous behaviour of no timeout utilized on file uploads.
+- Fixed a bug where reloading a Lists widget with a custom search term applied would reset the pagination.
 
 ## Security Improvements
 -
