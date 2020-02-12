@@ -10,7 +10,7 @@ There are various code changes that may be required, including code found in plu
 
 Instructions marked with a `√` can be performed immediately to ensure forward compatibility. In other words the change is compatible with all versions of October, now and after the release. It is recommended to make these changes as soon as possible.
 
-* Build 4XX is available as a test update from 15th Febraury 2020. Stable release date to be announced.
+* Build 4XX is available as a test update from 15th February 2020. Stable release date to be announced.
 
 ## New system requirements: (`√`)
 
@@ -80,7 +80,9 @@ If you are using composer you will need to make the following changes to your co
 },
 ```
 
-### Configuration files (`config/*` files)
+>**NOTE:** See the below section on Unit Testing if you also have a `require-dev` section defined in your `composer.json`.
+
+### Configuration files (`config/*` files) (`√`)
 
 Some new configuration files have been made available as part of the Laravel 6 upgrade. You should add these configuration files to your project's `config` folder, and adjust the configuration as necessary. While you're doing that, it is recommended that you review the rest of the configuration files present on GitHub and ensure that your project's copies are up to date as there have been numerous configuration options added over the past year.
 
@@ -99,7 +101,7 @@ Additionally, `putenv()` no longer changes the value returned by calls to `env()
 
 The version of Laravel has been changed from 5.5 LTS to 6.x LTS. If you are using packages made for Laravel you may have to go through and update them to a version compatible with Laravel 6.x.
 
-### Interacting with Cache repositories directly
+### Interacting with Cache repositories directly (`√`, when using `now()->addMinutes()`)
 
 Cache TTL (time-to-live) values that are specified as an integer are treated as seconds now, as opposed to minutes, when interacting directly with a cache repository. If you interact with the cache directly, we recommend that you use `DateTime` or `Carbon` instances to define when your data is to expire (ex. `now()->addMinutes(60)` instead of `60`). If you wish to continue using integers, you will need to multiply your integer values by 60 to get the number of seconds.
 
@@ -124,7 +126,7 @@ The following files have been updated for Laravel 6, however, you may continue t
   - [`bootstrap/autoload.php`](https://github.com/octobercms/october/blob/wip/laravel-6/bootstrap/autoload.php)
   - [`artisan`](https://github.com/octobercms/october/blob/wip/laravel-6/artisan)
 
-### October CMS Unit Testing
+### Unit Testing
 
 If you are running unit testing for October CMS development, you will need to make some changes to your composer.json file and replace the `tests` folder in your installation to get the new browser tests and the updates to the unit tests.
 
