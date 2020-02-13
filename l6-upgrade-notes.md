@@ -142,9 +142,13 @@ If you are running unit testing for October CMS development, you will need to ma
     "laravel/dusk": "^5.8"
 },
 "autoload-dev": {
-    "psr-4": {
-        "October\\Core\\Tests\\": "tests/"
-    }
+    "classmap": [
+        "tests/concerns/InteractsWithAuthentication.php",
+        "tests/fixtures/backend/models/UserFixture.php",
+        "tests/TestCase.php",
+        "tests/UiTestCase.php",
+        "tests/PluginTestCase.php"
+    ]
 },
 "scripts": {
     "post-create-project-cmd": [
@@ -186,10 +190,8 @@ You then need to replace the contents of your project's `tests/` directory with 
 
 ## Plugin Unit Tests
 
-If your plugin contains unit tests, and was previously using the `PluginTestCase` class, you will need to make some adjustments to your unit tests in order to function with the Laravel 6 upgrade.
+If your plugin contains unit tests, you will need to make some adjustments to your unit tests in order to function with the Laravel 6 upgrade.
 
-- If you use `use PluginTestCase` to bring in the `PluginTestCase` class into your unit test class, please change this to `use October\Core\Tests\PluginTestCase`.
-- If you instead just simply extend the `PluginTestCase` class with your unit test class, you will need to instead extend `\October\Core\Tests\PluginTestCase` instead.
 - All `setUp` and `tearDown` methods in your unit test classes must now have the return type `void` specified to match PHPUnit 8's requirements.
   - Change all `public function setUp()` methods to `public function setUp(): void`.
   - Change all `public function tearDown()` methods to `public function tearDown(): void`.
