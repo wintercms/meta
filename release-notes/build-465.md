@@ -14,7 +14,7 @@
 - Type hint for `registerSchedule` method in `PluginBase` updated to correctly hint the `Illuminate\Console\Scheduling\Schedule` object that is passed to it.
 - Added `exception.beforeReport` and `exception.report` events
 - `cms.backendForceSecure` no longer supports the value of `null` (where it would be considered the inverse of `app.debug`) as this resulted in confusion when disabling debug mode while the application was behind a proxy causing an infinite loop. Ultimately it's the server's responsibility to handle forcing HTTPS.
-- User preferences for list widgets are ignored if the list widget has disabled the setup modal via `showSetup` being `false`.
+- User preferences for list widgets are now ignored if the list widget has disabled the setup modal via `showSetup` being `false`.
 
 ## Bug Fixes:
 - Fixed issue with the `queueOn` and `laterOn` methods of the `Mail` facade throwing an invalid argument exception due to queue name string being defined where the queue manager is meant to be defined. The queue name is now injected into the `Mailable` object that is created, and the default queue manager is used instead.
@@ -24,9 +24,10 @@
 - Fixed issue where un-elevated plugins weren't being loaded on any routes starting with /combine (should have been /combine/)
 - Fixed a change in default behavior where a recent update to Dropzone.js (used for uploading files) added a timeout property that defaults to 30 seconds. Timeout has been set to 0 (infinite) to retain the previous behaviour of no timeout utilized on file uploads.
 - Fixed a bug where reloading a Lists widget with a custom search term applied would reset the pagination.
+- Improved error handling on invalid model attributes being used for form fields.
 
 ## Security Improvements
--
+- Improved escaping of option values provided to the dropdown field type
 
 ## Translation Improvements:
 - Improved Slovakian translation.
