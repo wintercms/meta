@@ -9,6 +9,7 @@
 - Added styling to distinguish a disabled unchecked checkbox from a enabled unchecked checkbox.
 - Added ability to middle mouse click on list rows to open them in a new tab.
 - Added new `style` attribute for repeater widgets, which controls repeater item behaviour. Allows items to be expanded or collapsed on load, or allows a repeater to act as an "accordion" widget.
+- If a lazily loaded tab is the first tab or only tab displayed it will now be automatically loaded on page load instead of remaining empty.
 
 ## API Changes:
 - Type hint for `registerSchedule` method in `PluginBase` updated to correctly hint the `Illuminate\Console\Scheduling\Schedule` object that is passed to it.
@@ -25,6 +26,7 @@
 - Fixed a change in default behavior where a recent update to Dropzone.js (used for uploading files) added a timeout property that defaults to 30 seconds. Timeout has been set to 0 (infinite) to retain the previous behaviour of no timeout utilized on file uploads.
 - Fixed a bug where reloading a Lists widget with a custom search term applied would reset the pagination.
 - Improved error handling on invalid model attributes being used for form fields.
+- Improved preview mode support for `type: number` fields with `0` as their value.
 
 ## Security Improvements
 - Improved escaping of option values provided to the dropdown field type
