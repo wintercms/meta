@@ -35,6 +35,7 @@ The project has two levels of maintainership. The current membership of each rol
 **Lead Maintainers**
 <a name="lead-maintainers"></a>
 
+- [@alekseybobkov](https://ghithub.com/alekseybobkov) - Alexey Bobkov
 - [@daftspunk](https://github.com/daftspunk) - Samuel Georges
 - [@LukeTowers](https://github.com/LukeTowers) - Luke Towers
 
