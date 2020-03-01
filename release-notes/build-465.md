@@ -1,6 +1,6 @@
-# Build 465 (WIP):
+# Build 465
 
-## UX/UI Improvements:
+## UX/UI Improvements
 - The Event Log list now shows the entire first line of a logged error message, up to 500 characters maximum, in order to provide more context of errors in the list.
 - When searching for plugins to install in the backend plugin management screen author names are now included in the search results.
 - A consistent cross browser focus ring style is now utilized in the backend.
@@ -11,14 +11,14 @@
 - Added new `style` attribute for repeater widgets, which controls repeater item behaviour. Allows items to be expanded or collapsed on load, or allows a repeater to act as an "accordion" widget.
 - If a lazily loaded tab is the first tab or only tab displayed it will now be automatically loaded on page load instead of remaining empty.
 
-## API Changes:
+## API Changes
 - Type hint for `registerSchedule` method in `PluginBase` updated to correctly hint the `Illuminate\Console\Scheduling\Schedule` object that is passed to it.
 - Added `exception.beforeReport` and `exception.report` events
 - `cms.backendForceSecure` no longer supports the value of `null` (where it would be considered the inverse of `app.debug`) as this resulted in confusion when disabling debug mode while the application was behind a proxy causing an infinite loop. Ultimately it's the server's responsibility to handle forcing HTTPS.
 - User preferences for list widgets are now ignored if the list widget has disabled the setup modal via `showSetup` being `false`.
 - Return type hint documentation for `PluginBase::boot` method changed from `array` to `void`.
 
-## Bug Fixes:
+## Bug Fixes
 - Fixed issue with the `queueOn` and `laterOn` methods of the `Mail` facade throwing an invalid argument exception due to queue name string being defined where the queue manager is meant to be defined. The queue name is now injected into the `Mailable` object that is created, and the default queue manager is used instead.
 - Implemented another fix for the temporary monkey patched LESS compilation to support PHP 7.4 until the Laravel 6 upgrade is completed.
 - Fixed a bug where attempting to set a simple value on a BelongsToMany relationship as a collection would produce a collection wrapped in an array instead of an array of values which would confuse the `sync()` command.
@@ -32,17 +32,8 @@
 ## Security Improvements
 - Improved escaping of option values provided to the dropdown field type
 
-## Translation Improvements:
+## Translation Improvements
 - Improved Slovakian translation.
 - Improved French translation.
 - Improved Dutch translation.
 - Minor cleanup to English translation.
-
-## Performance Improvements:
--
-
-## Community Improvements:
--
-
-## Dependencies
--
