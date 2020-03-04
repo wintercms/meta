@@ -111,6 +111,30 @@ Cache TTL (time-to-live) values that are specified as an integer are treated as 
 
 If you are using string based primary keys for your models add `protected $keyType = 'string';` to the model class definition to prevent performance optimizations meant for integer key types from negatively affecting your code.
 
+### Wildcard event listeners: `Event::listen('example.*', $listener);`
+
+The parameters sent to wildcard event listeners in October has changed match what Laravel has done since 5.4. This was overlooked in the 5.5 update but is being applied now. Going forward all wildcard event listeners will receive the name of the event currently being fired as the first parameter and an array of the event arguments as the second parameter.
+
+Example of old wildcard listener:
+
+```php
+Event::listen('*', function ($params) {
+    if (Event::firing() === 'some.specific.event') {
+        // do stuff with $params
+    }
+});
+```
+
+Example of new wildcard listener:
+
+```php
+Event::listen('*', function ($event, $params) {
+    if ($event === 'some.specific.event') {
+        // do stuff with $params
+    }
+});
+```
+
 ### Using Carbon directly
 
 The Carbon library has been upgraded from version 1 to version 2. While this should mostly work with existing code, please [review the upgrade guide](https://carbon.nesbot.com/docs/#api-carbon-2).
