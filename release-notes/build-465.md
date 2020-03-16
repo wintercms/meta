@@ -17,6 +17,7 @@
 - `cms.backendForceSecure` no longer supports the value of `null` (where it would be considered the inverse of `app.debug`) as this resulted in confusion when disabling debug mode while the application was behind a proxy causing an infinite loop. Ultimately it's the server's responsibility to handle forcing HTTPS.
 - User preferences for list widgets are now ignored if the list widget has disabled the setup modal via `showSetup` being `false`.
 - Return type hint documentation for `PluginBase::boot` method changed from `array` to `void`.
+- Re-added the `db:seed` artisan command
 
 ## Bug Fixes
 - Fixed issue with the `queueOn` and `laterOn` methods of the `Mail` facade throwing an invalid argument exception due to queue name string being defined where the queue manager is meant to be defined. The queue name is now injected into the `Mailable` object that is created, and the default queue manager is used instead.

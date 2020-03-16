@@ -8,10 +8,14 @@
 - The `postbackHandler` property for DataTable form widgets now defaults to `null` - the widget will interpret a `null` value as to detect the save handler for the form that contains the widget (this is usually `onSave`, the old default value, but it will now detect other handlers such as those used by the relation controller).
 - The `getParameter` method in `Cms\Classes\Router` is now correctly type-hinted.
 - External parameters may now use dot notation to get a deeper-nested value when used for component parameters in a CMS object.
+- Added `auth.throttle.*` configuration options to configure the login throttling for the backend.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
 - Record Finder widgets will now correctly save and load a record when using a column other than ID in the `keyFrom` configuration value, when the widget is not in relation mode.
+- Fixed issue where custom validation rule strings starting with `unique` would not register correctly.
+- Fixed `propertyExists()` method to correctly detect properties added through `addDynamicProperty()`.
+- Fixed `options` support for `checkboxlist` and `balloon-selector` field types in the Syntax Parser
 
 ## Security Improvements
 -
