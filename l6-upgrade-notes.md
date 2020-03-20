@@ -48,17 +48,6 @@ If you would like to help with the upgrade process please make the following cha
 
 Any required code changes are described below in sections based on related functionality that you may or may not be using. If you are using the described functionality, please review the section and make the required changes.
 
-### Git repositories (`√`)
-
-If you track your project in a Git repository, you will need to add the `storage/framework/cache/data/.gitignore` file to your project with the following contents:
-
-```
-*
-!.gitignore
-```
-
-as well as add `!data/` to the `storage/framework/cache/.gitignore` file.
-
 ### Composer (composer.json)
 
 If you are using composer you will need to make the following changes to your composer.json file:
