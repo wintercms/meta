@@ -9,6 +9,8 @@
 - The `getParameter` method in `Cms\Classes\Router` is now correctly type-hinted.
 - External parameters may now use dot notation to get a deeper-nested value when used for component parameters in a CMS object.
 - Added `auth.throttle.*` configuration options to configure the login throttling for the backend.
+- Added `formGetRedirectUrl($context, $model)` method to the `FormController` behavior, overrideable by the implementing controller. Used to get the redirect URL for a given context & model if a redirect is requested.
+- If uploaded files are missing an extension October will now try to automatically determine one based on the MIME type of the file.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
