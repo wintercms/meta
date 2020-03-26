@@ -11,7 +11,8 @@
 - Added `auth.throttle.*` configuration options to configure the login throttling for the backend.
 - Added `formGetRedirectUrl($context, $model)` method to the `FormController` behavior, overrideable by the implementing controller. Used to get the redirect URL for a given context & model if a redirect is requested.
 - If uploaded files are missing an extension October will now try to automatically determine one based on the MIME type of the file.
-- Added support for the `attributes` property on the `codeeditor` FormWidget
+- Added support for the `attributes` property on the `codeeditor` FormWidget.
+- Added support for the `placeholder` attribute on the `password` field type.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
@@ -20,6 +21,7 @@
 - Fixed `propertyExists()` method to correctly detect properties added through `addDynamicProperty()`.
 - Fixed `options` support for `checkboxlist` and `balloon-selector` field types in the Syntax Parser
 - Fixed issues with properly quoting values when running `october:env`
+- Fixed issue where Excel wouldn't properly detect the encoding of CSV files exported using the `useList` option
 
 ## Security Improvements
 -
