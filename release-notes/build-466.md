@@ -13,6 +13,7 @@
 - If uploaded files are missing an extension October will now try to automatically determine one based on the MIME type of the file.
 - Added support for the `attributes` property on the `codeeditor` FormWidget.
 - Added support for the `placeholder` attribute on the `password` field type.
+- Added support for defining custom values for the `title` and `toolbarButtons` labels of the RelationController behavior.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
@@ -22,12 +23,14 @@
 - Fixed `options` support for `checkboxlist` and `balloon-selector` field types in the Syntax Parser
 - Fixed issues with properly quoting values when running `october:env`
 - Fixed issue where Excel wouldn't properly detect the encoding of CSV files exported using the `useList` option
+- Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
 
 ## Security Improvements
 -
 
 ## Translation Improvements
-- Improved German translations.
+- Improved German translation.
+- Improved Russian translation.
 
 ## Performance Improvements
 - Minor performance improvement by not calling Lang::get() every time a CMS Page object is instantiated.
@@ -36,4 +39,4 @@
 -
 
 ## Dependencies
--
+- Switched from `jakub-onderka/php-parallel-lint` to `php-parallel-lint/php-parallel-lint` for unit testing purposes in the October Rain library.
