@@ -39,4 +39,4 @@
 -
 
 ## Dependencies
-- Switched from `jakub-onderka/php-parallel-lint` to `php-parallel-lint/php-parallel-lint` for unit testing purposes in the October Rain library.
+- Switched from the abandoned `jakub-onderka/php-parallel-lint` library to `php-parallel-lint/php-parallel-lint` for code linting purposes in the October CMS and Rain library test suites.
