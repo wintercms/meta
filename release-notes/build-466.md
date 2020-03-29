@@ -1,7 +1,7 @@
 # Build 466 (WIP)
 
 ## UX/UI Improvements
--
+- Improved the disabled styling of the `markdown` & `colorpicker` FormWidgets.
 
 ## API Changes
 - Menu items controlled by `NavigationManager` are now objects, and `$manager->getMainMenuItem($owner, $code)` has been added to make it easier to manipulate existing menu items without having to deregister and reregister menu items to apply changes.
@@ -11,7 +11,7 @@
 - Added `auth.throttle.*` configuration options to configure the login throttling for the backend.
 - Added `formGetRedirectUrl($context, $model)` method to the `FormController` behavior, overrideable by the implementing controller. Used to get the redirect URL for a given context & model if a redirect is requested.
 - If uploaded files are missing an extension October will now try to automatically determine one based on the MIME type of the file.
-- Added support for the `attributes` property on the `codeeditor` & `fileupload` FormWidgets.
+- Added support for the `attributes` property on the `colorpicker`, `codeeditor`, `markdown`, & `fileupload` FormWidgets.
 - Added support for the `placeholder` attribute on the `password` field type.
 - Added support for defining custom values for the `title` and `toolbarButtons` labels of the RelationController behavior.
 
@@ -24,6 +24,7 @@
 - Fixed issues with properly quoting values when running `october:env`
 - Fixed issue where Excel wouldn't properly detect the encoding of CSV files exported using the `useList` option
 - Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
+- Asset files uploaded in the CMS will now take their default permissions from the value set in the configuration.
 
 ## Security Improvements
 -
