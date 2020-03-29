@@ -11,7 +11,7 @@
 - Added `auth.throttle.*` configuration options to configure the login throttling for the backend.
 - Added `formGetRedirectUrl($context, $model)` method to the `FormController` behavior, overrideable by the implementing controller. Used to get the redirect URL for a given context & model if a redirect is requested.
 - If uploaded files are missing an extension October will now try to automatically determine one based on the MIME type of the file.
-- Added support for the `attributes` property on the `codeeditor` FormWidget.
+- Added support for the `attributes` property on the `codeeditor` & `fileupload` FormWidgets.
 - Added support for the `placeholder` attribute on the `password` field type.
 - Added support for defining custom values for the `title` and `toolbarButtons` labels of the RelationController behavior.
 
