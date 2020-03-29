@@ -14,7 +14,7 @@ Instructions marked with a `√` can be performed immediately to ensure forward 
 
 ## New system requirements: (`√`)
 
-- PHP 7.2.9 or greater (recommended PHP 7.4)
+- PHP 7.2 or greater (recommended PHP 7.4)
 - SQLite 3.7.11 or greater (recommended SQLite 3.8.8+)
 
 >**NOTE**: The PHP 7.1 branch, and those before it, are now [unsupported](https://www.php.net/supported-versions.php).
@@ -141,7 +141,7 @@ The following files have been updated for Laravel 6, however, you may continue t
 
 ### Unit Testing
 
-If you are running unit testing for October CMS development, you will need to make some changes to your composer.json file and replace the `tests` folder in your installation to get the new browser tests and the updates to the unit tests.
+If you are running unit testing for October CMS development, you will need to make some changes to your composer.json file and replace the `tests` folder in your installation to get the updates to the unit tests.
 
 **composer.json** changes required:
 ```json
@@ -151,15 +151,13 @@ If you are running unit testing for October CMS development, you will need to ma
     "dms/phpunit-arraysubset-asserts": "^0.1.0",
     "meyfa/phpunit-assert-gd": "^2.0",
     "squizlabs/php_codesniffer": "3.*",
-    "jakub-onderka/php-parallel-lint": "^1.0",
-    "laravel/dusk": "^5.8"
+    "php-parallel-lint/php-parallel-lint": "^1.0",
 },
 "autoload-dev": {
     "classmap": [
         "tests/concerns/InteractsWithAuthentication.php",
         "tests/fixtures/backend/models/UserFixture.php",
         "tests/TestCase.php",
-        "tests/UiTestCase.php",
         "tests/PluginTestCase.php"
     ]
 },
