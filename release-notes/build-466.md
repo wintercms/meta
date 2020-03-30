@@ -1,7 +1,7 @@
 # Build 466 (WIP)
 
 ## UX/UI Improvements
-- Improved the disabled styling of the `markdown` & `colorpicker` FormWidgets.
+- Improved the disabled styling of the `markdown`, `richeditor`, `mediafinder`, & `colorpicker` FormWidgets.
 
 ## API Changes
 - Menu items controlled by `NavigationManager` are now objects, and `$manager->getMainMenuItem($owner, $code)` has been added to make it easier to manipulate existing menu items without having to deregister and reregister menu items to apply changes.
@@ -11,9 +11,10 @@
 - Added `auth.throttle.*` configuration options to configure the login throttling for the backend.
 - Added `formGetRedirectUrl($context, $model)` method to the `FormController` behavior, overrideable by the implementing controller. Used to get the redirect URL for a given context & model if a redirect is requested.
 - If uploaded files are missing an extension October will now try to automatically determine one based on the MIME type of the file.
-- Added support for the `attributes` property on the `colorpicker`, `codeeditor`, `markdown`, & `fileupload` FormWidgets.
+- Added support for the `attributes` property on the `colorpicker`, `codeeditor`, `markdown`, `richeditor`, `mediafinder`, & `fileupload` FormWidgets.
 - Added support for the `placeholder` attribute on the `password` field type.
 - Added support for defining custom values for the `title` and `toolbarButtons` labels of the RelationController behavior.
+- Added support for a `badge` property on main & side menu items in the backend to display string values as the menu item badge instead of the only numeric values already supported by the `counter` property.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
