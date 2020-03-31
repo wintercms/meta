@@ -28,9 +28,12 @@
 - Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
 - Asset files uploaded in the CMS will now take their default permissions from the value set in the configuration.
 - Repeaters will now trigger `change.oc.formwidget` when adding or removing items.
+- Fixed issue where the richeditor toolbar popups were z-index clashing with other form elements.
+- Fixed issue where mail layouts that didn't exist in the database but did exist in the filesystem weren't being loaded correctly.
+- Fixed issue where some browsers would incorrectly check off list checkboxes after a page reload through the autocomplete functionality which would cause visual & behavioural inconsistencies.
 
 ## Security Improvements
--
+- Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types)
 
 ## Translation Improvements
 - Improved German translation.
