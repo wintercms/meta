@@ -31,9 +31,13 @@
 - Fixed issue where the richeditor toolbar popups were z-index clashing with other form elements.
 - Fixed issue where mail layouts that didn't exist in the database but did exist in the filesystem weren't being loaded correctly.
 - Fixed issue where some browsers would incorrectly check off list checkboxes after a page reload through the autocomplete functionality which would cause visual & behavioural inconsistencies.
+- Fixed support for importing CSV files with encodings not supported by `mb_convert_encoding()` by using `iconv()` as a fallback.
 
 ## Security Improvements
-- Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types)
+- Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
+- Fixed vulnerability where maliciously crafted CSV files could lead to a self-XSS attack when using the `ImportExportController` behavior. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
+- Prevented potential CSV injection attacks via the `ImportExportController` behavior. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
+
 
 ## Translation Improvements
 - Improved German translation.
