@@ -32,6 +32,8 @@
 - Fixed issue where mail layouts that didn't exist in the database but did exist in the filesystem weren't being loaded correctly.
 - Fixed issue where some browsers would incorrectly check off list checkboxes after a page reload through the autocomplete functionality which would cause visual & behavioural inconsistencies.
 - Fixed support for importing CSV files with encodings not supported by `mb_convert_encoding()` by using `iconv()` as a fallback.
+- Fixed issue where translations for related models managed by the `RelationController` behavior would not save when creating the related model, or updating a pivot model.
+- Fixed issue where model scopes applied by the `relation` FormWidget didn't support joins being used.
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
