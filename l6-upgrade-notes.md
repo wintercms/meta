@@ -37,7 +37,7 @@ If you would like to help with the upgrade process please make the following cha
     "october/backend": "dev-wip/laravel-6",
     "october/cms": "dev-wip/laravel-6",
     "laravel/framework": "~6.0",
-    "wikimedia/composer-merge-plugin": "dev-master"
+    "wikimedia/composer-merge-plugin": "1.4.1"
 },
 "config": {
     "preferred-install": "dist"
@@ -62,7 +62,7 @@ If you are using composer you will need to make the following changes to your co
     "october/backend": "dev-wip/laravel-6",
     "october/cms": "dev-wip/laravel-6",
     "laravel/framework": "~6.0",
-    "wikimedia/composer-merge-plugin": "dev-master"
+    "wikimedia/composer-merge-plugin": "1.4.1"
 },
 "config": {
     "preferred-install": "dist"
