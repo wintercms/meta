@@ -15,6 +15,7 @@
 - Added support for the `placeholder` attribute on the `password` field type.
 - Added support for defining custom values for the `title` and `toolbarButtons` labels of the RelationController behavior.
 - Added support for a `badge` property on main & side menu items in the backend to display string values as the menu item badge instead of the only numeric values already supported by the `counter` property.
+- Added a unique HTML id attribute to the Filter widget popups for targeting individual filter scopes in CSS.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
@@ -44,3 +45,4 @@
 
 ## Dependencies
 - Switched from the abandoned `jakub-onderka/php-parallel-lint` library to `php-parallel-lint/php-parallel-lint` for code linting purposes in the October CMS and Rain library test suites.
+- Locked the wikipedia/composer-merge-plugin dependency to a version that still supports PHP 7.0-7.2. Lock will be reverted when the L6 upgrade is merged in.
