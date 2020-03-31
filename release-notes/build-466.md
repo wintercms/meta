@@ -26,6 +26,7 @@
 - Fixed issue where Excel wouldn't properly detect the encoding of CSV files exported using the `useList` option
 - Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
 - Asset files uploaded in the CMS will now take their default permissions from the value set in the configuration.
+- Repeaters will now trigger `change.oc.formwidget` when adding or removing items.
 
 ## Security Improvements
 -
@@ -36,6 +37,7 @@
 
 ## Performance Improvements
 - Minor performance improvement by not calling Lang::get() every time a CMS Page object is instantiated.
+- Minor performance improvement in the plugin manager by not looping over all plugins everytime a plugin identifier needs to be normalized.
 
 ## Community Improvements
 -
