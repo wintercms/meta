@@ -16,6 +16,8 @@
 - Added support for defining custom values for the `title` and `toolbarButtons` labels of the RelationController behavior.
 - Added support for a `badge` property on main & side menu items in the backend to display string values as the menu item badge instead of the only numeric values already supported by the `counter` property.
 - Added a unique HTML id attribute to the Filter widget popups for targeting individual filter scopes in CSS.
+- Added `usingSource($source, $closure)` method to the `Cms\Classes\AutoDatasource` to force the `AutoDatasource` to only use the specified source for that closure.
+- Media items now only return an absolute URL if either `cms.linkPolicy` is set to `force` or the `path` property of the media storage disk starts with an absolute URL. This limits the breaking change from Build 444 to only installations using a `force` link policy.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
@@ -34,6 +36,9 @@
 - Fixed support for importing CSV files with encodings not supported by `mb_convert_encoding()` by using `iconv()` as a fallback.
 - Fixed issue where translations for related models managed by the `RelationController` behavior would not save when creating the related model, or updating a pivot model.
 - Fixed issue where model scopes applied by the `relation` FormWidget didn't support joins being used.
+- Fixed issue where `php artisan theme:sync --target=database` wouldn't properly sync to the specified target.
+- Improved the flexibility of the PluginManager in accepting plugin identifiers that are not perfectly matched to the desired plugin's casing (i.e. `Rainlab.Blog` would be considered an invalid plugin identifier prior to this change, it is now correctly identified as belonging to `RainLab.Blog`).
+- Fixed issue where pivot records being created or updated through the `RelationController` would not trigger the form field change events.
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
