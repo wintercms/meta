@@ -2,6 +2,8 @@
 
 ## UX/UI Improvements
 - Improved the disabled styling of the `markdown`, `richeditor`, `mediafinder`, & `colorpicker` FormWidgets.
+- Fixed long standing issue where on initial page load the backend nav bar would be an incorrect width until the JS loaded to correct it by switching to a flex layout for the backend nav bar.
+- Improved UX when an AJAX request is made while the application is in hard maintenance mode (`php artisan down`).
 
 ## API Changes
 - Menu items controlled by `NavigationManager` are now objects, and `$manager->getMainMenuItem($owner, $code)` has been added to make it easier to manipulate existing menu items without having to deregister and reregister menu items to apply changes.
@@ -39,12 +41,12 @@
 - Fixed issue where `php artisan theme:sync --target=database` wouldn't properly sync to the specified target.
 - Improved the flexibility of the PluginManager in accepting plugin identifiers that are not perfectly matched to the desired plugin's casing (i.e. `Rainlab.Blog` would be considered an invalid plugin identifier prior to this change, it is now correctly identified as belonging to `RainLab.Blog`).
 - Fixed issue where pivot records being created or updated through the `RelationController` would not trigger the form field change events.
+- Update manager now respects the values of `cms.pluginsPathLocal` and `cms.themesPathLocal` when installing new plugins & themes.
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
 - Fixed vulnerability where maliciously crafted CSV files could lead to a self-XSS attack when using the `ImportExportController` behavior. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
 - Prevented potential CSV injection attacks via the `ImportExportController` behavior. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
-
 
 ## Translation Improvements
 - Improved German translation.
