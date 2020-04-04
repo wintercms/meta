@@ -21,6 +21,7 @@
 - Added a unique HTML id attribute to the Filter widget popups for targeting individual filter scopes in CSS.
 - Added `usingSource($source, $closure)` method to the `Cms\Classes\AutoDatasource` to force the `AutoDatasource` to only use the specified source for that closure.
 - Media items now only return an absolute URL if either `cms.linkPolicy` is set to `force` or the `path` property of the media storage disk starts with an absolute URL. This limits the breaking change from Build 444 to only installations using a `force` link policy.
+- Implemented the new `Backend\Traits\UploadableWidget` trait intended for Widgets that need to handle uploading files to the Media Library.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
