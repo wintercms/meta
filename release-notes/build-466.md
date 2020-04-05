@@ -68,4 +68,4 @@
 
 ## Dependencies
 - Switched from the abandoned `jakub-onderka/php-parallel-lint` library to `php-parallel-lint/php-parallel-lint` for code linting purposes in the October CMS and Rain library test suites.
-- Locked the wikipedia/composer-merge-plugin dependency to a version that still supports PHP 7.0-7.2. Lock will be reverted when the L6 upgrade is merged in.
+- Locked the wikipedia/composer-merge-plugin dependency to version 1.4.1.
