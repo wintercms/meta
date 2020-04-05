@@ -5,6 +5,7 @@
 - Fixed long standing issue where on initial page load the backend nav bar would be an incorrect width until the JS loaded to correct it by switching to a flex layout for the backend nav bar.
 - Improved UX when an AJAX request is made while the application is in hard maintenance mode (`php artisan down`).
 - Added three preset buttons (Default, Full, & Minimal) to the backend richeditor toolbar settings to simplify the experience of selecting a custom richeditor toolbar.
+- Form tabs in the backend are now tracked in the URL bar by default making linking to specific tabs easier and retaining the place of the currently active tab across page reloads. Disable this behaviour by setting `linkable: false` on the form tab configuration.
 
 ## API Changes
 - Menu items controlled by `NavigationManager` are now objects, and `$manager->getMainMenuItem($owner, $code)` has been added to make it easier to manipulate existing menu items without having to deregister and reregister menu items to apply changes.
