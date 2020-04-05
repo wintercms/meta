@@ -132,6 +132,10 @@ The Carbon library has been upgraded from version 1 to version 2. While this sho
 
 Symfony has been upgraded to version 4 (except for the Yaml subsystem). If interacting directly with it, please [review the upgrade guide](https://github.com/symfony/symfony/blob/master/UPGRADE-4.0.md)
 
+### Using League CSV directly
+
+The CSV package provided by The PHP League has been upgraded from version 8 to version 9. We have made the necessary adjustments to October CMS in order to accommodate this change, however, if you use the library directly, it is strongly recommended that you [review the upgrade guide](https://csv.thephpleague.com/9.0/upgrading/) as several methods have been dropped.
+
 ### Optional changes (`√`)
 
 The following files have been updated for Laravel 6, however, you may continue to use your current version of these files if you wish:
@@ -234,6 +238,7 @@ For more information on deprecations, see the [PHPUnit 8 release notes](https://
 - [Symfony](https://github.com/symfony/symfony/blob/master/UPGRADE-4.0.md)
 - [phpdotenv](https://github.com/vlucas/phpdotenv/blob/master/UPGRADING.md#v2-to-v3)
 - [PHPUnit](https://github.com/sebastianbergmann/phpunit/blob/8.0.0/ChangeLog-8.0.md#800---2019-02-01)
+- [League\CSV](https://csv.thephpleague.com/9.0/upgrading/)
 
 ### PHP Upgrade Guides (`√`)
 
