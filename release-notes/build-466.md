@@ -48,7 +48,7 @@
 - Fixed issue where pivot records being created or updated through the `RelationController` would not trigger the form field change events.
 - Update manager now respects the values of `cms.pluginsPathLocal` and `cms.themesPathLocal` when installing new plugins & themes.
 - Improved support for opcache when `opcache.restrict_api` is in effect.
-- Fixed issue where `Lang::choice` method would not use the plural form for a locale with a sublocale (ie. "English (United Kingdom) - `en-uk`).
+- Fixed issue where `Lang::choice` method would not use the plural form for a locale with a sublocale (ie. "English (United Kingdom)" / `en-uk`).
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
