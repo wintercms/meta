@@ -23,7 +23,7 @@
 - Added `usingSource($source, $closure)` method to the `Cms\Classes\AutoDatasource` to force the `AutoDatasource` to only use the specified source for that closure.
 - Media items now only return an absolute URL if either `cms.linkPolicy` is set to `force` or the `path` property of the media storage disk starts with an absolute URL. This limits the breaking change from Build 444 to only installations using a `force` link policy.
 - Implemented the new `Backend\Traits\UploadableWidget` trait intended for Widgets that need to handle uploading files to the Media Library.
-- Added support for "soft" or "optional" components, a way for themes to include components only if they're present without breaking the theme if the relevant plugin is not installed and / or enabled. To make a component "soft" or "optional" prefix it's name with `@`. Example: `[@staticPage]`
+- Added support for "soft" or "optional" components, a way for themes to include components only if they're present without breaking the theme if the relevant plugin is not installed and / or enabled. To make a component "soft" or "optional", prefix its name with `@`. Example: `[@staticPage]`
 - Added support for `ignoreTimezone` to `date` and `daterange` filter scope types.
 
 ## Bug Fixes
@@ -48,6 +48,7 @@
 - Fixed issue where pivot records being created or updated through the `RelationController` would not trigger the form field change events.
 - Update manager now respects the values of `cms.pluginsPathLocal` and `cms.themesPathLocal` when installing new plugins & themes.
 - Improved support for opcache when `opcache.restrict_api` is in effect.
+- Fixed issue where `Lang::choice` method would not use the plural form for a locale with a sublocale (ie. "English (United Kingdom) - `en-uk`).
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
@@ -58,6 +59,7 @@
 - Improved German translation.
 - Improved Russian translation.
 - Improved Hungarian translation.
+- Improved Slovenian translation.
 
 ## Performance Improvements
 - Minor performance improvement by not calling Lang::get() every time a CMS Page object is instantiated.
