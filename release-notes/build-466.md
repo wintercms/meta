@@ -71,7 +71,7 @@
 - Minor performance improvement in the plugin manager by not looping over all plugins everytime a plugin identifier needs to be normalized.
 
 ## Community Improvements
--
+- Web installer now automatically cleans up after itself.
 
 ## Dependencies
 - Switched from the abandoned `jakub-onderka/php-parallel-lint` library to `php-parallel-lint/php-parallel-lint` for code linting purposes in the October CMS and Rain library test suites.
