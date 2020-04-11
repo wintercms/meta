@@ -8,6 +8,7 @@
 - Form tabs in the backend are now tracked in the URL bar by default making linking to specific tabs easier and retaining the place of the currently active tab across page reloads. Disable this behaviour by setting `linkable: false` on the form tab configuration.
 - Added button on backend user record pages that allows admins to unsuspend a user account that has been locked out due to failed login throttling.
 - AJAX requests will now attempt to perform HTML5 validation if present & supported by the browser before submitting the AJAX request.
+- Added new `plugin:rollback Author.Plugin 1.2.3` command to rollback a specified plugin all the way to before it was installed or to the provided version.
 
 ## API Changes
 - Menu items controlled by `NavigationManager` are now objects, and `$manager->getMainMenuItem($owner, $code)` has been added to make it easier to manipulate existing menu items without having to deregister and reregister menu items to apply changes.
