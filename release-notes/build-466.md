@@ -28,6 +28,7 @@
 - Implemented the new `Backend\Traits\UploadableWidget` trait intended for Widgets that need to handle uploading files to the Media Library.
 - Added support for "soft" or "optional" components, a way for themes to include components only if they're present without breaking the theme if the relevant plugin is not installed and / or enabled. To make a component "soft" or "optional", prefix its name with `@`. Example: `[@staticPage]`
 - Added support for `ignoreTimezone` to `date` and `daterange` filter scope types.
+- Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
@@ -37,7 +38,6 @@
 - Fixed `options` support for `checkboxlist` and `balloon-selector` field types in the Syntax Parser
 - Fixed issues with properly quoting values when running `october:env`
 - Fixed issue where Excel wouldn't properly detect the encoding of CSV files exported using the `useList` option
-- Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
 - Asset files uploaded in the CMS will now take their default permissions from the value set in the configuration.
 - Repeaters will now trigger `change.oc.formwidget` when adding or removing items.
 - Fixed issue where the richeditor toolbar popups were z-index clashing with other form elements.
@@ -55,6 +55,7 @@
 - Fixed issue where `theme:install` Artisan command would throw an exception if the database templates feature was enabled.
 - Fixed issue where using the search query input in a filter for a relation list modal would throw a "not bound to controller" exception, due to the request not being tied to the relation list modal.
 - Fixed weird outline styling around `:focus`ed elements introduced in Build 465
+- Fixed bug that prevented the `Purgeable` database model behavior from being used with the `SimpleTree` & `NestedTree` traits.
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
