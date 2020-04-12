@@ -29,6 +29,7 @@
 - Added support for "soft" or "optional" components, a way for themes to include components only if they're present without breaking the theme if the relevant plugin is not installed and / or enabled. To make a component "soft" or "optional", prefix its name with `@`. Example: `[@staticPage]`
 - Added support for `ignoreTimezone` to `date` and `daterange` filter scope types.
 - Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
+- Added ability to translate List column default values
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
