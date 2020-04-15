@@ -19,6 +19,22 @@ Instructions marked with a `√` can be performed immediately to ensure forward 
 
 >**NOTE**: The PHP 7.1 branch, and those before it, are now [unsupported](https://www.php.net/supported-versions.php).
 
+## Affected functionality
+
+If you are using any of the following functionality it's highly recommended that you take a look at the relevant section in this guide and make any required changes to your usage:
+
+- [Composer](#upgrade-composer)
+- [Configuration files (`/config/*.php`)](#upgrade-config)
+- [Environment variables (`.env` files)](#upgrade-env)
+- [Any packages made for Laravel](#upgrade-laravel-packages)
+- [Interacting with `Cache` repositories](#upgrade-cache)
+- [String based primary keys in models](#upgrade-string-keys)
+- [Wildcard event listeners](#upgrade-wildcard-listeners)
+- [Using Carbon directly](#upgrade-carbon)
+- [Using Symfony directly](#upgrade-symfony)
+- [Using League\Csv directly](#upgrade-league)
+- [Unit Testing](#upgrade-unit-testing)
+
 ## Known issues:
 
 - If using RainLab.Translate, ensure you update to v1.6.x (currently unreleased, manually apply [3e31ce](https://github.com/rainlab/translate-plugin/commit/3e31cee945f3cde55cab0ebd0fa278555207302e)) to resolve `Missing required parameters for [Route: ] [URI: en/{slug}].")`
@@ -48,6 +64,7 @@ If you would like to help with the upgrade process please make the following cha
 
 Any required code changes are described below in sections based on related functionality that you may or may not be using. If you are using the described functionality, please review the section and make the required changes.
 
+<a name="upgrade-composer"></a>
 ### Composer (composer.json)
 
 If you are using composer you will need to make the following changes to your composer.json file:
@@ -71,6 +88,7 @@ If you are using composer you will need to make the following changes to your co
 
 >**NOTE:** See the below section on Unit Testing if you also have a `require-dev` section defined in your `composer.json`.
 
+<a name="upgrade-config"></a>
 ### Configuration files (`config/*` files) (`√`)
 
 Some new configuration files have been made available as part of the Laravel 6 upgrade. You should add these configuration files to your project's `config` folder, and adjust the configuration as necessary. While you're doing that, it is recommended that you review the rest of the configuration files present on GitHub and ensure that your project's copies are up to date as there have been numerous configuration options added over the past year.
@@ -78,6 +96,7 @@ Some new configuration files have been made available as part of the Laravel 6 u
   - [`config/hashing.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/hashing.php)
   - [`config/logging.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/logging.php)
 
+<a name="upgrade-env"></a>
 ### Environment variables (`.env` files) (`√`)
 
 If you are using `.env` files with a variable that has a `#` inside of an unquoted value; that will now be treated as a comment due to an upgrade to the `phpdotenv` library used for parsing them.
@@ -86,20 +105,24 @@ If you have any `#` characters inside of unquoted environment variables please u
 
 Additionally, `putenv()` no longer changes the value returned by calls to `env()` as the `env` helper is now considered read-only. If dynamically changing configuration is required, it is recommended to use Config values instead as they can be dynamically changed with `Config::set()`
 
+<a name="upgrade-laravel-packages"></a>
 ### Using any Laravel based packages
 
 The version of Laravel has been changed from 5.5 LTS to 6.x LTS. If you are using packages made for Laravel you may have to go through and update them to a version compatible with Laravel 6.x.
 
+<a name="upgrade-cache"></a>
 ### Interacting with Cache repositories directly (`√`, when using `now()->addMinutes()`)
 
 Cache TTL (time-to-live) values that are specified as an integer are treated as seconds now, as opposed to minutes, when interacting directly with a cache repository. If you interact with the cache directly, we recommend that you use `DateTime` or `Carbon` instances to define when your data is to expire (ex. `now()->addMinutes(60)` instead of `60`). If you wish to continue using integers, you will need to multiply your integer values by 60 to get the number of seconds.
 
 >**NOTE**: This does not affect the `cms.urlCacheTtl` and `cms.parsedPageCacheTTL` configuration values, which will continue to use minutes.
 
+<a name="upgrade-string-keys"></a>
 ### String-based primary keys in models (`√`)
 
 If you are using string based primary keys for your models add `protected $keyType = 'string';` to the model class definition to prevent performance optimizations meant for integer key types from negatively affecting your code.
 
+<a name="upgrade-wildcard-listeners"></a>
 ### Wildcard event listeners: `Event::listen('example.*', $listener);`
 
 The parameters sent to wildcard event listeners in October has changed match what Laravel has done since 5.4. This was overlooked in the 5.5 update but is being applied now. Going forward all wildcard event listeners will receive the name of the event currently being fired as the first parameter and an array of the event arguments as the second parameter.
@@ -124,14 +147,17 @@ Event::listen('*', function ($event, $params) {
 });
 ```
 
+<a name="upgrade-carbon"></a>
 ### Using Carbon directly
 
 The Carbon library has been upgraded from version 1 to version 2. While this should mostly work with existing code, please [review the upgrade guide](https://carbon.nesbot.com/docs/#api-carbon-2).
 
+<a name="upgrade-symfony"></a>
 ### Using Symfony directly
 
 Symfony has been upgraded to version 4 (except for the Yaml subsystem). If interacting directly with it, please [review the upgrade guide](https://github.com/symfony/symfony/blob/master/UPGRADE-4.0.md)
 
+<a name="upgrade-league"></a>
 ### Using League CSV directly
 
 The CSV package provided by The PHP League has been upgraded from version 8 to version 9. We have made the necessary adjustments to October CMS in order to accommodate this change, however, if you use the library directly, it is strongly recommended that you [review the upgrade guide](https://csv.thephpleague.com/9.0/upgrading/) as several methods have been dropped.
@@ -143,6 +169,7 @@ The following files have been updated for Laravel 6, however, you may continue t
   - [`bootstrap/autoload.php`](https://github.com/octobercms/october/blob/wip/laravel-6/bootstrap/autoload.php)
   - [`artisan`](https://github.com/octobercms/october/blob/wip/laravel-6/artisan)
 
+<a name="upgrade-unit-testing"></a>
 ### Unit Testing
 
 If you are running unit testing for October CMS development, you will need to make some changes to your composer.json file and replace the `tests` folder in your installation to get the updates to the unit tests.
