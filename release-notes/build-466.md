@@ -57,6 +57,7 @@
 - Fixed issue where using the search query input in a filter for a relation list modal would throw a "not bound to controller" exception, due to the request not being tied to the relation list modal.
 - Fixed weird outline styling around `:focus`ed elements introduced in Build 465
 - Fixed bug that prevented the `Purgeable` database model behavior from being used with the `SimpleTree` & `NestedTree` traits.
+- Fixed error that would occur when using the `Revisionable` model trait with a date value that was null.
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
