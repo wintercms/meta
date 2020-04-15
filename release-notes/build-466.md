@@ -68,6 +68,7 @@
 - Improved Russian translation.
 - Improved Hungarian translation.
 - Improved Slovenian translation.
+- Added Serbian translation.
 
 ## Performance Improvements
 - Minor performance improvement by not calling Lang::get() every time a CMS Page object is instantiated.
