@@ -160,7 +160,7 @@ Symfony has been upgraded to version 4 (except for the Yaml subsystem). If inter
 <a name="upgrade-league"></a>
 ### Using League CSV directly
 
-The CSV package provided by The PHP League has been upgraded from version 8 to version 9. We have made the necessary adjustments to October CMS in order to accommodate this change, however, if you use the library directly, it is strongly recommended that you [review the upgrade guide](https://csv.thephpleague.com/9.0/upgrading/) as several methods have been dropped.
+The CSV package provided by The PHP League has been upgraded from version 8 to version 9. We have made the necessary adjustments to October CMS in order to accommodate this change, however, if you use the library directly or have extended the `ImportModel` and `ExportModel` classes, it is strongly recommended that you [review the upgrade guide](https://csv.thephpleague.com/9.0/upgrading/) as several methods have been dropped or moved.
 
 ### Optional changes (`√`)
 
