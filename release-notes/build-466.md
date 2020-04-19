@@ -30,6 +30,7 @@
 - Added support for `ignoreTimezone` to `date` and `daterange` filter scope types.
 - Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
 - Added ability to translate List column default values
+- Added ability to specify the filename of files uploaded directly via the AJAX framework and `Blob` objects.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
