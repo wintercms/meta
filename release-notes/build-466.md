@@ -60,6 +60,7 @@
 - Fixed weird outline styling around `:focus`ed elements introduced in Build 465
 - Fixed bug that prevented the `Purgeable` database model behavior from being used with the `SimpleTree` & `NestedTree` traits.
 - Fixed error that would occur when using the `Revisionable` model trait with a date value that was null.
+- Fixed long standing problem where if a user attempts to use the list search feature on a list that has improperly configured (i.e. `searchable: true` set on a column that doesn't support DB searching) then that list would remain broken for the rest of the session's lifetime.
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
