@@ -177,12 +177,12 @@ If you are running unit testing for October CMS development, you will need to ma
 **composer.json** changes required:
 ```json
 "require-dev": {
-    "fzaninotto/faker": "^1.9",
     "phpunit/phpunit": "^8.0|^9.0",
-    "dms/phpunit-arraysubset-asserts": "^0.1.0",
-    "meyfa/phpunit-assert-gd": "^2.0",
+    "fzaninotto/faker": "~1.9",
     "squizlabs/php_codesniffer": "3.*",
     "php-parallel-lint/php-parallel-lint": "^1.0",
+    "meyfa/phpunit-assert-gd": "^2.0.0",
+    "dms/phpunit-arraysubset-asserts": "^0.1.0"
 },
 "autoload-dev": {
     "classmap": [
@@ -202,7 +202,7 @@ If you are running unit testing for October CMS development, you will need to ma
         "php artisan package:discover"
     ],
     "test": [
-        "phpunit --stop-on-failure --prepend ./vendor/october/rain/src/Support/helpers.php"
+        "phpunit --stop-on-failure"
     ],
     "lint": [
         "parallel-lint --exclude vendor --exclude storage --exclude tests/fixtures/plugins/testvendor/goto/Plugin.php ."
@@ -228,7 +228,9 @@ If you are running unit testing for October CMS development, you will need to ma
 }
 ```
 
-You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/wip/laravel-6/tests).
+You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/wip/laravel-6/tests). 
+
+For maxium compatibility you can also replace your `phpunit.xml` file with the [`phpunit.xml` file from the repository](https://github.com/octobercms/october/blob/wip/laravel-6/phpunit.xml)
 
 ## Plugin Unit Tests
 
