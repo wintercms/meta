@@ -82,6 +82,7 @@
 
 ## Community Improvements
 - Web installer now automatically cleans up after itself.
+- Added method hints to Facade classes to allow IDE software to provide autocomplete and hints for methods provided by a Facade.
 
 ## Dependencies
 - Switched from the abandoned `jakub-onderka/php-parallel-lint` library to `php-parallel-lint/php-parallel-lint` for code linting purposes in the October CMS and Rain library test suites.
