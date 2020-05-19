@@ -10,6 +10,7 @@
 - AJAX requests will now attempt to perform HTML5 validation if present & supported by the browser before submitting the AJAX request.
 - Added new `plugin:rollback Author.Plugin 1.2.3` command to rollback a specified plugin all the way to before it was installed or to the provided version.
 - Added new `create:reportwidget Author.Plugin ReportWidgetName` command to scaffold ReportWidget creation.
+- Added button on the Updates page in the backend to take users directly to the Install Themes page.
 
 ## API Changes
 - Menu items controlled by `NavigationManager` are now objects, and `$manager->getMainMenuItem($owner, $code)` has been added to make it easier to manipulate existing menu items without having to deregister and reregister menu items to apply changes.
