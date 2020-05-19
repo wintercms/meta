@@ -66,6 +66,7 @@
 - Fixed issue where creating records with the TagList would require the nameFrom attribute to be marked as fillable for mass assignment.
 - Fixed issue where having a filter config with no scopes defined would cause issues with the ListController behavior.
 - Fixed typos referencing the Halcyon library
+- Fixed IE11 support for deregistering service workers in the backend
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
