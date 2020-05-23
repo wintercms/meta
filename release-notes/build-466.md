@@ -68,6 +68,7 @@
 - Fixed issue where having a filter config with no scopes defined would cause issues with the ListController behavior.
 - Fixed typos referencing the Halcyon library
 - Fixed IE11 support for deregistering service workers in the backend
+- Fixed issue where if a template was manually removed from `cms_theme_templates` when using `databaseTemplates` would cause an exception to be thrown.
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
@@ -84,6 +85,7 @@
 ## Performance Improvements
 - Minor performance improvement by not calling Lang::get() every time a CMS Page object is instantiated.
 - Minor performance improvement in the plugin manager by not looping over all plugins everytime a plugin identifier needs to be normalized.
+- Implemented DB query de-duplication for the DbDatasource when using databaseTemplates reducing the number of queries run when pulling from the DbDatasource.
 
 ## Community Improvements
 - Web installer now automatically cleans up after itself.
