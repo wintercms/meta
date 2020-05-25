@@ -7,7 +7,6 @@
 - Added three preset buttons (Default, Full, & Minimal) to the backend richeditor toolbar settings to simplify the experience of selecting a custom richeditor toolbar.
 - Form tabs in the backend are now tracked in the URL bar by default making linking to specific tabs easier and retaining the place of the currently active tab across page reloads. Disable this behaviour by setting `linkable: false` on the form tab configuration.
 - Added button on backend user record pages that allows admins to unsuspend a user account that has been locked out due to failed login throttling.
-- AJAX requests will now attempt to perform HTML5 validation if present & supported by the browser before submitting the AJAX request.
 - Added new `plugin:rollback Author.Plugin 1.2.3` command to rollback a specified plugin all the way to before it was installed or to the provided version.
 - Added new `create:reportwidget Author.Plugin ReportWidgetName` command to scaffold ReportWidget creation.
 - Added button on the Updates page in the backend to take users directly to the Install Themes page.
@@ -33,6 +32,7 @@
 - Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
 - Added ability to translate List column default values
 - Added ability to specify the filename of files uploaded directly via the AJAX framework and `Blob` objects.
+- Added new `data-request-validate` option to trigger browser-based client side validation on AJAX requests within `<form>` elements.
 - Plugins & themes included as git submodules are now properly detected as valid git sources in the `october:util git pull` command.
 
 ## Bug Fixes
