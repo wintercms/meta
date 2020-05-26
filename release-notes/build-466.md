@@ -36,6 +36,7 @@
 - Added new `data-request-validate` option to trigger browser-based client side validation on AJAX requests within `<form>` elements.
 - Plugins & themes included as git submodules are now properly detected as valid git sources in the `october:util git pull` command.
 - `PluginManager->findMissingDependencies()` now returns an array of arrays of missing plugin codes keyed by the plugin code that requires the missing plugins.
+- Added support for the `trigger` field property in the FieldParser.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
@@ -72,6 +73,8 @@
 - Fixed IE11 support for deregistering service workers in the backend
 - Fixed issue where if a template was manually removed from `cms_theme_templates` when using `databaseTemplates` would cause an exception to be thrown.
 - Redid October's Translation service to extend Laravel's to improve compatibility with Laravel packages
+- Fixed issue where the `unique` validation rule wouldn't work on models with a custom DB connection.
+- Fixed issue where calling `createMany()` on a BelongsToMany relationship would cause the relationships to be created as deferred bindings with a session key of 0 even when the parent model exists.
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
