@@ -74,6 +74,7 @@
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
 - Fixed vulnerability where maliciously crafted CSV files could lead to a self-XSS attack when using the `ImportExportController` behavior. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
 - Prevented potential CSV injection attacks via the `ImportExportController` behavior. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
+- Prevented potential stored XSS attacks by authenticated users with access to the markdown FormWidget. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
 
 ## Translation Improvements
 - Improved German translation.
