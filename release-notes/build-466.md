@@ -71,6 +71,7 @@
 - Fixed typos referencing the Halcyon library
 - Fixed IE11 support for deregistering service workers in the backend
 - Fixed issue where if a template was manually removed from `cms_theme_templates` when using `databaseTemplates` would cause an exception to be thrown.
+- Redid October's Translation service to extend Laravel's to improve compatibility with Laravel packages
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
