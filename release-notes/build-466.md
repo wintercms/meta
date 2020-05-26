@@ -10,6 +10,7 @@
 - Added new `plugin:rollback Author.Plugin 1.2.3` command to rollback a specified plugin all the way to before it was installed or to the provided version.
 - Added new `create:reportwidget Author.Plugin ReportWidgetName` command to scaffold ReportWidget creation.
 - Added button on the Updates page in the backend to take users directly to the Install Themes page.
+- Update management page & dashboard status widget now list plugins that are missing their dependencies and what dependencies are missing specifically.
 
 ## API Changes
 - Menu items controlled by `NavigationManager` are now objects, and `$manager->getMainMenuItem($owner, $code)` has been added to make it easier to manipulate existing menu items without having to deregister and reregister menu items to apply changes.
@@ -34,6 +35,7 @@
 - Added ability to specify the filename of files uploaded directly via the AJAX framework and `Blob` objects.
 - Added new `data-request-validate` option to trigger browser-based client side validation on AJAX requests within `<form>` elements.
 - Plugins & themes included as git submodules are now properly detected as valid git sources in the `october:util git pull` command.
+- `PluginManager->findMissingDependencies()` now returns an array of arrays of missing plugin codes keyed by the plugin code that requires the missing plugins.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
@@ -81,6 +83,7 @@
 - Improved Russian translation.
 - Improved Hungarian translation.
 - Improved Slovenian translation.
+- Improved Dutch translation.
 - Added Serbian translation.
 
 ## Performance Improvements
