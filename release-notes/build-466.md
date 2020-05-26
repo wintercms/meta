@@ -87,6 +87,7 @@
 - Minor performance improvement by not calling Lang::get() every time a CMS Page object is instantiated.
 - Minor performance improvement in the plugin manager by not looping over all plugins everytime a plugin identifier needs to be normalized.
 - Implemented DB query de-duplication for the DbDatasource when using databaseTemplates reducing the number of queries run when pulling from the DbDatasource.
+- Vastly improved performance when using remote storage for the Media Library by reducing the amount of network calls required to list the contents of the storage directory.
 
 ## Community Improvements
 - Web installer now automatically cleans up after itself.
