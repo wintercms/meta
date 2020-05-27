@@ -38,6 +38,8 @@
 - `PluginManager->findMissingDependencies()` now returns an array of arrays of missing plugin codes keyed by the plugin code that requires the missing plugins.
 - Added support for the `trigger` field property in the FieldParser.
 - Finished the implementation of the `(array) $cssClasses` property on the Filter widget.
+- Inspector dropdown properties now refresh dependent fields if the values are loaded remotely through the API (ie. through a `getOptions` method).
+- Inspector dropdown properties now support the `emptyOption` option as a synonym for `placeholder`, to show a value if no dropdown option is selected.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
