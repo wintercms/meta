@@ -37,6 +37,7 @@
 - Plugins & themes included as git submodules are now properly detected as valid git sources in the `october:util git pull` command.
 - `PluginManager->findMissingDependencies()` now returns an array of arrays of missing plugin codes keyed by the plugin code that requires the missing plugins.
 - Added support for the `trigger` field property in the FieldParser.
+- Finished the implementation of the `(array) $cssClasses` property on the Filter widget.
 
 ## Bug Fixes
 - Fixed an issue where data in a DataTable widget inside a relation model popup form would not be saved on submit.
