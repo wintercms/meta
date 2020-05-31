@@ -85,6 +85,7 @@
 - Fixed vulnerability where maliciously crafted CSV files could lead to a self-XSS attack when using the `ImportExportController` behavior. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
 - Prevented potential CSV injection attacks via the `ImportExportController` behavior. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
 - Prevented potential stored XSS attacks by authenticated users with access to the markdown FormWidget. Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
+- Prevented potential XSS attacks that could be enabled by passing untrusted user input to jQuery HTML manipulation functions. Credit to [Matthew Guillot](https://github.com/mrgswift) for reporting it, see the [jQuery Security Advisory](https://github.com/jquery/jquery/security/advisories/GHSA-gxr4-xjj5-5px2) for more information.
 
 ## Translation Improvements
 - Improved German translation.
@@ -108,3 +109,4 @@
 ## Dependencies
 - Switched from the abandoned `jakub-onderka/php-parallel-lint` library to `php-parallel-lint/php-parallel-lint` for code linting purposes in the October CMS and Rain library test suites.
 - Locked the wikipedia/composer-merge-plugin dependency to version 1.4.1.
+- Updated the version of jQuery pulled in by `@jQuery` to 3.4.0 from 3.3.1 to match the version used in the backend.
