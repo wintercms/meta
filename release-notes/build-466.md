@@ -33,7 +33,7 @@
 - Changed optional .htaccess line forcing HTTPS to default to returning a 301 response instead of 302.
 - Added ability to translate List column default values
 - Added ability to specify the filename of files uploaded directly via the AJAX framework and `Blob` objects.
-- Added new `data-request-validate` option to trigger browser-based client side validation on AJAX requests within `<form>` elements.
+- Added new `data-browser-validate` option to trigger browser-based client side validation on AJAX requests within `<form>` elements.
 - Plugins & themes included as git submodules are now properly detected as valid git sources in the `october:util git pull` command.
 - `PluginManager->findMissingDependencies()` now returns an array of arrays of missing plugin codes keyed by the plugin code that requires the missing plugins.
 - Added support for the `trigger` field property in the FieldParser.
