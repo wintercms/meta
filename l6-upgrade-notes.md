@@ -46,8 +46,6 @@ If you would like to help with the upgrade process please make the following cha
 ```json
 "require": {
     "php": "^7.2",
-    "ext-mbstring": "*",
-    "ext-openssl": "*",
     "october/rain": "dev-wip/laravel-6 as 1.0",
     "october/system": "dev-wip/laravel-6",
     "october/backend": "dev-wip/laravel-6",
@@ -72,8 +70,6 @@ If you are using composer you will need to make the following changes to your co
 ```json
 "require": {
     "php": "^7.2",
-    "ext-mbstring": "*",
-    "ext-openssl": "*",
     "october/rain": "dev-wip/laravel-6 as 1.0",
     "october/system": "dev-wip/laravel-6",
     "october/backend": "dev-wip/laravel-6",
@@ -93,6 +89,8 @@ If you are using composer you will need to make the following changes to your co
 
 Some new configuration files have been made available as part of the Laravel 6 upgrade. You should add these configuration files to your project's `config` folder, and adjust the configuration as necessary. While you're doing that, it is recommended that you review the rest of the configuration files present on GitHub and ensure that your project's copies are up to date as there have been numerous configuration options added over the past year.
 
+  - [`config/auth.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/auth.php)
+  - [`config/develop.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/develop.php)
   - [`config/hashing.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/hashing.php)
   - [`config/logging.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/logging.php)
 
@@ -219,11 +217,6 @@ If you are running unit testing for October CMS development, you will need to ma
         "recurse": true,
         "replace": false,
         "merge-dev": false
-    },
-    "laravel": {
-        "dont-discover": [
-            "laravel/dusk"
-        ]
     }
 }
 ```
