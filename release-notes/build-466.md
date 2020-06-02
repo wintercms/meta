@@ -79,6 +79,7 @@
 - Fixed issue where the `unique` validation rule wouldn't work on models with a custom DB connection.
 - Fixed issue where calling `createMany()` on a BelongsToMany relationship would cause the relationships to be created as deferred bindings with a session key of 0 even when the parent model exists.
 - Fixed an issue where some ApplicationExceptions include unfiltered user input in the response to the browser, which would cause security researchers to think that they've found a XSS vulnerability which would then take resources to explain how it wasn't exploitable by just stripping any potential XSS from ApplicationException messages.
+- Fixed issue where the filter widget wasn't supported by ManyToMany relations with the RelationController.
 
 ## Security Improvements
 - Fixed vulnerabilities that required the `cms.manage_assets` permission to execute (local file inclusion, arbitrary file deletion, & arbitrary upload of asset file types). Credit to [Sivanesh Ashok](https://twitter.com/sivaneshashok) for the discovery.
