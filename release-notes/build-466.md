@@ -1,4 +1,4 @@
-# Build 466 (WIP)
+# Build 466
 
 ## UX/UI Improvements
 - Improved the disabled styling of the `markdown`, `richeditor`, `mediafinder`, & `colorpicker` FormWidgets.
