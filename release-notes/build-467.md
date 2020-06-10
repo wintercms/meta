@@ -11,6 +11,7 @@
 ## Bug Fixes
 - Fixed bug introduced in 466 where `:number` stopped working in transChoice translation strings.
 - Fixed bug introduced in 466 where it was impossible to upload images to the Media Library while on a page that included the AssetList widget.
+- Fixed bug introduced in 466 where plugin dependencies wouldn't be loaded all of the time.
 
 ## Security Improvements
 -
