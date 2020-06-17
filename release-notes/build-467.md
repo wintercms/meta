@@ -13,6 +13,7 @@
 - Fixed bug introduced in 466 where it was impossible to upload images to the Media Library while on a page that included the AssetList widget.
 - Fixed bug introduced in 466 where plugin dependencies wouldn't be loaded all of the time.
 - Fixed bug where belongsToMany relationships with pivot data could not be added to through the RelationController if a custom `order` property was set on the relationship definition.
+- Fixed empty tags being stripped in RichEditor (Froala) widget.
 
 ## Security Improvements
 -
