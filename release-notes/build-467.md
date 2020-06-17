@@ -14,12 +14,13 @@
 - Fixed bug introduced in 466 where plugin dependencies wouldn't be loaded all of the time.
 - Fixed bug where belongsToMany relationships with pivot data could not be added to through the RelationController if a custom `order` property was set on the relationship definition.
 - Fixed empty tags being stripped in RichEditor (Froala) widget.
+- Fixed bug where a field with `@context` in the name would completely break forms if it also utilized the `dependsOn` API other fields.
 
 ## Security Improvements
 -
 
 ## Translation Improvements
--
+- Improved the Polish translation.
 
 ## Performance Improvements
 -
