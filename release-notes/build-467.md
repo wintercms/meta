@@ -15,6 +15,7 @@
 - Fixed bug where belongsToMany relationships with pivot data could not be added to through the RelationController if a custom `order` property was set on the relationship definition.
 - Fixed empty tags being stripped in RichEditor (Froala) widget.
 - Fixed bug where a field with `@context` in the name would completely break forms if it also utilized the `dependsOn` API other fields.
+- Fixed bug introduced in 466 where backend throttle records were no longer recording the IP address correctly of authentication attempts.
 
 ## Security Improvements
 - Fixed security issue where content pasted into the Froala richeditor wasn't properly sanitized exposing users to self-XSS attacks from malicious websites when copying & pasting content into the editor.
