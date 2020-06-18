@@ -17,7 +17,7 @@
 - Fixed bug where a field with `@context` in the name would completely break forms if it also utilized the `dependsOn` API other fields.
 
 ## Security Improvements
--
+- Fixed security issue where content pasted into the Froala richeditor wasn't properly sanitized exposing users to self-XSS attacks from malicious websites when copying & pasting content into the editor.
 
 ## Translation Improvements
 - Improved the Polish translation.
