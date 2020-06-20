@@ -103,6 +103,8 @@ If you have any `#` characters inside of unquoted environment variables please u
 
 Additionally, `putenv()` no longer changes the value returned by calls to `env()` as the `env` helper is now considered read-only. If dynamically changing configuration is required, it is recommended to use Config values instead as they can be dynamically changed with `Config::set()`
 
+>**IMPORTANT:** `.env` files now require any values with spaces in them to be quoted too, it's recommended to just enclose every single value in `.env` with double quotes.
+
 <a name="upgrade-laravel-packages"></a>
 ### Using any Laravel based packages
 
@@ -221,7 +223,7 @@ If you are running unit testing for October CMS development, you will need to ma
 }
 ```
 
-You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/wip/laravel-6/tests). 
+You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/wip/laravel-6/tests).
 
 For maxium compatibility you can also replace your `phpunit.xml` file with the [`phpunit.xml` file from the repository](https://github.com/octobercms/october/blob/wip/laravel-6/phpunit.xml)
 

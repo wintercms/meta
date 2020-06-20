@@ -18,6 +18,7 @@
 - Fixed bug introduced in 466 where backend throttle records were no longer recording the IP address correctly of authentication attempts.
 - Fixed visual glitch on Inspector autocomplete dropdown fields
 - Fixed an issue where using `File()->fromUrl()` on very long URLs would result in a filename that was too long for the database.
+- Fixed issue where application bootstrappers could hard crash the application by throwing an exception that wouldn't be able to passed on to the user for them to resolve.
 
 ## Security Improvements
 - Fixed security issue where content pasted into the Froala richeditor wasn't properly sanitized exposing users to self-XSS attacks from malicious websites when copying & pasting content into the editor.
