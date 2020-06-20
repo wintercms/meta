@@ -19,6 +19,8 @@
 - Fixed visual glitch on Inspector autocomplete dropdown fields
 - Fixed an issue where using `File()->fromUrl()` on very long URLs would result in a filename that was too long for the database.
 - Fixed issue where application bootstrappers could hard crash the application by throwing an exception that wouldn't be able to passed on to the user for them to resolve.
+- Improve error handling for invalid counter properties on backend menu items.
+- Fixed issue where the `onSave()` AJAX handlers of the `FormController` behavior weren't getting being affected by context-specific configuration values.
 
 ## Security Improvements
 - Fixed security issue where content pasted into the Froala richeditor wasn't properly sanitized exposing users to self-XSS attacks from malicious websites when copying & pasting content into the editor.
