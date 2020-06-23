@@ -27,6 +27,7 @@ If you are using any of the following functionality it's highly recommended that
 - [Configuration files (`/config/*.php`)](#upgrade-config)
 - [Environment variables (`.env` files)](#upgrade-env)
 - [Any packages made for Laravel](#upgrade-laravel-packages)
+- [Laravel package auto-discovery](#laravel-package-autodiscovery)
 - [Interacting with `Cache` repositories](#upgrade-cache)
 - [String based primary keys in models](#upgrade-string-keys)
 - [Wildcard event listeners](#upgrade-wildcard-listeners)
@@ -93,6 +94,8 @@ Some new configuration files have been made available as part of the Laravel 6 u
   - [`config/develop.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/develop.php)
   - [`config/hashing.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/hashing.php)
   - [`config/logging.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/logging.php)
+  
+A [new config option](https://github.com/octobercms/october/blob/wip/laravel-6/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`.
 
 <a name="upgrade-env"></a>
 ### Environment variables (`.env` files) (`√`)
@@ -109,6 +112,15 @@ Additionally, `putenv()` no longer changes the value returned by calls to `env()
 ### Using any Laravel based packages
 
 The version of Laravel has been changed from 5.5 LTS to 6.x LTS. If you are using packages made for Laravel you may have to go through and update them to a version compatible with Laravel 6.x.
+
+<a name="laravel-package-autodiscovery"></a>
+### Laravel package auto-discovery (`√`)
+
+Starting with the Laravel 6 foundation upgrade, October CMS will now default to no longer loading discovered packages through Laravel's [package auto-discovery](https://laravel.com/docs/6.x/packages#package-discovery) service, as this was having the effect of Laravel packages still being loaded and made active even if the plugin using them had been disabled by the user.
+
+This may mean that plugins that were using packages for Laravel but were not explicitly including them in the boot process for the plugin may no longer have access to these packages. Please note that we recommend that plugins do not rely on auto-discovery, and instead bring in the packages and service providers explicitly through the `Plugin.php` file as part of the `register()` or `boot()` processes.
+
+A [new config option](https://github.com/octobercms/october/blob/wip/laravel-6/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`. If you wish to retain the pre-update functionality, you can set this to `true`.
 
 <a name="upgrade-cache"></a>
 ### Interacting with Cache repositories directly (`√`, when using `now()->addMinutes()`)
