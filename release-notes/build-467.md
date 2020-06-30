@@ -1,12 +1,9 @@
-# Build 467 (WIP)
+# Build 467
 
 ## UX/UI Improvements
 - Added docblocks to the controller scaffolding.
 - Added support for decompiling nested compiled asset files when `cms.decompileBackendAssets` is enabled.
 - Improved error handling for failed fileuploads
-
-## API Changes
--
 
 ## Bug Fixes
 - Fixed bug introduced in 466 where `:number` stopped working in transChoice translation strings.
@@ -29,12 +26,3 @@
 
 ## Translation Improvements
 - Improved the Polish translation.
-
-## Performance Improvements
--
-
-## Community Improvements
--
-
-## Dependencies
--
