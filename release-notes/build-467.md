@@ -24,5 +24,8 @@
 ## Security Improvements
 - Fixed security issue where content pasted into the Froala richeditor wasn't properly sanitized exposing users to self-XSS attacks from malicious websites when copying & pasting content into the editor.
 
+## Community Improvements
+- Documented the Select field widget's dynamic option creation (tagging) feature.
+
 ## Translation Improvements
 - Improved the Polish translation.
