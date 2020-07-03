@@ -5130,6 +5130,48 @@
                     "\/modules\/cms\/controllers\/Index.php": "c3cc25eb581a6be03a119d368e726dfc"
                 }
             }
+        },
+        {
+            "build": 467,
+            "modules": {
+                "system": "fcb8baf88bd3ed55eb2138547244843a",
+                "backend": "5ce2409855b9fb2c03720f6c18ac8936",
+                "cms": "98fe11fc6608a3d5db56c86f29218ebf"
+            },
+            "files": {
+                "modified": {
+                    "\/modules\/system\/classes\/PluginManager.php": "b7480d29b4caccf58be4c826a1415118",
+                    "\/modules\/system\/assets\/ui\/docs\/select.md": "4cb16c1ba71e553ccd8a0d61791b049f",
+                    "\/modules\/system\/assets\/ui\/storm.css": "934079f770b96b6480743191ee0dc47e",
+                    "\/modules\/system\/assets\/ui\/less\/inspector.less": "d2740f87b60b698a62b0d7f03566f39d",
+                    "\/modules\/system\/assets\/js\/framework-min.js": "aeba479011811fdf0eee2fd32f467036",
+                    "\/modules\/system\/assets\/js\/framework.combined-min.js": "94e0fe815ab80d704200a3ca76034943",
+                    "\/modules\/system\/assets\/js\/framework.js": "1d7fc14d293429726ee45f02c4f85746",
+                    "\/modules\/backend\/classes\/AuthManager.php": "93ccb0905fb8ff1c8fdb31529855df23",
+                    "\/modules\/backend\/classes\/NavigationManager.php": "d6208842969c1cd998a3186fc8bdc604",
+                    "\/modules\/backend\/traits\/UploadableWidget.php": "f434168fe2660c1c39d84e96caa94be3",
+                    "\/modules\/backend\/helpers\/Backend.php": "ded86504f9db85e469f51ebfa1f23e13",
+                    "\/modules\/backend\/formwidgets\/mediafinder\/assets\/js\/mediafinder.js": "af8ddbefbd4cc148b146a200d77644a6",
+                    "\/modules\/backend\/formwidgets\/richeditor\/assets\/js\/build-plugins-min.js": "f8b6753d82c8d4a67434f220716b4209",
+                    "\/modules\/backend\/formwidgets\/richeditor\/assets\/js\/richeditor.js": "73e5dea0315916f56e2769f1fb0da238",
+                    "\/modules\/backend\/widgets\/mediamanager\/assets\/js\/mediamanager.js": "5015bdab8454c5c8726811417f2d5489",
+                    "\/modules\/backend\/widgets\/mediamanager\/assets\/js\/mediamanager-browser-min.js": "34bb2eb75f80a3dcd181183ebf5e2bfc",
+                    "\/modules\/backend\/widgets\/Form.php": "010d1cb244e06f8c4ef4614273e0378f",
+                    "\/modules\/backend\/widgets\/MediaManager.php": "3dcd95af4a7e6b9c7bd919bc52355e3d",
+                    "\/modules\/backend\/widgets\/form\/assets\/js\/october.form.js": "84218665d8c6b572768282c470dbf678",
+                    "\/modules\/backend\/behaviors\/RelationController.php": "59a48a16272ff6011a1ea778b41b73a4",
+                    "\/modules\/backend\/behaviors\/FormController.php": "16d43a0d47009bb58e5795e99a20f0b0",
+                    "\/modules\/backend\/models\/EditorSetting.php": "4c5aedb1b2dd861a8665819af56d2373",
+                    "\/modules\/backend\/lang\/pl\/lang.php": "5be9eb3c0f9d6b1da41ef56b750697ae",
+                    "\/modules\/cms\/widgets\/AssetList.php": "8b815aa12c7f74b1faa794dfc996ceb8",
+                    "\/modules\/cms\/widgets\/assetlist\/assets\/js\/assetlist.js": "f15538c70330f583b7443b3d1e383257",
+                    "\/modules\/cms\/lang\/en\/lang.php": "9a2adeed8f800f6ffe367a6963a52db7",
+                    "\/modules\/cms\/controllers\/Index.php": "0353bd242f9bce07324d7ad00979a206"
+                },
+                "removed": [
+                    "\/modules\/system\/assets\/ui\/less\/global.mixins.utility.css"
+                ]
+            }
         }
     ]
 }
