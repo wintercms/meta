@@ -15,10 +15,10 @@ The OctoberCMS, OctoberRain, & RainLab GitHub organizations use the following sy
 ## Statuses
 | Label                        | Description / Purpose                                                                                |
 |------------------------------|------------------------------------------------------------------------------------------------------|
-| Status: Archived             | Has not seen any activity in 30 days, used to prompt stakeholders to take action. After 3 days, archived issues/PRs are automatically closed. |
+| Status: Archived             | Has not seen any activity in 60 days, used to prompt stakeholders to take action. After 3 days, archived issues/PRs are automatically closed. |
 | Status: Accepted             | Enhancement that has been approved in theory.                                                        |
 | Status: Blocked              | Blocked from progressing by something (usually another related issue / PR)                           |
-| Status: Completed            | Fix is completed and merged into the dev branch; remaining open until it has been merged into master |
+| Status: Completed            | Fix is completed and merged into the main development branch |
 | Status: In Progress          | Currently being worked on                                                                            |
 | Status: On Hold              | Put on hold for now but will be worked on again in the future                                        |
 | Status: Response Needed      | Requires / is waiting on a response from at least one of the participants                            |
