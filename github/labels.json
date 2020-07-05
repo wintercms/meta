@@ -37,9 +37,9 @@
 
 
     {
-		"name": "Status: Abandoned",
+		"name": "Status: Archived",
 		"color": "000000",
-		"description": "Has not seen any activity in at least a month, used to prompt stakeholders to action"
+		"description": "Has not seen any activity in at least 60 days, used to prompt stakeholders to action"
     },
     {
 		"name": "Status: Accepted",
@@ -54,7 +54,7 @@
     {
 		"name": "Status: Completed",
 		"color": "006B75",
-		"description": "Fix is completed and merged into the dev branch; remaining open until it has been merged into master"
+		"description": "Fix is completed and merged into the main development branch"
     },
     {
 		"name": "Status: In Progress",
