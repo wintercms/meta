@@ -1,7 +1,7 @@
 # Build 468 (WIP)
 
 ## UX/UI Improvements
-- Added new "sensitive" field widget that provides a revealable password field for forms.
+-
 
 ## API Changes
 - The `Encryptable` trait now encrypts "empty" values correctly, such as the number zero and an empty string. The only value that is left unencrypted is a `null` value.
