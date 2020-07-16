@@ -1,7 +1,7 @@
 # Build 468 (WIP)
 
 ## UX/UI Improvements
--
+- Added new Paragraph Formats option to the Editor Settings page, which allows you to control the available tags in the Paragraph Formats button.
 
 ## API Changes
 - The `Encryptable` trait now encrypts "empty" values correctly, such as the number zero and an empty string. The only value that is left unencrypted is a `null` value.
