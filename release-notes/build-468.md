@@ -14,7 +14,7 @@
 -
 
 ## Translation Improvements
--
+- Improved French translation.
 
 ## Performance Improvements
 -
