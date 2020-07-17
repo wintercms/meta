@@ -10,6 +10,7 @@
 - Unit tests involving authentication are now namespaced to `backend.auth`, to prevent conflicts with other authentication libraries.
 - Fixed "use statement with non-compound names has no effect" when attempting to import classes already in the root namespace (like facades) in the CMS PHP code section.
 - Fixed a bug where the text entry of a `taglist` field would remain after the tag has been created.
+- Resolved an issue where PHP `max_input_vars` limits would prevent "group" filters from working if they contained more options than `max_input_vars` would allow.
 
 ## Security Improvements
 -
