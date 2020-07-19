@@ -1,16 +1,16 @@
-# Build 4XX - Foundation framework upgrade (Laravel 6.x LTS)
+# Build 468 - Foundation framework upgrade (Laravel 6.x LTS)
 
 Release Note 10
 
 Due to overwhelming support from the community, October CMS is updating its foundation framework to the latest Long Term Support (LTS) release. As a result, there are some new requirements to run October and some code changes required.
 
-From the proposed date of 1st March 2020* (Build 4XX) your webserver will require PHP 7.2.9 or above to use October CMS. After this date, websites using PHP 7.0-7.2.8 will still function normally but will no longer be able to receive updates or install the latest version.
+From the proposed date of 1st August 2020* (Build 468) your webserver will require PHP 7.2.9 or above to use October CMS. After this date, websites using PHP 7.0-7.2.8 will still function normally but will no longer be able to receive updates or install the latest version.
 
 There are various code changes that may be required, including code found in plugins and themes, both private and public depending on what features you are utilizing.
 
 Instructions marked with a `√` can be performed immediately to ensure forward compatibility. In other words the change is compatible with all versions of October, now and after the release. It is recommended to make these changes as soon as possible.
 
-* Build 4XX is available as a test update from 15th February 2020. Stable release date to be announced.
+* Build 468 is available as a test update from 22nd July 2020. Stable release date to be announced.
 
 ## New system requirements: (`√`)
 
@@ -71,10 +71,10 @@ If you are using composer you will need to make the following changes to your co
 ```json
 "require": {
     "php": "^7.2",
-    "october/rain": "dev-wip/laravel-6 as 1.0",
-    "october/system": "dev-wip/laravel-6",
-    "october/backend": "dev-wip/laravel-6",
-    "october/cms": "dev-wip/laravel-6",
+    "october/rain": "~1.0",
+    "october/system": "~1.0",
+    "october/backend": "~1.0",
+    "october/cms": "~1.0",
     "laravel/framework": "~6.0",
     "wikimedia/composer-merge-plugin": "1.4.1"
 },
@@ -94,7 +94,7 @@ Some new configuration files have been made available as part of the Laravel 6 u
   - [`config/develop.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/develop.php)
   - [`config/hashing.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/hashing.php)
   - [`config/logging.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/logging.php)
-  
+
 A [new config option](https://github.com/octobercms/october/blob/wip/laravel-6/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`.
 
 <a name="upgrade-env"></a>
@@ -137,7 +137,7 @@ If you are using string based primary keys for your models add `protected $keyTy
 <a name="upgrade-wildcard-listeners"></a>
 ### Wildcard event listeners: `Event::listen('example.*', $listener);`
 
-The parameters sent to wildcard event listeners in October has changed match what Laravel has done since 5.4. This was overlooked in the 5.5 update but is being applied now. Going forward all wildcard event listeners will receive the name of the event currently being fired as the first parameter and an array of the event arguments as the second parameter.
+The parameters sent to wildcard event listeners in October has changed to match what Laravel has done since 5.4. This was overlooked in the 5.5 update but is being applied now. Going forward all wildcard event listeners will receive the name of the event currently being fired as the first parameter and an array of the event arguments as the second parameter.
 
 Example of old wildcard listener:
 
@@ -179,7 +179,9 @@ The CSV package provided by The PHP League has been upgraded from version 8 to v
 The following files have been updated for Laravel 6, however, you may continue to use your current version of these files if you wish:
 
   - [`bootstrap/autoload.php`](https://github.com/octobercms/october/blob/wip/laravel-6/bootstrap/autoload.php)
+  - [`index.php`](https://github.com/octobercms/october/blob/wip/laravel-6/index.php)
   - [`artisan`](https://github.com/octobercms/october/blob/wip/laravel-6/artisan)
+  - ['.gitignore'](https://github.com/octobercms/october/blob/wip/laravel-6/.gitignore)
 
 <a name="upgrade-unit-testing"></a>
 ### Unit Testing
