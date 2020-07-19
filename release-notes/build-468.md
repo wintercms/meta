@@ -5,12 +5,15 @@
 
 ## API Changes
 - The `Encryptable` trait now encrypts "empty" values correctly, such as the number zero and an empty string. The only value that is left unencrypted is a `null` value.
+- Fixed docblocks in the `October\Rain\Network\Http` class that referred to the `$options` property as an `array` instead of the `callable` that is actually used
 
 ## Bug Fixes
 - Unit tests involving authentication are now namespaced to `backend.auth`, to prevent conflicts with other authentication libraries.
 - Fixed "use statement with non-compound names has no effect" when attempting to import classes already in the root namespace (like facades) in the CMS PHP code section.
 - Fixed a bug where the text entry of a `taglist` field would remain after the tag has been created.
 - Resolved an issue where PHP `max_input_vars` limits would prevent "group" filters from working if they contained more options than `max_input_vars` would allow.
+- Fixed support for `ignoreTimezone` in `date` and `daterange` filter scope types.
+- Fixed issue with Arabic translation in the backend where Indic numerals were being used instead of Arabic numerals for the `datepicker` FormWidget which was confusing the serverside processing of date values.
 
 ## Security Improvements
 -
@@ -22,7 +25,7 @@
 -
 
 ## Community Improvements
--
+- Added note in `config/cms.php` for handling URL generation for uploaded files when using October in a subfolder installation.
 
 ## Dependencies
 -
