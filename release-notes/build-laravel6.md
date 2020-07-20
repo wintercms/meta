@@ -23,6 +23,7 @@
 
 ## Bug Fixes
 - Improved stability of the FieldParser when parsing fields without the type property specified.
+- Fixed issue where the `QueryBuilder->remember()` method did not properly support being passed DateTime instances for cache expiry.
 
 ## Security Improvements
 -
