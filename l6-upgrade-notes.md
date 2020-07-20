@@ -31,6 +31,7 @@ If you are using any of the following functionality it's highly recommended that
 - [Interacting with `Cache` repositories](#upgrade-cache)
 - [String based primary keys in models](#upgrade-string-keys)
 - [Wildcard event listeners](#upgrade-wildcard-listeners)
+- [Catch-all routing](#catchall-routing)
 - [Using Carbon directly](#upgrade-carbon)
 - [Using Symfony directly](#upgrade-symfony)
 - [Using League\Csv directly](#upgrade-league)
@@ -158,6 +159,23 @@ Event::listen('*', function ($event, $params) {
     }
 });
 ```
+
+<a name="catchall-routing"></a>
+### Catch-all routing (`√`)
+
+Changes to the routing in Laravel 6 have resulted in the behaviour of catch-all routes being changed in October CMS. Previously, a catch-all route could be defined with the following:
+
+```
+Route::any('{slug}', 'Backend\Classes\BackendController@run')->where('slug', '(.*)?');
+```
+
+The definition `{slug}` in Laravel 6 is now considered to be a *required* URL parameter, and will fail with an exception if the router sees an empty parameter. If your plugin uses a similar routing rule, and you would like URLs with an empty parameter to still be routed to your plugin, you must change this definition to be *optional* by suffixing the parameter name with the question mark (`?`) symbol. Eg:
+
+```
+Route::any('{slug?}', 'Backend\Classes\BackendController@run')->where('slug', '(.*)?');
+```
+
+This can be done immediately for your plugin routes, as optional parameters were already available in Laravel 5.5.
 
 <a name="upgrade-carbon"></a>
 ### Using Carbon directly
