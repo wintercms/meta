@@ -14,6 +14,7 @@
 - Resolved an issue where PHP `max_input_vars` limits would prevent "group" filters from working if they contained more options than `max_input_vars` would allow.
 - Fixed support for `ignoreTimezone` in `date` and `daterange` filter scope types.
 - Fixed issue with Arabic translation in the backend where Indic numerals were being used instead of Arabic numerals for the `datepicker` FormWidget which was confusing the serverside processing of date values.
+- Fixed issue where an incorrect `<textarea>` tag definition broke the popup editor for `stringList` and `text` type fields in the Inspector.
 
 ## Security Improvements
 -
