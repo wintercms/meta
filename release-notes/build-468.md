@@ -17,7 +17,7 @@
 - Fixed issue where an incorrect `<textarea>` tag definition broke the popup editor for `stringList` and `text` type fields in the Inspector.
 
 ## Security Improvements
--
+- Improved validation of encrypted cookies by locking cookie values to the cookie they were created for. See [the security advisory](https://github.com/octobercms/october/security/advisories/GHSA-55mm-5399-7r63) for more information.
 
 ## Translation Improvements
 - Improved French translation.

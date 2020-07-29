@@ -1,4 +1,4 @@
-# Build 468
+# Build 469
 
 >**NOTE:** This build contains a number of changes made as a part of the upgrade from Laravel 5.5 LTS to 6.x LTS, it is highly recommended that you [review the upgrade guide](https://github.com/octoberrain/meta/blob/master/l6-upgrade-notes.md) to ensure you aren't affected.
 
@@ -19,7 +19,6 @@
 - Added new `php artisan create:theme $code` scaffolding command.
 - Added new `Arr::undot()` and `array_undot` helper methods / functions (transforms a flat, dot-notated array into a normal nested array)
 - Added new `config_path()` helper function.
-
 
 ## Bug Fixes
 - Improved stability of the FieldParser when parsing fields without the type property specified.
