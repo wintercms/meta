@@ -1,4 +1,4 @@
-# Build 468 (WIP)
+# Build 468
 
 ## UX/UI Improvements
 - Added new Paragraph Formats option to the Editor Settings page, which allows you to control the available tags in the Paragraph Formats button.
@@ -22,11 +22,5 @@
 ## Translation Improvements
 - Improved French translation.
 
-## Performance Improvements
--
-
 ## Community Improvements
 - Added note in `config/cms.php` for handling URL generation for uploaded files when using October in a subfolder installation.
-
-## Dependencies
--
