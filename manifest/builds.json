@@ -5172,6 +5172,41 @@
                     "\/modules\/system\/assets\/ui\/less\/global.mixins.utility.css"
                 ]
             }
+        },
+        {
+            "build": 468,
+            "modules": {
+                "system": "9922d1c15da5e180e0e31980b77b0053",
+                "backend": "92792c45ec19fa00e4850230dbc8c473",
+                "cms": "0229bd9a6836a4e60cf67b8183506ea0"
+            },
+            "files": {
+                "added": {
+                    "\/modules\/system\/assets\/js\/lang\/lang.rs.js": "1c4112273704ed83425ebcbad9b17a5a"
+                },
+                "modified": {
+                    "\/modules\/system\/assets\/ui\/storm-min.js": "3976be3a157b07be02a9cb44b3685d4b",
+                    "\/modules\/system\/assets\/ui\/vendor\/moment\/locale\/ar.js": "82bfe67a559975cd6297c955fd61680a",
+                    "\/modules\/system\/assets\/ui\/js\/select.js": "f001950b99b3a63a7eb3a57dacbbb766",
+                    "\/modules\/system\/assets\/ui\/js\/inspector.editor.text.js": "62a377083b4b0633985292bef462b388",
+                    "\/modules\/system\/assets\/ui\/js\/filter.js": "fdcfae595d228417acfdb96a39c395aa",
+                    "\/modules\/system\/assets\/js\/lang\/lang.ar.js": "b7fb635bc997bd2fa73ee618bac25939",
+                    "\/modules\/system\/assets\/js\/lang\/lang.sl.js": "02b74360852d2f26439ef09608899706",
+                    "\/modules\/system\/assets\/js\/lang\/lang.hu.js": "29d2dedb175c5a67909b7d5426005bd0",
+                    "\/modules\/backend\/formwidgets\/richeditor\/assets\/js\/build-plugins-min.js": "d7fc823fc212d394f647ce1b00c281ea",
+                    "\/modules\/backend\/formwidgets\/richeditor\/assets\/js\/richeditor.js": "1ff1bd7d451f826b8891d809120f9986",
+                    "\/modules\/backend\/formwidgets\/richeditor\/partials\/_richeditor.htm": "e6887164c38877ee824ffd738974f06e",
+                    "\/modules\/backend\/formwidgets\/RichEditor.php": "a793382b8582d20561cee64d7cdb540b",
+                    "\/modules\/backend\/widgets\/Filter.php": "c0e6d45ad2fd0b67a8ffea11b8c4fed7",
+                    "\/modules\/backend\/widgets\/filter\/partials\/_scope_daterange.htm": "1d3d0700a72f71618335da1565dbae62",
+                    "\/modules\/backend\/widgets\/filter\/partials\/_scope_date.htm": "bf858e23715a9bda11c5136d6cbbd022",
+                    "\/modules\/backend\/models\/editorsetting\/fields.yaml": "410cb676c1be77c779ca200a054be289",
+                    "\/modules\/backend\/models\/EditorSetting.php": "f7d606b320eac7168ca0cdc60e978c28",
+                    "\/modules\/backend\/lang\/en\/lang.php": "63900b2c8b98d7e389c899a462eebf0c",
+                    "\/modules\/cms\/classes\/CodeParser.php": "a1f238a3549f269e917ac47b8ae661a1",
+                    "\/modules\/cms\/lang\/fr\/lang.php": "27b87d11f7c2e0c598aaa3b2b355c0fc"
+                }
+            }
         }
     ]
 }
