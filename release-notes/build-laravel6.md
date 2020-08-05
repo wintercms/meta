@@ -19,6 +19,7 @@
 - Added new `php artisan create:theme $code` scaffolding command.
 - Added new `Arr::undot()` and `array_undot` helper methods / functions (transforms a flat, dot-notated array into a normal nested array)
 - Added new `config_path()` helper function.
+- Added new `resolve_path()` helper function that closely emulates the PHP `realpath()` function, but supports resolving paths for missing files and subdirectories.
 
 ## Bug Fixes
 - Improved stability of the FieldParser when parsing fields without the type property specified.
