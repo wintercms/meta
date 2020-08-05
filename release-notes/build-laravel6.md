@@ -24,6 +24,7 @@
 ## Bug Fixes
 - Improved stability of the FieldParser when parsing fields without the type property specified.
 - Fixed issue where the `QueryBuilder->remember()` method did not properly support being passed DateTime instances for cache expiry.
+- Fixed an issue introduced in Build 466 where asset files were unable to be created through the CMS section.
 
 ## Security Improvements
 -
