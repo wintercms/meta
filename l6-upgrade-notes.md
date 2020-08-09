@@ -10,7 +10,7 @@ There are various code changes that may be required, including code found in plu
 
 Instructions marked with a `√` can be performed immediately to ensure forward compatibility. In other words the change is compatible with all versions of October, now and after the release. It is recommended to make these changes as soon as possible.
 
-* Build 469 is available as a test update from 1 August 2020. Stable release date to be announced.
+* Build 469 is available as a test update from 16 August 2020. Stable release date to be announced.
 
 ## New system requirements: (`√`)
 
