@@ -196,7 +196,7 @@ The CSV package provided by The PHP League has been upgraded from version 8 to v
 <a name="changes-to-file-model"></a>
 ### Changes to the File model (`√`)
 
-Due to a recent security path made in the Laravel framework, the `October\Rain\Database\Attach\File` model (and by extension, the `System\Models\File` model) now use the "fillable" attributes property to define the fields available for mass assignment, as opposed to the "guarded" attributes property, which is susceptible to some quirks in its behavior. If you extend either of these models to provide your own custom File model and wish to have extra fields stored, you will need to copy the `$fillable` attribute from the `October\Rain\Database\Attach\File` model and place it in your own extension, adding any extra fields you wish to be fillable as well.
+Due to a recent security patch made in the Laravel framework, the `October\Rain\Database\Attach\File` model (and by extension, the `System\Models\File` model) now use the "fillable" attributes property to define the fields available for mass assignment, as opposed to the "guarded" attributes property, which is susceptible to some quirks in its behavior. If you extend either of these models to provide your own custom File model and wish to have extra fields stored through mass assignment, you will need to copy the `$fillable` attribute from the `October\Rain\Database\Attach\File` model and place it in your own extension, adding any extra fields that you wish to be fillable as well.
 
 ```
     /**
