@@ -35,6 +35,7 @@ If you are using any of the following functionality it's highly recommended that
 - [Using Carbon directly](#upgrade-carbon)
 - [Using Symfony directly](#upgrade-symfony)
 - [Using League\Csv directly](#upgrade-league)
+- [Changes to the File model](#changes-to-file-model)
 - [Unit Testing](#upgrade-unit-testing)
 
 ## Known issues:
@@ -191,6 +192,28 @@ Symfony has been upgraded to version 4 (except for the Yaml subsystem). If inter
 ### Using League CSV directly
 
 The CSV package provided by The PHP League has been upgraded from version 8 to version 9. We have made the necessary adjustments to October CMS in order to accommodate this change, however, if you use the library directly or have extended the `ImportModel` and `ExportModel` classes, it is strongly recommended that you [review the upgrade guide](https://csv.thephpleague.com/9.0/upgrading/) as several methods have been dropped or moved.
+
+<a name="changes-to-file-model"></a>
+### Changes to the File model (`√`)
+
+Due to a recent security path made in the Laravel framework, the `October\Rain\Database\Attach\File` model (and by extension, the `System\Models\File` model) now use the "fillable" attributes property to define the fields available for mass assignment, as opposed to the "guarded" attributes property, which is susceptible to some quirks in its behavior. If you extend either of these models to provide your own custom File model and wish to have extra fields stored, you will need to copy the `$fillable` attribute from the `October\Rain\Database\Attach\File` model and place it in your own extension, adding any extra fields you wish to be fillable as well.
+
+```
+    /**
+     * @var array The attributes that are mass assignable.
+     */
+    protected $fillable = [
+        'file_name',
+        'title',
+        'description',
+        'field',
+        'attachment_id',
+        'attachment_type',
+        'is_public',
+        'sort_order',
+        'data',
+    ];
+ ```
 
 ### Optional changes (`√`)
 
