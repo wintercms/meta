@@ -36,7 +36,6 @@ If you are using any of the following functionality it's highly recommended that
 - [Using Carbon directly](#upgrade-carbon)
 - [Using Symfony directly](#upgrade-symfony)
 - [Using League\Csv directly](#upgrade-league)
-- [Changes to the File model](#changes-to-file-model)
 - [Unit Testing](#upgrade-unit-testing)
 
 ## Known issues:
