@@ -231,7 +231,7 @@ The following files have been updated for Laravel 6, however, you may continue t
   - [`bootstrap/autoload.php`](https://github.com/octobercms/october/blob/wip/laravel-6/bootstrap/autoload.php)
   - [`index.php`](https://github.com/octobercms/october/blob/wip/laravel-6/index.php)
   - [`artisan`](https://github.com/octobercms/october/blob/wip/laravel-6/artisan)
-  - ['.gitignore'](https://github.com/octobercms/october/blob/wip/laravel-6/.gitignore)
+  - [`.gitignore`](https://github.com/octobercms/october/blob/wip/laravel-6/.gitignore)
 
 <a name="upgrade-unit-testing"></a>
 ### Unit Testing
