@@ -30,6 +30,7 @@ If you are using any of the following functionality it's highly recommended that
 - [Laravel package auto-discovery](#laravel-package-autodiscovery)
 - [Interacting with `Cache` repositories](#upgrade-cache)
 - [String based primary keys in models](#upgrade-string-keys)
+- [Use of `$guarded` in models](#guarded-in-models)
 - [Wildcard event listeners](#upgrade-wildcard-listeners)
 - [Catch-all routing](#catchall-routing)
 - [Using Carbon directly](#upgrade-carbon)
@@ -49,15 +50,18 @@ If you would like to help with the upgrade process please make the following cha
 ```json
 "require": {
     "php": "^7.2",
-    "october/rain": "dev-wip/laravel-6 as 1.0",
-    "october/system": "dev-wip/laravel-6",
-    "october/backend": "dev-wip/laravel-6",
-    "october/cms": "dev-wip/laravel-6",
+    "october/rain": "dev-develop as 1.0",
+    "october/system": "dev-developer",
+    "october/backend": "dev-develop",
+    "october/cms": "dev-develop",
     "laravel/framework": "~6.0",
     "wikimedia/composer-merge-plugin": "1.4.1"
 },
 "config": {
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "platform": {
+        "php": "7.2"
+    }
 },
 ```
 
@@ -81,7 +85,10 @@ If you are using composer you will need to make the following changes to your co
     "wikimedia/composer-merge-plugin": "1.4.1"
 },
 "config": {
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "platform": {
+        "php": "7.2"
+    }
 },
 ```
 
@@ -135,6 +142,31 @@ Cache TTL (time-to-live) values that are specified as an integer are treated as 
 ### String-based primary keys in models (`√`)
 
 If you are using string based primary keys for your models add `protected $keyType = 'string';` to the model class definition to prevent performance optimizations meant for integer key types from negatively affecting your code.
+
+<a name="guarded-in-models"></a>
+### Use of `$guarded` in models (`√`)
+
+Due to a recent security patch made in the Laravel framework ([see discussion](https://github.com/octobercms/library/commit/b779df0174454fea203c10d7582465f9ddaf22fb)), if a model uses the `$guarded` property to define attributes that are to be protected from mass assignment; then any attempts to use mass-assignment to populate a property / attribute of the model that does not exist in the database will fail. Example:
+
+```
+MyModel extends Model
+{
+    $guarded = ['id'];
+
+    $someProperty = null;
+
+    public function setSomePropertyAttribute($value)
+    {
+        $this->someProperty = $value
+    }
+}
+```
+
+Calling `MyModel::create(['someProperty' => 'data']);` would previously have worked, but will not anymore.
+
+> **NOTE:** October does not recommend this pattern. Unless using the `Purgeable` trait, attributes on a model should always correspond directly to the database schema asssociated with that model. It is perfectly acceptable to have public properties on a model that do not correspond to database schema, but avoid abusing methods & functionality designed for model attributes (i.e. attribute getters and setters) as much as possible.
+
+This specifically affected the `October\Rain\Database\Attach\File` model (and by extension, the `System\Models\File` model), which now use the "fillable" attributes property to define the fields available for mass assignment, as opposed to the "guarded" attributes property. If you extend either of these models to provide your own custom File model and wish to have extra fields stored through mass assignment, you will need to copy the [`$fillable` attribute from the `October\Rain\Database\Attach\File` model](https://github.com/octobercms/library/commit/6cd6af6940ca15598ad1bab64e2db4a005d9d38f#diff-b062dfb9a3f1e4c504ad988c977f1b40R34-R47) and place it in your own extension, adding any extra fields that you wish to be fillable as well.
 
 <a name="upgrade-wildcard-listeners"></a>
 ### Wildcard event listeners: `Event::listen('example.*', $listener);`
@@ -192,28 +224,6 @@ Symfony has been upgraded to version 4 (except for the Yaml subsystem). If inter
 ### Using League CSV directly
 
 The CSV package provided by The PHP League has been upgraded from version 8 to version 9. We have made the necessary adjustments to October CMS in order to accommodate this change, however, if you use the library directly or have extended the `ImportModel` and `ExportModel` classes, it is strongly recommended that you [review the upgrade guide](https://csv.thephpleague.com/9.0/upgrading/) as several methods have been dropped or moved.
-
-<a name="changes-to-file-model"></a>
-### Changes to the File model (`√`)
-
-Due to a recent security patch made in the Laravel framework, the `October\Rain\Database\Attach\File` model (and by extension, the `System\Models\File` model) now use the "fillable" attributes property to define the fields available for mass assignment, as opposed to the "guarded" attributes property, which is susceptible to some quirks in its behavior. If you extend either of these models to provide your own custom File model and wish to have extra fields stored through mass assignment, you will need to copy the `$fillable` attribute from the `October\Rain\Database\Attach\File` model and place it in your own extension, adding any extra fields that you wish to be fillable as well.
-
-```
-    /**
-     * @var array The attributes that are mass assignable.
-     */
-    protected $fillable = [
-        'file_name',
-        'title',
-        'description',
-        'field',
-        'attachment_id',
-        'attachment_type',
-        'is_public',
-        'sort_order',
-        'data',
-    ];
- ```
 
 ### Optional changes (`√`)
 

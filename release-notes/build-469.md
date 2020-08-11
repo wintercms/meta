@@ -27,6 +27,7 @@
 - Fixed issue where the `QueryBuilder->remember()` method did not properly support being passed DateTime instances for cache expiry.
 - Fixed an issue introduced in Build 466 where asset files were unable to be created through the CMS section.
 - Fixed issue where removing the currently sorted by column from the list's visible columns would cause an error.
+- Fixed issue where not having the GD extension loaded would cause the process to exit with an error message instead of throwing an Exception.
 
 ## Security Improvements
 -
