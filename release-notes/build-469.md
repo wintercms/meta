@@ -19,8 +19,9 @@
 - Added new `php artisan create:theme $code` scaffolding command.
 - Added new `Arr::undot()` and `array_undot` helper methods / functions (transforms a flat, dot-notated array into a normal nested array)
 - Added new `config_path()` helper function.
-- Added new `resolve_path()` helper function that closely emulates the PHP `realpath()` function, but supports resolving paths for missing files and subdirectories.
+- Added new `resolve_path()` helper function that closely emulates the PHP `realpath()` function, but supports resolving paths for missing files and subdirectories. This is provided by the `October\Rain\Filesystem\PathResolver` helper class, which can resolve canonical paths and determine if given paths are within given directories.
 - The `October\Rain\Database\Attach\File` model now uses "fillable" attributes as opposed to "guarded" attributes to control mass assignment. If you extend the `File` (or the main `System\Models\File`) model to provide additional fields, you must now copy the "fillable" attributes to your extension and add any additional fields to this definition.
+- The `October\Rain\Html\HtmlBuilder::limit()` method now considers whitespaces and line breaks to be one character, regardless of the line break type or number of spaces. This ensures a consistent result across both Windows and Linux.
 
 ## Bug Fixes
 - Improved stability of the FieldParser when parsing fields without the type property specified.
@@ -42,6 +43,7 @@
 - Added the Laravel framework dependency to each of the core modules to improve stability of existing composer installations
 - The `ftp` and `sftp` storage drivers are now included with the core.
 - The `postmark` mail driver is now included with the core.
+- The Rain Library is now tested against both Linux and Windows, PHP versions 7.2 to 7.4, to ensure that the library functions correctly across both operating systems.
 
 ## Dependencies
 - The Laravel framework has been added as a dependency to the core modules and library to improve the stability of existing Composer installations.
