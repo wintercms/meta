@@ -34,7 +34,7 @@
 -
 
 ## Translation Improvements
--
+- Improved Spanish translations.
 
 ## Performance Improvements
 -
