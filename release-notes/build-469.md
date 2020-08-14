@@ -21,6 +21,7 @@
 - Added new `config_path()` helper function.
 - Added new `resolve_path()` helper function that closely emulates the PHP `realpath()` function, but supports resolving paths for missing files and subdirectories. This is provided by the `October\Rain\Filesystem\PathResolver` helper class, which can resolve canonical paths and determine if given paths are within given directories.
 - The `October\Rain\Database\Attach\File` model now uses "fillable" attributes as opposed to "guarded" attributes to control mass assignment. If you extend the `File` (or the main `System\Models\File`) model to provide additional fields, you must now copy the "fillable" attributes to your extension and add any additional fields to this definition.
+- The `October\Rain\Database\Attach\File` model will now log exceptions when `getThumb()` fails in addition to generating the broken image file as the thumbnail as per existing behaviour.
 - The `October\Rain\Html\HtmlBuilder::limit()` method now considers whitespaces and line breaks to be one character, regardless of the line break type or number of spaces. This ensures a consistent result across both Windows and Linux.
 
 ## Bug Fixes
