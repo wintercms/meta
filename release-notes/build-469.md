@@ -43,7 +43,7 @@
 - Added the Laravel framework dependency to each of the core modules to improve stability of existing composer installations
 - The `ftp` and `sftp` storage drivers are now included with the core.
 - The `postmark` mail driver is now included with the core.
-- The Rain Library is now tested against both Linux and Windows, PHP versions 7.2 to 7.4, to ensure that the library functions correctly across both operating systems.
+- The October CMS and Rain Library are now tested against both Linux and Windows, PHP versions 7.2 to 7.4, to ensure that functionality works correctly across both supported operating systems.
 
 ## Dependencies
 - The Laravel framework has been added as a dependency to the core modules and library to improve the stability of existing Composer installations.
