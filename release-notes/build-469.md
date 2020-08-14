@@ -23,6 +23,7 @@
 - The `October\Rain\Database\Attach\File` model now uses "fillable" attributes as opposed to "guarded" attributes to control mass assignment. If you extend the `File` (or the main `System\Models\File`) model to provide additional fields, you must now copy the "fillable" attributes to your extension and add any additional fields to this definition.
 - The `October\Rain\Database\Attach\File` model will now log exceptions when `getThumb()` fails in addition to generating the broken image file as the thumbnail as per existing behaviour.
 - The `October\Rain\Html\HtmlBuilder::limit()` method now considers whitespaces and line breaks to be one character, regardless of the line break type or number of spaces. This ensures a consistent result across both Windows and Linux.
+- Added `File::isLocalDisk($filesystemAdapterDisk)` method to check if the provided disk is using the Local Flysystem adapter. `October\Rain\Database\Attach\File` has switched it's internal method `isLocalStorage()` to using it, so if you are overriding that method you may be able to remove your overridden method implementation so long as your `getDisk()` method is returning the correct disk for your custom FileModel.
 
 ## Bug Fixes
 - Improved stability of the FieldParser when parsing fields without the type property specified.
