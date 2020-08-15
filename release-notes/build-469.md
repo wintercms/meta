@@ -4,6 +4,7 @@
 
 ## UX/UI Improvements
 - Added new "sensitive" field widget that provides a revealable password field for forms.
+- Finished implementing the `php artisan october:util purge uploads` console command that purges invalid files (Files that don't have a matching entry in `system_files`) and empty directories from the `uploads` directory. This only works on uploads stored on the local disk for now.
 
 ## API Changes
 - Added new development configuration option `develop.allowDeepSymlinks` which allows for symlinks at any subdirectory level when generating a public URL from a local path.
