@@ -5,6 +5,7 @@
 ## UX/UI Improvements
 - Added new "sensitive" field widget that provides a revealable password field for forms.
 - Finished implementing the `php artisan october:util purge uploads` console command that purges invalid files (Files that don't have a matching entry in `system_files`) and empty directories from the `uploads` directory. This only works on uploads stored on the local disk for now.
+- Added built in support for easy and fast resizing of images with three new Twig filters (`| resize(width, height, options)`, `| imageWidth`, `| imageHeight`) and a new backend List column type (`image`). See https://github.com/octobercms/october/pull/5231 for more information.
 
 ## API Changes
 - Added new development configuration option `develop.allowDeepSymlinks` which allows for symlinks at any subdirectory level when generating a public URL from a local path.
@@ -34,12 +35,14 @@
 - Fixed an issue introduced in Build 466 where asset files were unable to be created through the CMS section.
 - Fixed issue where removing the currently sorted by column from the list's visible columns would cause an error.
 - Fixed issue where not having the GD extension loaded would cause the process to exit with an error message instead of throwing an Exception.
+- Fixed issue where non-compound use statements that were aliasing imported classes in CMS code sections (i.e. `use Session as OctoberSession`) were no longer being included in the parsed PHP because of a bug fix in Build 468.
 
 ## Security Improvements
 -
 
 ## Translation Improvements
-- Improved Spanish translations.
+- Improved Spanish translation.
+- Improved Russian translation.
 
 ## Performance Improvements
 -
