@@ -36,6 +36,7 @@
 - Fixed issue where removing the currently sorted by column from the list's visible columns would cause an error.
 - Fixed issue where not having the GD extension loaded would cause the process to exit with an error message instead of throwing an Exception.
 - Fixed issue where non-compound use statements that were aliasing imported classes in CMS code sections (i.e. `use Session as OctoberSession`) were no longer being included in the parsed PHP because of a bug fix in Build 468.
+- Fixed issue introduced in Build 466 where `BelongsTo` relationships were unable to be updated using the RelationController behavior.
 
 ## Security Improvements
 -
