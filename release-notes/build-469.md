@@ -38,8 +38,8 @@
 - Fixed issue where non-compound use statements that were aliasing imported classes in CMS code sections (i.e. `use Session as OctoberSession`) were no longer being included in the parsed PHP because of a bug fix in Build 468.
 - Fixed issue introduced in Build 466 where `BelongsTo` relationships were unable to be updated using the RelationController behavior.
 - Fixed issue where not specifying a `thumbnailWidth` (even when providing a `thumbnailHeight`) for the `FileUpload` `FormWidget` would cause it to default to 100x100.
-- Fixed bug where unlinking a `BelongsTo` relationship with the RelationController would not fully clear it from the view widget being displayed.
-- Fixed bug where creating or adding a new record to a `BelongsTo` relationship with the RelationController would not fully remove any existing relationship.
+- Fixed bug where unlinking a `HasOne` or `BelongsTo` relationship with the RelationController would not fully clear it from the view widget being displayed.
+- Fixed bug where creating or adding a new record to a `HasOne` or `BelongsTo` relationship with the RelationController would not fully remove any existing relationship.
 
 ## Security Improvements
 -
