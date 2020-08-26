@@ -28,6 +28,7 @@
 - Added `File::isLocalDisk($filesystemAdapterDisk)` method to check if the provided disk is using the Local Flysystem adapter. `October\Rain\Database\Attach\File` has switched it's internal method `isLocalStorage()` to using it, so if you are overriding that method you may be able to remove your overridden method implementation so long as your `getDisk()` method is returning the correct disk for your custom FileModel.
 - Removed `data-browser-validate` from the default controller scaffolding files as HTML5 form validation does not play nice with anything beyond the most basic forms. Also removed from the System Settings backend forms.
 - Plugin view & configuration files are now registered on protected routes even if the plugin doesn't have elevated permissions to run on those routes in order to support views and configuration being used in database migrations.
+- Improved handling of Rule objects when used in validation - the `message()` method is now used to return a fallback message (optionally translated), and there is no need to specify a `validate()` method anymore.
 
 ## Bug Fixes
 - Improved stability of the FieldParser when parsing fields without the type property specified.
