@@ -28,8 +28,12 @@
 - Added `File::isLocalDisk($filesystemAdapterDisk)` method to check if the provided disk is using the Local Flysystem adapter. `October\Rain\Database\Attach\File` has switched it's internal method `isLocalStorage()` to using it, so if you are overriding that method you may be able to remove your overridden method implementation so long as your `getDisk()` method is returning the correct disk for your custom FileModel.
 - Removed `data-browser-validate` from the default controller scaffolding files as HTML5 form validation does not play nice with anything beyond the most basic forms. Also removed from the System Settings backend forms.
 - Plugin view & configuration files are now registered on protected routes even if the plugin doesn't have elevated permissions to run on those routes in order to support views and configuration being used in database migrations.
+<<<<<<< HEAD
 - Added `getAllPlugins()` method to the `System\Classes\PluginManager` class to retrieve all plugins detected on the system instead of just the enabled ones.
 - Bound `Illuminate\Foundation\Application` to `October\Rain\Foundation\Application` in the application container to better support Laravel packages that typehint the Application class directly rather than the contract.
+=======
+- Improved handling of Rule objects when used in validation - the `message()` method is now used to return a fallback message (optionally translated), and there is no need to specify a `validate()` method anymore.
+>>>>>>> d89406aec5e24e8475f89b5b9aecda71979264a7
 
 ## Bug Fixes
 - Improved stability of the FieldParser when parsing fields without the type property specified.
@@ -40,8 +44,8 @@
 - Fixed issue where non-compound use statements that were aliasing imported classes in CMS code sections (i.e. `use Session as OctoberSession`) were no longer being included in the parsed PHP because of a bug fix in Build 468.
 - Fixed issue introduced in Build 466 where `BelongsTo` relationships were unable to be updated using the RelationController behavior.
 - Fixed issue where not specifying a `thumbnailWidth` (even when providing a `thumbnailHeight`) for the `FileUpload` `FormWidget` would cause it to default to 100x100.
-- Fixed bug where unlinking a `BelongsTo` relationship with the RelationController would not fully clear it from the view widget being displayed.
-- Fixed bug where creating or adding a new record to a `BelongsTo` relationship with the RelationController would not fully remove any existing relationship.
+- Fixed bug where unlinking a `HasOne` or `BelongsTo` relationship with the RelationController would not fully clear it from the view widget being displayed.
+- Fixed bug where creating or adding a new record to a `HasOne` or `BelongsTo` relationship with the RelationController would not fully remove any existing relationship.
 
 ## Security Improvements
 -
