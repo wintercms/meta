@@ -45,6 +45,7 @@
 - Fixed issue where unlinking a `HasOne` or `BelongsTo` relationship with the RelationController would not fully clear it from the view widget being displayed.
 - Fixed issue where creating or adding a new record to a `HasOne` or `BelongsTo` relationship with the RelationController would not fully remove any existing relationship.
 - Fixed issue introduced in Build 461 where all SystemExceptions would be logged twice to the EventLog.
+- Fixed an exception that would be thrown when editing Mail Templates if any partials recorded in the database were no longer provided by the plugin due to it being removed or disabled.
 
 ## Security Improvements
 -
