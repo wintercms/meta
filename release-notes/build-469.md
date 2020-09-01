@@ -6,7 +6,7 @@
 - Added new "sensitive" field widget that provides a revealable password field for forms.
 - Finished implementing the `php artisan october:util purge uploads` console command that purges invalid files (Files that don't have a matching entry in `system_files`) and empty directories from the `uploads` directory. This only works on uploads stored on the local disk for now.
 - Added built in support for easy and fast resizing of images with three new Twig filters (`| resize(width, height, options)`, `| imageWidth`, `| imageHeight`) and a new backend List column type (`image`). See https://github.com/octobercms/october/pull/5231 for more information.
-- The SMTP port field in the Mail Settings page will be pre-filled with the default port depending on the encryption type selected, if it is using a standard port. Custom ports will not be overwritten. 
+- The SMTP port field in the Mail Settings page will be pre-filled with the default port depending on the encryption type selected, if it is using a standard port. Custom ports will not be overwritten.
 
 ## API Changes
 - Added new development configuration option `develop.allowDeepSymlinks` which allows for symlinks at any subdirectory level when generating a public URL from a local path.
@@ -46,6 +46,7 @@
 - Fixed issue where creating or adding a new record to a `HasOne` or `BelongsTo` relationship with the RelationController would not fully remove any existing relationship.
 - Fixed issue introduced in Build 461 where all SystemExceptions would be logged twice to the EventLog.
 - Fixed an exception that would be thrown when editing Mail Templates if any partials recorded in the database were no longer provided by the plugin due to it being removed or disabled.
+- Fixed issue where a JS exception would be thrown if attempting to load a page with tabs where the hash part of the URL contained a `/`.
 
 ## Security Improvements
 -
