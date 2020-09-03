@@ -43,7 +43,7 @@ The project has two levels of maintainership. The current membership of each rol
 
 - [@w20k](https://github.com/w20k) - Denis Denisov
 - [@bennothommo](https://github.com/bennothommo) - Ben Thomson
-- [@mjauvin](https://github.com/mjauvin) - Marc Jauvin (RainLab Translate only)
+- [@mjauvin](https://github.com/mjauvin) - Marc Jauvin (RainLab.Translate only)
 
 When defining which roles may action any of the protocols below, the term "maintainers" means 
 that any Maintainer or Lead Maintainer can be responsible. If a protocol is only for Lead 
@@ -70,6 +70,16 @@ At the same time, October CMS has a responsibility to its users to ensure that b
 security and code are followed. Where possible, October CMS follows the LTS (long-term support)
 versions of the Laravel framework as the foundation framework, which does include the deprecation
 of unsupported PHP versions as required.
+
+Additionally, given that October places a high priority on security, we take the approach that
+we should make every effort to ensure our users security, even if they are unable to update to the
+latest version of the project. As such, we are committed to maintaining security releases for 
+our End of Life branches (i.e. major Laravel upgrades) indefinitely to the extent of our abilities.
+While we cannot be relied upon to provide security fixes for our issues with October's dependencies,
+we will always be willing to act on security reports we receive affecting EOL branches so long as it
+is something that we can actually fix with a non-breaking update to said branch. Of course, overall
+we do not recommend or endorse the usage of EOL branches whatsoever, we recognize the operational 
+constraints placed on some of our users and will do our best to keep all our users as safe as possible.
 
 ## Projects
 
@@ -105,6 +115,17 @@ an as-needed basis, as long as commits are small and are clearly explained and j
 commit message. It is still preferred that pull requests are used for larger commits. There is no
 `develop` branch for these repositories.
 
+#### End-of-Life Branches
+<a name="october-cms-eol-branches"></a>
+
+October CMS and the Rain library also contain branches from End of Life versions of the project.
+These branches are intended to be used through Composer only, and exist for the sole purpose of
+being able to push security fixes to our users that for whatever reasons were unable to upgrade to
+the latest versions of October CMS. Once a version reaches EOL, absolutely no enhancements, bug
+fixes, or changes of any kind apart from security fixes will be permitted to be made to that branch.
+
+Currently there is just one EOL branch, 1.0, targeting Laravel 5.5.
+
 #### Milestones
 <a name="october-cms-milestones"></a>
 
@@ -119,6 +140,8 @@ build is released:
 
 In these examples, the final number represents the build number, with `v1.0.` prefixed to the
 build number to match versioning standards.
+
+>**NOTE:** The middle number is tied to the major Laravel version supported by that series of builds. `v1.0` refers to everything from initial release to Laravel 5.5 inclusive, while `v1.1` refers to Laravel 6 LTS, and `v1.2` will refer to the next LTS version of Laravel targeted by October, etc. When that number is incremented, the build number will restart from 0.
 
 One build milestone representing the *next* build to be released will be present for all
 incoming code changes. In some cases, a second build milestone representing the version after
