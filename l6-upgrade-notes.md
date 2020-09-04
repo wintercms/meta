@@ -1,16 +1,16 @@
-# Build 469 - Foundation framework upgrade (Laravel 6.x LTS)
+# Build 1.1.0 - Foundation framework upgrade (Laravel 6.x LTS)
 
 Release Note 10
 
 Due to overwhelming support from the community, October CMS is updating its foundation framework to the latest Long Term Support (LTS) release. As a result, there are some new requirements to run October and some code changes required.
 
-From the proposed date of 1st August 2020* (Build 469) your webserver will require PHP 7.2.9 or above to use October CMS. After this date, websites using PHP 7.0-7.2.8 will still function normally but will no longer be able to receive updates or install the latest version.
+From the proposed date of 1st August 2020* (Build 1.1.0) your webserver will require PHP 7.2.9 or above to use October CMS. After this date, websites using PHP 7.0-7.2.8 will still function normally but will no longer be able to receive updates or install the latest version.
 
 There are various code changes that may be required, including code found in plugins and themes, both private and public depending on what features you are utilizing.
 
 Instructions marked with a `√` can be performed immediately to ensure forward compatibility. In other words the change is compatible with all versions of October, now and after the release. It is recommended to make these changes as soon as possible.
 
-* Build 469 is available as a test update from 16 August 2020. Stable release date to be announced.
+* Build 1.1.0 is available as a test update from 16 August 2020. Stable release date to be announced.
 
 ## New system requirements: (`√`)
 
