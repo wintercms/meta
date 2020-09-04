@@ -1,7 +1,7 @@
 # Build 1.0.469
 
 ## API Changes
-- `.svg` has been removed from the default list of allowed extensions for uploading for security reasons, will be re-added in Build 1.1.0 alongside sanitization to protect against XSS attacks. Use `storage.media.defaultExtensions` to override the default list of allowed extensions in order to re-add support for it at your own risk.
+- `.svg` has been removed from the default list of allowed extensions for uploading for security reasons, will be re-added in Build 1.1.1 alongside sanitization to protect against XSS attacks. Use `storage.media.defaultExtensions` to override the default list of allowed extensions in order to re-add support for it at your own risk.
 - `$fileName` was removed as a parameter for the `October\Rain\Halcyon\Builder->delete()` method as it wasn't actually being used internally and had no effect.
 
 ## Bug Fixes
