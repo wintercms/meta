@@ -13,7 +13,8 @@ the RainLab plugins are maintained.
 - [Main Philosophy](#main-philosophy)
 - [Projects](#projects)
   - [October CMS](#october-cms)
-    - [Main Branches](#october-cms-main-branches)
+    - [Main Branch](#october-cms-main-branches)
+    - [End-of-Life Branches](#october-cms-eol-branches)
     - [Milestones](#october-cms-milestones)
     - [Reviewing Issues and Pull Requests](#october-cms-reviewing-issues-and-prs)
     - [Merging Pull Requests](#october-cms-merging-pull-requests)
@@ -75,6 +76,7 @@ Additionally, given that October places a high priority on security, we take the
 we should make every effort to ensure our users security, even if they are unable to update to the
 latest version of the project. As such, we are committed to maintaining security releases for 
 our End of Life branches (i.e. major Laravel upgrades) indefinitely to the extent of our abilities.
+
 While we cannot be relied upon to provide security fixes for our issues with October's dependencies,
 we will always be willing to act on security reports we receive affecting EOL branches so long as it
 is something that we can actually fix with a non-breaking update to said branch. Of course, overall
@@ -89,42 +91,53 @@ The following protocols are in place for all current and future repositories und
 [@octobercms](https://github.com/octobercms) organisation. This includes the October CMS and Rain
 library repositories, as well as its installer and documentation.
 
-#### Main Branches
-<a name="october-cms-main-branches"></a>
+#### Main Branch
+<a name="october-cms-main-branch"></a>
 
-October CMS and the Rain library both have two main branches for their repositories - `master` 
-and `develop`. Both branches represent the *stable* and *testing* states of the product - more 
-specifically, they represent the most recent stable build and the most bleeding-edge publicly
-available code, respectively.
+October CMS and the Rain library both have a `develop` branch that is used as the main development
+branch. All development work and pull requests made to these repositories should target this branch,
+unless the work is being done as a subset of work on another branch.
 
-In general, the only time `master` is updated is when a new stable version of October CMS is
-released to the public. This process is done by the [Lead Maintainers](#lead-maintainers) as part of their 
-[Release Process](#october-cms-release-process).
-
-Direct commits to the `master` branch should not be done for the October CMS and Rain Library
+Direct commits to the `develop` branch should not be done for the October CMS and Rain Library
 repos except for the following circumstances:
 
-- Pushing out a new stable release of October CMS *(Lead Maintainers only)*
+- Pushing out a new release of October CMS *(Lead Maintainers only)*
 - Making changes to any project-related meta or policy files, such as the README, funding,
 licensing and security policies. *(Lead Maintainers only)*
 - Fixing issues with the automated testing suite.
 - Rectifying disclosed security vulnerabilities
 
-For the installer and documentation repositories, commits to the `master` branch can be done on
-an as-needed basis, as long as commits are small and are clearly explained and justified in the
-commit message. It is still preferred that pull requests are used for larger commits. There is no
-`develop` branch for these repositories.
+For the installer and documentation repositories, the `master` branch is still used as their main
+development branch. Commits to the `master` branch can be done on an as-needed basis, as long as
+commits are small and are clearly explained and justified in the commit message. It is still preferred
+that pull requests are used for larger commits.
 
 #### End-of-Life Branches
 <a name="october-cms-eol-branches"></a>
 
-October CMS and the Rain library also contain branches from End of Life versions of the project.
-These branches are intended to be used through Composer only, and exist for the sole purpose of
-being able to push security fixes to our users that for whatever reasons were unable to upgrade to
-the latest versions of October CMS. Once a version reaches EOL, absolutely no enhancements, bug
-fixes, or changes of any kind apart from security fixes will be permitted to be made to that branch.
+When October CMS rebases the version of the Laravel framework in use as its foundation, we intend
+to make an "End-of-Life" branch for the last release on the older version of the framework. This
+will be denoted by a branch being created with the current major and minor version of the October CMS
+project, with development continuing on the next minor version increment, with the patch version being
+reset to zero.
 
-Currently there is just one EOL branch, 1.0, targeting Laravel 5.5.
+For example, if the latest October CMS release is `1.2.3`, the EOL branch will be defined as `1.2`, and the 
+next active release of October CMS will be `1.3.0`.
+
+Active development will cease on End-of-Life branches, and no further pull requests to add
+functionality or fix bugs will be accepted. Only security fixes, properly disclosed to the October
+CMS team, will be accepted for End-of-Life branches.
+
+Currently there is just one EOL branch, `1.0`, targeting Laravel 5.5.
+
+As security fixes are disclosed to the team, we intend to make patch releases of these EOL branches on
+an as-needed basis. These will be released as the major and minor version of the branch, with the patch
+version incremented.
+
+While we intend to support EOL branches with security fixes, we cannot garuntee that the dependencies used
+in these versions will also be safe. We will not support changes to the dependencies. It is always recommended
+that projects using October CMS upgrade to the latest active versions. If a dependency presents a major
+security flaw 
 
 #### Milestones
 <a name="october-cms-milestones"></a>
