@@ -7,6 +7,7 @@
 - Finished implementing the `php artisan october:util purge uploads` console command that purges invalid files (Files that don't have a matching entry in `system_files`) and empty directories from the `uploads` directory. This only works on uploads stored on the local disk for now.
 - Added built in support for easy and fast resizing of images with three new Twig filters (`| resize(width, height, options)`, `| imageWidth`, `| imageHeight`) and a new backend List column type (`image`). See https://github.com/octobercms/october/pull/5231 for more information.
 - The SMTP port field in the Mail Settings page will be pre-filled with the default port depending on the encryption type selected, if it is using a standard port. Custom ports will not be overwritten.
+- Added a link to the backend in the demo theme header menu to make it easier for new users to find the backend.
 
 ## API Changes
 - Added new development configuration option `develop.allowDeepSymlinks` which allows for symlinks at any subdirectory level when generating a public URL from a local path.
@@ -68,5 +69,6 @@
 ## Dependencies
 - The Laravel framework has been added as a dependency to the core modules and library to improve the stability of existing Composer installations.
 - The Assetic library is no longer an external dependency as the key functionality has been absorbed by the October Rain library.
+- The Jenssegers/Date library is no longer an external dependency as the key functionality was included in Carbon 2.0 and Argon took over whatever small pieces were left behind.
 - The unmaintained `leefo/scssphp` dependency has been replaced with `scssphp/scssphp`
 - The unmaintained `lessc.inc.php` included dependency has been replaced with `wikimedia/less.php`

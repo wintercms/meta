@@ -34,6 +34,7 @@ If you are using any of the following functionality it's highly recommended that
 - [Wildcard event listeners](#upgrade-wildcard-listeners)
 - [Catch-all routing](#catchall-routing)
 - [Using Carbon directly](#upgrade-carbon)
+- [Using Jenssegers\Date directly](#upgrade-jenssegers-date)
 - [Using Symfony directly](#upgrade-symfony)
 - [Using League\Csv directly](#upgrade-league)
 - [Unit Testing](#upgrade-unit-testing)
@@ -213,6 +214,11 @@ This can be done immediately for your plugin routes, as optional parameters were
 ### Using Carbon directly
 
 The Carbon library has been upgraded from version 1 to version 2. While this should mostly work with existing code, please [review the upgrade guide](https://carbon.nesbot.com/docs/#api-carbon-2).
+
+<a name="upgrade-jenssegers-date"></a>
+### Using Jenssegers/Date directly
+
+The `jenssegers/date` library has been removed from October entirely as most of its functionality is now present in Carbon 2.0. This should mostly work with existing code unless you were referencing it directly, in which case replace any references to `Jenssegers\Date\Date` with `October\Rain\Argon\Date`.
 
 <a name="upgrade-symfony"></a>
 ### Using Symfony directly
