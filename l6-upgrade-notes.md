@@ -99,12 +99,12 @@ If you are using composer you will need to make the following changes to your co
 
 Some new configuration files have been made available as part of the Laravel 6 upgrade. You should add these configuration files to your project's `config` folder, and adjust the configuration as necessary. While you're doing that, it is recommended that you review the rest of the configuration files present on GitHub and ensure that your project's copies are up to date as there have been numerous configuration options added over the past year.
 
-  - [`config/auth.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/auth.php)
-  - [`config/develop.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/develop.php)
-  - [`config/hashing.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/hashing.php)
-  - [`config/logging.php`](https://github.com/octobercms/october/blob/wip/laravel-6/config/logging.php)
+  - [`config/auth.php`](https://github.com/octobercms/october/blob/develop/config/auth.php)
+  - [`config/develop.php`](https://github.com/octobercms/october/blob/develop/config/develop.php)
+  - [`config/hashing.php`](https://github.com/octobercms/october/blob/develop/config/hashing.php)
+  - [`config/logging.php`](https://github.com/octobercms/october/blob/develop/config/logging.php)
 
-A [new config option](https://github.com/octobercms/october/blob/wip/laravel-6/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`.
+A [new config option](https://github.com/octobercms/october/blob/develop/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`.
 
 <a name="upgrade-env"></a>
 ### Environment variables (`.env` files) (`√`)
@@ -129,7 +129,7 @@ Starting with the Laravel 6 foundation upgrade, October CMS will now default to 
 
 This may mean that plugins that were using packages for Laravel but were not explicitly including them in the boot process for the plugin may no longer have access to these packages. Please note that we recommend that plugins do not rely on auto-discovery, and instead bring in the packages and service providers explicitly through the `Plugin.php` file as part of the `register()` or `boot()` processes.
 
-A [new config option](https://github.com/octobercms/october/blob/wip/laravel-6/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`. If you wish to retain the pre-update functionality, you can set this to `true`.
+A [new config option](https://github.com/octobercms/october/blob/develop/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`. If you wish to retain the pre-update functionality, you can set this to `true`.
 
 <a name="upgrade-cache"></a>
 ### Interacting with Cache repositories directly (`√`, when using `now()->addMinutes()`)
@@ -234,10 +234,10 @@ The CSV package provided by The PHP League has been upgraded from version 8 to v
 
 The following files have been updated for Laravel 6, however, you may continue to use your current version of these files if you wish:
 
-  - [`bootstrap/autoload.php`](https://github.com/octobercms/october/blob/wip/laravel-6/bootstrap/autoload.php)
-  - [`index.php`](https://github.com/octobercms/october/blob/wip/laravel-6/index.php)
-  - [`artisan`](https://github.com/octobercms/october/blob/wip/laravel-6/artisan)
-  - [`.gitignore`](https://github.com/octobercms/october/blob/wip/laravel-6/.gitignore)
+  - [`bootstrap/autoload.php`](https://github.com/octobercms/october/blob/develop/bootstrap/autoload.php)
+  - [`index.php`](https://github.com/octobercms/october/blob/develop/index.php)
+  - [`artisan`](https://github.com/octobercms/october/blob/develop/artisan)
+  - [`.gitignore`](https://github.com/octobercms/october/blob/develop/.gitignore)
 
 <a name="upgrade-unit-testing"></a>
 ### Unit Testing
@@ -293,9 +293,9 @@ If you are running unit testing for October CMS development, you will need to ma
 }
 ```
 
-You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/wip/laravel-6/tests).
+You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/develop/tests).
 
-For maxium compatibility you can also replace your `phpunit.xml` file with the [`phpunit.xml` file from the repository](https://github.com/octobercms/october/blob/wip/laravel-6/phpunit.xml)
+For maxium compatibility you can also replace your `phpunit.xml` file with the [`phpunit.xml` file from the repository](https://github.com/octobercms/october/blob/develop/phpunit.xml)
 
 ## Plugin Unit Tests
 
