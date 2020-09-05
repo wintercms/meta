@@ -34,6 +34,7 @@
 - Bound `Illuminate\Foundation\Application` to `October\Rain\Foundation\Application` in the application container to better support Laravel packages that typehint the Application class directly rather than the contract.
 - Improved handling of Rule objects when used in validation - the `message()` method is now used to return a fallback message (optionally translated), and there is no need to specify a `validate()` method anymore.
 - The `october:util set build` command has been replaced with the `october:version` command, which now does a more accurate build version check by comparing the October CMS installation files with a manifest kept on GitHub, and no longer queries the October CMS servers simply for the latest stable or edge build.
+- Added a unique ID to the Filter widget container to support being targeted through the AJAX framework.
 
 ## Bug Fixes
 - Improved stability of the FieldParser when parsing fields without the type property specified.
