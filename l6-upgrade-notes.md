@@ -26,6 +26,7 @@ If you are using any of the following functionality it's highly recommended that
 - [Composer](#upgrade-composer)
 - [Configuration files (`/config/*.php`)](#upgrade-config)
 - [Environment variables (`.env` files)](#upgrade-env)
+- [Server configuration (`.htaccess` files)](#upgrade-server-config)
 - [Any packages made for Laravel](#upgrade-laravel-packages)
 - [Laravel package auto-discovery](#laravel-package-autodiscovery)
 - [Interacting with `Cache` repositories](#upgrade-cache)
@@ -116,6 +117,17 @@ If you have any `#` characters inside of unquoted environment variables please u
 Additionally, `putenv()` no longer changes the value returned by calls to `env()` as the `env` helper is now considered read-only. If dynamically changing configuration is required, it is recommended to use Config values instead as they can be dynamically changed with `Config::set()`
 
 >**IMPORTANT:** `.env` files now require any values with spaces in them to be quoted too, it's recommended to just enclose every single value in `.env` with double quotes.
+
+<a name="upgrade-server-config">
+### Server configuration (`.htaccess` files)
+
+With the introduction of core support for the `| resize` filter and associated logic, you will need to add the `storage/app/resized` directory as an allowed directory to your server configuration in order to load the resized images produced by that functionality.
+
+`.htaccess` / Apache: Add `RewriteCond %{REQUEST_FILENAME} !/storage/app/resized/.*` to the `### White listed folders` section, below `RewriteCond %{REQUEST_FILENAME} !/storage/app/media/.*`.
+
+`site.conf` / nginx: Add `location ~ ^/storage/app/resized { try_files $uri 404; }` to the `# Let nginx return 404 if static file doesn't exist` section, below `location ~ ^/storage/app/media { try_files $uri 404; }`.
+
+`web.config` / IIS: Add `<add input="{REQUEST_FILENAME}" matchType="IsFile" pattern="^/storage/app/resized/.*" negate="true" />` below `<add input="{REQUEST_FILENAME}" matchType="IsFile" pattern="^/storage/app/media/.*" negate="true" />`
 
 <a name="upgrade-laravel-packages"></a>
 ### Using any Laravel based packages
