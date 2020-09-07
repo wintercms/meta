@@ -1,6 +1,6 @@
 # Build 1.1.0 - Foundation framework upgrade (Laravel 6.x LTS)
 
-Release Note 10
+Release Note 13
 
 Due to overwhelming support from the community, October CMS is updating its foundation framework to the latest Long Term Support (LTS) release. As a result, there are some new requirements to run October and some code changes required.
 
