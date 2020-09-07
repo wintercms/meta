@@ -51,15 +51,9 @@
 - Fixed an exception that would be thrown when editing Mail Templates if any partials recorded in the database were no longer provided by the plugin due to it being removed or disabled.
 - Fixed issue where a JS exception would be thrown if attempting to load a page with tabs where the hash part of the URL contained a `/`.
 
-## Security Improvements
--
-
 ## Translation Improvements
 - Improved Spanish translation.
 - Improved Russian translation.
-
-## Performance Improvements
--
 
 ## Community Improvements
 - Added the Laravel framework dependency to each of the core modules to improve stability of existing composer installations
