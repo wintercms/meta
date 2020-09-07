@@ -5207,6 +5207,27 @@
                     "\/modules\/cms\/lang\/fr\/lang.php": "93faf29b49744145dce9b5a9dedeb5a7ec51ced6aad7c315d0824c20502e6dd5"
                 }
             }
+        },
+        {
+            "build": 469,
+            "modules": {
+                "system": "3ecf3bd6f3a0ab494a2144bc91597f95f45f80ed5aa54a64a98fc988737ce9e6",
+                "backend": "e36eb0d768dc68cbf0c4b4e7ade04baddfa907d8da2fdfa5910f88b4dedfee46",
+                "cms": "57b5c9044520e94a54f5b735658bc828415effe4e5a7e9112c77df3f41594fc3"
+            },
+            "files": {
+                "added": {
+                    "\/modules\/system\/twig\/SecurityPolicy.php": "974519875b212af34c35af81cc8402e2974efb3ea37e6cc680c68013e817edab"
+                },
+                "modified": {
+                    "\/modules\/system\/ServiceProvider.php": "035076384da410e091bfd0b44bbb6005588db2b57ebe72d8ac0517ad05cab23c",
+                    "\/modules\/system\/composer.json": "53fd5cfd5a926c8c0d6d8bf6e3bb0fbdf193336c7b655ad8819dc85aad187ffc",
+                    "\/modules\/backend\/composer.json": "507fd2f71303ee5b47edbea47757f2a18809fc0e140f20a4bc55d8a520b2c80f",
+                    "\/modules\/cms\/classes\/CmsObject.php": "d42436c140171c1f59bae107df917f98e402f5b870b3e1577a79356523bcce41",
+                    "\/modules\/cms\/classes\/Controller.php": "981137a204234bb5b9f47a3ef4afdb1ca4e0963700d2c843a64ca51610d9e28f",
+                    "\/modules\/cms\/composer.json": "cf1909ce8b7278789f36621fd1cadd1c4b1df23ba33d179c60cad04fbca4932d"
+                }
+            }
         }
     ]
 }
