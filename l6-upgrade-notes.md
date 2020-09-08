@@ -51,8 +51,8 @@ If you would like to help with the upgrade process please make the following cha
 ```json
 "require": {
     "php": "^7.2",
-    "october/rain": "dev-develop as 1.0",
-    "october/system": "dev-developer",
+    "october/rain": "dev-develop as 1.1",
+    "october/system": "dev-develop",
     "october/backend": "dev-develop",
     "october/cms": "dev-develop",
     "laravel/framework": "~6.0",
@@ -61,7 +61,7 @@ If you would like to help with the upgrade process please make the following cha
 "config": {
     "preferred-install": "dist",
     "platform": {
-        "php": "7.2"
+        "php": "7.2.9"
     }
 },
 ```
@@ -78,17 +78,17 @@ If you are using composer you will need to make the following changes to your co
 ```json
 "require": {
     "php": "^7.2",
-    "october/rain": "~1.0",
-    "october/system": "~1.0",
-    "october/backend": "~1.0",
-    "october/cms": "~1.0",
+    "october/rain": "~1.1",
+    "october/system": "~1.1",
+    "october/backend": "~1.1",
+    "october/cms": "~1.1",
     "laravel/framework": "~6.0",
     "wikimedia/composer-merge-plugin": "1.4.1"
 },
 "config": {
     "preferred-install": "dist",
     "platform": {
-        "php": "7.2"
+        "php": "7.2.9"
     }
 },
 ```
