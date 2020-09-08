@@ -7,7 +7,8 @@
 -
 
 ## Bug Fixes
-- Fixed a bug where displaying protected file thumbnails with a width or height set to nothing would fail.
+- Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
+- Fixed issue where URLs to resized images were not being properly URL encoded
 
 ## Security Improvements
 -
