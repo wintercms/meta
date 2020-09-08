@@ -1,10 +1,10 @@
 # Build 1.1.0 - Foundation framework upgrade (Laravel 6.x LTS)
 
-Release Note 13
+Release Note 11
 
 Due to overwhelming support from the community, October CMS is updating its foundation framework to the latest Long Term Support (LTS) release. As a result, there are some new requirements to run October and some code changes required.
 
-From the proposed date of 1st August 2020* (Build 1.1.0) your webserver will require PHP 7.2.9 or above to use October CMS. After this date, websites using PHP 7.0-7.2.8 will still function normally but will no longer be able to receive updates or install the latest version.
+From the proposed Build 1.1.0 your webserver will require PHP 7.2.9 or above to use October CMS. After this date, websites using PHP 7.0-7.2.8 will still function normally but will no longer be able to receive updates or install the latest version.
 
 There are various code changes that may be required, including code found in plugins and themes, both private and public depending on what features you are utilizing.
 
@@ -118,7 +118,7 @@ Additionally, `putenv()` no longer changes the value returned by calls to `env()
 
 >**IMPORTANT:** `.env` files now require any values with spaces in them to be quoted too, it's recommended to just enclose every single value in `.env` with double quotes.
 
-<a name="upgrade-server-config">
+<a name="upgrade-server-config"></a>
 ### Server configuration (`.htaccess` files)
 
 With the introduction of core support for the `| resize` filter and associated logic, you will need to add the `storage/app/resized` directory as an allowed directory to your server configuration in order to load the resized images produced by that functionality.
