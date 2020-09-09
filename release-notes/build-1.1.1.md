@@ -4,7 +4,7 @@
 -
 
 ## API Changes
--
+- The `october:env` command is now privileged and will run even if plugins are failing to boot.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
