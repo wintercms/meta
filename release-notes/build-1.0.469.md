@@ -4,6 +4,7 @@
 - `.svg` has been removed from the default list of allowed extensions for uploading for security reasons, will be re-added in Build 1.1.1 alongside sanitization to protect against XSS attacks. Use `storage.media.defaultExtensions` to override the default list of allowed extensions in order to re-add support for it at your own risk.
 - `$fileName` was removed as a parameter for the `October\Rain\Halcyon\Builder->delete()` method as it wasn't actually being used internally and had no effect.
 - Partials included via `$this->renderPartial()`, `{% partial 'path/to/partial' %}`, and `{% include 'path/to/partial` %} now properly block all extensions other than `.htm` by default.
+- Attempting to load & render partials from outside of the theme using the CMS Twig engine will no longer work (note, this was never officially supported, it was a bug that it ever worked in the first place). If you are trying to render Twig from outside the theme you should always use the System Twig engine instead of the CMS one by calling `\Twig::parse($templateContents, $templateVars);`)
 
 ## Bug Fixes
 - Fixed issue where cookies that were generated at some point between pre-Laravel 5.5.* cookie security fix and the latest cookie security fixes in Build 1.0.468 could fail to be processed correctly.
