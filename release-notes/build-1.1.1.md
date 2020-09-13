@@ -1,7 +1,7 @@
 # Build 1.1.1
 
 ## UX/UI Improvements
--
+- Adjusted `october:fresh` to remove the demo plugin even when the demo theme has already been removed.
 
 ## API Changes
 - The `october:env` command is now privileged and will run even if plugins are failing to boot.
