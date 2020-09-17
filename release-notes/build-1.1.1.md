@@ -11,7 +11,7 @@
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
 - Fixed issue where URLs to resized images were not being properly URL encoded
 - Fixed an issue introduced in Build 1.1.0 where plain Twig templates couldn't be loaded through the `{% include 'path' %}` or `{{ source(path) }}` Twig functions.
-- Fixed issue introduced in build 458 where non-grouped repeaters with minimum items specified via the `minItems` option did not pre-fill the repeater with the minimum items.
+- Fixed issue introduced in build 1.0.458 where non-grouped repeaters with minimum items specified via the `minItems` option did not pre-fill the repeater with the minimum items.
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
