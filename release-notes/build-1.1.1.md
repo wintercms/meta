@@ -12,6 +12,7 @@
 - Fixed issue where URLs to resized images were not being properly URL encoded
 - Fixed an issue introduced in Build 1.1.0 where plain Twig templates couldn't be loaded through the `{% include 'path' %}` or `{{ source(path) }}` Twig functions.
 - Fixed issue introduced in build 1.0.458 where non-grouped repeaters with minimum items specified via the `minItems` option did not pre-fill the repeater with the minimum items.
+- Fixed issue where the ImageResizer would attempt to process image types that it couldn't handle instead of just passing them through untouched.
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
