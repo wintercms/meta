@@ -14,6 +14,7 @@
 - Fixed issue introduced in build 1.0.458 where non-grouped repeaters with minimum items specified via the `minItems` option did not pre-fill the repeater with the minimum items.
 - Fixed issue where the ImageResizer would attempt to process image types that it couldn't handle instead of just passing them through untouched.
 - Fixed issue where resized images were not correctly identified as already having been resized when atomic (blue/green) deployment strategies are used in conjunction with files being stored on the local filesystem in a shared symlinked storage folder.
+- Fixed issue where the media manager would not display a folder that a contained a filename with characters that are considered invalid by the MediaLibrary class (i.e. '+', various unicode characters).
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
