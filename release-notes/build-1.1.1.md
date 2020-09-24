@@ -22,7 +22,8 @@
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
 
 ## Translation Improvements
-- Improved Taiwanese translations
+- Improved Taiwanese translation
+- Improved French translation
 
 ## Performance Improvements
 -
