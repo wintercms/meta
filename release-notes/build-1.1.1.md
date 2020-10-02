@@ -25,6 +25,7 @@
 - Improved Taiwanese translation
 - Improved French translation
 - Improved Slovenian translation
+- Improved Russian translation
 
 ## Performance Improvements
 -
