@@ -29,6 +29,7 @@
 - Improved French translation
 - Improved Slovenian translation
 - Improved Russian translation
+- Improved Italian translation
 
 ## Performance Improvements
 -
