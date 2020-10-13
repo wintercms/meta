@@ -10,6 +10,7 @@
 - The `noRecordsMessage` configuration value to specify a message when a list is empty can now be specified for list-type widgets in the Relation controller.
 - CMS pages that are hidden (only accessible to logged in backend users) will now be automatically removed from RainLab.Pages menus.
 - `session.same_site` now defaults to `Lax` instead of null and any invalid configurations will be automatically corrected to the default value of `Lax`. See [#5293](https://github.com/octobercms/october/pull/5293) for a detailed breakdown.
+- Added new `removeSideMenuItems()` helper method to `NavigationManager`, which can quickly remove one or more side menu items for a specific owner and menu.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
