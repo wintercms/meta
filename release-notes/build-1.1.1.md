@@ -25,6 +25,7 @@
 - Fixed issue where the media manager would not display a folder that a contained a filename with characters that are considered invalid by the MediaLibrary class (i.e. '+', various unicode characters).
 - Fixed issue where resized images with spaces in their filenames would not pass the resizer validation checks because the target URL would be decoded three times instead of the intended two.
 - If a model's dateFormat includes microseconds (`.u`) or milliseconds (`.v`) but a given value provided to an attribute that is cast as a date does not include that information, then the date casting logic will now automatically add the appropriate number of zeros to the end of the provided date value for it to be accepted when parsing the provided value according to the defined dateFormat for the model. This fixes an issue with databases that have `.u` or `.v` in date columns that are managed by the datepicker in the backend which doesn't support sending micro or milliseconds.
+- Fixed a long-standing issue where returning a redirect to a file in response to an AJAX request in order to get the browser to download the file wouldn't stop displaying the AJAX loading indicator.
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
