@@ -13,6 +13,7 @@
 - `session.same_site` now defaults to `Lax` instead of null and any invalid configurations will be automatically corrected to the default value of `Lax`. See [#5293](https://github.com/octobercms/october/pull/5293) for a detailed breakdown.
 - Added new `removeSideMenuItems()` helper method to `NavigationManager`, which can quickly remove one or more side menu items for a specific owner and menu.
 - The app locale at the time of a message's entry onto the queue is now stored with the message on the queue as `_current_locale`.
+- Added support for `$query->selectConcat(array $parts, string $as)` to concatenate an array of parts into a single column/attribute `$as`.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
