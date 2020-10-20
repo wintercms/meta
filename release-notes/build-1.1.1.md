@@ -15,6 +15,7 @@
 - The app locale at the time of a message's entry onto the queue is now stored with the message on the queue as `_current_locale`.
 - Added support for `$query->selectConcat(array $parts, string $as)` to concatenate an array of parts into a single column/attribute `$as`.
 - Added support for the `upsert($values, $uniqueBy, $updateColumns)` QueryBuilder method added in Laravel 8.x which allows for bulk updates or inserts at the database level.
+- Added separate `backend.manage_own_editor` permission to allow users to manage their own personal editor preferences without being able to modify the global ones.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
@@ -30,6 +31,7 @@
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
+- Improved handling of custom editor styles to prevent HTML injection
 
 ## Translation Improvements
 - Improved Taiwanese translation
