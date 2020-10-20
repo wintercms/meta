@@ -14,6 +14,7 @@
 - Added new `removeSideMenuItems()` helper method to `NavigationManager`, which can quickly remove one or more side menu items for a specific owner and menu.
 - The app locale at the time of a message's entry onto the queue is now stored with the message on the queue as `_current_locale`.
 - Added support for `$query->selectConcat(array $parts, string $as)` to concatenate an array of parts into a single column/attribute `$as`.
+- Added support for the `upsert($values, $uniqueBy, $updateColumns)` QueryBuilder method added in Laravel 8.x which allows for bulk updates or inserts at the database level.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
