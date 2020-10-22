@@ -4,6 +4,7 @@
 - Adjusted `october:fresh` to remove the demo plugin even when the demo theme has already been removed.
 - Allowed for the "fancy" breadcrumb widget to be styled based on custom branding colors specified in the "Customize back-end" settings.
 - System will now throw an exception with a helpful error message if image resizing fails because an unsupported cache driver is being used (i.e. `array`).
+- Switched the order of the "Install plugins" & "Install themes" buttons to match the order of the tabs on the actual install page
 
 ## API Changes
 - The `october:env` command is now privileged and will run even if plugins are failing to boot.
@@ -16,6 +17,8 @@
 - Added support for `$query->selectConcat(array $parts, string $as)` to concatenate an array of parts into a single column/attribute `$as`.
 - Added support for the `upsert($values, $uniqueBy, $updateColumns)` QueryBuilder method added in Laravel 8.x which allows for bulk updates or inserts at the database level.
 - Added separate `backend.manage_own_editor` permission to allow users to manage their own personal editor preferences without being able to modify the global ones.
+- Added new `media_path()` helper function to return the fully qualified path to the media directory.
+- Added new `Storage::identify($disk)` method to identify the name of the disk configuration used to instantiate the given disk instance.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
@@ -28,6 +31,8 @@
 - Fixed issue where resized images with spaces in their filenames would not pass the resizer validation checks because the target URL would be decoded three times instead of the intended two.
 - If a model's dateFormat includes microseconds (`.u`) or milliseconds (`.v`) but a given value provided to an attribute that is cast as a date does not include that information, then the date casting logic will now automatically add the appropriate number of zeros to the end of the provided date value for it to be accepted when parsing the provided value according to the defined dateFormat for the model. This fixes an issue with databases that have `.u` or `.v` in date columns that are managed by the datepicker in the backend which doesn't support sending micro or milliseconds.
 - Fixed a long-standing issue where returning a redirect to a file in response to an AJAX request in order to get the browser to download the file wouldn't stop displaying the AJAX loading indicator.
+- Fixed the `uploads_path()` helper.
+- Fixed support for AWS S3 as a source for the ImageResizer.
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
