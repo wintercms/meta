@@ -5,6 +5,8 @@
 - Allowed for the "fancy" breadcrumb widget to be styled based on custom branding colors specified in the "Customize back-end" settings.
 - System will now throw an exception with a helpful error message if image resizing fails because an unsupported cache driver is being used (i.e. `array`).
 - Switched the order of the "Install plugins" & "Install themes" buttons to match the order of the tabs on the actual install page
+- Plugins that are already present in the local system and also exist in the marketplace will no longer be re-downloaded when a Project ID is attached.
+- The plugin management page will now reload after making changes that would affect which plugins are currently active.
 
 ## API Changes
 - The `october:env` command is now privileged and will run even if plugins are failing to boot.
