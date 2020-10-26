@@ -46,6 +46,8 @@
 - Improved Slovenian translation
 - Improved Russian translation
 - Improved Italian translation
+- Improved Dutch translation
+- Improved German translation
 
 ## Performance Improvements
 -
