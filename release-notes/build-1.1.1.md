@@ -21,6 +21,7 @@
 - Added separate `backend.manage_own_editor` permission to allow users to manage their own personal editor preferences without being able to modify the global ones.
 - Added new `media_path()` helper function to return the fully qualified path to the media directory.
 - Added new `Storage::identify($disk)` method to identify the name of the disk configuration used to instantiate the given disk instance.
+- Template blocks in Backend templates are now correctly terminating the output buffering used. Block processing uses layers of output buffering to determine applicable block content, however, a particular scenario occurred where subsequent blocks were not rendered due to content in between two blocks cancelling another layer, causing issues with further blocks. The block functionality will now capture the content in between blocks and hold it until the final content is generated, keeping the correct layer intact so that subsequent blocks are kept in the right location. See https://github.com/octobercms/library/pull/517 for more information.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
@@ -35,6 +36,8 @@
 - Fixed a long-standing issue where returning a redirect to a file in response to an AJAX request in order to get the browser to download the file wouldn't stop displaying the AJAX loading indicator.
 - Fixed the `uploads_path()` helper.
 - Fixed support for AWS S3 as a source for the ImageResizer.
+- Fixed issue where backend administrators list could not be filtered by "Is superuser?" filter on SQL Server due to that database engine not supporting literal boolean values.
+- Fixed adjacent block placeholders not working in Backend templates - the initial block is rendered, but the subsequent block is ignored. See API change above regarding block termination for more information.
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
