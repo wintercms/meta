@@ -22,6 +22,7 @@
 - Added new `media_path()` helper function to return the fully qualified path to the media directory.
 - Added new `Storage::identify($disk)` method to identify the name of the disk configuration used to instantiate the given disk instance.
 - Template blocks in Backend templates are now correctly terminating the output buffering used. Block processing uses layers of output buffering to determine applicable block content, however, a particular scenario occurred where subsequent blocks were not rendered due to content in between two blocks cancelling another layer, causing issues with further blocks. The block functionality will now capture the content in between blocks and hold it until the final content is generated, keeping the correct layer intact so that subsequent blocks are kept in the right location. See https://github.com/octobercms/library/pull/517 for more information.
+- Added new `October\Rain\Database\Behaviors\Sortable` behavior that mirrors the functionality of the `October\Rain\Database\Traits\Sortable` trait except with the ability to dynamically attach it to models at runtime allowing for third-party plugins to be extended with the functionality.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
