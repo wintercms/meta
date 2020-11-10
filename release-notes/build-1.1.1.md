@@ -40,6 +40,7 @@
 - Fixed support for AWS S3 as a source for the ImageResizer.
 - Fixed issue where backend administrators list could not be filtered by "Is superuser?" filter on SQL Server due to that database engine not supporting literal boolean values.
 - Fixed adjacent block placeholders not working in Backend templates - the initial block is rendered, but the subsequent block is ignored. See API change above regarding block termination for more information.
+- Fixed issue where an exception is thrown when scanning template content for mail templates and layouts that have been orphaned by a disabled or removed plugin. This prevented plugins such as the Translate plugin from scanning messages correctly.
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
