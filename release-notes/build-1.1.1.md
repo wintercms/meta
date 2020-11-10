@@ -41,6 +41,7 @@
 - Fixed issue where backend administrators list could not be filtered by "Is superuser?" filter on SQL Server due to that database engine not supporting literal boolean values.
 - Fixed adjacent block placeholders not working in Backend templates - the initial block is rendered, but the subsequent block is ignored. See API change above regarding block termination for more information.
 - Fixed issue where an exception is thrown when scanning template content for mail templates and layouts that have been orphaned by a disabled or removed plugin. This prevented plugins such as the Translate plugin from scanning messages correctly.
+- Fixed issue where models with guarded properties were failing to allow attributes that don't have a corresponding column to be processed in events (for example, the "data" attribute in the File model).
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
