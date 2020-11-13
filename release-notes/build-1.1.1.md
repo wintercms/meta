@@ -24,6 +24,7 @@
 - Template blocks in Backend templates are now correctly terminating the output buffering used. Block processing uses layers of output buffering to determine applicable block content, however, a particular scenario occurred where subsequent blocks were not rendered due to content in between two blocks cancelling another layer, causing issues with further blocks. The block functionality will now capture the content in between blocks and hold it until the final content is generated, keeping the correct layer intact so that subsequent blocks are kept in the right location. See https://github.com/octobercms/library/pull/517 for more information.
 - Added new `October\Rain\Database\Behaviors\Sortable` behavior that mirrors the functionality of the `October\Rain\Database\Traits\Sortable` trait except with the ability to dynamically attach it to models at runtime allowing for third-party plugins to be extended with the functionality.
 - Themes can now register localization keys to be used only on the backend using a similar file structure to plugins & modules. Ex: `themes/mytheme/lang/en/lang.php` contains `'ga_api_key' => 'Google Analytics API Key'`, referenced by `themes.mytheme::lang.ga_api_key`.
+- Quick actions can now be defined in the top-right of the Backend. Quick actions act as shortcuts to common actions, such as previewing the website. See https://github.com/octobercms/october/pull/5344 for more information.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
@@ -40,6 +41,8 @@
 - Fixed support for AWS S3 as a source for the ImageResizer.
 - Fixed issue where backend administrators list could not be filtered by "Is superuser?" filter on SQL Server due to that database engine not supporting literal boolean values.
 - Fixed adjacent block placeholders not working in Backend templates - the initial block is rendered, but the subsequent block is ignored. See API change above regarding block termination for more information.
+- Fixed issue where an exception is thrown when scanning template content for mail templates and layouts that have been orphaned by a disabled or removed plugin. This prevented plugins such as the Translate plugin from scanning messages correctly.
+- Fixed issue where models with guarded properties were failing to allow attributes that don't have a corresponding column to be processed in events (for example, the "data" attribute in the File model).
 
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
