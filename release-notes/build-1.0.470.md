@@ -11,7 +11,8 @@
 - Fixed an issue introduced in Build 1.0.469 where plain Twig templates couldn't be loaded through the `{% include 'path' %}` or `{{ source(path) }}` Twig functions
 
 ## Security Improvements
-- Tightened up the default permissions granted to the "Publisher" system role out of the box (backported from 1.1.1)
+- Tightened up the default permissions granted to the "Publisher" system role out of the box (backported from 1.1.1).
+- Locked down the Twig sandbox even more to prevent allowing users with access to Twig templates from defining and running PHP code (backported from 1.1.1).
 
 ## Translation Improvements
 -

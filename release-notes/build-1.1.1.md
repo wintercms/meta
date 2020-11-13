@@ -44,6 +44,7 @@
 ## Security Improvements
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
 - Improved handling of custom editor styles to prevent HTML injection
+- Locked down the Twig sandbox even more to prevent allowing users with access to Twig templates from defining and running PHP code
 
 ## Translation Improvements
 - Improved Taiwanese translation
