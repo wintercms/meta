@@ -7,6 +7,7 @@
 - Switched the order of the "Install plugins" & "Install themes" buttons to match the order of the tabs on the actual install page
 - Plugins that are already present in the local system and also exist in the marketplace will no longer be re-downloaded when a Project ID is attached.
 - The plugin management page will now reload after making changes that would affect which plugins are currently active.
+- Custom messages can now be provided for bulk deletions in Lists, defined by the `deleteMessage` property for successful deletions, and `noRecordsDeletedMessage` property for when no deletions occurred due to missing selections or an altered list query not returning any applicable records.
 
 ## API Changes
 - The `october:env` command is now privileged and will run even if plugins are failing to boot.
