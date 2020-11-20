@@ -9,6 +9,7 @@
 - The plugin management page will now reload after making changes that would affect which plugins are currently active.
 
 ## API Changes
+- The initial seeding process for empty databases no longer uses a default password; instead a secure random password is generated and reported in the console. If you need to change the admin account password run `php artisan october:passwd admin NewPasswordHere`
 - The `october:env` command is now privileged and will run even if plugins are failing to boot.
 - A new syntax for specifying the available options for field types that use the `options` property is now available: `\Path\To\Class::staticMethodName` will use the array returned by calling the static method `\Path\To\Class::staticMethodName()` as the options
 - The `noRecordsMessage` configuration value to specify a message when a list is empty can now be specified for list-type widgets in the Relation controller.
@@ -43,8 +44,12 @@
 - Fixed adjacent block placeholders not working in Backend templates - the initial block is rendered, but the subsequent block is ignored. See API change above regarding block termination for more information.
 - Fixed issue where an exception is thrown when scanning template content for mail templates and layouts that have been orphaned by a disabled or removed plugin. This prevented plugins such as the Translate plugin from scanning messages correctly.
 - Fixed issue where models with guarded properties were failing to allow attributes that don't have a corresponding column to be processed in events (for example, the "data" attribute in the File model).
+- Fixed issue with the included `http_build_url()` polyfill where the current and replacement URLs couldn't be passed as strings.
+- Fixed issue where having multiple belongsToMany relationships defined and differentiated by the `conditions` property would cause one of the relationships to be wiped out on saves of a separate relationship. See [octobercms/october#4952](https://github.com/octobercms/october/issues/4952) for more information.
+- Fixed issue where paths provided to the `theme:sync` command were too loosely matched, which could lead to files that weren't intended to be synced being synced anyways.
 
 ## Security Improvements
+- The admin account password is now securely randomly generated during the initial seeding process for empty databases and is reported in the console. If you need to change the admin account password run `php artisan october:passwd admin NewPasswordHere`
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
 - Improved handling of custom editor styles to prevent HTML injection
 - Locked down the Twig sandbox even more to prevent allowing users with access to Twig templates from defining and running PHP code
