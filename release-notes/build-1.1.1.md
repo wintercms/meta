@@ -63,3 +63,6 @@
 - Improved Italian translation
 - Improved Dutch translation
 - Improved German translation
+
+## Dependencies
+- The Composer merge plugin was temporarily cloned to the OctoberRain GitHub organization to resolve an issue with Composer 2.0 support.
