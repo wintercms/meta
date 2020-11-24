@@ -4,8 +4,8 @@
 -
 
 ## API Changes
-- Added support for the `{colorpicker}` field in the Field Parser.
-- The `availableColors` attribute can now be specified for `colorpicker` type variables in the Field Parser.
+- Added support for the `{colorpicker}` field in the Dynamic Syntax parser.
+- The `availableColors` attribute can now be specified for `colorpicker` type variables in the Dynamic Syntax parser.
 
 ## Bug Fixes
 -
