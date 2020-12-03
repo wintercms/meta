@@ -14,7 +14,7 @@
 -
 
 ## Translation Improvements
--
+- Improved Slovakian translations.
 
 ## Performance Improvements
 -
