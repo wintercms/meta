@@ -9,6 +9,7 @@
 
 ## Bug Fixes
 - Fixed a duplicate AJAX call being fired when using the "Apply" or "Clear" buttons in a group filter.
+- Fixed an exception thrown on viewing or logging into the Backend when attempting to load the backend localization files of a missing theme.
 
 ## Security Improvements
 -
