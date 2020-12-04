@@ -21,7 +21,7 @@
 -
 
 ## Community Improvements
--
+- Added a new `EventFake` class to provide mocking and testing services for events in unit tests.
 
 ## Dependencies
 -
