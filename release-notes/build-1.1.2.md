@@ -10,6 +10,8 @@
 ## Bug Fixes
 - Fixed a duplicate AJAX call being fired when using the "Apply" or "Clear" buttons in a group filter.
 - Fixed an exception thrown on viewing or logging into the Backend when attempting to load the backend localization files of a missing theme.
+- Fixed issue where `/0` would return the result from `/`.
+- Fixed issue where plugins with external dependencies referenced in their migration files would fail to install correctly via the `plugin:install` CLI command while installing normally in a web environment.
 
 ## Security Improvements
 -
