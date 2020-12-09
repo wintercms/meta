@@ -12,6 +12,7 @@
 - Fixed an exception thrown on viewing or logging into the Backend when attempting to load the backend localization files of a missing theme.
 - Fixed issue where `/0` would return the result from `/`.
 - Fixed issue where plugins with external dependencies referenced in their migration files would fail to install correctly via the `plugin:install` CLI command while installing normally in a web environment.
+- The `listAllDirectories()` method in the `MediaLibrary` helper now correctly excludes paths and directories that are specified in the storage ignore rules configuration.
 
 ## Security Improvements
 -
