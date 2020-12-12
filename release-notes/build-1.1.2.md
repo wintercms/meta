@@ -1,7 +1,7 @@
 # Build 1.1.2 (WIP)
 
 ## UX/UI Improvements
--
+- Fixed issue where the browser's number increment/decrement control would cover up the placeholder text in `type: number` inputs when hovered over or focused on.
 
 ## API Changes
 - Added support for the `{colorpicker}` field in the Dynamic Syntax parser.
