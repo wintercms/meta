@@ -26,6 +26,7 @@
 
 ## Community Improvements
 - Added a new `EventFake` class to provide mocking and testing services for events in unit tests.
+- Fixed the order of parameters in the docblock for the `mailer.beforeAddContent` event.
 
 ## Dependencies
 -
