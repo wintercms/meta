@@ -2,6 +2,7 @@
 
 ## UX/UI Improvements
 - Fixed issue where the browser's number increment/decrement control would cover up the placeholder text in `type: number` inputs when hovered over or focused on.
+- Added ability to select the default backend locale when running the `october:install` command
 
 ## API Changes
 - Added support for the `{colorpicker}` field in the Dynamic Syntax parser.
@@ -16,7 +17,7 @@
 - Fixed issue where field options specified using a static method in the form of `options: "\Path\To\Class::staticMethod"` were not receiving the Form widget instance or the Field widget instance as per the documentation.
 
 ## Security Improvements
--
+- Tightened up the Twig SecurityPolicy. Calling `insert()`, `update()`, `delete()` methods on all PHP objects are now blocked from within Twig, data modifications should not be done at the view layer. If absolutely necessary, consider firing a view event instead.
 
 ## Translation Improvements
 - Improved Slovakian translations.
