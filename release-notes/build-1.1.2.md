@@ -16,6 +16,7 @@
 - The `listAllDirectories()` method in the `MediaLibrary` helper now correctly excludes paths and directories that are specified in the storage ignore rules configuration.
 - Fixed issue where field options specified using a static method in the form of `options: "\Path\To\Class::staticMethod"` were not receiving the Form widget instance or the Field widget instance as per the documentation.
 - Fixed issue introduced in Laravel 5.7 where eager loading `File` relationships on PostgreSQL would fail with the message "Varchar <> Integer comparison is not allowed".
+- Fixed an issue with integers being used as keys for the options in the checkbox list.
 
 ## Security Improvements
 - Tightened up the Twig SecurityPolicy. Calling `insert()`, `update()`, `delete()` methods on all PHP objects are now blocked from within Twig, data modifications should not be done at the view layer. If absolutely necessary, consider firing a view event instead.
