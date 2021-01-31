@@ -26,6 +26,7 @@
 
 ## Translation Improvements
 - Improved Slovakian translations.
+- Improved Hungarian translations.
 
 ## Performance Improvements
 -
