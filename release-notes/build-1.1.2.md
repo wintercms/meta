@@ -8,6 +8,7 @@
 - Added support for the `{colorpicker}` field in the Dynamic Syntax parser.
 - The `availableColors` attribute can now be specified for `colorpicker` type variables in the Dynamic Syntax parser.
 - Added new `getRelationTypeDefinitions` and `getRelationTypeDefinition` methods to models to query relationship definitions through methods as opposed to interacting with the relation properties directly.
+- The "Customize" button is now disabled for all themes that are not the currently active theme.
 
 ## Bug Fixes
 - Fixed a duplicate AJAX call being fired when using the "Apply" or "Clear" buttons in a group filter.
