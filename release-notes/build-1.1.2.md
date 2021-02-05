@@ -40,4 +40,4 @@
 - Fixed the order of parameters in the docblock for the `mailer.beforeAddContent` event.
 
 ## Dependencies
--
+- Updated Pikaday to 1.8.2
