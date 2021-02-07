@@ -28,9 +28,10 @@
 - Session identifiers are now invalidated on logging out instead of just flushed.
 
 ## Translation Improvements
-- Improved Slovakian translations.
-- Improved Hungarian translations.
-- Improved Brazilian Portuguese translations.
+- Improved Slovakian translation.
+- Improved Hungarian translation.
+- Improved Brazilian Portuguese translation.
+- Improved Dutch translation.
 
 ## Performance Improvements
 -
