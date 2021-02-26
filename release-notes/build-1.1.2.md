@@ -21,6 +21,8 @@
 - Fixed issue where having safeMode enabled when editing a CMS CompoundObject with different line endings from the user's browser (i.e. `\r` vs `\r\n`) would cause the safe mode protection to unnecessarily trigger (preventing any changes to non-protected properties from being saved) because the user's browser would modify the original line endings.
 - Fixed an issue with integers being used as keys for the options in the checkbox list.
 - Fixed an issue with syncing belongToMany relationships introduced in v1.1.1.
+- Fixed an issue where the user-provided password for the default admin account during `october:install` was not being respected and was instead always being set to a random string of characters as if no password had been provided.
+- Fixed an issue where the ImageResizer was always provided absolute URLs instead of respecting the value of `cms.linkPolicy`.
 
 ## Security Improvements
 - Tightened up the Twig SecurityPolicy. Calling `insert()`, `update()`, `delete()` methods on all PHP objects are now blocked from within Twig, data modifications should not be done at the view layer. If absolutely necessary, consider firing a view event instead.
