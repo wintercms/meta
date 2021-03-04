@@ -44,3 +44,4 @@
 
 ## Dependencies
 - Updated Pikaday to 1.8.2
+- Switched back to the source repository for the `wikimedia/composer-merge-plugin` as Composer 2.0 support has fully arrived. Update your `composer.json` files to require `"wikimedia/composer-merge-plugin": "~2.0.1"`
