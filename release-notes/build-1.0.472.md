@@ -1,5 +1,7 @@
 # Build 1.0.472 (WIP)
 
+> **NOTE:** As of v1.0.472, the core maintainer team has left October CMS and forked the project into Winter CMS.
+
 ## UX/UI Improvements
 -
 

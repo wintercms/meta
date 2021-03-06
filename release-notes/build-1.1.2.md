@@ -1,5 +1,7 @@
 # Build 1.1.2 (WIP)
 
+> **NOTE:** As of v1.1.2, the core maintainer team has left October CMS and forked the project into Winter CMS.
+
 ## UX/UI Improvements
 - Fixed issue where the browser's number increment/decrement control would cover up the placeholder text in `type: number` inputs when hovered over or focused on.
 - Added ability to select the default backend locale when running the `october:install` command
@@ -23,6 +25,7 @@
 - Fixed an issue with syncing belongToMany relationships introduced in v1.1.1.
 - Fixed an issue where the user-provided password for the default admin account during `october:install` was not being respected and was instead always being set to a random string of characters as if no password had been provided.
 - Fixed an issue where the ImageResizer was always provided absolute URLs instead of respecting the value of `cms.linkPolicy`.
+- Fixed an issue where calling `detach()` on a BelongsToMany relationship where a scope was defined on the relationship would fail.
 
 ## Security Improvements
 - Tightened up the Twig SecurityPolicy. Calling `insert()`, `update()`, `delete()` methods on all PHP objects are now blocked from within Twig, data modifications should not be done at the view layer. If absolutely necessary, consider firing a view event instead.
