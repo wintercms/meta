@@ -1,4 +1,4 @@
-# Build 1.1.2 (WIP)
+# Build 1.1.2
 
 > **NOTE:** As of v1.1.2, the core maintainer team has left October CMS and forked the project into Winter CMS.
 
@@ -38,13 +38,11 @@
 - Improved Brazilian Portuguese translation.
 - Improved Dutch translation.
 
-## Performance Improvements
--
-
 ## Community Improvements
 - Added a new `EventFake` class to provide mocking and testing services for events in unit tests.
 - Fixed the order of parameters in the docblock for the `mailer.beforeAddContent` event.
 
 ## Dependencies
 - Updated Pikaday to 1.8.2
+- PHP 8 is now supported
 - Switched back to the source repository for the `wikimedia/composer-merge-plugin` as Composer 2.0 support has fully arrived. Update your `composer.json` files to require `"wikimedia/composer-merge-plugin": "~2.0.1"`
