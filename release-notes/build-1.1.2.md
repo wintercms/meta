@@ -33,10 +33,11 @@
 - Fixed an issue with syncing belongToMany relationships introduced in v1.1.1.
 - Fixed an issue where the user-provided password for the default admin account during `winter:install` was not being respected and was instead always being set to a random string of characters as if no password had been provided.
 - Fixed an issue where the ImageResizer was always provided absolute URLs instead of respecting the value of `cms.linkPolicy`.
-- Fixed an issue where calling `detach()` on a BelongsToMany relationship where a scope was defined on the relationship would fail.
+- Reverted previous fixes to the BelongsToMany relationship related to conditions and scopes being defined during detach() as they were causing more problems than they solved.
 - Added a default value of `SQLite` to the database options question of the `winter:install` command so that `--no-interaction` will work.
 - Fixed a breaking change in how empty route parameters with default values are handled that was introduced in v1.0.466
 - Fixed issue where a tooltip in first column of Lists widget not working.
+- Fixed an issue where fields that use `dependsOn` to depend on another field that is itself dependent on other fields wouldn't be triggered when the first field was updated through the `dependsOn` functionality.
 
 ## Security Improvements
 - Tightened up the Twig SecurityPolicy. Calling `insert()`, `update()`, `delete()` methods on all PHP objects are now blocked from within Twig, data modifications should not be done at the view layer. If absolutely necessary, consider firing a view event instead.
