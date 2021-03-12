@@ -36,7 +36,6 @@
 - Reverted previous fixes to the BelongsToMany relationship related to conditions and scopes being defined during detach() as they were causing more problems than they solved.
 - Added a default value of `SQLite` to the database options question of the `winter:install` command so that `--no-interaction` will work.
 - Fixed a breaking change in how empty route parameters with default values are handled that was introduced in v1.0.466
-- Fixed issue where a tooltip in first column of Lists widget not working.
 - Fixed an issue where fields that use `dependsOn` to depend on another field that is itself dependent on other fields wouldn't be triggered when the first field was updated through the `dependsOn` functionality.
 
 ## Security Improvements
