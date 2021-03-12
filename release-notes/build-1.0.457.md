@@ -2,7 +2,7 @@
 
 ## UX/UI Improvements:
 - Now utilizing the selected `secondaryColor` brand setting for the border color on selected items in the Treeview control (pages list)
-- Added support for `cms.databaseTemplates` to the `october:env` command
+- Added support for `cms.databaseTemplates` to the `winter:env` command
 - Added support for preview mode to the Taglist FormWidget
 - Improved the visibility of the code editor buttons in the CMS section by changing their colour to one with more contrast
 - Disabled the theme config cache when application is in debug mode
@@ -10,9 +10,9 @@
 - Improved screen reader accessibility for tabs and improved keyboard navigation in the backend
 
 ## API Changes:
-- The `October\Rain\Database\Attach\File` model's `getPath()` now defines an optional `$fileName` parameter, any custom classes that extend this method must have their method signatures updated to match this change.
-- The `October\Rain\Database\Attach\File` model's `getThumbFilename()` method has been changed from `protected` to `public`, any custom classes that extend this method must have their method signatures updated to match this change.
-- The `getDisk()` method has been added to the `October\Rain\Database\Attach\File` model which enables running all storage related commands on the File's actual storage disk instead of the default storage disk.
+- The `Winter\Rain\Database\Attach\File` model's `getPath()` now defines an optional `$fileName` parameter, any custom classes that extend this method must have their method signatures updated to match this change.
+- The `Winter\Rain\Database\Attach\File` model's `getThumbFilename()` method has been changed from `protected` to `public`, any custom classes that extend this method must have their method signatures updated to match this change.
+- The `getDisk()` method has been added to the `Winter\Rain\Database\Attach\File` model which enables running all storage related commands on the File's actual storage disk instead of the default storage disk.
 - Added new `Backend\Traits\PreferenceMaker` trait modelled after the `SessionMaker` trait that stores minor user preference changes (such as backend list configurations) in the user's preferences.
 - Added `cms.enableBackendServiceWorkers` (defaulting to false) to allow the use of Service Workers in the backend. They have been disabled by default for security purposes to prevent any frontend Service Workers from leaking into the backend.
 - Plugin dependencies defined in the plugin registration class `$require` property are now case insensitive.
@@ -63,7 +63,7 @@
 ## Community Improvements:
 - Various improvements (performance and otherwise) made to the TravisCI integration with the main repos to make contributing to PRs a nicer experience
 - Various improvements to the automated testsuite (including a new style checker, the existing code base has been cleaned up to conform to the style checker. It may be made more strict in the future, for now all PRs are required to adhere to it)
-- Added documentation for the `theme:sync` command and for the `--relative` option for the `october:mirror` command
+- Added documentation for the `theme:sync` command and for the `--relative` option for the `winter:mirror` command
 
 ## Dependencies
 - Added inline_style and inline_class Froala plugins into the base Froala build

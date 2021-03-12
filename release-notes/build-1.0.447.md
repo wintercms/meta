@@ -8,7 +8,7 @@
 - Renamed the Lists widget's `prepareModel()` method to `prepareQuery()` instead.
 - Provided the containing `Form` widget to `FormWidgetBases` instances as `$widget->getParentForm()` to enable complex FormWidgets to correctly obtain their containing `Form` widget instance.
 - Implemented automatic backend URL generation for protected file's getPath() and getThumb() methods
-- Added `returnResponse` parameter to `output()` and `outputThumb()` methods on the `October\Rain\Database\Attach\File` class to return `Response` objects instead of outputting the response headers and content directly.
+- Added `returnResponse` parameter to `output()` and `outputThumb()` methods on the `Winter\Rain\Database\Attach\File` class to return `Response` objects instead of outputting the response headers and content directly.
 - Added `validateUserModel()` method to the AuthManager class to provide an opportunity to reject a user's login
 - Added `step`, `min`, & `max` options to the `number` field type.
 - Added support for the `recordfinder` FormWidget to be used without a relationship definition through the `useRelation: false` and `modelClass` config properties
@@ -29,7 +29,7 @@
 - Fixed display of the "Clear search" button in various contexts
 - Improved error messages in the YAML parser
 - Fixed issue from Build 1.0.444 where tabs and tables were no longer horizontally scrollable on touch devices
-- Fixed issue with simplePaginate using Laravel's translation system for Next & Previous which doesn't work in October
+- Fixed issue with simplePaginate using Laravel's translation system for Next & Previous which doesn't work in Winter
 - Fixed insidious bug where HasOne relationship's `getSimpleValue` would return the key of the parent record, not of the actual related record.
 - Fixed issue introduced in Build 1.0.446 where some media URLs would contain the base folder twice in a row
 - Fixed issue with expanding / collapsing the side menu items within the backend settings section

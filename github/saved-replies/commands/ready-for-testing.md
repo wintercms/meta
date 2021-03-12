@@ -19,14 +19,14 @@
   // Comment body
   const commentBody = 'This pull request has been marked as **Ready for Testing**. To expedite this pull request being'
     + ' merged, we encourage members of the community to test the changes and confirm they are working. You may view our'
-    + ' [Testing a Pull Request](https://github.com/octobercms/october/blob/develop/.github/CONTRIBUTING.md#testing-a-pull-request)'
-    + ' section in the Contibution Guide to access the changes in your own copy of October CMS.'
+    + ' [Testing a Pull Request](https://github.com/wintercms/winter/blob/develop/.github/CONTRIBUTING.md#testing-a-pull-request)'
+    + ' section in the Contibution Guide to access the changes in your own copy of Winter CMS.'
     + '\n\n'
-    + 'If you have [Docker](https://www.docker.com/), you can quickly run a copy of October CMS with this pull request\'s'
+    + 'If you have [Docker](https://www.docker.com/), you can quickly run a copy of Winter CMS with this pull request\'s'
     + ' changes in place via the following command:'
     + '\n\n'
     + '```\n'
-    + 'docker run --rm -p 80:80 -e GIT_MERGE_PR=' + number + ' aspendigital/octobercms:develop\n'
+    + 'docker run --rm -p 80:80 -e GIT_MERGE_PR=' + number + ' aspendigital/wintercms:develop\n'
     + '```';
 
   // Add comment

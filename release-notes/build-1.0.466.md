@@ -19,7 +19,7 @@
 - External parameters may now use dot notation to get a deeper-nested value when used for component parameters in a CMS object.
 - Added `auth.throttle.*` configuration options to configure the login throttling for the backend.
 - Added `formGetRedirectUrl($context, $model)` method to the `FormController` behavior, overrideable by the implementing controller. Used to get the redirect URL for a given context & model if a redirect is requested.
-- If uploaded files are missing an extension October will now try to automatically determine one based on the MIME type of the file.
+- If uploaded files are missing an extension Winter will now try to automatically determine one based on the MIME type of the file.
 - Added support for the `attributes` property on the `colorpicker`, `codeeditor`, `markdown`, `richeditor`, `mediafinder`, & `fileupload` FormWidgets.
 - Added support for the `placeholder` attribute on the `password` field type.
 - Added support for defining custom values for the `title` and `toolbarButtons` labels of the RelationController behavior.
@@ -34,7 +34,7 @@
 - Added ability to translate List column default values
 - Added ability to specify the filename of files uploaded directly via the AJAX framework and `Blob` objects.
 - Added new `data-browser-validate` option to trigger browser-based client side validation on AJAX requests within `<form>` elements.
-- Plugins & themes included as git submodules are now properly detected as valid git sources in the `october:util git pull` command.
+- Plugins & themes included as git submodules are now properly detected as valid git sources in the `winter:util git pull` command.
 - `PluginManager->findMissingDependencies()` now returns an array of arrays of missing plugin codes keyed by the plugin code that requires the missing plugins.
 - Added support for the `trigger` field property in the FieldParser.
 - Finished the implementation of the `(array) $cssClasses` property on the Filter widget.
@@ -47,7 +47,7 @@
 - Fixed issue where custom validation rule strings starting with `unique` would not register correctly.
 - Fixed `propertyExists()` method to correctly detect properties added through `addDynamicProperty()`.
 - Fixed `options` support for `checkboxlist` and `balloon-selector` field types in the Syntax Parser
-- Fixed issues with properly quoting values when running `october:env`
+- Fixed issues with properly quoting values when running `winter:env`
 - Fixed issue where Excel wouldn't properly detect the encoding of CSV files exported using the `useList` option
 - Asset files uploaded in the CMS will now take their default permissions from the value set in the configuration.
 - Repeaters will now trigger `change.oc.formwidget` when adding or removing items.
@@ -75,7 +75,7 @@
 - Fixed typos referencing the Halcyon library
 - Fixed IE11 support for deregistering service workers in the backend
 - Fixed issue where if a template was manually removed from `cms_theme_templates` when using `databaseTemplates` would cause an exception to be thrown.
-- Redid October's Translation service to extend Laravel's to improve compatibility with Laravel packages
+- Redid Winter's Translation service to extend Laravel's to improve compatibility with Laravel packages
 - Fixed issue where the `unique` validation rule wouldn't work on models with a custom DB connection.
 - Fixed issue where calling `createMany()` on a BelongsToMany relationship would cause the relationships to be created as deferred bindings with a session key of 0 even when the parent model exists.
 - Fixed an issue where some ApplicationExceptions include unfiltered user input in the response to the browser, which would cause security researchers to think that they've found a XSS vulnerability which would then take resources to explain how it wasn't exploitable by just stripping any potential XSS from ApplicationException messages.
@@ -108,6 +108,6 @@
 - Added UI docs for indeterminate checkboxes
 
 ## Dependencies
-- Switched from the abandoned `jakub-onderka/php-parallel-lint` library to `php-parallel-lint/php-parallel-lint` for code linting purposes in the October CMS and Rain library test suites.
+- Switched from the abandoned `jakub-onderka/php-parallel-lint` library to `php-parallel-lint/php-parallel-lint` for code linting purposes in the Winter CMS and Rain library test suites.
 - Locked the wikipedia/composer-merge-plugin dependency to version 1.4.1.
 - Updated the version of jQuery pulled in by `@jQuery` to 3.4.0 from 3.3.1 to match the version used in the backend.

@@ -1,4 +1,4 @@
-The OctoberCMS, OctoberRain, & RainLab GitHub organizations use the following system of labels for managing issues and pull requests. Every issue  / pull request should generally at least have a Type label and Status label assigned to them. Priority & Miscellaneous labels can be assigned as applicable.
+The Winter CMS, WinterRain, & RainLab GitHub organizations use the following system of labels for managing issues and pull requests. Every issue  / pull request should generally at least have a Type label and Status label assigned to them. Priority & Miscellaneous labels can be assigned as applicable.
 
 ## Types
 | Label                        | Description / Purpose                                                                              |
@@ -47,4 +47,4 @@ The OctoberCMS, OctoberRain, & RainLab GitHub organizations use the following sy
 | PostgreSQL                   | Issue / PR is related to PostgreSQL compatibility                                        |
 | third party                  | Not related to the repository, it must be handled by a third party instead               |
 | wrong branch                 | Should not be used anymore as maintainers can edit the branch a PR is made to themselves |
-| Website / Marketplace / Docs | Issue is related to the OctoberCMS.com marketplace or documentation                      |
+| Website / Marketplace / Docs | Issue is related to the Winter CMS.com marketplace or documentation                      |

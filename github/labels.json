@@ -141,7 +141,7 @@
     {
 		"name": "Website / Marketplace / Docs",
 		"color": "FBCA04",
-        "description": "Issue is related to the OctoberCMS.com marketplace or documentation",
+        "description": "Issue is related to the Winter CMS.com marketplace or documentation",
         "aliases": [
 			"website"
 		]

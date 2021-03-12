@@ -1,7 +1,7 @@
 # Build 1.1.1
 
 ## UX/UI Improvements
-- Adjusted `october:fresh` to remove the demo plugin even when the demo theme has already been removed.
+- Adjusted `winter:fresh` to remove the demo plugin even when the demo theme has already been removed.
 - Allowed for the "fancy" breadcrumb widget to be styled based on custom branding colors specified in the "Customize back-end" settings.
 - System will now throw an exception with a helpful error message if image resizing fails because an unsupported cache driver is being used (i.e. `array`).
 - Switched the order of the "Install plugins" & "Install themes" buttons to match the order of the tabs on the actual install page
@@ -10,12 +10,12 @@
 - Custom messages can now be provided for bulk deletions in Lists, defined by the `deleteMessage` property for successful deletions, and `noRecordsDeletedMessage` property for when no deletions occurred due to missing selections or an altered list query not returning any applicable records.
 
 ## API Changes
-- The initial seeding process for empty databases no longer uses a default password; instead a secure random password is generated and reported in the console. If you need to change the admin account password run `php artisan october:passwd admin NewPasswordHere`
-- The `october:env` command is now privileged and will run even if plugins are failing to boot.
+- The initial seeding process for empty databases no longer uses a default password; instead a secure random password is generated and reported in the console. If you need to change the admin account password run `php artisan winter:passwd admin NewPasswordHere`
+- The `winter:env` command is now privileged and will run even if plugins are failing to boot.
 - A new syntax for specifying the available options for field types that use the `options` property is now available: `\Path\To\Class::staticMethodName` will use the array returned by calling the static method `\Path\To\Class::staticMethodName()` as the options
 - The `noRecordsMessage` configuration value to specify a message when a list is empty can now be specified for list-type widgets in the Relation controller.
 - CMS pages that are hidden (only accessible to logged in backend users) will now be automatically removed from RainLab.Pages menus.
-- `session.same_site` now defaults to `Lax` instead of null and any invalid configurations will be automatically corrected to the default value of `Lax`. See [#5293](https://github.com/octobercms/october/pull/5293) for a detailed breakdown.
+- `session.same_site` now defaults to `Lax` instead of null and any invalid configurations will be automatically corrected to the default value of `Lax`. See [#5293](https://github.com/wintercms/winter/pull/5293) for a detailed breakdown.
 - Added new `removeSideMenuItems()` helper method to `NavigationManager`, which can quickly remove one or more side menu items for a specific owner and menu.
 - The app locale at the time of a message's entry onto the queue is now stored with the message on the queue as `_current_locale`.
 - Added support for `$query->selectConcat(array $parts, string $as)` to concatenate an array of parts into a single column/attribute `$as`.
@@ -23,10 +23,10 @@
 - Added separate `backend.manage_own_editor` permission to allow users to manage their own personal editor preferences without being able to modify the global ones.
 - Added new `media_path()` helper function to return the fully qualified path to the media directory.
 - Added new `Storage::identify($disk)` method to identify the name of the disk configuration used to instantiate the given disk instance.
-- Template blocks in Backend templates are now correctly terminating the output buffering used. Block processing uses layers of output buffering to determine applicable block content, however, a particular scenario occurred where subsequent blocks were not rendered due to content in between two blocks cancelling another layer, causing issues with further blocks. The block functionality will now capture the content in between blocks and hold it until the final content is generated, keeping the correct layer intact so that subsequent blocks are kept in the right location. See https://github.com/octobercms/library/pull/517 for more information.
-- Added new `October\Rain\Database\Behaviors\Sortable` behavior that mirrors the functionality of the `October\Rain\Database\Traits\Sortable` trait except with the ability to dynamically attach it to models at runtime allowing for third-party plugins to be extended with the functionality.
+- Template blocks in Backend templates are now correctly terminating the output buffering used. Block processing uses layers of output buffering to determine applicable block content, however, a particular scenario occurred where subsequent blocks were not rendered due to content in between two blocks cancelling another layer, causing issues with further blocks. The block functionality will now capture the content in between blocks and hold it until the final content is generated, keeping the correct layer intact so that subsequent blocks are kept in the right location. See https://github.com/wintercms/library/pull/517 for more information.
+- Added new `Winter\Rain\Database\Behaviors\Sortable` behavior that mirrors the functionality of the `Winter\Rain\Database\Traits\Sortable` trait except with the ability to dynamically attach it to models at runtime allowing for third-party plugins to be extended with the functionality.
 - Themes can now register localization keys to be used only on the backend using a similar file structure to plugins & modules. Ex: `themes/mytheme/lang/en/lang.php` contains `'ga_api_key' => 'Google Analytics API Key'`, referenced by `themes.mytheme::lang.ga_api_key`.
-- Quick actions can now be defined in the top-right of the Backend. Quick actions act as shortcuts to common actions, such as previewing the website. See https://github.com/octobercms/october/pull/5344 for more information.
+- Quick actions can now be defined in the top-right of the Backend. Quick actions act as shortcuts to common actions, such as previewing the website. See https://github.com/wintercms/winter/pull/5344 for more information.
 
 ## Bug Fixes
 - Fixed issue where displaying protected file thumbnails with a width or height set to nothing would fail.
@@ -46,11 +46,11 @@
 - Fixed issue where an exception is thrown when scanning template content for mail templates and layouts that have been orphaned by a disabled or removed plugin. This prevented plugins such as the Translate plugin from scanning messages correctly.
 - Fixed issue where models with guarded properties were failing to allow attributes that don't have a corresponding column to be processed in events (for example, the "data" attribute in the File model).
 - Fixed issue with the included `http_build_url()` polyfill where the current and replacement URLs couldn't be passed as strings.
-- Fixed issue where having multiple belongsToMany relationships defined and differentiated by the `conditions` property would cause one of the relationships to be wiped out on saves of a separate relationship. See [octobercms/october#4952](https://github.com/octobercms/october/issues/4952) for more information.
+- Fixed issue where having multiple belongsToMany relationships defined and differentiated by the `conditions` property would cause one of the relationships to be wiped out on saves of a separate relationship. See [wintercms/winter#4952](https://github.com/wintercms/winter/issues/4952) for more information.
 - Fixed issue where paths provided to the `theme:sync` command were too loosely matched, which could lead to files that weren't intended to be synced being synced anyways.
 
 ## Security Improvements
-- The admin account password is now securely randomly generated during the initial seeding process for empty databases and is reported in the console. If you need to change the admin account password run `php artisan october:passwd admin NewPasswordHere`
+- The admin account password is now securely randomly generated during the initial seeding process for empty databases and is reported in the console. If you need to change the admin account password run `php artisan winter:passwd admin NewPasswordHere`
 - Tightened up the default permissions granted to the "Publisher" system role out of the box
 - Improved handling of custom editor styles to prevent HTML injection
 - Locked down the Twig sandbox even more to prevent allowing users with access to Twig templates from defining and running PHP code
@@ -65,4 +65,4 @@
 - Improved German translation
 
 ## Dependencies
-- The Composer merge plugin was temporarily cloned to the OctoberRain GitHub organization to resolve an issue with Composer 2.0 support.
+- The Composer merge plugin was temporarily cloned to the WinterRain GitHub organization to resolve an issue with Composer 2.0 support.

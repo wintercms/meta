@@ -9,7 +9,7 @@
 - Added ability to define icons for tabs
 - Added "Apply" & "Clear" buttons to filter popups
 - Added support for 'auto' placement of the time picker widget (based on viewport)
-- Added ability to install October.Drivers and RainLab.Builder plugins from the october:install command
+- Added ability to install Winter.Drivers and RainLab.Builder plugins from the winter:install command
 - Added readOnly support to RecordFinder, Switch, & Relation form widgets
 - Improved the visibility of the code editor control buttons
 - Collapse folders in the CMS by default

@@ -12,7 +12,7 @@
 - When setting relationship values model mutator methods (`'set' . $attribute . 'Attribute'`) are now taken into account meaning that you can control how specific relationship values are set by defining a custom mutator method for the relationship.
 - Added `getReportWidgets()` method to `Backend\Classes\WidgetManager` to return the protected array of currently registered report widgets
 - Custom theme data stored in `cms_theme_data` is now removed when the theme it belongs to is deleted.
-- Added `develop.decompileBackendAssets` configuration flag to decompile the backend assets in order to simplify making changes to backend asset files for the purpose of making PRs to the OctoberCMS core.
+- Added `develop.decompileBackendAssets` configuration flag to decompile the backend assets in order to simplify making changes to backend asset files for the purpose of making PRs to the Winter CMS core.
 - Switched parsing of stub files for the generator commands to use Twig instead of basic `str_replace()`, this will enable more complex stub files
 
 ## Bug Fixes:
@@ -32,10 +32,10 @@
 - The file extension has been added to the end of asset combiner URLs (ex. /combine/asqw3ljkqw421323.js or /combine/lkj23jlk13j1l.css) in order to allow CDNs to more easily identify the URL as cacheable to improve overall site performance.
 
 ## Community Improvements:
-- Added documentation on keeping local forks of the OctoberCMS codebase up to date with upstream.
+- Added documentation on keeping local forks of the Winter CMS codebase up to date with upstream.
 - Improved the CONTRIBUTING.md guide
 - Added security policy
 - Added documentation for testing pull requests
 
 ## Dependencies
-- Updated to v1.8.0 of Spectrum.js (Note: October was already using 1.8.0, however jQuery API updates were made without the vendor tagging a new release)
+- Updated to v1.8.0 of Spectrum.js (Note: Winter was already using 1.8.0, however jQuery API updates were made without the vendor tagging a new release)

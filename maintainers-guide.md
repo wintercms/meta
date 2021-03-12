@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This document immortalises the processes involved with maintaining the October CMS and RainLab
-repositories. This is intended to give the maintainers of the project a clear idea as to how to 
-review and manage the inflow of code and ensure the qualities and philosophies of October CMS and
+This document immortalises the processes involved with maintaining the Winter CMS and RainLab
+repositories. This is intended to give the maintainers of the project a clear idea as to how to
+review and manage the inflow of code and ensure the qualities and philosophies of Winter CMS and
 the RainLab plugins are maintained.
 
 ## Table of Contents
@@ -12,13 +12,13 @@ the RainLab plugins are maintained.
 - [Roles](#roles)
 - [Main Philosophy](#main-philosophy)
 - [Projects](#projects)
-  - [October CMS](#october-cms)
-    - [Main Branches](#october-cms-main-branches)
-    - [Milestones](#october-cms-milestones)
-    - [Reviewing Issues and Pull Requests](#october-cms-reviewing-issues-and-prs)
-    - [Merging Pull Requests](#october-cms-merging-pull-requests)
-    - [Standard Workflow for Maintainers](#october-cms-standard-workflow)
-    - [Release Process](#october-cms-release-process)
+  - [Winter CMS](#winter-cms)
+    - [Main Branches](#winter-cms-main-branches)
+    - [Milestones](#winter-cms-milestones)
+    - [Reviewing Issues and Pull Requests](#winter-cms-reviewing-issues-and-prs)
+    - [Merging Pull Requests](#winter-cms-merging-pull-requests)
+    - [Standard Workflow for Maintainers](#winter-cms-standard-workflow)
+    - [Release Process](#winter-cms-release-process)
   - [RainLab plugins](#rainlab)
     - [Main Branches](#rainlab-main-branches)
     - [Milestones](#rainlab-milestones)
@@ -45,56 +45,56 @@ The project has two levels of maintainership. The current membership of each rol
 - [@bennothommo](https://github.com/bennothommo) - Ben Thomson
 - [@mjauvin](https://github.com/mjauvin) - Marc Jauvin (RainLab Translate only)
 
-When defining which roles may action any of the protocols below, the term "maintainers" means 
-that any Maintainer or Lead Maintainer can be responsible. If a protocol is only for Lead 
+When defining which roles may action any of the protocols below, the term "maintainers" means
+that any Maintainer or Lead Maintainer can be responsible. If a protocol is only for Lead
 Maintainers, this distinction will be made instead.
 
 ## Main Philosophy
 
-October CMS operates under the philosophy that "Everything should be made as simple as possible,
+Winter CMS operates under the philosophy that "Everything should be made as simple as possible,
 but not simpler". As arbiters of the codebase, maintainers should strive to ensure that as the
 functionality and potential of the system increases, careful thought is still given to ensuring
 that proposed code is simple to develop for the developer and easy to use for the user.
 
-Important reading on the philosophy of October CMS can be found through these links:
+Important reading on the philosophy of Winter CMS can be found through these links:
 
-- https://octobercms.com/blog/post/getting-back-to-basics
-- https://octobercms.com/blog/post/putting-octobercms-words
-- https://octobercms.com/about
+- https://wintercms.com/blog/post/getting-back-to-basics
+- https://wintercms.com/blog/post/putting-wintercms-words
+- https://wintercms.com/about
 
-As October CMS is an "evergreen" product with rolling updates, special care must be taken to
-maintain backwards compatibility and allow all users of October CMS and the RainLab plugins to
+As Winter CMS is an "evergreen" product with rolling updates, special care must be taken to
+maintain backwards compatibility and allow all users of Winter CMS and the RainLab plugins to
 continue to use the products through updates without issue.
 
-At the same time, October CMS has a responsibility to its users to ensure that best practices in
-security and code are followed. Where possible, October CMS follows the LTS (long-term support)
+At the same time, Winter CMS has a responsibility to its users to ensure that best practices in
+security and code are followed. Where possible, Winter CMS follows the LTS (long-term support)
 versions of the Laravel framework as the foundation framework, which does include the deprecation
 of unsupported PHP versions as required.
 
 ## Projects
 
-### October CMS
+### Winter CMS
 
 The following protocols are in place for all current and future repositories underneath the
-[@octobercms](https://github.com/octobercms) organisation. This includes the October CMS and Rain
+[@wintercms](https://github.com/wintercms) organisation. This includes the Winter CMS and Rain
 library repositories, as well as its installer and documentation.
 
 #### Main Branches
-<a name="october-cms-main-branches"></a>
+<a name="winter-cms-main-branches"></a>
 
-October CMS and the Rain library both have two main branches for their repositories - `master` 
-and `develop`. Both branches represent the *stable* and *testing* states of the product - more 
+Winter CMS and the Rain library both have two main branches for their repositories - `master`
+and `develop`. Both branches represent the *stable* and *testing* states of the product - more
 specifically, they represent the most recent stable build and the most bleeding-edge publicly
 available code, respectively.
 
-In general, the only time `master` is updated is when a new stable version of October CMS is
-released to the public. This process is done by the [Lead Maintainers](#lead-maintainers) as part of their 
-[Release Process](#october-cms-release-process).
+In general, the only time `master` is updated is when a new stable version of Winter CMS is
+released to the public. This process is done by the [Lead Maintainers](#lead-maintainers) as part of their
+[Release Process](#winter-cms-release-process).
 
-Direct commits to the `master` branch should not be done for the October CMS and Rain Library
+Direct commits to the `master` branch should not be done for the Winter CMS and Rain Library
 repos except for the following circumstances:
 
-- Pushing out a new stable release of October CMS *(Lead Maintainers only)*
+- Pushing out a new stable release of Winter CMS *(Lead Maintainers only)*
 - Making changes to any project-related meta or policy files, such as the README, funding,
 licensing and security policies. *(Lead Maintainers only)*
 - Fixing issues with the automated testing suite.
@@ -106,10 +106,10 @@ commit message. It is still preferred that pull requests are used for larger com
 `develop` branch for these repositories.
 
 #### Milestones
-<a name="october-cms-milestones"></a>
+<a name="winter-cms-milestones"></a>
 
-The October CMS and Rain libraries use milestones to track which changes are to be released with
-each build. Although October CMS is a continuously-developed evergreen project, milestones are
+The Winter CMS and Rain libraries use milestones to track which changes are to be released with
+each build. Although Winter CMS is a continuously-developed evergreen project, milestones are
 named in a version format like so in order to reflect the final "tag" that is made when a new
 build is released:
 
@@ -152,34 +152,34 @@ generally one of the following three statuses:
 - This milestone is locked and the build has been released.
 
 #### Reviewing Issues and Pull Requests
-<a name="october-cms-reviewing-issues-and-prs"></a>
+<a name="winter-cms-reviewing-issues-and-prs"></a>
 
-Maintainers must review all issues and pull requests that are made to the October CMS repositories
-to ensure that they meet the standards of code quality and adherence to the principles of October
+Maintainers must review all issues and pull requests that are made to the Winter CMS repositories
+to ensure that they meet the standards of code quality and adherence to the principles of Winter
 CMS.
 
 Things that maintainers should look at with issues should include:
 
 - If it is a reported bug, does the bug exist? Sometimes bugs are due to configuration issues,
 or unique environments.
-- If it is a suggested enhancement or change, does it solve a problem that October does not yet
+- If it is a suggested enhancement or change, does it solve a problem that Winter does not yet
 solve?
 - If it is a discussion, again, is the discussion towards finding a solution to a problem that
-October does not yet cover?
+Winter does not yet cover?
 
 When reviewing pull requests, maintainers should strive to look at the following:
 
 - Does the pull request actually solve the issue it intends to resolve?
-- Does the pull request follow the [PSR-2 guidelines](https://www.php-fig.org/psr/psr-2/) and 
-our own [Developer Guidelines](https://octobercms.com/help/guidelines/developer)?
-- Does the pull request allow users of October CMS to continue to use the system as they have
+- Does the pull request follow the [PSR-2 guidelines](https://www.php-fig.org/psr/psr-2/) and
+our own [Developer Guidelines](https://wintercms.com/help/guidelines/developer)?
+- Does the pull request allow users of Winter CMS to continue to use the system as they have
 up until now, or provide adequate justification for the change in behaviour?
 
 Pull requests submitted by contributors must be made to the `develop` branch or to a feature or
 fix branch - any pull requests made to the `master` branch must be rebased to `develop`. In these
 cases, it is generally best to indicate to the contributor that the `master` branch is not the
 correct base (you can use this
-[standard reply](https://github.com/octoberrain/meta/blob/master/github/saved-replies/wrong-branch.md)
+[standard reply](https://github.com/winterrain/meta/blob/master/github/saved-replies/wrong-branch.md)
 for this).
 
 Pull requests should also indicate any issues that they resolve - this should be stipulated as
@@ -191,9 +191,9 @@ addition, issues and PRs are automatically closed after 30 days of inactivity.
 
 To keep track of the progress of issues and pull requests, we use the labelling and milestone
 systems of GitHub to record the current status. Our
-[standard labels](https://github.com/octoberrain/meta/blob/master/github/labelling.md) dictate a 
+[standard labels](https://github.com/winterrain/meta/blob/master/github/labelling.md) dictate a
 type of pull request or issue (ie. an enhancement, maintenance, discussions or bug report), a status
-(ie. in progress, completed, or a response or revision is needed) and sometimes a priority (ie. 
+(ie. in progress, completed, or a response or revision is needed) and sometimes a priority (ie.
 critical, high or low). In general, an issue should have one type label and one status label.
 
 If an issue or pull request is accepted, it should be assigned to either the **In Progress**
@@ -202,7 +202,7 @@ is not yet determined which build it will be implemented in. Once a build has be
 milestone should be set to the build milestone.
 
 #### Merging Pull Requests
-<a name="october-cms-merging-pull-requests"></a>
+<a name="winter-cms-merging-pull-requests"></a>
 
 When a Pull Request is assigned to the *current* build milestone, it can be merged into the `develop`
 branch. Maintainers should use the **Squash and merge** option in GitHub to squash PRs into one
@@ -216,7 +216,7 @@ future reference.
 
 Users who have provided fixes or assistance in the form of PRs and commits are properly attributed
 in Git, however, if someone provides assistance outside of Git (ie. through Slack/Discord, or through
-the forums), it is generally polite to credit them in the commit. Credit should be provided in the 
+the forums), it is generally polite to credit them in the commit. Credit should be provided in the
 form of `Credit to @username` in the commit description.
 
 In addition, any fixed or referenced issues or PRs should be linked as well, tagged as either `Fixed:`
@@ -239,9 +239,9 @@ pull request does not have a build milestone assigned to it yet, this should als
 current build milestone.
 
 #### Standard Workflow for Maintainers
-<a name="october-cms-standard-workflow"></a>
+<a name="winter-cms-standard-workflow"></a>
 
-Where possible, all work done on October CMS should be done through pull requests. Pull requests
+Where possible, all work done on Winter CMS should be done through pull requests. Pull requests
 allow the opportunity for all maintainers to be able to review the proposed changes and provide
 feedback or determine any perceived issues, and in addition allow the automated tests to pick up
 any issues with code quality or our test scenarios before it reaches the main branches.
@@ -263,48 +263,48 @@ few circumstances exist where a commit straight to `develop` may be necessary:
 - Fixing parse errors or exceptions that may have been missed during code review of a PR.
 - Documentation fixes.
 - Fixing disclosed security vulnerabilities.
-- Minor tweaks / bug fixes that do not change any current behaviours of October CMS.
+- Minor tweaks / bug fixes that do not change any current behaviours of Winter CMS.
 
 #### Release process
-<a name="october-cms-release-process"></a>
+<a name="winter-cms-release-process"></a>
 
-The release process is one undertaken by the [Lead Maintainers](#lead-maintainers) to release a new build of October CMS
+The release process is one undertaken by the [Lead Maintainers](#lead-maintainers) to release a new build of Winter CMS
 as an edge update or as a stable update. During this window, maintainers should not merge any code
 into the `develop` branch - however, they can continue to review and accept PRs for upcoming
 milestones.
 
 The following steps are undertaken by the Lead Maintainers for release:
 
-- The release notes are finalized in the `octoberrain/meta` repository.
+- The release notes are finalized in the `winterrain/meta` repository.
 - The `develop` branch is tagged with the *current* milestone's version, ie. `v1.0.460`.
 - The tag is then tested thoroughly by the Lead Maintainers.
-- Once approved, a subsplit of the repository is actioned which separates the modules of October CMS
+- Once approved, a subsplit of the repository is actioned which separates the modules of Winter CMS
 from the main repository. This is then shown on Composer.
-- The changelog on https://octobercms.com/changelog is updated to reflect the new build, and
-available updates will start appearing on October CMS installs depending on their edge update policy.
+- The changelog on https://wintercms.com/changelog is updated to reflect the new build, and
+available updates will start appearing on Winter CMS installs depending on their edge update policy.
 
-At this point in time, October CMS and the Rain Library do not use the **Releases** functionality
-provided by GitHub, as the release notes are covered by the `octoberrain/meta` repository.
+At this point in time, Winter CMS and the Rain Library do not use the **Releases** functionality
+provided by GitHub, as the release notes are covered by the `winterrain/meta` repository.
 
 ### RainLab plugins
 <a name="rainlab"></a>
 
 The following protocols are in place for all current and future repositories underneath the
 [@rainlab](https://github.com/rainlab) organisation. Note that a lot of the processes are the same as
-for October CMS, so this section will be more defining any *different* processes.
+for Winter CMS, so this section will be more defining any *different* processes.
 
 #### Main Branches
 <a name="rainlab-main-branches"></a>
 
 All RainLab plugin repositories contain a `master` branch which is the combined efforts of all
 contributions to the plugin. Maintainers may commit changes to the `master` branch on an as-needed
-basis, but as with the October CMS repositories, it is still preferred that substantial changes or
+basis, but as with the Winter CMS repositories, it is still preferred that substantial changes or
 new or changed features be done in pull requests.
 
 #### Milestones
 <a name="rainlab-milestones"></a>
 
-RainLab plugins, like the October CMS repositories, use milestones to track which changes are
+RainLab plugins, like the Winter CMS repositories, use milestones to track which changes are
 implemented with which version of the plugin. Milestones in the RainLab plugins use a more "semantic"
 versioning and so have major, minor and point releases in the format of `major.minor.point`. For
 example:
@@ -315,7 +315,7 @@ example:
 
 The following scenarios would determine which version number needs to change:
 
-- `major` should be increased for substantial changes made to the plugin, such as complete rewrites 
+- `major` should be increased for substantial changes made to the plugin, such as complete rewrites
 or pivoting of the purpose of the plugin. These changes are assumed to be backwards-incompatible and
 will require manual intervention by the users of the plugin.
 - `minor` should be increased for smaller changes or new features that may still be
@@ -331,7 +331,7 @@ PRs and issues.
 #### Reviewing Issues and Pull Requests
 <a name="rainlab-reviewing-issues-and-prs"></a>
 
-Maintainers should use the [same processes for October CMS](#october-cms-reviewing-issues-and-prs)
+Maintainers should use the [same processes for Winter CMS](#winter-cms-reviewing-issues-and-prs)
 when reviewing issues and PRs for RainLab plugins. The only difference is that there is no **In
 Progress** or **Pending Features** milestones for RainLab plugins - all accepted PRs and issues should
 be assigned to an applicable milestone depending on the severity of the change.
@@ -346,20 +346,20 @@ be modified as part of the [Release Process](#rainlab-release-process).
 #### Merging Pull Requests
 <a name="rainlab-merging-pull-requests"></a>
 
-As with reviewing issues and PRs, RainLab plugins use the [same processes as October CMS](#october-cms-merging-pull-requests) when merging pull requests.
+As with reviewing issues and PRs, RainLab plugins use the [same processes as Winter CMS](#winter-cms-merging-pull-requests) when merging pull requests.
 
 #### Standard Workflow for Maintainers
 <a name="rainlab-standard-workflow"></a>
 
-The workflow for RainLab plugins is the [same as October](#october-cms-standard-workflow), except
+The workflow for RainLab plugins is the [same as Winter](#winter-cms-standard-workflow), except
 that maintainers may commit changes to the `master` branch instead of the `develop` branch on an
-as-needed basis. As with October CMS, the primary mechanism for implementing changes is still
+as-needed basis. As with Winter CMS, the primary mechanism for implementing changes is still
 recommended to be pull requests.
 
 #### Release Process
 <a name="rainlab-release-process"></a>
 
-The release process for RainLab plugins is different to October CMS in that all maintainers
+The release process for RainLab plugins is different to Winter CMS in that all maintainers
 may release a new version of the RainLab plugins, and can action all the steps below (except for
 making a release stable on the marketplace - this must be done by a [Lead Maintainer](#lead-maintainers).
 

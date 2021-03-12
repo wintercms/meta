@@ -5,7 +5,7 @@
 
 ## API Changes
 - The `Encryptable` trait now encrypts "empty" values correctly, such as the number zero and an empty string. The only value that is left unencrypted is a `null` value.
-- Fixed docblocks in the `October\Rain\Network\Http` class that referred to the `$options` property as an `array` instead of the `callable` that is actually used
+- Fixed docblocks in the `Winter\Rain\Network\Http` class that referred to the `$options` property as an `array` instead of the `callable` that is actually used
 
 ## Bug Fixes
 - Unit tests involving authentication are now namespaced to `backend.auth`, to prevent conflicts with other authentication libraries.
@@ -17,10 +17,10 @@
 - Fixed issue where an incorrect `<textarea>` tag definition broke the popup editor for `stringList` and `text` type fields in the Inspector.
 
 ## Security Improvements
-- Improved validation of encrypted cookies by locking cookie values to the cookie they were created for. See [the security advisory](https://github.com/octobercms/october/security/advisories/GHSA-55mm-5399-7r63) for more information.
+- Improved validation of encrypted cookies by locking cookie values to the cookie they were created for. See [the security advisory](https://github.com/wintercms/winter/security/advisories/GHSA-55mm-5399-7r63) for more information.
 
 ## Translation Improvements
 - Improved French translation.
 
 ## Community Improvements
-- Added note in `config/cms.php` for handling URL generation for uploaded files when using October in a subfolder installation.
+- Added note in `config/cms.php` for handling URL generation for uploaded files when using Winter in a subfolder installation.

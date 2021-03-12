@@ -18,7 +18,7 @@
 
   // Comment body
   const commentBody = 'This pull request has been made to the wrong branch. As per our'
-    + ' [Contribution Guide](https://github.com/octobercms/october/blob/master/.github/CONTRIBUTING.md#making-a-pull-request)'
+    + ' [Contribution Guide](https://github.com/wintercms/winter/blob/master/.github/CONTRIBUTING.md#making-a-pull-request)'
     + ', all pull requests must be made to the `develop` branch.'
     + '\n\n'
     + 'We have automatically changed your pull request to be merged to the `develop` branch for you. Please ensure that'

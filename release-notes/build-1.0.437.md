@@ -3,7 +3,7 @@
 ## API Changes:
 - Added dot notation support to `extendClassWith()` method
 - Added `attachOnUpload` property to the `FileUpload` FormWidget to attach the file directly to the parent record as soon as the upload completes instead of waiting for deferred binding to attach the file
-- Added `cache.codeParserDataCacheKey` configuration item to prevent issues when running multiple OctoberCMS instances attached to the same cache server
+- Added `cache.codeParserDataCacheKey` configuration item to prevent issues when running multiple Winter CMS instances attached to the same cache server
 
 ## Bug Fixes:
 - Fixed infinite loop that could be triggered in the AuthManager

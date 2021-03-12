@@ -8,7 +8,7 @@
 - Added support for the `customViewPath` configuration property in the RelationController when rendering lists to be able to override the partials used for rendering the `Lists` widget.
 - Using the `ImportExportController`'s `useList` property will now pass the list header values through the `backend.list.overrideHeaderValue` event just like a regular list would.
 - ApplicationException are no longer logged if unhandled (they're meant as more of a validation / sanity check exception. SystemExceptions are logged instead.
-- All Artisan commands that are unusable in October (typically because they rely on a "Laravel" project structure) are no longer registered and thus no longer made available. Full list of removed commands here: [octobercms/library#447](https://github.com/octobercms/library/pull/447)
+- All Artisan commands that are unusable in Winter (typically because they rely on a "Laravel" project structure) are no longer registered and thus no longer made available. Full list of removed commands here: [wintercms/library#447](https://github.com/wintercms/library/pull/447)
 - Added static method `Cms\Helpers\Cms::safeModeEnabled()` to check if safe mode is enabled.
 - Add support for lazy loading backend form tabs with the `lazy` configuration property that takes an array of tab names to apply lazy loading to.
 
@@ -22,7 +22,7 @@
 
 ## Community Improvements:
 - Switched to using Discord instead of Slack: https://discord.gg/gEKgwSZ
-- Launched Premium Support: https://octobercms.com/premium-support
+- Launched Premium Support: https://wintercms.com/premium-support
 
 ## Dependencies
 - Minimum PHP version bumped from 7.0.0 to 7.0.8

@@ -2,13 +2,13 @@
 
 Release Note 11
 
-Due to overwhelming support from the community, October CMS is updating its foundation framework to the latest Long Term Support (LTS) release. As a result, there are some new requirements to run October and some code changes required.
+Due to overwhelming support from the community, Winter CMS is updating its foundation framework to the latest Long Term Support (LTS) release. As a result, there are some new requirements to run Winter and some code changes required.
 
-From the proposed Build 1.1.0 your webserver will require PHP 7.2.9 or above to use October CMS. After this date, websites using PHP 7.0-7.2.8 will still function normally but will no longer be able to receive updates or install the latest version.
+From the proposed Build 1.1.0 your webserver will require PHP 7.2.9 or above to use Winter CMS. After this date, websites using PHP 7.0-7.2.8 will still function normally but will no longer be able to receive updates or install the latest version.
 
 There are various code changes that may be required, including code found in plugins and themes, both private and public depending on what features you are utilizing.
 
-Instructions marked with a `√` can be performed immediately to ensure forward compatibility. In other words the change is compatible with all versions of October, now and after the release. It is recommended to make these changes as soon as possible.
+Instructions marked with a `√` can be performed immediately to ensure forward compatibility. In other words the change is compatible with all versions of Winter, now and after the release. It is recommended to make these changes as soon as possible.
 
 * Build 1.1.0 is available as a test update from 16 August 2020. Stable release date to be announced.
 
@@ -51,10 +51,10 @@ If you would like to help with the upgrade process please make the following cha
 ```json
 "require": {
     "php": "^7.2",
-    "october/rain": "dev-develop as 1.1",
-    "october/system": "dev-develop",
-    "october/backend": "dev-develop",
-    "october/cms": "dev-develop",
+    "winter/rain": "dev-develop as 1.1",
+    "winter/system": "dev-develop",
+    "winter/backend": "dev-develop",
+    "winter/cms": "dev-develop",
     "laravel/framework": "~6.0",
     "wikimedia/composer-merge-plugin": "1.4.1"
 },
@@ -78,10 +78,10 @@ If you are using composer you will need to make the following changes to your co
 ```json
 "require": {
     "php": "^7.2",
-    "october/rain": "~1.1",
-    "october/system": "~1.1",
-    "october/backend": "~1.1",
-    "october/cms": "~1.1",
+    "winter/rain": "~1.1",
+    "winter/system": "~1.1",
+    "winter/backend": "~1.1",
+    "winter/cms": "~1.1",
     "laravel/framework": "~6.0",
     "wikimedia/composer-merge-plugin": "1.4.1"
 },
@@ -100,12 +100,12 @@ If you are using composer you will need to make the following changes to your co
 
 Some new configuration files have been made available as part of the Laravel 6 upgrade. You should add these configuration files to your project's `config` folder, and adjust the configuration as necessary. While you're doing that, it is recommended that you review the rest of the configuration files present on GitHub and ensure that your project's copies are up to date as there have been numerous configuration options added over the past year.
 
-  - [`config/auth.php`](https://github.com/octobercms/october/blob/develop/config/auth.php)
-  - [`config/develop.php`](https://github.com/octobercms/october/blob/develop/config/develop.php)
-  - [`config/hashing.php`](https://github.com/octobercms/october/blob/develop/config/hashing.php)
-  - [`config/logging.php`](https://github.com/octobercms/october/blob/develop/config/logging.php)
+  - [`config/auth.php`](https://github.com/wintercms/winter/blob/develop/config/auth.php)
+  - [`config/develop.php`](https://github.com/wintercms/winter/blob/develop/config/develop.php)
+  - [`config/hashing.php`](https://github.com/wintercms/winter/blob/develop/config/hashing.php)
+  - [`config/logging.php`](https://github.com/wintercms/winter/blob/develop/config/logging.php)
 
-A [new config option](https://github.com/octobercms/october/blob/develop/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`.
+A [new config option](https://github.com/wintercms/winter/blob/develop/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`.
 
 <a name="upgrade-env"></a>
 ### Environment variables (`.env` files) (`√`)
@@ -137,11 +137,11 @@ The version of Laravel has been changed from 5.5 LTS to 6.x LTS. If you are usin
 <a name="laravel-package-autodiscovery"></a>
 ### Laravel package auto-discovery (`√`)
 
-Starting with the Laravel 6 foundation upgrade, October CMS will now default to no longer loading discovered packages through Laravel's [package auto-discovery](https://laravel.com/docs/6.x/packages#package-discovery) service, as this was having the effect of Laravel packages still being loaded and made active even if the plugin using them had been disabled by the user.
+Starting with the Laravel 6 foundation upgrade, Winter CMS will now default to no longer loading discovered packages through Laravel's [package auto-discovery](https://laravel.com/docs/6.x/packages#package-discovery) service, as this was having the effect of Laravel packages still being loaded and made active even if the plugin using them had been disabled by the user.
 
 This may mean that plugins that were using packages for Laravel but were not explicitly including them in the boot process for the plugin may no longer have access to these packages. Please note that we recommend that plugins do not rely on auto-discovery, and instead bring in the packages and service providers explicitly through the `Plugin.php` file as part of the `register()` or `boot()` processes.
 
-A [new config option](https://github.com/octobercms/october/blob/develop/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`. If you wish to retain the pre-update functionality, you can set this to `true`.
+A [new config option](https://github.com/wintercms/winter/blob/develop/config/app.php#L150) has been added to `config/app.php`, `loadDiscoveredPackages`, which controls the loading of packages through Laravel's package discovery system. If you do not provide this through your own `config/app.php` instance, this will default to `false`. If you wish to retain the pre-update functionality, you can set this to `true`.
 
 <a name="upgrade-cache"></a>
 ### Interacting with Cache repositories directly (`√`, when using `now()->addMinutes()`)
@@ -158,7 +158,7 @@ If you are using string based primary keys for your models add `protected $keyTy
 <a name="guarded-in-models"></a>
 ### Use of `$guarded` in models (`√`)
 
-Due to a recent security patch made in the Laravel framework ([see discussion](https://github.com/octobercms/library/commit/b779df0174454fea203c10d7582465f9ddaf22fb)), if a model uses the `$guarded` property to define attributes that are to be protected from mass assignment; then any attempts to use mass-assignment to populate a property / attribute of the model that does not exist in the database will fail. Example:
+Due to a recent security patch made in the Laravel framework ([see discussion](https://github.com/wintercms/library/commit/b779df0174454fea203c10d7582465f9ddaf22fb)), if a model uses the `$guarded` property to define attributes that are to be protected from mass assignment; then any attempts to use mass-assignment to populate a property / attribute of the model that does not exist in the database will fail. Example:
 
 ```
 MyModel extends Model
@@ -176,14 +176,14 @@ MyModel extends Model
 
 Calling `MyModel::create(['someProperty' => 'data']);` would previously have worked, but will not anymore.
 
-> **NOTE:** October does not recommend this pattern. Unless using the `Purgeable` trait, attributes on a model should always correspond directly to the database schema asssociated with that model. It is perfectly acceptable to have public properties on a model that do not correspond to database schema, but avoid abusing methods & functionality designed for model attributes (i.e. attribute getters and setters) as much as possible.
+> **NOTE:** Winter does not recommend this pattern. Unless using the `Purgeable` trait, attributes on a model should always correspond directly to the database schema asssociated with that model. It is perfectly acceptable to have public properties on a model that do not correspond to database schema, but avoid abusing methods & functionality designed for model attributes (i.e. attribute getters and setters) as much as possible.
 
-This specifically affected the `October\Rain\Database\Attach\File` model (and by extension, the `System\Models\File` model), which now use the "fillable" attributes property to define the fields available for mass assignment, as opposed to the "guarded" attributes property. If you extend either of these models to provide your own custom File model and wish to have extra fields stored through mass assignment, you will need to copy the [`$fillable` attribute from the `October\Rain\Database\Attach\File` model](https://github.com/octobercms/library/commit/6cd6af6940ca15598ad1bab64e2db4a005d9d38f#diff-b062dfb9a3f1e4c504ad988c977f1b40R34-R47) and place it in your own extension, adding any extra fields that you wish to be fillable as well.
+This specifically affected the `Winter\Rain\Database\Attach\File` model (and by extension, the `System\Models\File` model), which now use the "fillable" attributes property to define the fields available for mass assignment, as opposed to the "guarded" attributes property. If you extend either of these models to provide your own custom File model and wish to have extra fields stored through mass assignment, you will need to copy the [`$fillable` attribute from the `Winter\Rain\Database\Attach\File` model](https://github.com/wintercms/library/commit/6cd6af6940ca15598ad1bab64e2db4a005d9d38f#diff-b062dfb9a3f1e4c504ad988c977f1b40R34-R47) and place it in your own extension, adding any extra fields that you wish to be fillable as well.
 
 <a name="upgrade-wildcard-listeners"></a>
 ### Wildcard event listeners: `Event::listen('example.*', $listener);`
 
-The parameters sent to wildcard event listeners in October has changed to match what Laravel has done since 5.4. This was overlooked in the 5.5 update but is being applied now. Going forward all wildcard event listeners will receive the name of the event currently being fired as the first parameter and an array of the event arguments as the second parameter.
+The parameters sent to wildcard event listeners in Winter has changed to match what Laravel has done since 5.4. This was overlooked in the 5.5 update but is being applied now. Going forward all wildcard event listeners will receive the name of the event currently being fired as the first parameter and an array of the event arguments as the second parameter.
 
 Example of old wildcard listener:
 
@@ -208,7 +208,7 @@ Event::listen('*', function ($event, $params) {
 <a name="catchall-routing"></a>
 ### Catch-all routing (`√`)
 
-Changes to the routing in Laravel 6 have resulted in the behaviour of catch-all routes being changed in October CMS. Previously, a catch-all route could be defined with the following:
+Changes to the routing in Laravel 6 have resulted in the behaviour of catch-all routes being changed in Winter CMS. Previously, a catch-all route could be defined with the following:
 
 ```
 Route::any('{slug}', 'Backend\Classes\BackendController@run')->where('slug', '(.*)?');
@@ -230,7 +230,7 @@ The Carbon library has been upgraded from version 1 to version 2. While this sho
 <a name="upgrade-jenssegers-date"></a>
 ### Using Jenssegers/Date directly
 
-The `jenssegers/date` library has been removed from October entirely as most of its functionality is now present in Carbon 2.0. This should mostly work with existing code unless you were referencing it directly, in which case replace any references to `Jenssegers\Date\Date` with `October\Rain\Argon\Date`.
+The `jenssegers/date` library has been removed from Winter entirely as most of its functionality is now present in Carbon 2.0. This should mostly work with existing code unless you were referencing it directly, in which case replace any references to `Jenssegers\Date\Date` with `Winter\Rain\Argon\Date`.
 
 <a name="upgrade-symfony"></a>
 ### Using Symfony directly
@@ -240,21 +240,21 @@ Symfony has been upgraded to version 4 (except for the Yaml subsystem). If inter
 <a name="upgrade-league"></a>
 ### Using League CSV directly
 
-The CSV package provided by The PHP League has been upgraded from version 8 to version 9. We have made the necessary adjustments to October CMS in order to accommodate this change, however, if you use the library directly or have extended the `ImportModel` and `ExportModel` classes, it is strongly recommended that you [review the upgrade guide](https://csv.thephpleague.com/9.0/upgrading/) as several methods have been dropped or moved.
+The CSV package provided by The PHP League has been upgraded from version 8 to version 9. We have made the necessary adjustments to Winter CMS in order to accommodate this change, however, if you use the library directly or have extended the `ImportModel` and `ExportModel` classes, it is strongly recommended that you [review the upgrade guide](https://csv.thephpleague.com/9.0/upgrading/) as several methods have been dropped or moved.
 
 ### Optional changes (`√`)
 
 The following files have been updated for Laravel 6, however, you may continue to use your current version of these files if you wish:
 
-  - [`bootstrap/autoload.php`](https://github.com/octobercms/october/blob/develop/bootstrap/autoload.php)
-  - [`index.php`](https://github.com/octobercms/october/blob/develop/index.php)
-  - [`artisan`](https://github.com/octobercms/october/blob/develop/artisan)
-  - [`.gitignore`](https://github.com/octobercms/october/blob/develop/.gitignore)
+  - [`bootstrap/autoload.php`](https://github.com/wintercms/winter/blob/develop/bootstrap/autoload.php)
+  - [`index.php`](https://github.com/wintercms/winter/blob/develop/index.php)
+  - [`artisan`](https://github.com/wintercms/winter/blob/develop/artisan)
+  - [`.gitignore`](https://github.com/wintercms/winter/blob/develop/.gitignore)
 
 <a name="upgrade-unit-testing"></a>
 ### Unit Testing
 
-If you are running unit testing for October CMS development, you will need to make some changes to your composer.json file and replace the `tests` folder in your installation to get the updates to the unit tests.
+If you are running unit testing for Winter CMS development, you will need to make some changes to your composer.json file and replace the `tests` folder in your installation to get the updates to the unit tests.
 
 **composer.json** changes required:
 ```json
@@ -280,7 +280,7 @@ If you are running unit testing for October CMS development, you will need to ma
         "php artisan package:discover"
     ],
     "post-update-cmd": [
-        "php artisan october:util set build",
+        "php artisan winter:util set build",
         "php artisan package:discover"
     ],
     "test": [
@@ -305,9 +305,9 @@ If you are running unit testing for October CMS development, you will need to ma
 }
 ```
 
-You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/octobercms/october/tree/develop/tests).
+You then need to replace the contents of your project's `tests/` directory with the [`tests/` directory from the repository](https://github.com/wintercms/winter/tree/develop/tests).
 
-For maxium compatibility you can also replace your `phpunit.xml` file with the [`phpunit.xml` file from the repository](https://github.com/octobercms/october/blob/develop/phpunit.xml)
+For maxium compatibility you can also replace your `phpunit.xml` file with the [`phpunit.xml` file from the repository](https://github.com/wintercms/winter/blob/develop/phpunit.xml)
 
 ## Plugin Unit Tests
 

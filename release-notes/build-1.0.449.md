@@ -29,7 +29,7 @@
 - Improved French translation
 
 ## Community Improvements:
-- Added guidelines for updating JS dependencies used in the OctoberCMS core
+- Added guidelines for updating JS dependencies used in the Winter CMS core
 
 ## Dependencies
 - Fixed issue with Twig 2.7.4

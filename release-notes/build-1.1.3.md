@@ -19,7 +19,7 @@
 -
 
 ## Community Improvements
--
+- Documented the Lists widget's `perPageOptions` configuration property
 
 ## Dependencies
 -
