@@ -4,10 +4,10 @@
 -
 
 ## API Changes
--
+- Added support for modifying the RichEditor's allowed attributes list through the EditorSettings in the backend
 
 ## Bug Fixes
--
+- Fixed issue with Schedule->withoutOverlapping() by bringing the Halcyon MemoryRepository more inline with the parent class.
 
 ## Security Improvements
 -
