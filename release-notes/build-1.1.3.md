@@ -8,6 +8,7 @@
 
 ## Bug Fixes
 - Fixed issue with Schedule->withoutOverlapping() by bringing the Halcyon MemoryRepository more inline with the parent class.
+- Fixed an error thrown when using the "package:discover" command when `app.loadDiscoveredPackages` set to false, as the manifest was reset to `null` as opposed to an empty array.
 
 ## Security Improvements
 -
