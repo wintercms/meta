@@ -5,6 +5,7 @@
 
 ## API Changes
 - Added support for modifying the RichEditor's allowed attributes list through the EditorSettings in the backend
+- Added support for lazy loading class aliases only when needed through the new `Winter\Storm\ClassLoader->addAliases(['Real\Class' => 'Alias\For\Class'])` method.
 
 ## Bug Fixes
 - Fixed issue with Schedule->withoutOverlapping() by bringing the Halcyon MemoryRepository more inline with the parent class.
