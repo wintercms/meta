@@ -18,7 +18,7 @@
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
 
 ## Translation Improvements
--
+- Improved French translation.
 
 ## Performance Improvements
 -
