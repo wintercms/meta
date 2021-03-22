@@ -8,17 +8,21 @@
 - Added support for lazy loading class aliases only when needed through the new `Winter\Storm\Support\ClassLoader->addAliases(['Real\Class' => 'Alias\For\Class'])` method.
 - Added support for saving deferred bindings with pivot data.
 - Added `Backend::makeCarbon($dateTime)` helper for setting the backend timezone on date values.
+- Added support for Dependency Injection in console commands.
+- Added support for `php artisan winter:util purge orphans` command that removes any `system_files` records that do not have matching files stored on the filesystem.
 
 ## Bug Fixes
 - Fixed issue with Schedule->withoutOverlapping() by bringing the Halcyon MemoryRepository more inline with the parent class.
 - Fixed an error thrown when using the "package:discover" command when `app.loadDiscoveredPackages` set to false, as the manifest was reset to `null` as opposed to an empty array.
 - Fixed issue where tooltips set on the first column of the Lists widget were not working.
+- Fixed issue where components that used dependency injection in their constructors would break in the backend.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
 
 ## Translation Improvements
 - Improved French translation.
+- Improved Russian translation.
 
 ## Performance Improvements
 -
@@ -27,4 +31,4 @@
 - Documented the Lists widget's `perPageOptions` configuration property
 
 ## Dependencies
--
+- Refactored the `Winter\Storm\Events\Dispatcher` class to extend and override the base Laravel Event Dispatcher rather than just duplicating and implementing the contract for greater compatibility with Laravel.
