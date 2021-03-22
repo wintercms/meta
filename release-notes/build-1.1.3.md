@@ -5,7 +5,7 @@
 
 ## API Changes
 - Added support for modifying the RichEditor's allowed attributes list through the EditorSettings in the backend
-- Added support for lazy loading class aliases only when needed through the new `Winter\Storm\ClassLoader->addAliases(['Real\Class' => 'Alias\For\Class'])` method.
+- Added support for lazy loading class aliases only when needed through the new `Winter\Storm\Support\ClassLoader->addAliases(['Real\Class' => 'Alias\For\Class'])` method.
 - Added support for saving deferred bindings with pivot data.
 - Added `Backend::makeCarbon($dateTime)` helper for setting the backend timezone on date values.
 
