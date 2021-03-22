@@ -1,7 +1,7 @@
 # Build 1.1.3 (WIP)
 
 ## UX/UI Improvements
--
+- Added support for choosing the default backend locale and timezone in `php artisan winter:install`.
 
 ## API Changes
 - Added support for modifying the RichEditor's allowed attributes list through the EditorSettings in the backend
@@ -10,6 +10,7 @@
 - Added `Backend::makeCarbon($dateTime)` helper for setting the backend timezone on date values.
 - Added support for Dependency Injection in console commands.
 - Added support for `php artisan winter:util purge orphans` command that removes any `system_files` records that do not have matching files stored on the filesystem.
+- Added support for `registerValidationRules` in the `Plugin.php` plugin registration file to register custom validation rules.
 
 ## Bug Fixes
 - Fixed issue with Schedule->withoutOverlapping() by bringing the Halcyon MemoryRepository more inline with the parent class.
