@@ -11,12 +11,14 @@
 - Added support for Dependency Injection in console commands.
 - Added support for `php artisan winter:util purge orphans` command that removes any `system_files` records that do not have matching files stored on the filesystem.
 - Added support for `registerValidationRules` in the `Plugin.php` plugin registration file to register custom validation rules.
+- Added support for specifying `min`, `max`, and `step` values on the `number` and `numberrange` List Filter scope types.
 
 ## Bug Fixes
 - Fixed issue with Schedule->withoutOverlapping() by bringing the Halcyon MemoryRepository more inline with the parent class.
 - Fixed an error thrown when using the "package:discover" command when `app.loadDiscoveredPackages` set to false, as the manifest was reset to `null` as opposed to an empty array.
 - Fixed issue where tooltips set on the first column of the Lists widget were not working.
 - Fixed issue where components that used dependency injection in their constructors would break in the backend.
+- The RecordFinder FormWidget will now automatically determine what to use for the key column if the model used is not using the default of `id`. This used to be controlled by the undocumented `keyFrom` option on the recordfinder, but is now handled behind the scenes automatically.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
