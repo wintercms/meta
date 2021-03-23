@@ -24,6 +24,7 @@
 ## Translation Improvements
 - Improved French translation.
 - Improved Russian translation.
+- Moved Media Manager `rename` and `move` action language keys to the backend module instead of the CMS module.
 
 ## Performance Improvements
 -
