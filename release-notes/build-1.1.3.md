@@ -12,6 +12,8 @@
 - Added support for `php artisan winter:util purge orphans` command that removes any `system_files` records that do not have matching files stored on the filesystem.
 - Added support for `registerValidationRules` in the `Plugin.php` plugin registration file to register custom validation rules.
 - Added support for specifying `min`, `max`, and `step` values on the `number` and `numberrange` List Filter scope types.
+- Added support for translator namespace aliases by adding `Lang::registerNamespaceAlias('real.namespace', 'aliased.namespace')`.
+- Added support for aliasing entire namespaces in the class loader via the new `Winter\Storm\Support\ClassLoader->addNamespaceAliases(['Real\Namespace' => 'Aliased\Namespace'])` method.
 
 ## Bug Fixes
 - Fixed issue with Schedule->withoutOverlapping() by bringing the Halcyon MemoryRepository more inline with the parent class.
@@ -19,6 +21,9 @@
 - Fixed issue where tooltips set on the first column of the Lists widget were not working.
 - Fixed issue where components that used dependency injection in their constructors would break in the backend.
 - The RecordFinder FormWidget will now automatically determine what to use for the key column if the model used is not using the default of `id`. This used to be controlled by the undocumented `keyFrom` option on the recordfinder, but is now handled behind the scenes automatically.
+- Reverted "Fixed issue introduced in Laravel 5.7 where eager loading `File` relationships on PostgreSQL would fail with the message "Varchar <> Integer comparison is not allowed"" introduced in 1.1.2 since it was causing issues when strict typing was enabled.
+- Fixed an issue where `PluginManager->getRegistrationMethodValues()` would attempt to call protected methods on PHP 7.4.
+- Improved Media Library path validation logic by allowing `//` but not allowing `://` to account for poorly constructed paths that are still technically valid.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
@@ -26,6 +31,7 @@
 ## Translation Improvements
 - Improved French translation.
 - Improved Russian translation.
+- Improved Dutch translation.
 - Moved Media Manager `rename` and `move` action language keys to the backend module instead of the CMS module.
 
 ## Performance Improvements
