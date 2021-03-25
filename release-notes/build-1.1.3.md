@@ -14,6 +14,7 @@
 - Added support for specifying `min`, `max`, and `step` values on the `number` and `numberrange` List Filter scope types.
 - Added support for translator namespace aliases by adding `Lang::registerNamespaceAlias('real.namespace', 'aliased.namespace')`.
 - Added support for aliasing entire namespaces in the class loader via the new `Winter\Storm\Support\ClassLoader->addNamespaceAliases(['Real\Namespace' => 'Aliased\Namespace'])` method.
+- Added support for pre and post processing of YAML being parsed which should pave the way for supporting YAML v4
 
 ## Bug Fixes
 - Fixed issue with Schedule->withoutOverlapping() by bringing the Halcyon MemoryRepository more inline with the parent class.
