@@ -25,6 +25,7 @@
 - Reverted "Fixed issue introduced in Laravel 5.7 where eager loading `File` relationships on PostgreSQL would fail with the message "Varchar <> Integer comparison is not allowed"" introduced in 1.1.2 since it was causing issues when strict typing was enabled.
 - Fixed an issue where `PluginManager->getRegistrationMethodValues()` would attempt to call protected methods on PHP 7.4.
 - Improved Media Library path validation logic by allowing `//` but not allowing `://` to account for poorly constructed paths that are still technically valid.
+- Fixed issue where sending emails using the Laravel Notification system could cause an exception in the System module when it attempted to extend a view instance while it was expecting a view string reference.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
@@ -43,3 +44,4 @@
 
 ## Dependencies
 - Refactored the `Winter\Storm\Events\Dispatcher` class to extend and override the base Laravel Event Dispatcher rather than just duplicating and implementing the contract for greater compatibility with Laravel.
+- Updated from `symfony/yaml` v3.4 to `symfony/yaml` v4.4 and added a default preprocessor to automatically fix breaking changes between v3 and v4 of the symfony/yaml package.
