@@ -2,6 +2,7 @@
 
 ## UX/UI Improvements
 - Added support for choosing the default backend locale and timezone in `php artisan winter:install`.
+- Controller scaffolding now uses the default backend localization keys for the default titles in the FormBehavior config instead of hardcoded English strings
 
 ## API Changes
 - Added support for modifying the RichEditor's allowed attributes list through the EditorSettings in the backend
