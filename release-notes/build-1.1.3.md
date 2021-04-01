@@ -31,6 +31,7 @@
 - Improved Media Library path validation logic by allowing `//` but not allowing `://` to account for poorly constructed paths that are still technically valid.
 - Fixed issue where sending emails using the Laravel Notification system could cause an exception in the System module when it attempted to extend a view instance while it was expecting a view string reference.
 - Fixed issue where a TagList field that is disabled or readOnly would fail to correctly render if the value was an array.
+- Added branching support for `winter:version`, different version branches (1.0, 1.1, etc) can now be correctly identified.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
