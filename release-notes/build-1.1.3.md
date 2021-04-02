@@ -32,6 +32,7 @@
 - Fixed issue where sending emails using the Laravel Notification system could cause an exception in the System module when it attempted to extend a view instance while it was expecting a view string reference.
 - Fixed issue where a TagList field that is disabled or readOnly would fail to correctly render if the value was an array.
 - Added branching support for `winter:version`, different version branches (1.0, 1.1, etc) can now be correctly identified.
+- Improved handling of dates by the Filter widget, specifically when ignoreTimezone is set on only one of a few date inputs in a given filter, and when using the daterange filter type with certain date values.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
