@@ -33,10 +33,12 @@
 - Fixed issue where a TagList field that is disabled or readOnly would fail to correctly render if the value was an array.
 - Added branching support for `winter:version`, different version branches (1.0, 1.1, etc) can now be correctly identified.
 - Improved handling of dates by the Filter widget, specifically when ignoreTimezone is set on only one of a few date inputs in a given filter, and when using the daterange filter type with certain date values.
+- Changed the default value of `database.connections.sqlite.database` to `base_path('storage/database.sqlite')` to better support applications using a mirrored public directory.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
 - Tightened up the permission checking logic by requiring strict type matches.
+- Removed `xml` from the list of default allowed extensions to upload, can be added back through the configuration if required.
 
 ## Translation Improvements
 - Improved French translation.
