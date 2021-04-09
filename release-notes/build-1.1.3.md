@@ -36,6 +36,7 @@
 - Changed the default value of `database.connections.sqlite.database` to `base_path('storage/database.sqlite')` to better support applications using a mirrored public directory.
 - Fixed issue where redirects to slow loading pages via AJAX could stop the loading indicator (and thus enable the triggering element) before the redirect actually completed, potentially leading to users triggering multiple requests unintentionally. As a side-effect due to how browsers process file downloads triggered by AJAX, this broke the loading indicator for AJAX redirects that cause the browser to download files instead of leaving the page; see [the test plugin](https://github.com/wintercms/wn-test-plugin/commit/9fb25e233e5da16daead8c12526b69f4aca53a30#diff-acf973ac915a3ac625f316456994123c57a688463a4a74c31247cf6334643365R8-R15) for how you can manually fix that functionality within your projects.
 - Fixed long standing issue with the pagelinks plugin in the richeditor where inserting a link from the pagelinks popup would insert it at the start of the content instead of where the selected text was, and fixed another issue that would cause any preset text to be overwritten when selecting a link to use from the pagelinks popup.
+- Fixed support for CSS variables within the asset compiler / combiner, this is a step closer towards native Tailwind support within Winter CMS.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
