@@ -58,3 +58,4 @@
 ## Dependencies
 - Refactored the `Winter\Storm\Events\Dispatcher` class to extend and override the base Laravel Event Dispatcher rather than just duplicating and implementing the contract for greater compatibility with Laravel.
 - Updated from `symfony/yaml` v3.4 to `symfony/yaml` v4.4 and added a default preprocessor to automatically fix breaking changes between v3 and v4 of the symfony/yaml package.
+- Switched away from the abandoned `fzaninotto/faker` package to the maintained `fakerphp/faker` package.
