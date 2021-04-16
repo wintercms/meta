@@ -3,6 +3,7 @@
 ## UX/UI Improvements
 - Added support for choosing the default backend locale and timezone in `php artisan winter:install`.
 - Controller scaffolding now uses the default backend localization keys for the default titles in the FormBehavior config instead of hardcoded English strings
+- The `unique` validation rule can now be used without any additional information, previously it required the table name to be specified in the form of `unique:table_name`. This also means that `unique` validation rules will respect the current model's `$table` property.
 
 ## API Changes
 - Added support for modifying the RichEditor's allowed attributes list through the EditorSettings in the backend
