@@ -42,6 +42,8 @@
 - Fixed long standing issue with the pagelinks plugin in the richeditor where inserting a link from the pagelinks popup would insert it at the start of the content instead of where the selected text was, and fixed another issue that would cause any preset text to be overwritten when selecting a link to use from the pagelinks popup.
 - Fixed issue where exceptions / errors that were thrown before the `Event` facade was available would always be reported as "Class Event does not exist" instead of the actual problem.
 - Fixed support for CSS variables within the asset compiler / combiner, this is a step closer towards native Tailwind support within Winter CMS.
+- Fixed issue where resizing certain `.gif` images would result in `imagecolorsforindex(): Argument #2 ($color) is out of range`.
+- Fixed issue where resizing `.gif` images with no transparent colour set would result in the white colour being replaced with the default transparent colour.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
