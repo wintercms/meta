@@ -23,6 +23,7 @@
 - Added support for automatic cache busting for the assets loaded by the `{% framework %}` Twig tag based on the current version stored in the database. Use `artisan winter:version` to set the correct version for your project.
 - Added `Config::registerNamespaceAlias($original, $alias);` to allow aliasing a config namespaces to another config namespace, i.e. `Config::registerNamespaceAlias('winter.debugbar', 'debugbar');` would return the config items from `winter.debugbar` when accessing the `debugbar` config. This is useful for forked packages or when integrating Laravel packages into Winter.
 - Added `Config::registerPackageFallback($original, $fallback)` to allow the config items to be loaded from the global `$fallback` config when present if the `$original` global config isn't present. Useful when forking plugins to ensure existing installations with customized configs at the global level continue to work.
+- Added support for plugins specifying that they "replace" other plugins via the `replaces` key in the `pluginDetails()` method. See [wintercms/winter#41](https://github.com/wintercms/winter/pull/41) for more details. Methods added to `PluginBase`: `getReplaces($includeConstraints = false)`, `canReplacePlugin($plugin, $version)`, `getPluginIdentifier()`, `getPluginPath()`, and `getPluginVersion()`.
 
 ## Bug Fixes
 - Fixed issue with Schedule->withoutOverlapping() by bringing the Halcyon MemoryRepository more inline with the parent class.
