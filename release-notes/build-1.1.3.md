@@ -7,22 +7,23 @@
 
 ## API Changes
 - Added support for modifying the RichEditor's allowed attributes list through the EditorSettings in the backend
-- Added support for lazy loading class aliases only when needed through the new `Winter\Storm\Support\ClassLoader->addAliases(['Real\Class' => 'Alias\For\Class'])` method.
 - Added support for saving deferred bindings with pivot data.
 - Added `Backend::makeCarbon($dateTime)` helper for setting the backend timezone on date values.
 - Added support for Dependency Injection in console commands.
 - Added support for `php artisan winter:util purge orphans` command that removes any `system_files` records that do not have matching files stored on the filesystem.
 - Added support for `registerValidationRules` in the `Plugin.php` plugin registration file to register custom validation rules.
 - Added support for specifying `min`, `max`, and `step` values on the `number` and `numberrange` List Filter scope types.
-- Added support for translator namespace aliases by adding `Lang::registerNamespaceAlias('real.namespace', 'aliased.namespace')`.
-- Added support for aliasing entire namespaces in the class loader via the new `Winter\Storm\Support\ClassLoader->addNamespaceAliases(['Real\Namespace' => 'Aliased\Namespace'])` method.
 - Added support for pre and post processing of YAML being parsed which should pave the way for supporting YAML v4
 - Added support for array views to the MailFake class
 - Added support for HTTP HEAD requests from the `Http` utility.
 - Added boolean `$ok` indicator to the `Http` utility to indicate if the last response was successful (ie. an HTTP 2xx response code was returned)
 - Added support for automatic cache busting for the assets loaded by the `{% framework %}` Twig tag based on the current version stored in the database. Use `artisan winter:version` to set the correct version for your project.
+- Added support for translator namespace aliases by adding `Lang::registerNamespaceAlias('real.namespace', 'aliased.namespace')`.
 - Added `Config::registerNamespaceAlias($original, $alias);` to allow aliasing a config namespaces to another config namespace, i.e. `Config::registerNamespaceAlias('winter.debugbar', 'debugbar');` would return the config items from `winter.debugbar` when accessing the `debugbar` config. This is useful for forked packages or when integrating Laravel packages into Winter.
 - Added `Config::registerPackageFallback($original, $fallback)` to allow the config items to be loaded from the global `$fallback` config when present if the `$original` global config isn't present. Useful when forking plugins to ensure existing installations with customized configs at the global level continue to work.
+- Added support for lazy loading class aliases only when needed through the new `Winter\Storm\Support\ClassLoader->addAliases(['Real\Class' => 'Alias\For\Class'])` method.
+- Added support for aliasing entire namespaces in the class loader via the new `Winter\Storm\Support\ClassLoader->addNamespaceAliases(['Real\Namespace' => 'Aliased\Namespace'])` method.
+- Added support for getting the original class name of an aliased class when registered through the ClassLoader via the `Winter\Storm\Support\ClassLoader->getAlias($aliasedClass)` method
 - Added support for plugins specifying that they "replace" other plugins via the `replaces` key in the `pluginDetails()` method. See [wintercms/winter#41](https://github.com/wintercms/winter/pull/41) & [wintercms/docs#11](https://github.com/wintercms/docs/pull/11) for more details. Methods added to `PluginBase`: `getReplaces($includeConstraints = false)`, `canReplacePlugin($plugin, $version)`, `getPluginIdentifier()`, `getPluginPath()`, and `getPluginVersion()`.
 
 ## Bug Fixes
