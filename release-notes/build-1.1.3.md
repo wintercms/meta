@@ -47,6 +47,7 @@
 - Fixed issue where resizing certain `.gif` images would result in `imagecolorsforindex(): Argument #2 ($color) is out of range`.
 - Fixed issue where resizing `.gif` images with no transparent colour set would result in the white colour being replaced with the default transparent colour.
 - Fixed issue where passing `null` as the image source to the `| resize` filter resulted in an exception being thrown instead of more gracefully silently ignoring the input and returning an emptry string.
+- Fixed issue where `init.php` wouldn't be loaded by the plugin boot process when running unit tests.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
