@@ -48,6 +48,8 @@
 - Fixed issue where resizing `.gif` images with no transparent colour set would result in the white colour being replaced with the default transparent colour.
 - Fixed issue where passing `null` as the image source to the `| resize` filter resulted in an exception being thrown instead of more gracefully silently ignoring the input and returning an emptry string.
 - Fixed issue where `init.php` wouldn't be loaded by the plugin boot process when running unit tests.
+- Fixed long standing issue where disabled plugins wouldn't be uninstalled by the `winter:down` command
+- Fixed issue where routes registered via plugin's `routes.php` file would not have names registered via `Route::name()` actually registered with the internal route name mapping meaning that `route($name)` would not be able to resolve to those routes.
 
 ## Security Improvements
 - Improved password reset flow by no longer throwing an error message if the provided email address doesn't exist in the system.
