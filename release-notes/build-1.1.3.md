@@ -1,4 +1,4 @@
-# Build 1.1.3 (WIP)
+# Build 1.1.3
 
 ## UX/UI Improvements
 - Added support for choosing the default backend locale and timezone in `php artisan winter:install`.
@@ -61,9 +61,6 @@
 - Improved Russian translation.
 - Improved Dutch translation.
 - Moved Media Manager `rename` and `move` action language keys to the backend module instead of the CMS module.
-
-## Performance Improvements
--
 
 ## Community Improvements
 - Documented the Lists widget's `perPageOptions` configuration property
