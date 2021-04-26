@@ -7,7 +7,7 @@
 -
 
 ## Bug Fixes
--
+- Fixed issue where warnings about removing replaced plugins were still shown even when the plugins had already been removed.
 
 ## Security Improvements
 -
