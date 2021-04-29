@@ -15,6 +15,7 @@
 
 ## Translation Improvements
 - Improved French translation.
+- Improved Latvian translation.
 
 ## Performance Improvements
 -
