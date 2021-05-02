@@ -1,7 +1,7 @@
 # Build 1.1.4 (WIP)
 
 ## UX/UI Improvements
--
+- Fixed visual issue with checkboxes in inspector popups where they would take up space but not be visible.
 
 ## API Changes
 -
