@@ -9,6 +9,7 @@
 ## Bug Fixes
 - Fixed issue where warnings about removing replaced plugins were still shown even when the plugins had already been removed.
 - Fixed support for multiple where clauses on the `unique` model attribute validation rule.
+- Fixed support for uppercase file extensions when using the `ImageResizer` (i.e. `.JPG`, etc)
 
 ## Security Improvements
 -
@@ -16,6 +17,7 @@
 ## Translation Improvements
 - Improved French translation.
 - Improved Latvian translation.
+- Improved Italian translation.
 
 ## Performance Improvements
 -
