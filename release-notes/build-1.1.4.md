@@ -25,6 +25,8 @@
 
 ## Community Improvements
 - Dropped old "build" files in the Storm library that were previously used for subsplitting the modules in the main Winter CMS repository for Composer. This has been replaced by a command in the Winter CMS CLI utility.
+- Changed the default database host config option to be `127.0.0.1` instead of `localhost`. `localhost` may be slightly faster in some environments, but `127.0.0.1` is more reliable in all environments and the default can always be changed for specific projects that require it.
+- Added automatic regeneration of the docs on [wintercms.com/docs](https://wintercms.com/docs) whenever a commit is made to the [docs repository](https://github.com/wintercms/docs) meaning that the public docs will finally be always up to date with the underlying git repository that powers them! Huge thanks to Marc Jauvin for finally taking care of a long standing annoyance with the project documentation.
 
 ## Dependencies
 -
