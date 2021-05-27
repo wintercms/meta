@@ -19,6 +19,7 @@
 - Improved French translation.
 - Improved Latvian translation.
 - Improved Italian translation.
+- Improved Romanian translation.
 
 ## Performance Improvements
 -
