@@ -25,7 +25,7 @@
 - Improved Russian translation.
 
 ## Performance Improvements
--
+- Improved speeds with path resolution for Halcyon File datasources sharing the same base directory.
 
 ## Community Improvements
 - Dropped old "build" files in the Storm library that were previously used for subsplitting the modules in the main Winter CMS repository for Composer. This has been replaced by a command in the Winter CMS CLI utility.
