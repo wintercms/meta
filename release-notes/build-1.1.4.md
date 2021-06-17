@@ -11,6 +11,7 @@
 - Fixed support for multiple where clauses on the `unique` model attribute validation rule.
 - Fixed support for uppercase file extensions when using the `ImageResizer` (i.e. `.JPG`, etc)
 - Fixed a few issues with the `unique` validation rule (couldn't specify multiple where conditions, minor inconsitencies in how it was being parsed, etc) and added unit tests to cover all valid variations fo the rule
+- Backported a fix from Laravel 7 to allow pagination for queries with `having` clauses.
 
 ## Security Improvements
 -
