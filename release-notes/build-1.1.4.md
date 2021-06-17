@@ -20,6 +20,7 @@
 - Improved Latvian translation.
 - Improved Italian translation.
 - Improved Romanian translation.
+- Improved Russian translation.
 
 ## Performance Improvements
 -
