@@ -2,6 +2,7 @@
 
 ## UX/UI Improvements
 - Fixed visual issue with checkboxes in inspector popups where they would take up space but not be visible.
+- The order of columns in the Lists widget will be reset when pressing the "Reset to Default" button in the List config popup.
 
 ## API Changes
 -
