@@ -14,6 +14,7 @@
 - Fixed a few issues with the `unique` validation rule (couldn't specify multiple where conditions, minor inconsitencies in how it was being parsed, etc) and added unit tests to cover all valid variations fo the rule
 - Fixed issue where calling `url()` or `temporaryUrl()` on a filesystem driver that didn't support those methods would throw a `Class not found` exception instead the appropriate `RuntimeException`.
 - Backported a fix from Laravel 7 to allow pagination for queries with `having` clauses.
+- Fixed issue with NavigationManager items that had invalid `order` values causing the backend to crash.
 
 ## Security Improvements
 -
