@@ -15,6 +15,7 @@
 - Fixed issue where calling `url()` or `temporaryUrl()` on a filesystem driver that didn't support those methods would throw a `Class not found` exception instead the appropriate `RuntimeException`.
 - Backported a fix from Laravel 7 to allow pagination for queries with `having` clauses.
 - Fixed issue with NavigationManager items that had invalid `order` values causing the backend to crash.
+- Fixed issue where requests to non-existant Asset Combiner routes would return a 500 error code instead of 404.
 
 ## Security Improvements
 -
