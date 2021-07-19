@@ -5,7 +5,9 @@
 - The order of columns in the Lists widget will be reset when pressing the "Reset to Default" button in the List config popup.
 
 ## API Changes
--
+- `SystemException`s are now thrown for code paths resulting in not found exceptions (AJAX handlers, partials, content, components, etc) to make it easier to identify and resolve issues before end users are affected.
+- Added the `getNamespaceAliases($namespace)` & `getReverseAlias($class)` methods to the `ClassLoader` class.
+- Added `Winter\Storm\Support\Testing\MocksClassLoader` trait for mocking the ClassLoader in unit tests.
 
 ## Bug Fixes
 - Fixed issue where warnings about removing replaced plugins were still shown even when the plugins had already been removed.
@@ -16,6 +18,8 @@
 - Backported a fix from Laravel 7 to allow pagination for queries with `having` clauses.
 - Fixed issue with NavigationManager items that had invalid `order` values causing the backend to crash.
 - Fixed issue where requests to non-existant Asset Combiner routes would return a 500 error code instead of 404.
+- Fixed issue where the replacing plugin would be disabled on the first request after an aliased plugin was disabled.
+- Fixed issue where namespace aliases registered via the `ClassLoader` (usually through the plugin replacement functionality) would not be evaluated by the `Extendable` trait (i.e. behaviors were not resolving correctly).
 
 ## Security Improvements
 -
