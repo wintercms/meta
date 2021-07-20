@@ -30,6 +30,7 @@
 - Improved Italian translation.
 - Improved Romanian translation.
 - Improved Russian translation.
+- Add client-side localization strings for german locale.
 
 ## Performance Improvements
 - Improved speeds with path resolution for Halcyon File datasources sharing the same base directory.
