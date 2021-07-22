@@ -8,6 +8,7 @@
 - `SystemException`s are now thrown for code paths resulting in not found exceptions (AJAX handlers, partials, content, components, etc) to make it easier to identify and resolve issues before end users are affected.
 - Added the `getNamespaceAliases($namespace)` & `getReverseAlias($class)` methods to the `ClassLoader` class.
 - Added `Winter\Storm\Support\Testing\MocksClassLoader` trait for mocking the ClassLoader in unit tests.
+- The `Http` helper in the Storm library now stores and makes available all response headers in the `$headers` property even if the `toFile()` method is used - previously, headers would be discarded to prevent them being added to the file content.
 
 ## Bug Fixes
 - Fixed issue where warnings about removing replaced plugins were still shown even when the plugins had already been removed.
