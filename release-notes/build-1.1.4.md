@@ -9,6 +9,7 @@
 - Added the `getNamespaceAliases($namespace)` & `getReverseAlias($class)` methods to the `ClassLoader` class.
 - Added `Winter\Storm\Support\Testing\MocksClassLoader` trait for mocking the ClassLoader in unit tests.
 - The `Http` helper in the Storm library now stores and makes available all response headers in the `$headers` property even if the `toFile()` method is used - previously, headers would be discarded to prevent them being added to the file content.
+- Custom Twig filters & functions registered in plugins via `registerMarkupTags()` can now specify the options to be used when registering the filters / functions with Twig.
 
 ## Bug Fixes
 - Fixed issue where warnings about removing replaced plugins were still shown even when the plugins had already been removed.
