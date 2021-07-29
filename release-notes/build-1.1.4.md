@@ -10,6 +10,7 @@
 - Added `Winter\Storm\Support\Testing\MocksClassLoader` trait for mocking the ClassLoader in unit tests.
 - The `Http` helper in the Storm library now stores and makes available all response headers in the `$headers` property even if the `toFile()` method is used - previously, headers would be discarded to prevent them being added to the file content.
 - Custom Twig filters & functions registered in plugins via `registerMarkupTags()` can now specify the options to be used when registering the filters / functions with Twig.
+- Added support for [Trusted Proxies](https://laravel.com/docs/6.x/requests#configuring-trusted-proxies) in Winter CMS, allowing sites behind proxies to still be served under HTTPS even if the HTTPS connection terminates at the proxy. Previously, the Backend of Winter CMS would redirect the user to the real underlying web address, which may not exist if it is proxied.
 
 ## Bug Fixes
 - Fixed issue where warnings about removing replaced plugins were still shown even when the plugins had already been removed.
