@@ -23,6 +23,7 @@
 - Fixed issue where requests to non-existant Asset Combiner routes would return a 500 error code instead of 404.
 - Fixed issue where the replacing plugin would be disabled on the first request after an aliased plugin was disabled.
 - Fixed issue where namespace aliases registered via the `ClassLoader` (usually through the plugin replacement functionality) would not be evaluated by the `Extendable` trait (i.e. behaviors were not resolving correctly).
+- Fixed issue where `0` couldn't be used as the `min` or `max` value for `number` field types.
 
 ## Security Improvements
 -
@@ -43,6 +44,7 @@
 - Changed the default database host config option to be `127.0.0.1` instead of `localhost`. `localhost` may be slightly faster in some environments, but `127.0.0.1` is more reliable in all environments and the default can always be changed for specific projects that require it.
 - Added automatic regeneration of the docs on [wintercms.com/docs](https://wintercms.com/docs) whenever a commit is made to the [docs repository](https://github.com/wintercms/docs) meaning that the public docs will finally be always up to date with the underlying git repository that powers them! Huge thanks to Marc Jauvin for finally taking care of a long standing annoyance with the project documentation.
 - Updated the default config files to more closely match Laravel 6's default configurations.
+- Improved issue templates on the main Winter CMS repository
 
 ## Dependencies
 -
