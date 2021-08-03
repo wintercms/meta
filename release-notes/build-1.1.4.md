@@ -3,6 +3,7 @@
 ## UX/UI Improvements
 - Fixed visual issue with checkboxes in inspector popups where they would take up space but not be visible.
 - The order of columns in the Lists widget will be reset when pressing the "Reset to Default" button in the List config popup.
+- The password restore and reset pages in the Auth controller now provide a body class (`restore` and `reset`, respectively) for targeting CSS.
 
 ## API Changes
 - `SystemException`s are now thrown for code paths resulting in not found exceptions (AJAX handlers, partials, content, components, etc) to make it easier to identify and resolve issues before end users are affected.
