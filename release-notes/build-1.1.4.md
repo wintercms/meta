@@ -26,6 +26,7 @@
 - Fixed issue where the replacing plugin would be disabled on the first request after an aliased plugin was disabled.
 - Fixed issue where namespace aliases registered via the `ClassLoader` (usually through the plugin replacement functionality) would not be evaluated by the `Extendable` trait (i.e. behaviors were not resolving correctly).
 - Fixed issue where `0` couldn't be used as the `min` or `max` value for `number` field types.
+- Fixed an issue with SSL connection failures and the `winter:version` command on Mac OS by using the `Http` helper as opposed to the `file_get_contents()` method.
 
 ## Security Improvements
 -
