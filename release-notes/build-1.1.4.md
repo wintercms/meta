@@ -64,6 +64,3 @@
 - Added automatic regeneration of the docs on [wintercms.com/docs](https://wintercms.com/docs) whenever a commit is made to the [docs repository](https://github.com/wintercms/docs) meaning that the public docs will finally be always up to date with the underlying git repository that powers them! Huge thanks to Marc Jauvin for finally taking care of a long standing annoyance with the project documentation.
 - Updated the default config files to more closely match Laravel 6's default configurations.
 - Improved issue templates on the main Winter CMS repository
-
-## Dependencies
--
