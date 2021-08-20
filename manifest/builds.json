@@ -7722,9 +7722,9 @@
             "build": "1.1.3",
             "parent": "1.1.2",
             "modules": {
-                "system": "b64df5f172e8c510aa8a7993c4238304118003e56bef35adaf21712b37cdaa97",
-                "backend": "1738e8dd1767323946a92096893a6e257b6c6e6e69b24666bdf4a5f86a118cbb",
-                "cms": "1e39157acba0cc3a84c59ef6e44b7bf2a6ec6ac828eade7b68c484def2760863"
+                "system": "1db9a5e4d17b784482bab7d6f5c7ff898027fafffc20b018894f299de850b513",
+                "backend": "ae1bf334da1e27259dae71dcfae854165d2fbffd71ebd35e31ac9373d7d5d2ea",
+                "cms": "9b894ca515282fb77470c42651b141c41b4a8c5e03d4ca83c8d30d42f7576773"
             },
             "files": {
                 "added": {
@@ -7754,7 +7754,7 @@
                     "\/modules\/system\/classes\/SourceManifest.php": "f20c39aef9898e070dee237591e1966d3eed3fb9ed86cc8b4cdb05c1f7c7acfd",
                     "\/modules\/system\/classes\/UpdateManager.php": "7b02f60e7bda6f3169d810964e821549fef0501de61cb2951b985f58aba1ab55",
                     "\/modules\/system\/classes\/VersionManager.php": "09149811b49f248e6abde3c23c97cad9bc97e9cc7f78c0519c320d2b4a3c2cac",
-                    "\/modules\/system\/composer.json": "d275c184cb961d881e9efce30dc8d424b6c30f7a362e89801c1e583d0820fdc5",
+                    "\/modules\/system\/composer.json": "ad4bbd11f365bd3d4c77191f3149556f637f6dcb3607923940cb2f73c3b8f864",
                     "\/modules\/system\/console\/WinterDown.php": "2c3a54f841c925ab9cbf3eb4249d205eebdb59b0bdbeea5b0005201de3521c85",
                     "\/modules\/system\/console\/WinterEnv.php": "565107fe6574721c32fa9d60ec8a5fa220925df2af55215284111feaa9afaa58",
                     "\/modules\/system\/console\/WinterFresh.php": "59d8bb9567d55044a4d085523e36e2f006388c10835e9bac309216e4a519c3f1",
@@ -7775,6 +7775,7 @@
                     "\/modules\/system\/traits\/AssetMaker.php": "325d0c974d33c5b4dc821fb27eb4c3a6a1665a1b3c678ee531cbd949980ce223",
                     "\/modules\/backend\/behaviors\/ReorderController.php": "18d1b85f38debf617c30a519bf9cae1bceba8d0740f02d17b43431ece6f9bb01",
                     "\/modules\/backend\/classes\/NavigationManager.php": "9626bd2326bd07c4137fc2e55546a7bdceecb54d6898ad9768f16cae9f26a7d3",
+                    "\/modules\/backend\/composer.json": "975c92f2657d7044f931c94b33b146e5156357f27e2f4f443aa2ef46f7dc97db",
                     "\/modules\/backend\/controllers\/Auth.php": "0cd2f15caf9aabaa96f2838e5c69675ba6dbd40973f858654d16ec4a11c75149",
                     "\/modules\/backend\/formwidgets\/RecordFinder.php": "ad165aa87bd3b739fa006016ff52cce272fc87d81eecc3f3a8f9dcc71ff2e10c",
                     "\/modules\/backend\/formwidgets\/RichEditor.php": "b25b4d2fdc0ef7fd8f3b08bcddf4d3492966129d78e00445f53fc9ecaf78a968",
@@ -7830,6 +7831,7 @@
                     "\/modules\/backend\/widgets\/form\/assets\/js\/winter.form.js": "c81a7d2fbab3f76ccf6e50b5c0c527f716d8a08e2422cb881f40e5624e633f57",
                     "\/modules\/backend\/widgets\/mediamanager\/partials\/_move-form.htm": "3cf918e3bfec7b0db46417e3850abd4f0884eab5e801edd6d644967a378f997b",
                     "\/modules\/backend\/widgets\/mediamanager\/partials\/_rename-form.htm": "bd7860dd0c9197c56109a85f02678ff3c0a625df56313b4325e777d8ade3ce25",
+                    "\/modules\/cms\/composer.json": "6ce8398036be9603b134c5f9694c55a841e3276f5f8639b436b502f73d4ab33d",
                     "\/modules\/cms\/lang\/be\/lang.php": "dda9310e42aaa2fca21a4b9a826c8e72e2f3467e10a12ed564ad1b7036cf2b1b",
                     "\/modules\/cms\/lang\/bg\/lang.php": "00e7ed884c94f5fa7ba0849f54fae8ca82b5c1bd46ca0fdc2a3f31d132d7d449",
                     "\/modules\/cms\/lang\/ca\/lang.php": "945cde4dfab9548fe1e40f7adf8c007e9ea491f791d6c34626315682fb52dc38",
@@ -7872,6 +7874,61 @@
                     "\/modules\/cms\/widgets\/ComponentList.php": "586172749fada27b0491ccf614c879600693502a960be8b4dcb3190ef0412521",
                     "\/modules\/cms\/widgets\/assetlist\/partials\/_move_form.htm": "b03f88c75604f86abf91269b8c3ad1b7bfe1396447dd39df5a9cf9957dc95b25",
                     "\/modules\/cms\/widgets\/assetlist\/partials\/_rename_form.htm": "7d40d08dd2f382f77f416027df4cf0f04c63f4d582c98d25780821bd7c5f1bb0"
+                }
+            }
+        },
+        {
+            "build": "1.1.4",
+            "parent": "1.1.3",
+            "modules": {
+                "system": "15f57de0a1417e8b22e5a11cf663f939c3e95de33d846912d325b2b14cea53dc",
+                "backend": "5147860f4bbccdbcf4de76de254a8e42e936ccff76851414f0382dc51f8b9d3e",
+                "cms": "a124a47f53ea49a40e18bab6818884bbdc04d5630c08486a864de16d0264f0d5"
+            },
+            "files": {
+                "added": {
+                    "\/modules\/system\/lang\/lv\/client.php": "3de6761f76c662bfae2fbfcb5eeab09ab2420cd28160f709f9398b53ba8e7b43"
+                },
+                "modified": {
+                    "\/modules\/system\/assets\/js\/lang\/lang.de.js": "5577c61ee0040c93316d11f452022c7c9d71be5fc067e16bfaf8cb5939c26237",
+                    "\/modules\/system\/assets\/js\/lang\/lang.lv.js": "c714e96e141f145387850fc61fb3c4b6f5bb735bd05a327eac938cdef3489473",
+                    "\/modules\/system\/assets\/js\/lang\/lang.ro.js": "0a3448fd3e9658e57b5071ddb00eff47cb6da0b1d5c17f85322a5789c4facc4b",
+                    "\/modules\/system\/assets\/ui\/less\/checkbox.less": "8f58ea0f30e3eb82110a7e23126d6886de3daebaea4046b02df3f5ac934543ea",
+                    "\/modules\/system\/assets\/ui\/storm.css": "63a0c6307de87288af5fdda945c91b342cb4a0acfe1b60d842b7ae99b5fdeb92",
+                    "\/modules\/system\/classes\/CombineAssets.php": "0ecfe33d570d98b25755a3e075bcdbb03622b19408a06393b3f2290fe9af4b20",
+                    "\/modules\/system\/classes\/ImageResizer.php": "d0c719cf96617580780006b83a497bc5c68c3f31a562fe4fa42a3b7bd27a2710",
+                    "\/modules\/system\/classes\/MarkupManager.php": "dd3aabdb4a9568991ed1c45fe693e948ac76ef3bd82ef8e8d22db931c43d9c3b",
+                    "\/modules\/system\/classes\/PluginManager.php": "6e2e9feb692800ae5cf44acec709fb94f6f964ce985f4debefb04baa0f791355",
+                    "\/modules\/system\/classes\/SourceManifest.php": "88cbf348ffc1d4c42bc53d52fe7d2387c6cfbf567f8ddc4c89ac8c6d5b5ba9fa",
+                    "\/modules\/system\/classes\/SystemController.php": "d717e0e55a935012c698ecd7a8005df69807dd329293b349769d262393c21c1d",
+                    "\/modules\/system\/classes\/UpdateManager.php": "201f0aa1b410bf5bff08b535cd623d594cabbd6d52ce3b241291ffddbd0520fc",
+                    "\/modules\/system\/controllers\/Updates.php": "6838888143a0468dcc6a3042ef7ec14a5297ebae25294e189fa3dda906cc0ac2",
+                    "\/modules\/system\/lang\/de\/client.php": "0b6db4857da372e2be9b87e52d48d30f1a4676594404f3f14b2f2065796ccb33",
+                    "\/modules\/system\/lang\/it\/lang.php": "d0e53697a4914a5531ae5132dd7b9719f391f66b5cc6818d710c2931c707228c",
+                    "\/modules\/system\/lang\/lv\/lang.php": "016eb7f9a8bfbbd382d2df1ae18a3df92d857f0da4b4f52832345654ac8c4fa3",
+                    "\/modules\/system\/lang\/lv\/validation.php": "09d095fb05b3b31ceab4813d3f9c12c98289650172e4b6935b8bf20297150eef",
+                    "\/modules\/system\/lang\/ro\/client.php": "ad1014f77af3fdfe3202676298e1cbc7da3a2100a8d2d669c07444b8dc4fcfb3",
+                    "\/modules\/system\/lang\/ro\/lang.php": "2aac5102d849588648d5f311bbef38d9398d00cc884a63b2d6380aac7e5c4777",
+                    "\/modules\/system\/lang\/ro\/validation.php": "66703f052628ace82b592a24c26806d3a4fbb562746d3b6c45356881f0cf255f",
+                    "\/modules\/system\/traits\/SecurityController.php": "80f0f86367941d2eeb57fe8bd6dc10185e27b5632b5b67926293c4bb67b3e685",
+                    "\/modules\/backend\/classes\/Controller.php": "eb094c953a35166a7b8b39624bedb32f1fa63a4f7ca99b59ae5f521353beb562",
+                    "\/modules\/backend\/classes\/MainMenuItem.php": "517430e0bc2573fd61e36a7643f17a788b5b45c6e48ba413cd5afa11966ecb7e",
+                    "\/modules\/backend\/classes\/NavigationManager.php": "011960f1cf4fb7cb782b2dcbedf70f4cb545b9dca7d6c33e2d756999ba4a436b",
+                    "\/modules\/backend\/classes\/QuickActionItem.php": "f886cdb002bd83726038a1750104abb72b2f2cf8b57ee445ec9ef0e476c98b18",
+                    "\/modules\/backend\/classes\/SideMenuItem.php": "ec1ab0f28d54ac9d9880f0c0b73b0dc93c500745c455a6c2aac64d9491af50f6",
+                    "\/modules\/backend\/controllers\/Auth.php": "810a348d85de84b9d7f68aa860a54901e1c31ca507ef02b752628106eea9bcbf",
+                    "\/modules\/backend\/lang\/it\/lang.php": "302876f119ae055920d08349568b0a615d139832b9dd097ee7ffcf825fb6ca76",
+                    "\/modules\/backend\/lang\/lv\/lang.php": "b4abcc32c77962f81da1361588e782e7b29138d5ad2172cf9774b63cfbda8548",
+                    "\/modules\/backend\/lang\/ro\/lang.php": "ebb801fe53b022ff6349f87833529b4f8e596c7487480ce3f0e0836447070aee",
+                    "\/modules\/backend\/models\/BrandSetting.php": "09f87d2830a3d8bdab58a270198511464730bf1d95d5d40060e684085d1a4e70",
+                    "\/modules\/backend\/models\/EditorSetting.php": "5c4effb963fa08ccbce01950333c08af100bed702ca611296e8227f2c7648cd4",
+                    "\/modules\/backend\/widgets\/Lists.php": "43530fd28b9255a121f5af27960e2f0a6ec0aaafb4376aee744b4b9f8f273f64",
+                    "\/modules\/backend\/widgets\/form\/partials\/_field_number.htm": "666fbf366cca0e9802a210395292a59fdd4900ce3d29c59dd1639848ac8fd9a6",
+                    "\/modules\/cms\/classes\/Controller.php": "b610cb56ab13a17216180942ae02ce09a3cb3918daac90522d36c4c84b84fd46",
+                    "\/modules\/cms\/lang\/fr\/lang.php": "84c471270c8f444c25362be8ee51210f05867f02449ea1ec077e9cd4998ebe0b",
+                    "\/modules\/cms\/lang\/it\/lang.php": "432f710d98e10e8e6a86a442fc0a55c0565b811dbedb7213866b3879cc82094d",
+                    "\/modules\/cms\/lang\/lv\/lang.php": "3b062bea9733d0d8258ca8f5b266088d3e5c3182e7e2b0818672d3ce9fa8a030",
+                    "\/modules\/cms\/lang\/ro\/lang.php": "d48fb7e10ebd195bf7d96b0ecec58a31f35842cd309ecf06f80b544ed38a4786"
                 }
             }
         }
