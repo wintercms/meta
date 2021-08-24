@@ -7931,6 +7931,24 @@
                     "\/modules\/cms\/lang\/ro\/lang.php": "d48fb7e10ebd195bf7d96b0ecec58a31f35842cd309ecf06f80b544ed38a4786"
                 }
             }
+        },
+        {
+            "build": "1.1.5",
+            "parent": "1.1.4",
+            "modules": {
+                "system": "15f57de0a1417e8b22e5a11cf663f939c3e95de33d846912d325b2b14cea53dc",
+                "backend": "3c41fd8518d2ced08ea9b37f9871f8a3085029c4aa1cfc7911b78cc1c3f4b763",
+                "cms": "33c3b63541792b8124b701e5435674e6925e1f881fc4b49c4c46e7caa5ea0511"
+            },
+            "files": {
+                "modified": {
+                    "\/modules\/backend\/assets\/css\/winter.css": "71d837bda202e48c4e29733e4fb6ac7a215339b32e57c83d2d238b24086a7cb5",
+                    "\/modules\/backend\/lang\/en\/lang.php": "1ea5926b63cafc8129413fb5e839ac95d8c3d00e0f582108ab81fa33f6f1d26a",
+                    "\/modules\/backend\/layouts\/default.htm": "933c5f7256c745d737442b3663be5cdfe7784bbc0da5bfb40f5cdb10eba1db4f",
+                    "\/modules\/backend\/models\/User.php": "96a5c48cd2c339a1d1458163fa6fc57ffc63c235741d2f337f550ed371bc052a",
+                    "\/modules\/cms\/models\/ThemeLog.php": "91dea4295f55d25d309e1090d852948c22b72f2fc91f278556c81113a28eae53"
+                }
+            }
         }
     ]
 }
