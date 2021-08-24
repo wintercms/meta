@@ -1,7 +1,8 @@
 # Build 1.1.5 (WIP)
 
 ## UX/UI Improvements
-- Added a notice to the top of every page in the backend when using the user impersonation functionality.
+- Added a notice to the top of every page in the backend when using the user impersonation functionality. <img width="1246" alt="Screen Shot 2021-08-24 at 2 03 38 PM" src="https://user-images.githubusercontent.com/7253840/130687384-306d0a07-da46-42d6-a6fc-b6810ae4c6c0.png">
+
 
 ## API Changes
 - Added `getRealUser()` to `Winter\Storm\Auth\Manager` to get the real user for the current request, taking into account user impersonation
