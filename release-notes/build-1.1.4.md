@@ -6,6 +6,7 @@
 - The password restore and reset pages in the Auth controller now provide a body class (`restore` and `reset`, respectively) for targeting CSS.
 
 ## API Changes
+- The URL generator (`URL::to()` and `url()`) will now **always return a slash after the hostname** and properly URL-encode values with the dot segments processed out.
 - `SystemException`s are now thrown for code paths resulting in not found exceptions (AJAX handlers, partials, content, components, etc) to make it easier to identify and resolve issues before end users are affected.
 - Added the `getNamespaceAliases($namespace)` & `getReverseAlias($class)` methods to the `ClassLoader` class.
 - Added `Winter\Storm\Support\Testing\MocksClassLoader` trait for mocking the ClassLoader in unit tests.
@@ -13,7 +14,6 @@
 - Custom Twig filters & functions registered in plugins via `registerMarkupTags()` can now specify the options to be used when registering the filters / functions with Twig.
 - Added support for [Trusted Proxies](https://laravel.com/docs/6.x/requests#configuring-trusted-proxies) in Winter CMS, allowing sites behind proxies to still be served under HTTPS even if the HTTPS connection terminates at the proxy. Previously, the Backend of Winter CMS would redirect the user to the real underlying web address, which may not exist if it is proxied.
 - Added support for providing a default image to be used for `type: image` backend list columns.
-- The URL generator (`URL::to()` and `url()`) now return properly URL-encoded values with the dot segments processed out, and will always return a slash after the hostname.
 - Added the following global helper functions:
     - `array_accessible()`: `Arr::accessible()`
     - `array_has_any()`: `Arr::hasAny()`
