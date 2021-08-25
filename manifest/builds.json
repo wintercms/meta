@@ -7949,6 +7949,20 @@
                     "\/modules\/cms\/models\/ThemeLog.php": "91dea4295f55d25d309e1090d852948c22b72f2fc91f278556c81113a28eae53"
                 }
             }
+        },
+        {
+            "build": "1.1.6",
+            "parent": "1.1.5",
+            "modules": {
+                "system": "15f57de0a1417e8b22e5a11cf663f939c3e95de33d846912d325b2b14cea53dc",
+                "backend": "7b3f094c8b13d626dc5529d4c7523c46e4b450fca32561adeb717c38319e1e91",
+                "cms": "33c3b63541792b8124b701e5435674e6925e1f881fc4b49c4c46e7caa5ea0511"
+            },
+            "files": {
+                "modified": {
+                    "\/modules\/backend\/assets\/css\/winter.css": "77cf51c85afdc1bc5a1b0a00ea0f965b8f3c1aa1377c2e626fea03594d35249b"
+                }
+            }
         }
     ]
 }
