@@ -6080,6 +6080,21 @@
             }
         },
         {
+            "build": "1.0.474",
+            "parent": "1.0.473",
+            "modules": {
+                "system": "3e05933f620fd742e4926535709ea37625a4824a7e3fad45bead854a61710294",
+                "backend": "741b260f8c8c360426e8220ce8fd3eb35b77019f75efe3f16a3b1e9acee04dff",
+                "cms": "e51ad9d85ef80d005fc6cac8c4b2b3412042b7b7c5d405181b1d7f7c53b152d8"
+            },
+            "files": {
+                "modified": {
+                    "\/modules\/backend\/models\/User.php": "96a5c48cd2c339a1d1458163fa6fc57ffc63c235741d2f337f550ed371bc052a",
+                    "\/modules\/cms\/models\/ThemeLog.php": "91dea4295f55d25d309e1090d852948c22b72f2fc91f278556c81113a28eae53"
+                }
+            }
+        },
+        {
             "build": "1.1.0",
             "parent": "1.0.473",
             "modules": {

@@ -13,7 +13,7 @@
 -
 
 ## Translation Improvements
--
+- Improved Persian translation.
 
 ## Performance Improvements
 -
