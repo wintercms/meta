@@ -21,7 +21,7 @@
 -
 
 ## Community Improvements
--
+- Winter CMS can now be accessed via the [Gitpod](https://gitpod.io) service, providing near-instant, fully working copies of Winter CMS for testing and development. Please see https://github.com/wintercms/winter/pull/295 for more information.
 
 ## Dependencies
 -
