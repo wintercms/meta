@@ -1,7 +1,7 @@
 # Build 1.1.7 (WIP)
 
 ## UX/UI Improvements
--
+- You can now define one or more IP addresses that may view the site normally even in maintenance mode from the Maintenance mode Settings screen.
 
 ## API Changes
 -
