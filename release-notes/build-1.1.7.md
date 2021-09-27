@@ -16,6 +16,7 @@
 - Improved Persian translation.
 - Improved Latvian translation.
 - Improved Russian translation.
+- Improved German translation.
 
 ## Performance Improvements
 -
