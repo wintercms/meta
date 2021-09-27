@@ -4,7 +4,7 @@
 - You can now define one or more IP addresses that may view the site during maintenance mode via the Maintenance mode Settings screen.
 
 ## API Changes
--
+- Added `$data` as the fourth argument to the `mailer.prepareSend` and `mailer.send` events.
 
 ## Bug Fixes
 - Fixed issue introduced in v1.0.466 where copying the default RelationController markup to use in a controller-level override of RelationController partials would result in an "undefined index" exception.
