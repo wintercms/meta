@@ -9,6 +9,7 @@
 ## Bug Fixes
 - Fixed issue introduced in v1.0.466 where copying the default RelationController markup to use in a controller-level override of RelationController partials would result in an "undefined index" exception.
 - Client language files for child locales (i.e. `en-ca`) will now include fallback strings from their parent locales.
+- Fixed an issue with the Markdown Editor in Chrome clipping the editor content if the viewport height is restricted while the widget has "stretch" enabled.
 
 ## Security Improvements
 -
