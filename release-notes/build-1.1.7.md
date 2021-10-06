@@ -2,9 +2,11 @@
 
 ## UX/UI Improvements
 - You can now define one or more IP addresses that may view the site during maintenance mode via the Maintenance mode Settings screen.
+- Console scaffolding commands (i.e. `create:controller`, `create:plugin`, etc) will now list the files that were created during the scaffolding process for clarity.
 
 ## API Changes
 - Added `$data` as the fourth argument to the `mailer.prepareSend` and `mailer.send` events.
+- Added `create:settings {plugin} {settings=Settings}` scaffolding command to generate a Settings model for the provided plugin.
 
 ## Bug Fixes
 - Fixed issue introduced in v1.0.466 where copying the default RelationController markup to use in a controller-level override of RelationController partials would result in an "undefined index" exception.
