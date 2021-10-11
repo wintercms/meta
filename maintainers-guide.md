@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This document immortalises the processes involved with maintaining the Winter CMS and RainLab
-repositories. This is intended to give the maintainers of the project a clear idea as to how to
-review and manage the inflow of code and ensure the qualities and philosophies of Winter CMS and
-the RainLab plugins are maintained.
+This document immortalises the processes involved with maintaining the Winter CMS repositories. This is intended to give
+the maintainers of the project a clear idea as to how to review and manage the inflow of code and ensure the qualities
+and philosophies of Winter CMS and its first-party plugins are maintained.
 
 ## Table of Contents
 
+- [Preface](#preface)
 - [Roles](#roles)
 - [Main Philosophy](#main-philosophy)
 - [Projects](#projects)
@@ -19,51 +19,53 @@ the RainLab plugins are maintained.
     - [Merging Pull Requests](#winter-cms-merging-pull-requests)
     - [Standard Workflow for Maintainers](#winter-cms-standard-workflow)
     - [Release Process](#winter-cms-release-process)
-  - [RainLab plugins](#rainlab)
-    - [Main Branches](#rainlab-main-branches)
-    - [Milestones](#rainlab-milestones)
-    - [Reviewing Issues and Pull Requests](#rainlab-reviewing-issues-and-prs)
-    - [Merging Pull Requests](#rainlab-merging-pull-requests)
-    - [Standard Workflow for Maintainers](#rainlab-standard-workflow)
-    - [Release Process](#rainlab-release-process)
+  - [First party plugins](#plugins)
+    - [Main Branches](#plugins-main-branches)
+    - [Milestones](#plugins-milestones)
+    - [Reviewing Issues and Pull Requests](#plugins-reviewing-issues-and-prs)
+    - [Merging Pull Requests](#plugins-merging-pull-requests)
+    - [Standard Workflow for Maintainers](#plugins-standard-workflow)
+    - [Release Process](#plugins-release-process)
+
+## Preface
+
+The Winter CMS project is the result of a fork that occurred on March 5th, 2021 after it became apparent to the
+maintainer group of October CMS that the original founders of October CMS had no intention of working collaboratively
+with the maintainer group. [The details of the fork](https://github.com/wintercms/winter/issues/5) go into more detail
+on what occurred, and the reasoning for the fork.
+
+This document was originally written (and agreed to by at least one of the founders) for October CMS, but has been
+repurposed for Winter CMS.
 
 ## Roles
 
-The project has two levels of maintainership. The current membership of each role
-(as of December 11th, 2019) is as follows:
+The project is considered a flat-level of management with equal responsibility of the project between all the
+maintainers. The current maintainers (as of October 11th, 2021) are as follows:
 
-**Lead Maintainers**
-<a name="lead-maintainers"></a>
-
-- [@alekseybobkov](https://ghithub.com/alekseybobkov) - Alexey Bobkov
-- [@daftspunk](https://github.com/daftspunk) - Samuel Georges
 - [@LukeTowers](https://github.com/LukeTowers) - Luke Towers
-
-**Maintainers**
-
-- [@w20k](https://github.com/w20k) - Denis Denisov
 - [@bennothommo](https://github.com/bennothommo) - Ben Thomson
-- [@mjauvin](https://github.com/mjauvin) - Marc Jauvin (RainLab Translate only)
+- [@mjauvin](https://github.com/mjauvin) - Marc Jauvin
+- [@jaxwilko](https://github.com/jaxwilko) - Jack Wilkinson
 
-When defining which roles may action any of the protocols below, the term "maintainers" means
-that any Maintainer or Lead Maintainer can be responsible. If a protocol is only for Lead
-Maintainers, this distinction will be made instead.
+Luke Towers has been designated the Lead Maintainer by the maintainer group, as the longest-serving maintainer of 
+October CMS.
 
 ## Main Philosophy
 
 Winter CMS operates under the philosophy that "Everything should be made as simple as possible,
-but not simpler". As arbiters of the codebase, maintainers should strive to ensure that as the
+but not simpler", as it was for October CMS before it. This phrase has been attributed to Albert Einstein ([although this has been disputed](https://quoteinvestigator.com/2011/05/13/einstein-simple/)), and succinctly describes the main drive of 
+Winter CMS.
+
+As arbiters of the codebase, maintainers should strive to ensure that as the
 functionality and potential of the system increases, careful thought is still given to ensuring
 that proposed code is simple to develop for the developer and easy to use for the user.
 
 Important reading on the philosophy of Winter CMS can be found through these links:
 
-- https://wintercms.com/blog/post/getting-back-to-basics
-- https://wintercms.com/blog/post/putting-wintercms-words
-- https://wintercms.com/about
+- https://wintercms.com/features
 
 As Winter CMS is an "evergreen" product with rolling updates, special care must be taken to
-maintain backwards compatibility and allow all users of Winter CMS and the RainLab plugins to
+maintain backwards compatibility and allow all users of Winter CMS and the first-party plugins to
 continue to use the products through updates without issue.
 
 At the same time, Winter CMS has a responsibility to its users to ensure that best practices in
@@ -76,33 +78,19 @@ of unsupported PHP versions as required.
 ### Winter CMS
 
 The following protocols are in place for all current and future repositories underneath the
-[@wintercms](https://github.com/wintercms) organisation. This includes the Winter CMS and Rain
-library repositories, as well as its installer and documentation.
+[@wintercms](https://github.com/wintercms) organisation. This includes the Winter CMS and Storm library repositories, 
+as well as its installer and documentation.
 
 #### Main Branches
 <a name="winter-cms-main-branches"></a>
 
-Winter CMS and the Rain library both have two main branches for their repositories - `master`
-and `develop`. Both branches represent the *stable* and *testing* states of the product - more
-specifically, they represent the most recent stable build and the most bleeding-edge publicly
-available code, respectively.
+Winter CMS and the Storm library both have one main branch for their repositories - `develop`, where all ongoing
+development for the next release on the current branch is stored. Both repositories also contain a branch for older,
+end-of-life branches that may still receive small updates and security fixes from time to time.
 
-In general, the only time `master` is updated is when a new stable version of Winter CMS is
-released to the public. This process is done by the [Lead Maintainers](#lead-maintainers) as part of their
-[Release Process](#winter-cms-release-process).
-
-Direct commits to the `master` branch should not be done for the Winter CMS and Rain Library
-repos except for the following circumstances:
-
-- Pushing out a new stable release of Winter CMS *(Lead Maintainers only)*
-- Making changes to any project-related meta or policy files, such as the README, funding,
-licensing and security policies. *(Lead Maintainers only)*
-- Fixing issues with the automated testing suite.
-- Rectifying disclosed security vulnerabilities
-
-For the installer and documentation repositories, commits to the `master` branch can be done on
-an as-needed basis, as long as commits are small and are clearly explained and justified in the
-commit message. It is still preferred that pull requests are used for larger commits. There is no
+For the installer and documentation repositories, the `main` branch represents the latest development snapshot.
+Commits to the `main` branch can be done on an as-needed basis, as long as commits are small and are clearly explained 
+and justified in the commit message. It is still preferred that pull requests are used for larger commits. There is no
 `develop` branch for these repositories.
 
 #### Milestones
@@ -136,12 +124,12 @@ features and fixes that are ready to be included in an upcoming build. A maintai
 a feature to be included in a build, which represents their intention to test and approve the
 feature or fix, and maintain it once it has been merged into the codebase.
 
-The [Lead Maintainers](#lead-maintainers) will, when appropriate, deem a milestone to be locked from further changes
+The maintainers will, when appropriate, deem a milestone to be locked from further changes
 except for bug fixes or maintenance in order to proceed with releasing the build. In these cases,
 no new issues or PRs should be assigned to the milestone unless they are a bug fix, or are some
 form of maintenance. No new features should be assigned to these milestones.
 
-Once the build is released by the Lead Maintainers, the Milestone should be locked completely
+Once the build is released by the maintainers, the Milestone should be locked completely
 and closed.
 
 The description of the milestone should contain the current status of the milestone, which is
@@ -176,11 +164,7 @@ our own [Developer Guidelines](https://wintercms.com/help/guidelines/developer)?
 up until now, or provide adequate justification for the change in behaviour?
 
 Pull requests submitted by contributors must be made to the `develop` branch or to a feature or
-fix branch - any pull requests made to the `master` branch must be rebased to `develop`. In these
-cases, it is generally best to indicate to the contributor that the `master` branch is not the
-correct base (you can use this
-[standard reply](https://github.com/winterrain/meta/blob/master/github/saved-replies/wrong-branch.md)
-for this).
+fix branch.
 
 Pull requests should also indicate any issues that they resolve - this should be stipulated as
 "Fixes #..." followed by the issue number in the initial (opening) comment of a pull request thread.
@@ -191,7 +175,7 @@ addition, issues and PRs are automatically closed after 30 days of inactivity.
 
 To keep track of the progress of issues and pull requests, we use the labelling and milestone
 systems of GitHub to record the current status. Our
-[standard labels](https://github.com/winterrain/meta/blob/master/github/labelling.md) dictate a
+[standard labels](https://github.com/winter/meta/blob/master/github/labelling.md) dictate a
 type of pull request or issue (ie. an enhancement, maintenance, discussions or bug report), a status
 (ie. in progress, completed, or a response or revision is needed) and sometimes a priority (ie.
 critical, high or low). In general, an issue should have one type label and one status label.
@@ -230,7 +214,7 @@ Fix some issues in the code (#1234)
 
 This fixes a couple of issues spotted in the Backend. The changes are minor and should not affect backwards compatibility.
 
-Credit to @bennothommo. Fixes #1212 and https://github.com/rainlab/blog#432
+Credit to @bennothommo. Fixes #1212 and https://github.com/wintercms/wn-blog-plugin#432
 ```
 
 A merged pull request - and any linked issues that the pull request resolves - should have the
@@ -268,44 +252,38 @@ few circumstances exist where a commit straight to `develop` may be necessary:
 #### Release process
 <a name="winter-cms-release-process"></a>
 
-The release process is one undertaken by the [Lead Maintainers](#lead-maintainers) to release a new build of Winter CMS
-as an edge update or as a stable update. During this window, maintainers should not merge any code
-into the `develop` branch - however, they can continue to review and accept PRs for upcoming
-milestones.
+The release process is one undertaken by the maintainers to release a new build of Winter CMS.
 
-The following steps are undertaken by the Lead Maintainers for release:
+The following steps are undertaken by the maintainers for release:
 
-- The release notes are finalized in the `winterrain/meta` repository.
+- The release notes are finalized in the `winter/meta` repository.
 - The `develop` branch is tagged with the *current* milestone's version, ie. `v1.0.460`.
-- The tag is then tested thoroughly by the Lead Maintainers.
-- Once approved, a subsplit of the repository is actioned which separates the modules of Winter CMS
+- A release is published for the tag in GitHub using the finalised release notes from the meta repository.
+- Once tagged, a subsplit of the repository is actioned which separates the modules of Winter CMS
 from the main repository. This is then shown on Composer.
 - The changelog on https://wintercms.com/changelog is updated to reflect the new build, and
 available updates will start appearing on Winter CMS installs depending on their edge update policy.
 
-At this point in time, Winter CMS and the Rain Library do not use the **Releases** functionality
-provided by GitHub, as the release notes are covered by the `winterrain/meta` repository.
+### First-party plugins
+<a name="plugins"></a>
 
-### RainLab plugins
-<a name="rainlab"></a>
-
-The following protocols are in place for all current and future repositories underneath the
-[@rainlab](https://github.com/rainlab) organisation. Note that a lot of the processes are the same as
-for Winter CMS, so this section will be more defining any *different* processes.
+The following protocols are in place for all first-party plugins published in the Winter CMS organisation.
+Note that a lot of the processes are the same as for Winter CMS, so this section will be more defining any
+*different* processes.
 
 #### Main Branches
-<a name="rainlab-main-branches"></a>
+<a name="plugins-main-branches"></a>
 
-All RainLab plugin repositories contain a `master` branch which is the combined efforts of all
-contributions to the plugin. Maintainers may commit changes to the `master` branch on an as-needed
+All first-party plugin repositories contain a `main` branch which is the combined efforts of all
+contributions to the plugin. Maintainers may commit changes to the `main` branch on an as-needed
 basis, but as with the Winter CMS repositories, it is still preferred that substantial changes or
 new or changed features be done in pull requests.
 
 #### Milestones
-<a name="rainlab-milestones"></a>
+<a name="plugins-milestones"></a>
 
-RainLab plugins, like the Winter CMS repositories, use milestones to track which changes are
-implemented with which version of the plugin. Milestones in the RainLab plugins use a more "semantic"
+First-party plugins, like the Winter CMS repositories, use milestones to track which changes are
+implemented with which version of the plugin. Milestones in the first-party plugins use a more "semantic"
 versioning and so have major, minor and point releases in the format of `major.minor.point`. For
 example:
 
@@ -324,52 +302,48 @@ schema or changes to component settings.
 - `point` should be increased for minor fixes, translation updates or very minor new features that
 maintain backwards compatibility.
 
-Maintainers should make sure that a `minor` and a `point` milestone is available for RainLab plugins
+Maintainers should make sure that a `minor` and a `point` milestone is available for first-party plugins
 at all times, and use their best determination of which is the appropriate milestone for all incoming
 PRs and issues.
 
 #### Reviewing Issues and Pull Requests
-<a name="rainlab-reviewing-issues-and-prs"></a>
+<a name="plugins-reviewing-issues-and-prs"></a>
 
 Maintainers should use the [same processes for Winter CMS](#winter-cms-reviewing-issues-and-prs)
-when reviewing issues and PRs for RainLab plugins. The only difference is that there is no **In
-Progress** or **Pending Features** milestones for RainLab plugins - all accepted PRs and issues should
+when reviewing issues and PRs for first-party plugins. The only difference is that there is no **In
+Progress** or **Pending Features** milestones for first-party plugins - all accepted PRs and issues should
 be assigned to an applicable milestone depending on the severity of the change.
 
-Pull requests should be made to the `master` branch at all times, unless it is a child feature branch
+Pull requests should be made to the `main` branch at all times, unless it is a child feature branch
 that is to be merged into a parent feature branch.
 
 For pull requests that contain changes to the `updates/version.yaml` file, maintainers should
 request that contributors do not include these changes in their pull request. This file should only
-be modified as part of the [Release Process](#rainlab-release-process).
+be modified as part of the [Release Process](#plugins-release-process).
 
 #### Merging Pull Requests
-<a name="rainlab-merging-pull-requests"></a>
+<a name="plugins-merging-pull-requests"></a>
 
-As with reviewing issues and PRs, RainLab plugins use the [same processes as Winter CMS](#winter-cms-merging-pull-requests) when merging pull requests.
+As with reviewing issues and PRs, first-party plugins use the [same processes as Winter CMS](#winter-cms-merging-pull-requests) when merging pull requests.
 
 #### Standard Workflow for Maintainers
-<a name="rainlab-standard-workflow"></a>
+<a name="plugins-standard-workflow"></a>
 
-The workflow for RainLab plugins is the [same as Winter](#winter-cms-standard-workflow), except
-that maintainers may commit changes to the `master` branch instead of the `develop` branch on an
+The workflow for first-party plugins is the [same as Winter](#winter-cms-standard-workflow), except
+that maintainers may commit changes to the `main` branch instead of the `develop` branch on an
 as-needed basis. As with Winter CMS, the primary mechanism for implementing changes is still
 recommended to be pull requests.
 
 #### Release Process
-<a name="rainlab-release-process"></a>
-
-The release process for RainLab plugins is different to Winter CMS in that all maintainers
-may release a new version of the RainLab plugins, and can action all the steps below (except for
-making a release stable on the marketplace - this must be done by a [Lead Maintainer](#lead-maintainers).
+<a name="plugins-release-process"></a>
 
 Before a new version is released, the maintainer should ensure that all tasks assigned to the new
-version's milestone are completed and merged into `master`. Once this is done, the maintainer should
+version's milestone are completed and merged into `main`. Once this is done, the maintainer should
 update the `updates/version.yaml` file with the new version, and a one-line summary of the changes.
 Some example of these one-line changes can be found below:
 
-- https://github.com/rainlab/blog-plugin/blob/master/updates/version.yaml
-- https://github.com/rainlab/pages-plugin/blob/master/updates/version.yaml
+- https://github.com/winter/wn-blog-plugin/blob/main/updates/version.yaml
+- https://github.com/winter/wn-pages-plugin/blob/main/updates/version.yaml
 
 If a migration is also included with this version, it should be appended as an array item below the
 update. The one-line summary and version should be included in the commit message for this change
@@ -400,9 +374,5 @@ quickly see *all* changes implemented in that version.
 
 For examples of Releases, see the following:
 
-- https://github.com/rainlab/blog-plugin/releases/tag/v1.3.4
-- https://github.com/rainlab/blog-plugin/releases/tag/v1.3.5
-
-Once the release is submitted and tagged, it will be visible in the Marketplace as an edge update. It
-is generally good practice to allow the update to be tested first for a period of 7-14 days before
-requesting a Lead Maintainer to mark the version as stable.
+- https://github.com/wintercms/wn-blog-plugin/releases/tag/v1.3.4
+- https://github.com/wintercms/wn-blog-plugin/releases/tag/v1.3.5
