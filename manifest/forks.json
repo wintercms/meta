@@ -1,6 +1,6 @@
 {
   "_description": "This manifest represents when Winter CMS forked to a new main branch, and EOL'd the previous branch. Branches are currently based on the Laravel framework version targeted. The format works as follows: within the 'forks' object, the key is the new established branch version, and the value is the parent version from which this newly established branch is derived from.",
   "forks": {
-    "1.1.0": "1.0.468"
+    "1.1.0": "1.0.473"
   }
 }
