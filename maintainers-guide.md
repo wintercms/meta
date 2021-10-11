@@ -342,8 +342,8 @@ version's milestone are completed and merged into `main`. Once this is done, the
 update the `updates/version.yaml` file with the new version, and a one-line summary of the changes.
 Some example of these one-line changes can be found below:
 
-- https://github.com/winter/wn-blog-plugin/blob/main/updates/version.yaml
-- https://github.com/winter/wn-pages-plugin/blob/main/updates/version.yaml
+- https://github.com/wintercms/wn-blog-plugin/blob/main/updates/version.yaml
+- https://github.com/wintercms/wn-pages-plugin/blob/main/updates/version.yaml
 
 If a migration is also included with this version, it should be appended as an array item below the
 update. The one-line summary and version should be included in the commit message for this change
