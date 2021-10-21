@@ -28,7 +28,8 @@
 
 ## Community Improvements
 - Winter CMS can now be accessed via the [Gitpod](https://gitpod.io) service, providing near-instant, fully working copies of Winter CMS for testing and development. Please see https://github.com/wintercms/winter/pull/295 for more information.
-- The [Architecture Concepts](https://wintercms.com/docs/architecture/introduction) have been added to the documentation and provide an higher level overview of Winter CMS and some of the advanced time-saving features available within the project.
+- The [Architecture Concepts](https://wintercms.com/docs/architecture/introduction) section has been added to the documentation and provide an higher level overview of Winter CMS and some of the advanced time-saving features available within the project.
+- The [Maintainer Guide](https://wintercms.com/docs/architecture/maintainer-guide) has been added to the documentation.
 
 ## Dependencies
 -
