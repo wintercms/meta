@@ -7,6 +7,7 @@
 ## API Changes
 - Added `$data` as the fourth argument to the `mailer.prepareSend` and `mailer.send` events.
 - Added `create:settings {plugin} {settings=Settings}` scaffolding command to generate a Settings model for the provided plugin.
+- Added `winter:test {?--p|plugin=} {?--c|configuration=} {?--o|core} --ANY-PHP-UNIT-FLAGS-HERE` command to easily run the core and plugin's PHPUnit testing suites.
 
 ## Bug Fixes
 - Fixed issue introduced in v1.0.466 where copying the default RelationController markup to use in a controller-level override of RelationController partials would result in an "undefined index" exception.
