@@ -1,6 +1,7 @@
 # Build 1.1.7 (WIP)
 
 ## UX/UI Improvements
+- The color picker widget has been redesigned with a fresh look and additional features. See https://github.com/wintercms/winter/pull/324 for more information.
 - You can now define one or more IP addresses that may view the site during maintenance mode via the Maintenance mode Settings screen.
 - Console scaffolding commands (i.e. `create:controller`, `create:plugin`, etc) will now list the files that were created during the scaffolding process for clarity.
 
