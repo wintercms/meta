@@ -15,6 +15,7 @@
 - Client language files for child locales (i.e. `en-ca`) will now include fallback strings from their parent locales.
 - Fixed an issue with the Markdown Editor in Chrome clipping the editor content if the viewport height is restricted while the widget has "stretch" enabled.
 - Fixed `Backed\Helper\Backend::makeCarbon()` to correctly default to the backend timezone set in `cms.backendTimezone`
+- Large numbers of options (250+) are now better handled with the `group` filter
 
 ## Security Improvements
 -
