@@ -16,6 +16,7 @@
 - Fixed an issue with the Markdown Editor in Chrome clipping the editor content if the viewport height is restricted while the widget has "stretch" enabled.
 - Fixed `Backed\Helper\Backend::makeCarbon()` to correctly default to the backend timezone set in `cms.backendTimezone`
 - Large numbers of options (250+) are now better handled with the `group` filter
+- Added support for base64 encoded `data:image` URIs in `image` type columns.
 
 ## Security Improvements
 -
