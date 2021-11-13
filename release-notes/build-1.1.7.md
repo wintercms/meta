@@ -1,4 +1,4 @@
-# Build 1.1.7 (WIP)
+# Build 1.1.7
 
 ## UX/UI Improvements
 - The color picker widget has been redesigned with a fresh look and additional features. See https://github.com/wintercms/winter/pull/324 for more information.
@@ -18,22 +18,13 @@
 - Large numbers of options (250+) are now better handled with the `group` filter
 - Added support for base64 encoded `data:image` URIs in `image` type columns.
 
-## Security Improvements
--
-
 ## Translation Improvements
 - Improved Persian translation.
 - Improved Latvian translation.
 - Improved Russian translation.
 - Improved German translation.
 
-## Performance Improvements
--
-
 ## Community Improvements
 - Winter CMS can now be accessed via the [Gitpod](https://gitpod.io) service, providing near-instant, fully working copies of Winter CMS for testing and development. Please see https://github.com/wintercms/winter/pull/295 for more information.
 - The [Architecture Concepts](https://wintercms.com/docs/architecture/introduction) section has been added to the documentation and provide an higher level overview of Winter CMS and some of the advanced time-saving features available within the project.
 - The [Maintainer Guide](https://wintercms.com/docs/architecture/maintainer-guide) has been added to the documentation.
-
-## Dependencies
--
