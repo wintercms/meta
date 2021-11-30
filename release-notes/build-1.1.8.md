@@ -8,12 +8,14 @@
 
 ## Bug Fixes
 - Integers can now be used as values for options provided to the Inspector `set` field.
+- Fixed issue with list of available encodings for importing where ISO 8859-9 was incorrectly referenced as ISO 8859-0.
 
 ## Security Improvements
 -
 
 ## Translation Improvements
--
+- Improved Latvian translation.
+- Improved Ukrainian translation.
 
 ## Performance Improvements
 -
@@ -22,4 +24,4 @@
 -
 
 ## Dependencies
--
+- Laravel 6.x LTS does not support PHP 8.1 so Winter has limited the supported PHP versions to PHP 7.2.9 -> PHP 8.0.*. PHP 8.1 support will come with Winter 1.2 using Laravel 9.x LTS in January 2022.
