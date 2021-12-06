@@ -10,6 +10,7 @@
 ## Bug Fixes
 - Integers can now be used as values for options provided to the Inspector `set` field.
 - Fixed issue with list of available encodings for importing where ISO 8859-9 was incorrectly referenced as ISO 8859-0.
+- Fixed issue that could occur when running console commands on a project that had replaced plugins and their replacing plugins present at the same time.
 
 ## Security Improvements
 -
