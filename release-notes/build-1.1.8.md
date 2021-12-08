@@ -15,6 +15,9 @@
 - Fixed issue with list of available encodings for importing where ISO 8859-9 was incorrectly referenced as ISO 8859-0.
 - Fixed issue that could occur when running console commands on a project that had replaced plugins and their replacing plugins present at the same time.
 - Fixed incorrect exception message when attempting to impersonate a user without authorization.
+- Fixed color picker widget not allowing an empty value.
+- Fixed color picker widget showing misleading mouse cursors in read-only mode.
+- Fixed color picker widget not triggered dependent fields on change.
 
 ## Security Improvements
 -
