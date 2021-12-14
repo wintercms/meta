@@ -3,6 +3,7 @@
 ## UX/UI Improvements
 - The `winter:down` command now requires a user to explicitly confirm the action by typing `DELETE` in their CLI.
 - The `plugin:remove` command now requires a user to explicitly confirm the action by typing the plugin code in their CLI.
+- Added Created At & Updated At columns to the Backend User & User Roles lists, marked invisible by default.
 
 ## API Changes
 - Classes implementing the `System\Traits\PropertyContainer` trait to provide dynamic property options for Inspector fields no longer need to have zero (or one optional) parameters in their constructor in order to work correctly. Note that if your constructor requires a value in any property and does not define a default, this will still fail, so ideally you should still use a class specifically set up for handling Inspector properties.
