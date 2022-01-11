@@ -25,6 +25,7 @@
 - Fixed color picker widget not triggering dependent fields on change.
 - Fixed issue where attempting to render a theme without a database present would fail because the AssetMaker trait was attempting to get the system build information from the database even though the DB wasn't present.
 - Fixed PHP 8 compatibility issue where a component with no controller throws an error when checking the existence of a method on the non-existent controller.
+- Fixed bug introduced in v1.1.5 where an infinite loop would occur when attempting to impersonate a backend user while logged in as a user without the `is_superuser` flag.
 
 ## Security Improvements
 -
