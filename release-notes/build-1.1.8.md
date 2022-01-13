@@ -41,6 +41,7 @@
 
 ## Community Improvements
 - All code examples in the official documentation now has proper language highlighting depending on the language of each example.
+- The console commands documentation has been signficantly refactored with an introductory page with a list of all commands now available. Commands are now grouped by their logical function.
 
 ## Dependencies
 - Laravel 6.x LTS does not support PHP 8.1 so Winter has limited the supported PHP versions to PHP 7.2.9 -> PHP 8.0.*. PHP 8.1 support will come with Winter 1.2 using Laravel 9.x LTS in January 2022.
