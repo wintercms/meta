@@ -35,6 +35,7 @@
 - Improved Ukrainian translation.
 - Improved French translation.
 - Improved Italian translation.
+- Improved Slovak translation.
 
 ## Performance Improvements
 -
