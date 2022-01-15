@@ -28,7 +28,8 @@
 - Fixed bug introduced in v1.1.5 where an infinite loop would occur when attempting to impersonate a backend user while logged in as a user without the `is_superuser` flag.
 
 ## Security Improvements
--
+- Improved the Twig SecurityPolicy to block more potentially dangerous entry points from being abused by accounts with access to Twig but not PHP.
+- Themes can no longer be imported while `cms.enableSafeMode` is active.
 
 ## Translation Improvements
 - Improved Latvian translation.
@@ -41,6 +42,7 @@
 -
 
 ## Community Improvements
+- `Winter.Notes`, a new first party plugin for adding notes to any record type in Winter was released. It provides a custom `notes` FormWidget that presents a note management experience similar to the Mac OS Notes App.
 - All code examples in the official documentation now has proper language highlighting depending on the language of each example.
 - The console commands documentation has been signficantly refactored with an introductory page with a list of all commands now available. Commands are now grouped by their logical function.
 
