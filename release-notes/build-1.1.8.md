@@ -30,6 +30,7 @@
 ## Security Improvements
 - Improved the Twig SecurityPolicy to block more potentially dangerous entry points from being abused by accounts with access to Twig but not PHP.
 - Themes can no longer be imported while `cms.enableSafeMode` is active.
+- Added a warning message to the system status dashboard widget when the default admin user is detected on the system.
 
 ## Translation Improvements
 - Improved Latvian translation.
