@@ -8,6 +8,7 @@
 - The Markdown editor will now add a `https://` template when adding a link or image, to encourage use of secure links.
 - Removed the timeout when running `winter:test`.
 - Fixed styling issue with color pickers on the Mail Brand Settings page in the backend.
+- Added a default `.vscode/settings.json` to the project to help VS Code correctly identify the language (PHP, Twig, or WinterCMS Template) used for `.htm` files based on where in the project they are located.
 
 ## API Changes
 - Classes implementing the `System\Traits\PropertyContainer` trait to provide dynamic property options for Inspector fields no longer need to have zero (or one optional) parameters in their constructor in order to work correctly. Note that if your constructor requires a value in any property and does not define a default, this will still fail, so ideally you should still use a class specifically set up for handling Inspector properties.
