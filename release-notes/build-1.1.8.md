@@ -39,6 +39,7 @@
 - Improved French translation.
 - Improved Italian translation.
 - Improved Slovak translation.
+- Improved Russian translation.
 
 ## Performance Improvements
 -
