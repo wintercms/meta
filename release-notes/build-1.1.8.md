@@ -8,10 +8,12 @@
 - The Markdown editor will now add a `https://` template when adding a link or image, to encourage use of secure links.
 - Removed the timeout when running `winter:test`.
 - Fixed styling issue with color pickers on the Mail Brand Settings page in the backend.
-- Added a default `.vscode/settings.json` to the project to help VS Code correctly identify the language (PHP, Twig, or WinterCMS Template) used for `.htm` files based on where in the project they are located.
 - Files in the CMS Theme Editor AssetList component will now be sorted alphabetically.
+- Added ability to manage the list of users associated with a given role from that role's update page.
+- Added "slug" input preset to the Administrator Role's code field.
 
 ## API Changes
+- Permissions registered without the `roles` property defined will now only be inherited by the `developer` system role, not all system roles.
 - Classes implementing the `System\Traits\PropertyContainer` trait to provide dynamic property options for Inspector fields no longer need to have zero (or one optional) parameters in their constructor in order to work correctly. Note that if your constructor requires a value in any property and does not define a default, this will still fail, so ideally you should still use a class specifically set up for handling Inspector properties.
 - Added `| md_line` Twig filter to make use of the `Markdown::parseLine()` method in Twig templates.
 - Replaced `Winter\Storm\Auth\AuthException` with `Winter\Storm\Auth\AuthenticationException`, added `Winter\Storm\Auth\AuthorizationException`.
@@ -29,11 +31,13 @@
 - Fixed PHP 8 compatibility issue where a component with no controller throws an error when checking the existence of a method on the non-existent controller.
 - Fixed bug introduced in v1.1.5 where an infinite loop would occur when attempting to impersonate a backend user while logged in as a user without the `is_superuser` flag.
 - Modules will now be seeded before plugin migrations are run to support plugin migrations that interact with module seeded data.
+- Fixed issue where setting the `readOnly` property to `true` on `datepicker` FormWidgets would leave the field greyed out but still editable.
 
 ## Security Improvements
 - Improved the Twig SecurityPolicy to block more potentially dangerous entry points from being abused by accounts with access to Twig but not PHP.
 - Themes can no longer be imported while `cms.enableSafeMode` is active.
 - Added a warning message to the system status dashboard widget when the default admin user is detected on the system.
+- Limited inheritance of "orphaned" (permissions without default roles assigned) to just the "Developer" role instead of all system roles.
 
 ## Translation Improvements
 - Improved Latvian translation.
@@ -50,6 +54,8 @@
 - `Winter.Notes`, a new first party plugin for adding notes to any record type in Winter was released. It provides a custom `notes` FormWidget that presents a note management experience similar to the Mac OS Notes App.
 - All code examples in the official documentation now has proper language highlighting depending on the language of each example.
 - The console commands documentation has been signficantly refactored with an introductory page with a list of all commands now available. Commands are now grouped by their logical function.
+- Added a default `.vscode/settings.json` to the project to help VS Code correctly identify the language (PHP, Twig, or WinterCMS Template) used for `.htm` files based on where in the project they are located.
+- Added a default `.vscode/extensions.json` to the project to provide recommendations on extensions for VS Code that work well with Winter
 
 ## Dependencies
 - Laravel 6.x LTS does not support PHP 8.1 so Winter has limited the supported PHP versions to PHP 7.2.9 -> PHP 8.0.*. PHP 8.1 support will come with Winter 1.2 using Laravel 9.x LTS in January 2022.
