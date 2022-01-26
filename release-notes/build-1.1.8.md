@@ -1,6 +1,7 @@
 # Build 1.1.8 (WIP)
 
 ## UX/UI Improvements
+- All default backend controller behaviors (i.e. `FormController`, `ListController`, `RelationController`, etc) no longer require a configuration property (i.e. `$formConfig`, `$listConfig`, `$relationConfig`, etc) defined on the implementing controller if the default config file is being used (i.e. `config_form.yaml`, `config_list.yaml`, `config_relation.yaml`, etc).
 - The `winter:down` command now requires a user to explicitly confirm the action by typing `DELETE` in their CLI.
 - The `plugin:remove` command now requires a user to explicitly confirm the action by typing the plugin code in their CLI.
 - Added Created At & Updated At columns to the Backend User & User Roles lists, marked invisible by default.
