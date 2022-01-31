@@ -19,6 +19,7 @@
 - Added `| md_line` Twig filter to make use of the `Markdown::parseLine()` method in Twig templates.
 - Replaced `Winter\Storm\Auth\AuthException` with `Winter\Storm\Auth\AuthenticationException`, added `Winter\Storm\Auth\AuthorizationException`.
 - The `plugin:remove` command now provides a `--no-rollback` option which disables the rolling back of database migrations for a plugin when it is being removed, allowing the plugin data to be retained.
+- Added support for the `app.asset_url` & `ASSET_URL` configuration options for use with the `Url::asset()` & `asset()` helpers.
 
 ## Bug Fixes
 - Integers can now be used as values for options provided to the Inspector `set` field.
