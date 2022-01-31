@@ -47,6 +47,7 @@
 - Improved Italian translation.
 - Improved Slovak translation.
 - Improved Russian translation.
+- Improved Persian translation.
 
 ## Performance Improvements
 -
