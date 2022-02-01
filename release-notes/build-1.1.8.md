@@ -40,6 +40,7 @@
 - Themes can no longer be imported while `cms.enableSafeMode` is active.
 - Added a warning message to the system status dashboard widget when the default admin user is detected on the system.
 - Limited inheritance of "orphaned" (permissions without default roles assigned) to just the "Developer" role instead of all system roles.
+- Fixed issue where users without the `backend.access_dashboard` could still access the dashboard if they did not have access to any other main menu items in the backend.
 
 ## Translation Improvements
 - Improved Latvian translation.
