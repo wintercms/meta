@@ -50,6 +50,7 @@
 - Improved Slovak translation.
 - Improved Russian translation.
 - Improved Persian translation.
+- Improved Japanese translation.
 
 ## Performance Improvements
 -
