@@ -15,6 +15,9 @@
 
 ## API Changes
 - Permissions registered without the `roles` property defined will now only be inherited by the `developer` system role, not all system roles.
+- Added [Snowboard.js](#todo), a new JS framework intended to replace the existing [AJAX Framework](#todo) that is more modular and no longer depends on jQuery.
+- Added support for Laravel Mix via the following commands: [`mix:install`](#todo), [`mix:compile`](#todo), [`mix:watch`](#todo), & [`mix:list`](#todo).
+- Added `System\Classes\MixAssets` singleton for managing an instance's Laravel Mix assets, see [`registerMixAssets()`](#todo) now available as a registration method for `Plugin.php`, `MixAssets::registerCallback()` for Modules, and the [`mix` property on `theme.yaml` definitions](#todo)
 - Classes implementing the `System\Traits\PropertyContainer` trait to provide dynamic property options for Inspector fields no longer need to have zero (or one optional) parameters in their constructor in order to work correctly. Note that if your constructor requires a value in any property and does not define a default, this will still fail, so ideally you should still use a class specifically set up for handling Inspector properties.
 - Added `| md_line` Twig filter to make use of the `Markdown::parseLine()` method in Twig templates.
 - Replaced `Winter\Storm\Auth\AuthException` with `Winter\Storm\Auth\AuthenticationException`, added `Winter\Storm\Auth\AuthorizationException`.
@@ -56,11 +59,11 @@
 -
 
 ## Community Improvements
-- `Winter.Notes`, a new first party plugin for adding notes to any record type in Winter was released. It provides a custom `notes` FormWidget that presents a note management experience similar to the Mac OS Notes App.
+- [`Winter.Notes`](#todo), a new first party plugin for adding notes to any record type in Winter was released. It provides a custom `notes` FormWidget that presents a note management experience similar to the Mac OS Notes App.
 - All code examples in the official documentation now has proper language highlighting depending on the language of each example.
 - The console commands documentation has been signficantly refactored with an introductory page with a list of all commands now available. Commands are now grouped by their logical function.
-- Added a default `.vscode/settings.json` to the project to help VS Code correctly identify the language (PHP, Twig, or WinterCMS Template) used for `.htm` files based on where in the project they are located.
-- Added a default `.vscode/extensions.json` to the project to provide recommendations on extensions for VS Code that work well with Winter
+- Added a default [`.vscode/settings.json`](#todo) to the project to help VS Code correctly identify the language (PHP, Twig, or WinterCMS Template) used for `.htm` files based on where in the project they are located.
+- Added a default [`.vscode/extensions.json`](#todo) to the project to provide recommendations on extensions for VS Code that work well with Winter
 
 ## Dependencies
 - Laravel 6.x LTS does not support PHP 8.1 so Winter has limited the supported PHP versions to PHP 7.2.9 -> PHP 8.0.*. PHP 8.1 support will come with Winter 1.2 using Laravel 9.x LTS in January 2022.
