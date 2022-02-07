@@ -23,6 +23,9 @@
 - Replaced `Winter\Storm\Auth\AuthException` with `Winter\Storm\Auth\AuthenticationException`, added `Winter\Storm\Auth\AuthorizationException`.
 - The `plugin:remove` command now provides a `--no-rollback` option which disables the rolling back of database migrations for a plugin when it is being removed, allowing the plugin data to be retained.
 - Added support for the `app.asset_url` & `ASSET_URL` configuration options for use with the `Url::asset()` & `asset()` helpers.
+- Added `| asset` Twig Filter
+- Added `app()`,  `media()`, `asset()`, `resize()`, `imageWidth()`, `imageHeight()` Twig Functions
+
 
 ## Bug Fixes
 - Integers can now be used as values for options provided to the Inspector `set` field.
@@ -44,6 +47,7 @@
 - Added a warning message to the system status dashboard widget when the default admin user is detected on the system.
 - Limited inheritance of "orphaned" (permissions without default roles assigned) to just the "Developer" role instead of all system roles.
 - Fixed issue where users without the `backend.access_dashboard` could still access the dashboard if they did not have access to any other main menu items in the backend.
+- Removed the `is_safe="html"` flag from the System Twig filters (`| app`, `| media`, `| resize`, `| imageWidth`, & `| imageHeight`) as none of them should ever return values that should be injected into templates without escaping the results.
 
 ## Translation Improvements
 - Improved Latvian translation.
