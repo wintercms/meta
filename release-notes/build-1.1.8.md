@@ -24,7 +24,7 @@
 - The `plugin:remove` command now provides a `--no-rollback` option which disables the rolling back of database migrations for a plugin when it is being removed, allowing the plugin data to be retained.
 - Added support for the `app.asset_url` & `ASSET_URL` configuration options for use with the `Url::asset()` & `asset()` helpers.
 - Added `| asset` Twig Filter
-- Added `app()`,  `media()`, `asset()`, `resize()`, `imageWidth()`, `imageHeight()` Twig Functions
+- Made `app()`,  `media()`, `asset()`, `resize()`, `imageWidth()`, `imageHeight()` available as Twig Functions
 
 
 ## Bug Fixes
