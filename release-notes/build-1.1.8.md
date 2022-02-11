@@ -15,10 +15,10 @@
 
 ## API Changes
 - Permissions registered without the `roles` property defined will now only be inherited by the `developer` system role, not all system roles.
-- Added [Snowboard.js](#todo), a new JS framework intended to replace the existing [AJAX Framework](#todo) that is more modular and no longer depends on jQuery.
-- Added support for Laravel Mix via the following commands: [`mix:install`](#todo), [`mix:compile`](#todo), [`mix:watch`](#todo), & [`mix:list`](#todo).
+- Added [Snowboard.js](https://wintercms.com/docs/snowboard/introduction), a new JS framework intended to replace the existing [AJAX Framework](https://wintercms.com/docs/ajax/introduction) that is more modular and no longer depends on jQuery.
+- Added support for Laravel Mix via the following commands: [`mix:install`](https://wintercms.com/docs/console/asset-compilation#mix-install), [`mix:compile`](https://wintercms.com/docs/console/asset-compilation#mix-compile), [`mix:watch`](https://wintercms.com/docs/console/asset-compilation#mix-watch), & [`mix:list`](https://wintercms.com/docs/console/asset-compilation#mix-list).
 - Added autodetection of Laravel Mix package configuration files when `winter.mix.js` is present in a plugin, theme, or module.
-- Added `System\Classes\MixAssets` for managing Laravel Mix packages provided by plugins, themes, & modules. See [`registerMixAssets()`](#todo) now available as a registration method for `Plugin.php`, `MixAssets::registerCallback()` for Modules, and the [`mix` property on `theme.yaml` definitions](#todo)
+- Added `System\Classes\MixAssets` for managing Laravel Mix packages provided by plugins, themes, & modules. See [`registerMixAssets()`](https://wintercms.com/docs/console/asset-compilation#registering-plugins) now available as a registration method for `Plugin.php`, `MixAssets::registerCallback()` for Modules, and the [`mix` property on `theme.yaml` definitions](https://wintercms.com/docs/console/asset-compilation#registering-themes)
 - Classes implementing the `System\Traits\PropertyContainer` trait to provide dynamic property options for Inspector fields no longer need to have zero (or one optional) parameters in their constructor in order to work correctly. Note that if your constructor requires a value in any property and does not define a default, this will still fail, so ideally you should still use a class specifically set up for handling Inspector properties.
 - Added `| md_line` Twig filter to make use of the `Markdown::parseLine()` method in Twig templates.
 - Replaced `Winter\Storm\Auth\AuthException` with `Winter\Storm\Auth\AuthenticationException`, added `Winter\Storm\Auth\AuthorizationException`.
