@@ -65,7 +65,6 @@
 
 ## Community Improvements
 - [`Winter.Notes`](https://github.com/wintercms/wn-notes-plugin), a new first party plugin for adding notes to any record type in Winter was released. It provides a custom `notes` FormWidget that presents a note management experience similar to the Mac OS Notes App.
-- Created a new official [VS Code extension for Winter CMS](https://marketplace.visualstudio.com/items?itemName=wintercms.winter-cms). Currently it provides syntax highlighting for Winter CMS Twig Templates (INI / PHP / Twig all in one file), *without* requiring `{##}` at the top of the Twig section as many previous attempts have. Future versions will include code completion for YAML files and Winter CMS templates.
 - All code examples in the official documentation now has proper language highlighting depending on the language of each example.
 - The console commands documentation has been signficantly refactored with an introductory page with a list of all commands now available. Commands are now grouped by their logical function.
 - Added a default [`.vscode/settings.json`](https://github.com/wintercms/winter/blob/develop/.vscode/settings.json) to the project to help VS Code correctly identify the language (PHP, Twig, or WinterCMS Template) used for `.htm` files based on where in the project they are located.
