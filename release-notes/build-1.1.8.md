@@ -27,7 +27,6 @@
 - Added `| asset` Twig Filter
 - Made `app()`,  `media()`, `asset()`, `resize()`, `imageWidth()`, `imageHeight()` available as Twig Functions
 
-
 ## Bug Fixes
 - Integers can now be used as values for options provided to the Inspector `set` field.
 - Fixed issue with list of available encodings for importing where ISO 8859-9 was incorrectly referenced as ISO 8859-0.
