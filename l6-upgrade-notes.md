@@ -235,7 +235,7 @@ The `jenssegers/date` library has been removed from Winter entirely as most of i
 <a name="upgrade-symfony"></a>
 ### Using Symfony directly
 
-Symfony has been upgraded to version 4 (except for the Yaml subsystem). If interacting directly with it, please [review the upgrade guide](https://github.com/symfony/symfony/blob/master/UPGRADE-4.0.md)
+Symfony has been upgraded to version 4 (except for the Yaml subsystem). If interacting directly with it, please [review the upgrade guide](https://github.com/symfony/symfony/blob/4.4/UPGRADE-4.0.md)
 
 <a name="upgrade-league"></a>
 ### Using League CSV directly
