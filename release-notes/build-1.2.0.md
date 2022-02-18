@@ -8,7 +8,6 @@
     - `plugin:enable $name`
     - `plugin:refresh $name`
     - `plugin:rollback $name ROLLBACK_VERSION`
-    -
 - Changed recommended language mode for component partial files to `wintercms-twig` instead of `twig`.
 - The `.env` file is now a first class citizen in Winter and configuration files refer to it by default. You can continue to run `winter:env` to generate a file pulling from your configuration to provide the default values.
 - The default configuration for the testing environment now includes an override to store files generated / modified throughout the test suite in a folder under tests/storage instead of polluting your regular local storage folder with files from tests that failed to clean up after themselves well enough.
