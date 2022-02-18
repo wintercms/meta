@@ -1,4 +1,4 @@
-# Build 1.1.8 (WIP)
+# Build 1.1.8
 
 ## UX/UI Improvements
 - All default backend controller behaviors (i.e. `FormController`, `ListController`, `RelationController`, etc) no longer require a configuration property (i.e. `$formConfig`, `$listConfig`, `$relationConfig`, etc) defined on the implementing controller if the default config file is being used (i.e. `config_form.yaml`, `config_list.yaml`, `config_relation.yaml`, etc).
@@ -58,9 +58,6 @@
 - Improved Russian translation.
 - Improved Persian translation.
 - Improved Japanese translation.
-
-## Performance Improvements
--
 
 ## Community Improvements
 - [`Winter.Notes`](https://github.com/wintercms/wn-notes-plugin), a new first party plugin for adding notes to any record type in Winter was released. It provides a custom `notes` FormWidget that presents a note management experience similar to the Mac OS Notes App.
