@@ -44,6 +44,7 @@
 - Removed requirement for a `Cms\Classes\Controller` instance on the `Cms\Twig\DebugExtension` making it easier to reuse elsewhere.
 - `winter:version` will now only normalize file contents before hashing if the file is a valid text-based file which improves the reliability of change detection on Windows.
 - `winter:passwd` now returns the status codes instead of using `exit($code)`
+- Fixed support for morphOne/hasOne relations in FormModelSaver
 
 ## Security Improvements
 -
