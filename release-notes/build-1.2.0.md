@@ -29,11 +29,14 @@
 - Laravel's migration commands have been removed / aliased to the relevant Winter commands as they did not function with Winter and never have.
 - `Winter\Storm\Support\Facades\Str` facade has been removed, use `Winter\Storm\Support\Str` directly instead.
 - The base `ModuleServiceProvider` no longer needs a call to `parent::register($module)` in the `register()` method as route registration is now handled in the `boot()` method.
+- Added two new events (`system.beforeRoute` and `system.route`) that fire before and after the system route registration respectively and moved the registration of the Backend and CMS module routes to be after the system route registration. The CMS module's routes should now always be the last routes registered regardless of what happens.
 - The `ThemeInstall`, `ThemeRemove`, `ThemeList`, `ThemeUse`, & `ThemeSync` console commands have been moved from the System module to the CMS module.
 - Removed the `getAdapter()` method from Storage disk instances
 - Added `getPathPrefix()` and `setPathPrefix()` methods to Storage disk instances
 - Fixed issue where running `winter:version --changes` would always display "We have detected the following modifications:" even when no modifications were detected.
 - The signature for `$twig->loadTemplate()` has been changed, use `$twig->load()` instead.
+- Added support for [anonymous migrations](https://laravel-news.com/laravel-anonymous-migrations) and made them the default when creating new migrations with `artisan create:model`.
+- Moved all scaffolding commands out of `Winter\Storm` and into their relevant Modules (`Backend`, `CMS`, & `System`).
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
