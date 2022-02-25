@@ -14,11 +14,12 @@
 - The default configuration for the testing environment now includes an override to store files generated / modified throughout the test suite in a folder under tests/storage instead of polluting your regular local storage folder with files from tests that failed to clean up after themselves well enough.
 - Added `migrate` as an alias to `winter:up` to simplify transitioning to Winter from Laravel
 - Improved confirmation logic for potentially destructive console commands.
+- Added ability for the `mix:watch` command to clean up after itself when terminated with SIGTERM.
 
 ## API Changes
 - `server.php` is no longer needed in order for `artisan serve` to function; it can be removed.
 - An application key is no longer provided by default, if your Winter instance is missing one just run `artisan key:generate` and one will be generated and set for you.
-- Added `@snowboard.base`, `@snowboard.request`, `@snowboard.attr`, `@snowboard.extras` AssetCombiner aliases.
+- Added `@snowboard.base`, `@snowboard.request`, `@snowboard.attr`, `@snowboard.extras`, & `@snowboard.extras.css` AssetCombiner aliases.
 - Module route registration should no longer require being wrapped in `App::before()` to support plugin's overriding them
 - The following Twig environments are now registered by the application and can be resolved by calling `App::make($environmentName);`:
     - `twig.environment` The default System TwigEnvironment, is used by the `Twig::parse()` parser
