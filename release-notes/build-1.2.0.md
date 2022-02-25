@@ -7,11 +7,13 @@
     - `plugin:disable $name`
     - `plugin:enable $name`
     - `plugin:refresh $name`
-    - `plugin:rollback $name ROLLBACK_VERSION`
+    - `plugin:rollback $name $rollbackVersion`
+    - `winter:passwd $username` (last 20 updated backend users)
 - Changed recommended language mode for component partial files to `wintercms-twig` instead of `twig`.
 - The `.env` file is now a first class citizen in Winter and configuration files refer to it by default. You can continue to run `winter:env` to generate a file pulling from your configuration to provide the default values.
 - The default configuration for the testing environment now includes an override to store files generated / modified throughout the test suite in a folder under tests/storage instead of polluting your regular local storage folder with files from tests that failed to clean up after themselves well enough.
 - Added `migrate` as an alias to `winter:up` to simplify transitioning to Winter from Laravel
+- Improved confirmation logic for potentially destructive console commands.
 
 ## API Changes
 - `server.php` is no longer needed in order for `artisan serve` to function; it can be removed.
@@ -37,6 +39,13 @@
 - The signature for `$twig->loadTemplate()` has been changed, use `$twig->load()` instead.
 - Added support for [anonymous migrations](https://laravel-news.com/laravel-anonymous-migrations) and made them the default when creating new migrations with `artisan create:model`.
 - Moved all scaffolding commands out of `Winter\Storm` and into their relevant Modules (`Backend`, `CMS`, & `System`).
+- Added `Winter\Storm\Console\Command` base class that adds helpers for making it easier for commands to implement suggested values for autocompletion.
+- Added `alert()` helper to the Winter `Command` base class that improves on the Laravel default by adding support for wrapping long alert messages to multiple lines.
+- Added `Winter\Storm\Console\Traits\ConfirmsWithInput` trait provides the `confirmWithInput($message, $requiredInput)` method to require the user to input the required input string in order before proceeding with running the command.
+- Version number reported by `artisan --version` will now include `Winter CMS`.
+- Changed `System\Classes\VersionManager->getDatabaseHistory($pluginCode)` from protected to public.
+- Added `System\Console\Traits\HasPluginInput` trait that provides helpers for when a console command interacts with plugin names as input arguments.
+-
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
@@ -50,7 +59,7 @@
 - Fixed support for morphOne/hasOne relations in FormModelSaver
 
 ## Security Improvements
--
+- Winter instances no longer come with a default application key set, `artisan key:generate` should be used to generate one.
 
 ## Translation Improvements
 - Improved German translation.
@@ -65,8 +74,9 @@
 - Minimum version of PHP bumped from PHP 7.2.9 to PHP 8.0.2
 - Laravel upgraded from 6.x LTS to 9.x
 - Twig upgraded from 2.x to 3.x
-- Symfony/Yaml upgraded from 3.4 to 5.1
 - Minimum version of Laravel Tinker bumped to 2.7
 - Minimum version of PHPUnit bumped to 9.5.8
 - Minimum version of Mockery bumped to 1.4.4
 - Symfony ugpraded from 4.x to 6.x
+- Symfony/Yaml upgraded from 3.4 to 6.0
+- Assetic upgraded from the modified embedded version of 1.4.0 to 3.0 as an external dependency.
