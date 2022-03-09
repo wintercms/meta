@@ -46,7 +46,7 @@
 - Version number reported by `artisan --version` will now include `Winter CMS`.
 - Changed `System\Classes\VersionManager->getDatabaseHistory($pluginCode)` from protected to public.
 - Added `System\Console\Traits\HasPluginInput` trait that provides helpers for when a console command interacts with plugin names as input arguments.
--
+- Removed `varcharmax` as a configuration option for `mysql` database connections.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
