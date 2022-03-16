@@ -47,6 +47,10 @@
 - Changed `System\Classes\VersionManager->getDatabaseHistory($pluginCode)` from protected to public.
 - Added `System\Console\Traits\HasPluginInput` trait that provides helpers for when a console command interacts with plugin names as input arguments.
 - Removed `varcharmax` as a configuration option for `mysql` database connections.
+- Made the `getStorageDisk()` and `getMediaPath()` methods on `System\Classes\MediaLibrary` public instead of protected.
+- Added `add{$RelationType}Relation($name, $config)` methods to the `HasRelationships` trait that make it easier to dynamically add new relationships to existing model classes.
+- Added `Winter\Storm\Parse\EnvFile` parsing class for handling modifying the contents of environment (`.env`) files through PHP.
+- Added `Winter\Storm\Parse\PHP\ArrayFile` parsing class for handling modifying the contents of Array Files (PHP config & localization files that return a single array and are used for storing data). The `Winter\Storm\Config\ConfigWriter` class has been rewritten to use the `ArrayFile` parser internally.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
@@ -58,6 +62,9 @@
 - `winter:version` will now only normalize file contents before hashing if the file is a valid text-based file which improves the reliability of change detection on Windows.
 - `winter:passwd` now returns the status codes instead of using `exit($code)`
 - Fixed support for morphOne/hasOne relations in FormModelSaver
+- Fixed issue where paths returned by the UploadableWidget could have two leading directory separators.
+- Fixed issue where attempting to interact with a Model instance before the DatabaseServerProvider boot() method was called would prevent any "nice" model events from actually working.
+- Fixed issue where the `key:generate` command wouldn't set the `APP_KEY` value in the `.env` file if the `.env` file didn't exist yet.
 
 ## Security Improvements
 - Winter instances no longer come with a default application key set, `artisan key:generate` should be used to generate one.
