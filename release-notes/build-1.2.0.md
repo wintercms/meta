@@ -51,6 +51,7 @@
 - Added `add{$RelationType}Relation($name, $config)` methods to the `HasRelationships` trait that make it easier to dynamically add new relationships to existing model classes.
 - Added `Winter\Storm\Parse\EnvFile` parsing class for handling modifying the contents of environment (`.env`) files through PHP.
 - Added `Winter\Storm\Parse\PHP\ArrayFile` parsing class for handling modifying the contents of Array Files (PHP config & localization files that return a single array and are used for storing data). The `Winter\Storm\Config\ConfigWriter` class has been rewritten to use the `ArrayFile` parser internally.
+- Added support for `multiple: bool` property on `type: fileupload` fields in the Theme Customization section to choose between an `attachOne` and `attachMany` relationship.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
