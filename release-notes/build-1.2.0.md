@@ -65,6 +65,7 @@
 - Fixed issue where paths returned by the UploadableWidget could have two leading directory separators.
 - Fixed issue where attempting to interact with a Model instance before the DatabaseServerProvider boot() method was called would prevent any "nice" model events from actually working.
 - Fixed issue where the `key:generate` command wouldn't set the `APP_KEY` value in the `.env` file if the `.env` file didn't exist yet.
+- Fixed issue where the `Cms\Classes\Page` `isActive` property wasn't being set if the URL was set to `/` and the currently requested URL was the home page.
 
 ## Security Improvements
 - Winter instances no longer come with a default application key set, `artisan key:generate` should be used to generate one.
