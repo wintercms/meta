@@ -15,6 +15,7 @@
 - Added `migrate` as an alias to `winter:up` to simplify transitioning to Winter from Laravel
 - Improved confirmation logic for potentially destructive console commands.
 - Added ability for the `mix:watch` command to clean up after itself when terminated with SIGTERM.
+- Made it easier to track down issues with the `ImageResizer` class by only removing the resizer configuration from the Cache after the resizer has been successfully instantiated.
 
 ## API Changes
 - `server.php` is no longer needed in order for `artisan serve` to function; it can be removed.
@@ -52,6 +53,7 @@
 - Added `Winter\Storm\Parse\EnvFile` parsing class for handling modifying the contents of environment (`.env`) files through PHP.
 - Added `Winter\Storm\Parse\PHP\ArrayFile` parsing class for handling modifying the contents of Array Files (PHP config & localization files that return a single array and are used for storing data). The `Winter\Storm\Config\ConfigWriter` class has been rewritten to use the `ArrayFile` parser internally.
 - Added support for `multiple: bool` property on `type: fileupload` fields in the Theme Customization section to choose between an `attachOne` and `attachMany` relationship.
+- Changed how YAML processors (added in v1.1.3) work; preprocessors are now only engaged if parsing the provided contents throws an exception.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.

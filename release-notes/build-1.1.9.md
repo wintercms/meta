@@ -7,9 +7,10 @@
 - Dependency checking and management for Snowboard plugins has been improved. Singletons that have a `ready` callback will not be fired until dependencies are loaded.
 - Added a `flash.create` and `flash.remove` global event in Snowboard to listen when a flash message is created and removed, respectively.
 - Added URL handling and base URL detection in Snowboard via the `Snowboard.url()` plugin.
+- Added `sortable` property to the Repeater FormWidget, defaults to `true`.
 
 ## Bug Fixes
-- Improved support for read-only filesystems by using the Storage facade to handle the disabled plugins cache file instead of directly interacting with the local disk.
+- Improved support for read-only filesystems by using the Storage facade to handle the disabled plugins cache file instead of directly interacting with the local disk and checking if the local filesystem is writable before attempting to create the temporary directory required by the `UpdateManager`.
 - Fixed the System Status dashboard widget on read-only filesystems.
 - Fixed issue where calling `Snowboard.request()` with the element parameter set to false or null would fail.
 - Fixed issue where changes made to `$this->vars` in a Partial's PHP code section wouldn't be available in the Twig section.
@@ -25,7 +26,7 @@
 -
 
 ## Community Improvements
--
+- Fixed file language hinting for backend controller views for VS Code
 
 ## Dependencies
--
+- The Winter core modules now report via composer that they replace the associated version of the October core modules to improve compatibility with the October ecosystem.
