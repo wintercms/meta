@@ -9,6 +9,7 @@
 - Added URL handling and base URL detection in Snowboard via the `Snowboard.url()` plugin.
 - Added `sortable` property to the Repeater FormWidget, defaults to `true`.
 - Added a `mix:update` command to allow updating of Node dependencies for Mix assets.
+- Added support for `type: nestedform` fields to the `ThemeData` theme customization forms.
 
 ## Bug Fixes
 - Improved support for read-only filesystems by using the Storage facade to handle the disabled plugins cache file instead of directly interacting with the local disk and checking if the local filesystem is writable before attempting to create the temporary directory required by the `UpdateManager`.
