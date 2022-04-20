@@ -17,7 +17,7 @@
 - Fixed issue where a Snowboard plugin that had been removed could not be re-added.
 
 ## Security Improvements
--
+- Improved reliability of the CMS Safe Mode feature. See https://github.com/wintercms/winter/security/advisories/GHSA-q37h-jhf3-85cj for more information
 
 ## Translation Improvements
 - Improved German translation

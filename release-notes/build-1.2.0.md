@@ -42,6 +42,16 @@
 - Added support for [anonymous migrations](https://laravel-news.com/laravel-anonymous-migrations) and made them the default when creating new migrations with `artisan create:model`.
 - Moved all scaffolding commands out of `Winter\Storm` and into their relevant Modules (`Backend`, `CMS`, & `System`).
 - Added `Winter\Storm\Console\Command` base class that adds helpers for making it easier for commands to implement suggested values for autocompletion.
+- Added `$nameFrom` property and `getNameInput()` method to the `Winter\Storm\Scaffold\GeneratorCommand` to enable checking for reserved names when generating code via scaffolding commands. Also made some method signature type hint changes to the class, be sure to review and apply them accordingly in any custom uses of that base class.
+- Removed `getPluginIdentifier()` method from the `Winter\Storm\Scaffold\GeneratorCommand` class and added a new base class for scaffolding resources that are specific to plugins: `System\Console\BaseScaffoldCommand`.
+- Added support for autocompletion of the `plugin` argument for scaffolders that extend `System\Console\BaseScaffoldCommand`.
+- Added support for generating localization messages by calling a `getLangKeys()` method defined on the scaffolding command during the execution process. This method can use the `$this->vars` property and `$this->laravel->getLocale()` method to return an associative array of message keys without the author prefix and their values for the current locale.
+- Added several helpers in the scaffolding template files:
+    - `plugin_id` -> lowercase version of a plugin's identifier
+    - `plugin_code` -> Studly case version of the plugin's identifier
+    - `plugin_url` -> `author/plugin`, used in `Backend::url()` calls
+    - `plugin_folder` -> `author/plugin`, used when generating paths to files with the `$` plugins directory path symbol or the `~` application path symbol.
+    - `plugin_namespace` -> Studly case version of the plugin's identifier in namespace form (i.e. `Author\Plugin`)
 - Added `alert()` helper to the Winter `Command` base class that improves on the Laravel default by adding support for wrapping long alert messages to multiple lines.
 - Added `Winter\Storm\Console\Traits\ConfirmsWithInput` trait provides the `confirmWithInput($message, $requiredInput)` method to require the user to input the required input string in order before proceeding with running the command.
 - Version number reported by `artisan --version` will now include `Winter CMS`.
