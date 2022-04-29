@@ -18,6 +18,7 @@
 - Fixed issue where changes made to `$this->vars` in a Partial's PHP code section wouldn't be available in the Twig section.
 - Fixed issue where a Snowboard plugin that had been removed could not be re-added.
 - Backported a fix from the 1.2 branch which resolves timeout issues with the `mix:install` command.
+- Fixed issue where using the `useRelationCount` option with a relation in a List widget would not retrieve the count if the relation name was not snake-cased.
 
 ## Security Improvements
 - Improved reliability of the CMS Safe Mode feature. See https://github.com/wintercms/winter/security/advisories/GHSA-q37h-jhf3-85cj for more information
