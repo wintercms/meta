@@ -80,6 +80,7 @@
 - Fixed issue where the `key:generate` command wouldn't set the `APP_KEY` value in the `.env` file if the `.env` file didn't exist yet.
 - Fixed issue where the `Cms\Classes\Page` `isActive` property wasn't being set if the URL was set to `/` and the currently requested URL was the home page.
 - Fixed issue where if the underlying data behind a datasource changes through manual intervention (either in the database or the filesystem) before running `theme:sync` it wasn't being detected by the `theme:sync` command.
+- Fixed issue where using the `useRelationCount` option with a relation in a List widget would not retrieve the count if the relation name was not snake-cased.
 
 ## Security Improvements
 - Winter instances no longer come with a default application key set, `artisan key:generate` should be used to generate one.
