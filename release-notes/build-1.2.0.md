@@ -32,6 +32,7 @@
 - Added support for the `{% spaceless %}` and `{% filter %}` Twig tokens to the core as Twig v3 removed them; it is recommended to avoid using them however.
 - The SchemaBuilder is now bound to `db.schema` instead of only resolved directly through the `Schema` facade.
 - Laravel's migration commands have been removed / aliased to the relevant Winter commands as they did not function with Winter and never have.
+- Facades must return string keys rather than objects (See https://github.com/laravel/framework/pull/38017)
 - `Winter\Storm\Support\Facades\Str` facade has been removed, use `Winter\Storm\Support\Str` directly instead.
 - The base `ModuleServiceProvider` no longer needs a call to `parent::register($module)` in the `register()` method as route registration is now handled in the `boot()` method.
 - Added two new events (`system.beforeRoute` and `system.route`) that fire before and after the system route registration respectively and moved the registration of the Backend and CMS module routes to be after the system route registration. The CMS module's routes should now always be the last routes registered regardless of what happens.
@@ -66,6 +67,7 @@
 - Added support for `multiple: bool` property on `type: fileupload` fields in the Theme Customization section to choose between an `attachOne` and `attachMany` relationship.
 - Changed how YAML processors (added in v1.1.3) work; preprocessors are now only engaged if parsing the provided contents throws an exception.
 - The `backend.layout.extendHead` event now passes `auth` or `default` as the value for `layout` instead of `auth.htm` or `default.htm`.
+- `Symfony\Component\Debug\Exception\FatalErrorException` has been removed, use `Symfony\Component\ErrorHandler\Error\FatalError` instead.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
