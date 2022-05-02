@@ -24,6 +24,7 @@
 
 ## Translation Improvements
 - Improved German translation
+- Improved Spanish translation
 
 ## Performance Improvements
 -
