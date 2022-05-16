@@ -18,6 +18,7 @@
 - Made it easier to track down issues with the `ImageResizer` class by only removing the resizer configuration from the Cache after the resizer has been successfully instantiated.
 - Backend template files (layouts, views, & partials) now use the `.php` extension which reduces confusion about what templating language is used for backend template files. `.htm` files are still supported, but not recommended.
 - Icon library updated from Font Awesome version 4 to 6, bringing over 1,300 new icons.
+- Added support for generating a TailwindCSS based theme via `artisan create:theme mytheme tailwind`
 
 ## API Changes
 - `server.php` is no longer needed in order for `artisan serve` to function; it can be removed.
@@ -69,6 +70,7 @@
 - Changed how YAML processors (added in v1.1.3) work; preprocessors are now only engaged if parsing the provided contents throws an exception.
 - The `backend.layout.extendHead` event now passes `auth` or `default` as the value for `layout` instead of `auth.htm` or `default.htm`.
 - `Symfony\Component\Debug\Exception\FatalErrorException` has been removed, use `Symfony\Component\ErrorHandler\Error\FatalError` instead.
+- Resized images are now cached by the modified time of their source image allowing replacements of the source image to trigger the resizing to regenerate based on the new source image.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
@@ -85,6 +87,7 @@
 - Fixed issue where the `key:generate` command wouldn't set the `APP_KEY` value in the `.env` file if the `.env` file didn't exist yet.
 - Fixed issue where the `Cms\Classes\Page` `isActive` property wasn't being set if the URL was set to `/` and the currently requested URL was the home page.
 - Fixed issue where if the underlying data behind a datasource changes through manual intervention (either in the database or the filesystem) before running `theme:sync` it wasn't being detected by the `theme:sync` command.
+- Added new `scaffold` argument to `create:theme` command, defaults to `less`; also supports `tailwind`.
 
 ## Security Improvements
 - Winter instances no longer come with a default application key set, `artisan key:generate` should be used to generate one.
