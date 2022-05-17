@@ -117,7 +117,7 @@ Review the changes to the [default configuration files](https://github.com/winte
 - Built in support for SES, Postmark, Mailgun, Mandrill, SendGrid, & SparkPost mail drivers has been removed, use the applicable first party driver plugins as needed:
     - [Winter.DriverAWS](https://github.com/wintercms/wn-driveraws-plugin)
     - [Winter.DriverMailgun](https://github.com/wintercms/wn-drivermailgun-plugin)
-    - [Winter.DriverMandril](https://github.com/wintercms/wn-drivermandril-plugin)
+    - [Winter.DriverMandrill](https://github.com/wintercms/wn-drivermandrill-plugin)
     - [Winter.DriverPostmark](https://github.com/wintercms/wn-driverpostmark-plugin)
     - [Winter.DriverSendGrid](https://github.com/wintercms/wn-driversendgrid-plugin)
     - [Winter.DriverSparkPost](https://github.com/wintercms/wn-driversparkpost-plugin)
