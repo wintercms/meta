@@ -115,12 +115,12 @@ Review the changes to the [default configuration files](https://github.com/winte
 <a name="upgrade-emails"></a>
 ### Emails
 - Built in support for SES, Postmark, Mailgun, Mandrill, SendGrid, & SparkPost mail drivers has been removed, use the applicable first party driver plugins as needed:
-    - [Winter.DriverAWS](https://github.com/wintercms/wn-aws-plugin)
-    - [Winter.DriverMailgun](https://github.com/wintercms/wn-mailgun-plugin)
-    - [Winter.DriverMandril](https://github.com/wintercms/wn-mandril-plugin)
-    - [Winter.DriverPostmark](https://github.com/wintercms/wn-postmark-plugin)
-    - [Winter.DriverSendGrid](https://github.com/wintercms/wn-sendgrid-plugin)
-    - [Winter.DriverSparkPost](https://github.com/wintercms/wn-sparkpost-plugin)
+    - [Winter.DriverAWS](https://github.com/wintercms/wn-driveraws-plugin)
+    - [Winter.DriverMailgun](https://github.com/wintercms/wn-drivermailgun-plugin)
+    - [Winter.DriverMandril](https://github.com/wintercms/wn-drivermandril-plugin)
+    - [Winter.DriverPostmark](https://github.com/wintercms/wn-driverpostmark-plugin)
+    - [Winter.DriverSendGrid](https://github.com/wintercms/wn-driversendgrid-plugin)
+    - [Winter.DriverSparkPost](https://github.com/wintercms/wn-driversparkpost-plugin)
 - Review the [SymfonyMailer upgrade guide](https://laravel.com/docs/9.x/upgrade#symfony-mailer) if you interact with mail message objects directly, several methods and return types have changed.
 
 
