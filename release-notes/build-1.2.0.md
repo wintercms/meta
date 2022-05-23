@@ -19,6 +19,7 @@
 - Backend template files (layouts, views, & partials) now use the `.php` extension which reduces confusion about what templating language is used for backend template files. `.htm` files are still supported, but not recommended.
 - Icon library updated from Font Awesome version 4 to 6, bringing over 1,300 new icons.
 - Added support for generating a TailwindCSS based theme via `artisan create:theme mytheme tailwind`
+- Added improved UX for invalid date values being provided to the datepicker FormWidget.
 
 ## API Changes
 - `server.php` is no longer needed in order for `artisan serve` to function; it can be removed.
@@ -71,6 +72,7 @@
 - The `backend.layout.extendHead` event now passes `auth` or `default` as the value for `layout` instead of `auth.htm` or `default.htm`.
 - `Symfony\Component\Debug\Exception\FatalErrorException` has been removed, use `Symfony\Component\ErrorHandler\Error\FatalError` instead.
 - Resized images are now cached by the modified time of their source image allowing replacements of the source image to trigger the resizing to regenerate based on the new source image.
+- Added `Winter\Storm\Console\Traits\ProcessesQuery` trait that provides a `processQuery($query, $callback, $chunkSize, $limit)` method that simplifies the process of processing large numbers of records in console commands by handling creating and updating a progress bar, chunking the provided query by the provided chunk size and limit parameters, running the callback for each record, and gracefully handling any exceptions thrown during the processing of records.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
