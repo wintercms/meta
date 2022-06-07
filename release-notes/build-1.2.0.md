@@ -73,6 +73,7 @@
 - `Symfony\Component\Debug\Exception\FatalErrorException` has been removed, use `Symfony\Component\ErrorHandler\Error\FatalError` instead.
 - Resized images are now cached by the modified time of their source image allowing replacements of the source image to trigger the resizing to regenerate based on the new source image.
 - Added `Winter\Storm\Console\Traits\ProcessesQuery` trait that provides a `processQuery($query, $callback, $chunkSize, $limit)` method that simplifies the process of processing large numbers of records in console commands by handling creating and updating a progress bar, chunking the provided query by the provided chunk size and limit parameters, running the callback for each record, and gracefully handling any exceptions thrown during the processing of records.
+- Added `Winter\Storm\Database\Traits\ArraySource` trait that allows a model to be created, queried and managed from arbitrary data as opposed to a database table.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
