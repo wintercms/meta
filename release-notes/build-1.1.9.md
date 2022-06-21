@@ -33,6 +33,7 @@
 ## Translation Improvements
 - Improved German translation
 - Improved Spanish translation
+- Improved Farsi translation
 
 ## Performance Improvements
 -
