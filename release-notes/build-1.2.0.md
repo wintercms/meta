@@ -75,6 +75,7 @@
 - Added `Winter\Storm\Console\Traits\ProcessesQuery` trait that provides a `processQuery($query, $callback, $chunkSize, $limit)` method that simplifies the process of processing large numbers of records in console commands by handling creating and updating a progress bar, chunking the provided query by the provided chunk size and limit parameters, running the callback for each record, and gracefully handling any exceptions thrown during the processing of records.
 - Added `Winter\Storm\Database\Traits\ArraySource` trait that allows a model to be created, queried and managed from arbitrary data as opposed to a database table.
 - Added `app.tempPath` configuration option to set the application's temporary path.
+- The load order of deferred Service Providers has been changed slightly, now the application will be made aware of the existence of deferred providers before it begins to register the eager loaded providers to allow for use of the deferred providers within the registration of the eager loaded providers. Actually doing so is still not recommended, but it was required for core internals of the PluginManager to perform better. See https://github.com/laravel/framework/pull/38724 & https://github.com/wintercms/storm/pull/86 for more details.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
