@@ -28,6 +28,7 @@
 - Fixed issue where using a time limit with `data-track-input` in Snowboard for input debouncing was being overwritten on entering a value due to misnamed variable.
 - Fixed issue where any value returned by a success or error callback in Snowboard would prevent further execution (including no value); instead of just preventing execution on receiving a value of `false`.
 - Fixed issue where string values (query selectors) were not able to be provided as the `data-request-form` attribute to Snowboard as it was requiring an instance of an element.
+- Fixed issue where passing an already URL-encoded string to the UrlGenerator could cause its query parameter keys to become double encoded, disrupting the original data structure.
 
 ## Security Improvements
 - Improved reliability of the CMS Safe Mode feature. See https://github.com/wintercms/winter/security/advisories/GHSA-q37h-jhf3-85cj for more information
