@@ -2,6 +2,7 @@
 
 ## UX/UI Improvements
 - The base Snowboard framework has been included in the Backend by default, allowing people to use Snowboard requests and included functionality in their plugin's backend pages if they wish. Please see https://github.com/wintercms/winter/pull/548 for more information on what is included.
+- Dates displayed on the Theme Logs & Event Logs pages in the backend now display in the current user's preferred locale & timezone.
 
 ## API Changes
 - Dependency checking and management for Snowboard plugins has been improved. Singletons that have a `ready` callback will not be fired until dependencies are loaded.
