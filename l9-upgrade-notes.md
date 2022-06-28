@@ -134,6 +134,34 @@ Review the changes to the [default configuration files](https://github.com/winte
 
 
 
+<a name="upgrade-localization"></a>
+### Localization:
+
+The `translator.beforeResolve` event has been removed for performance reasons. `Lang::set($key, $value, $locale)` can be used as a replacement.
+
+#### Overriding a specific key:
+
+**Winter < v1.2**
+```php
+ Event::listen('translator.beforeResolve', function ($key, $replaces, $locale) {
+    if ($key === 'validation.reserved') {
+        return Lang::get('winter.builder::lang.validation.reserved');
+    }
+});
+```
+**Winter >= v1.2**
+```php
+Lang::set('validation.reserved', Lang::get('winter.builder::lang.validation.reserved'));
+```
+
+#### Overriding an entire namespace:
+
+```php
+Lang::set('winter.builder::lang', require __DIR__ . '/lang/zh-cn/lang.php', 'zh-cn');
+```
+
+
+
 <a name="upgrade-cleanup"></a>
 ### Project Structure / General Cleanup:
 
