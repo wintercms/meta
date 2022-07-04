@@ -77,6 +77,7 @@
 - Added `app.tempPath` configuration option to set the application's temporary path.
 - The load order of deferred Service Providers has been changed slightly, now the application will be made aware of the existence of deferred providers before it begins to register the eager loaded providers to allow for use of the deferred providers within the registration of the eager loaded providers. Actually doing so is still not recommended, but it was required for core internals of the PluginManager to perform better. See https://github.com/laravel/framework/pull/38724 & https://github.com/wintercms/storm/pull/86 for more details.
 - Removed `translator.beforeResolve` event, use `Lang::set($key, $value, $locale)` instead.
+- The pivot model for a `morphTo` relation now uses the `Winter\Storm\Database\MorphPivot` class, similar to Laravel's own `MorphPivot` class. If you wish to use a custom pivot model for a `morphTo` relation, the pivot model must extend this class.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
