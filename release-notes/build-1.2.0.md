@@ -20,6 +20,7 @@
 - Icon library updated from Font Awesome version 4 to 6, bringing over 1,300 new icons.
 - Added support for generating a TailwindCSS based theme via `artisan create:theme mytheme tailwind`
 - Added improved UX for invalid date values being provided to the datepicker FormWidget.
+- PHPUnit arguments can now be passed to the `winter:test` command by first separating the arguments meant for Winter and the PHPUnit arguments / options with a `--`. Example: `winter:test --module=system -- --filter=ImageResizerTest`
 
 ## API Changes
 - `server.php` is no longer needed in order for `artisan serve` to function; it can be removed.
@@ -78,6 +79,21 @@
 - The load order of deferred Service Providers has been changed slightly, now the application will be made aware of the existence of deferred providers before it begins to register the eager loaded providers to allow for use of the deferred providers within the registration of the eager loaded providers. Actually doing so is still not recommended, but it was required for core internals of the PluginManager to perform better. See https://github.com/laravel/framework/pull/38724 & https://github.com/wintercms/storm/pull/86 for more details.
 - Removed `translator.beforeResolve` event, use `Lang::set($key, $value, $locale)` instead.
 - The pivot model for a `morphTo` relation now uses the `Winter\Storm\Database\MorphPivot` class, similar to Laravel's own `MorphPivot` class. If you wish to use a custom pivot model for a `morphTo` relation, the pivot model must extend this class.
+- Added `ImageResizer::getDefaultDisk()` method to get the default Storage disk used by the ImageResizer
+- Added `(ImageResizer)->getDisk()` method to get the disk for the currently active image
+- Made `getMediaPath($path)` and `getStorageDisk()` on `System\Classes\MediaLibrary` public (previously protected)
+- Added `checkDependencies()` method to the `PluginBase` class to handle checking if the plugin's dependencies are present.
+- The PluginManager logic now runs off of a "flag" system internally allowing for greater insight into why a particular plugin is disabled and greater control over programmatically disabling / enabling plugins at runtime via the new `PluginManager::DISABLED_REQUEST` flag. The following changes were made the `System\Classes\PluginManager`'s public API:
+    - Removed the following methods:
+        - `bindContainerObjects()`: No replacement.
+        - `clearDisabledCache()`: Use `clearFlagCache()` instead if required.
+        - `registerReplacedPlugins()`: Now handled as a part of `loadPluginFlags()`.
+    - Added the following methods:
+        - `loadPluginFlags()`: Loads the plugin flags (disabled & replacement states) from the cache regenerating them if required.
+        - `clearFlagCache()`: Resets the plugin flag cache
+        - `getPluginFlags(PluginBase|string $plugin): array`: Retrieves any flags that are currently set for the provided plugin.
+        - `freezePlugin(PluginBase|string $plugin)`: Flags the provided plugin as "frozen" (updates cannot be downloaded / installed).
+        - `unfreezePlugin(PluginBase|string $plugin)`: "Unfreezes" the provided plugin, allowing for updates to be performed.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.
@@ -95,6 +111,7 @@
 - Fixed issue where the `Cms\Classes\Page` `isActive` property wasn't being set if the URL was set to `/` and the currently requested URL was the home page.
 - Fixed issue where if the underlying data behind a datasource changes through manual intervention (either in the database or the filesystem) before running `theme:sync` it wasn't being detected by the `theme:sync` command.
 - Added new `scaffold` argument to `create:theme` command, defaults to `less`; also supports `tailwind`.
+- Fixed issue where plugins using `v` in their version identifiers would sometimes have issues when migrating between versions.
 
 ## Security Improvements
 - Winter instances no longer come with a default application key set, `artisan key:generate` should be used to generate one.
@@ -103,7 +120,9 @@
 - Improved German translation.
 
 ## Performance Improvements
--
+- Improved PluginManager performance & reliability by using the Cache system instead of a local JSON file for managing plugin flags.
+- Improved MediaManager performance by using the ImageResizer's lazy resized images for thumbnails.
+- Improved performance of projects using plugins with `plugin.yaml` files by caching the parsed results of said files.
 
 ## Community Improvements
 -
