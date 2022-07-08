@@ -11,7 +11,7 @@
     - `winter:passwd $username` (last 20 updated backend users)
 - Changed recommended language mode for component partial files to `wintercms-twig` instead of `twig`.
 - The `.env` file is now a first class citizen in Winter and configuration files refer to it by default. You can continue to run `winter:env` to generate a file pulling from your configuration to provide the default values.
-- The default configuration for the testing environment now includes an override to store files generated / modified throughout the test suite in a folder under tests/storage instead of polluting your regular local storage folder with files from tests that failed to clean up after themselves well enough.
+- The default configuration for the testing environment now includes an override to store files generated / modified throughout the test suite in a folder under system/tests/storage instead of polluting your regular local storage folder with files from tests that failed to clean up after themselves well enough.
 - Added `migrate` as an alias to `winter:up` to simplify transitioning to Winter from Laravel
 - Improved confirmation logic for potentially destructive console commands.
 - Added ability for the `mix:watch` command to clean up after itself when terminated with SIGTERM.
@@ -21,6 +21,8 @@
 - Added support for generating a TailwindCSS based theme via `artisan create:theme mytheme tailwind`
 - Added improved UX for invalid date values being provided to the datepicker FormWidget.
 - PHPUnit arguments can now be passed to the `winter:test` command by first separating the arguments meant for Winter and the PHPUnit arguments / options with a `--`. Example: `winter:test --module=system -- --filter=ImageResizerTest`
+- Unit tests have been moved from the project's `tests/` folder into individual `tests/` folders under each core module. Modules can now be tested individually by running `winter:test` with the `-m` or `--module` options (ex. `winter:test -m cms -m system -m backend`)
+- Added `create:job Author.Plugin JobName` scaffolding console command to create an initial Job class
 
 ## API Changes
 - `server.php` is no longer needed in order for `artisan serve` to function; it can be removed.
@@ -94,6 +96,7 @@
         - `getPluginFlags(PluginBase|string $plugin): array`: Retrieves any flags that are currently set for the provided plugin.
         - `freezePlugin(PluginBase|string $plugin)`: Flags the provided plugin as "frozen" (updates cannot be downloaded / installed).
         - `unfreezePlugin(PluginBase|string $plugin)`: "Unfreezes" the provided plugin, allowing for updates to be performed.
+- The base `TestCase` & `PluginTestCase` classes are now namespaced under the System module, extend `System\Tests\Bootstrap\TestCase` & `System\Tests\Bootstrap\PluginTestCase` now instead.
 
 ## Bug Fixes
 - `route:list` and `route:cache` now support module routes out of the box.

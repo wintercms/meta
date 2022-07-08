@@ -75,61 +75,6 @@ Any required code changes are described below in sections based on related funct
 
 Only potentially breaking changes are called out in this document, for the full list of all changes, please see the [1.2.0 release note](https://github.com/wintercms/meta/blob/master/release-notes/build-1.2.0.md).
 
-<a name="storm-code-analysis"></a>
-### Storm library code documentation and refactoring
-
-Version 1.2 of Winter includes a large code refactoring and documentation cleanup for the Storm library, to ensure that our base functionality is fully documented and works in a consistent and expected way. In addition, this brings our Storm library closer to the base Laravel functionality, which should make upgrades quicker and less painful in the future.
-
-While we have ensured that the potential for breaking changes is low, there may be some cases of breaking functionality if the functionality used an undocumented or incorrectly-documented API. We will list all the changes below, grouped by the "package" within the Storm library:
-
-#### Database
-
-- To prevent unsafe model instantiating, the model constructors are now forced to only allow a single `$attributes` parameter via an interface (`\Winter\Storm\Database\ModelInterface` and `\Winter\Storm\Halcyon\ModelInterface`). This will ensure that calls like `Model::make()` or `Model::create()` will execute correctly. It is possible that some people might have used additional parameters for their model constructors - these will no longer work and must be moved to another method.
-- Due to the above, Pivot model construction has been rewritten. The constructor used to allow 4 parameters but now only allows the one `$attributes` parameter as per the Model class. Construction now happens more closely to Laravel's format of calling a `Pivot::fromAttributes()` static method. If you previously used `new Pivot()` to create a pivot model, switch to using `Pivot::fromAttributes()` instead.
-- The `MorphToMany` class now extends the `MorphToMany` class from Laravel, as opposed to the `BelongsToMany` class in Winter. This prevents repeated code in the Winter `MorphToMany` class and maintains covariance with Laravel. This will mean that it will no longer inherit from the Winter `BelongsToMany` class. To allow for this, we have converted most of the overridden `BelongsToMany` functionality in Winter into a trait (`Concerns\BelongsOrMorphsToMany`). The `BelongsToMany` relation class now also uses this trait.
-- The relation traits found in `src/Database/Relations` have been moved to `src/Database/Relations/Concerns`, in order to keep just the actual relation classes within the `src/Database/Relations` directory. In the unlikely event that you are using a relation trait directly, please rename the trait classes to the following:
-    - `Winter\Storm\Database\Relations\AttachOneOrMany` to `Winter\Storm\Database\Relations\Concerns\AttachOneOrMany`
-    - `Winter\Storm\Database\Relations\DeferOneOrMany` to `Winter\Storm\Database\Relations\Concerns\DeferOneOrMany`
-    - `Winter\Storm\Database\Relations\DefinedConstraints` to `Winter\Storm\Database\Relations\Concerns\DefinedConstraints`
-    - `Winter\Storm\Database\Relations\HasOneOrMany` to `Winter\Storm\Database\Relations\Concerns\HasOneOrMany`
-    - `Winter\Storm\Database\Relations\MorphOneOrMany` to `Winter\Storm\Database\Relations\Concerns\MorphOneOrMany`
-
-#### Extension
-
-- Previously, the `Winter\Storm\Extension\Extendable::extendClassWith()` method returned the current class if the extension name provided was an empty string. This appears to be a code smell, so this has been changed to throw an Exception.
-
-#### Filesystem
-
-- The `Filesystem::symbolizePath` method's `$default` parameter now accepts a `string`, `bool` or `null`. Only in the case of `null` will the method return the original path - the given `$default` will be used in all other cases. This is the same as the original functionality, but we're documenting it in case you have customised this method in some fashion.
-- The `Filesystem::isPathSymbol` method previously returned the path symbol used, as a string, if one was found and `false` if not found. However, the docblock stipulated, as well as the method name itself implied, that this is a boolean check function, so we have converted this to a straight boolean response - `true` if a path symbol is used, otherwise `false`.
-- Many classes within the `Filesystem` namespace have had type hinting and return types added to enforce functionality and clarify documentation. If you extend any of these classes in your plugins, you may need to update your method signatures.
-
-#### Foundation
-
-- The `Winter\Storm\Foundation\Application` class callback methods `before` and `after` were documented as `void` methods, but returned a value. These no longer return a value.
-
-#### Halcyon
-
-- To prevent unsafe model instantiating, the model constructors are now forced to only allow a single `$attributes` parameter via an interface (`\Winter\Storm\Database\ModelInterface` and `\Winter\Storm\Halcyon\ModelInterface`). This will ensure that calls like `Model::make()` or `Model::create()` will execute correctly. It is possible that some people might have used additional parameters for their model constructors - these will no longer work and must be moved to another method.
-- The Halcyon Builder `insert` method now returns an `int` representing the created model's filesize, not a `bool`.
-- The Halcyon Builder `insert` method requires the `$values` parameter to actually contain variables and will throw an Exception if an empty array is provided. Previously, this was silently discarded and returned `true` (although this would not actually save the file).
-
-#### HTML
-
-- The `Winter\Storm\Html\FormBuilder` class has had type hinting and return types added to enforce functionality and clarify documentation. If you extend this class in your plugin, you may need to make changes to your method signatures if you overwrite the base functionality.
-
-#### Parse
-- The `Bracket` class constructor is now `final` to prevent unsafe static calls to the `parse` static method.
-- The `Bracket::parseString()` method previously returned `false` if a string was not provided for parsing, or the string was empty after trimming. Since the signature calls for a string, we won't check for this anymore. If the string is empty, an empty string will be returned.
-- The `markdown.beforeParse` event in the `Markdown` class sent a single `MarkdownData` instance as a parameter to the listeners. It now sends an array with the `MarkdownData` instance as the only value, to meet the signature requirements for events.
-- The `Syntax\FieldParser` class constructor has been made `final` to prevent unsafe static calls to the `parse` statuc method.
-- The `$template` parameter for the `Syntax\FieldParser` class constructor was originally optional. Since there is no purpose for this, and no way to populate the template after the fact, this has been made required.
-- The `Syntax\Parser` class constructor has been made `final` to prevent unsafe static calss to the `parse` static method.
-- The `$template` parameter for the `Syntax\Parser` class constructor was originally optional. Since there is no purpose for this, and no way to populate the template after the fact, this has been made required.
-
-#### Testing
-- The `Winter\Storm\Support\Testing\Fakes\MailFake::queue()` method has had its signature re-arranged to remain compatible with Laravel's `MailFake` class, with the `$queue` parameter being moved to the second parameter. The new signature is `($view, $queue, $data, $callback)`.
-
 <a name="upgrade-toc"></a>
 ## Affected functionality
 
@@ -143,6 +88,8 @@ If you are using any of the following functionality it's highly recommended that
 - [Facades](#upgrade-facades)
 - [Any packages made for Laravel](#upgrade-laravel-packages)
 - [Unit Testing](#upgrade-unit-testing)
+- [Storm Library Internals](#upgrade-storm-internals)
+- [Upgrade Guides](#upgrade-guides)
 
 <a name="upgrade-twig"></a>
 ### Twig
@@ -211,8 +158,10 @@ Lang::set('validation.reserved', Lang::get('winter.builder::lang.validation.rese
 
 #### Overriding an entire namespace:
 
+If you were using the event to extend / override an entire namespaced key (for example in order to share localization overrides that would normally be present in a project's `lang` override folder at the project root between multiple projects via a plugin), then you could switch your code to use the following example:
+
 ```php
-Lang::set('winter.builder::lang', require __DIR__ . '/lang/zh-cn/lang.php', 'zh-cn');
+Lang::set('winter.builder::lang', require __DIR__ . '/lang/en-ca/lang.php', 'en-ca');
 ```
 
 
@@ -241,9 +190,83 @@ The version of Laravel has been changed from 6.x LTS to 9.x LTS. If you are usin
 <a name="upgrade-unit-testing"></a>
 ### Unit Testing
 
-If you are running unit testing for Winter CMS development, you will need to make some changes to your composer.json file and replace the `tests` folder in your installation to get the updates to the unit tests.
+If you are running unit testing for Winter CMS development, you will need to make some changes to your composer.json file and remove the `tests` folder from your installation to get the updates to the unit tests.
 
-**TODO: Complete this section after tests reorg is complete**
+
+
+<a name="upgrade-storm-internals"></a>
+### Storm Library Internals
+
+Version 1.2 of Winter includes a large code refactoring and documentation cleanup for the Storm library, to ensure that our base functionality is fully documented and works in a consistent and expected way. In addition, this brings our Storm library closer to the base Laravel functionality, which should make upgrades quicker and less painful in the future.
+
+While we have ensured that the potential for breaking changes is low, there may be some cases of breaking functionality if the functionality used an undocumented or incorrectly-documented API. We will list all the changes below, grouped by the "package" within the Storm library:
+
+- [\Winter\Storm\Database](#storm-database)
+- [\Winter\Storm\Extension](#storm-extension)
+- [\Winter\Storm\Filesystem](#storm-filesystem)
+- [\Winter\Storm\Foundation](#storm-foundation)
+- [\Winter\Storm\Halcyon](#storm-halcyon)
+- [\Winter\Storm\Html](#storm-html)
+- [\Winter\Storm\Parse](#storm-parse)
+- [\Winter\Storm\Support\Testing](#storm-support-testing)
+
+<a name="storm-database"></a>
+#### Database
+
+- To prevent unsafe model instantiating, the model constructors are now forced to only allow a single `$attributes` parameter via an interface (`\Winter\Storm\Database\ModelInterface` and `\Winter\Storm\Halcyon\ModelInterface`). This will ensure that calls like `Model::make()` or `Model::create()` will execute correctly. It is possible that some people might have used additional parameters for their model constructors - these will no longer work and must be moved to another method.
+- Due to the above, Pivot model construction has been rewritten. The constructor used to allow 4 parameters but now only allows the one `$attributes` parameter as per the Model class. Construction now happens more closely to Laravel's format of calling a `Pivot::fromAttributes()` static method. If you previously used `new Pivot()` to create a pivot model, switch to using `Pivot::fromAttributes()` instead.
+- The `MorphToMany` class now extends the `MorphToMany` class from Laravel, as opposed to the `BelongsToMany` class in Winter. This prevents repeated code in the Winter `MorphToMany` class and maintains covariance with Laravel. This will mean that it will no longer inherit from the Winter `BelongsToMany` class. To allow for this, we have converted most of the overridden `BelongsToMany` functionality in Winter into a trait (`Concerns\BelongsOrMorphsToMany`). The `BelongsToMany` relation class now also uses this trait.
+- The relation traits found in `src/Database/Relations` have been moved to `src/Database/Relations/Concerns`, in order to keep just the actual relation classes within the `src/Database/Relations` directory. In the unlikely event that you are using a relation trait directly, please rename the trait classes to the following:
+    - `Winter\Storm\Database\Relations\AttachOneOrMany` to `Winter\Storm\Database\Relations\Concerns\AttachOneOrMany`
+    - `Winter\Storm\Database\Relations\DeferOneOrMany` to `Winter\Storm\Database\Relations\Concerns\DeferOneOrMany`
+    - `Winter\Storm\Database\Relations\DefinedConstraints` to `Winter\Storm\Database\Relations\Concerns\DefinedConstraints`
+    - `Winter\Storm\Database\Relations\HasOneOrMany` to `Winter\Storm\Database\Relations\Concerns\HasOneOrMany`
+    - `Winter\Storm\Database\Relations\MorphOneOrMany` to `Winter\Storm\Database\Relations\Concerns\MorphOneOrMany`
+
+<a name="storm-extension"></a>
+#### Extension
+
+- Previously, the `Winter\Storm\Extension\Extendable::extendClassWith()` method returned the current class if the extension name provided was an empty string. This appears to be a code smell, so this has been changed to throw an Exception.
+
+<a name="storm-filesystem"></a>
+#### Filesystem
+
+- The `Filesystem::symbolizePath` method's `$default` parameter now accepts a `string`, `bool` or `null`. Only in the case of `null` will the method return the original path - the given `$default` will be used in all other cases. This is the same as the original functionality, but we're documenting it in case you have customised this method in some fashion.
+- The `Filesystem::isPathSymbol` method previously returned the path symbol used, as a string, if one was found and `false` if not found. However, the docblock stipulated, as well as the method name itself implied, that this is a boolean check function, so we have converted this to a straight boolean response - `true` if a path symbol is used, otherwise `false`.
+- Many classes within the `Filesystem` namespace have had type hinting and return types added to enforce functionality and clarify documentation. If you extend any of these classes in your plugins, you may need to update your method signatures.
+
+<a name="storm-foundation"></a>
+#### Foundation
+
+- The `Winter\Storm\Foundation\Application` class callback methods `before` and `after` were documented as `void` methods, but returned a value. These no longer return a value.
+
+<a name="storm-halcyon"></a>
+#### Halcyon
+
+- To prevent unsafe model instantiating, the model constructors are now forced to only allow a single `$attributes` parameter via an interface (`\Winter\Storm\Database\ModelInterface` and `\Winter\Storm\Halcyon\ModelInterface`). This will ensure that calls like `Model::make()` or `Model::create()` will execute correctly. It is possible that some people might have used additional parameters for their model constructors - these will no longer work and must be moved to another method.
+- The Halcyon Builder `insert` method now returns an `int` representing the created model's filesize, not a `bool`.
+- The Halcyon Builder `insert` method requires the `$values` parameter to actually contain variables and will throw an Exception if an empty array is provided. Previously, this was silently discarded and returned `true` (although this would not actually save the file).
+
+<a name="storm-html"></a>
+#### HTML
+
+- The `Winter\Storm\Html\FormBuilder` class has had type hinting and return types added to enforce functionality and clarify documentation. If you extend this class in your plugin, you may need to make changes to your method signatures if you overwrite the base functionality.
+
+<a name="storm-parse"></a>
+#### Parse
+
+- The `Bracket` class constructor is now `final` to prevent unsafe static calls to the `parse` static method.
+- The `Bracket::parseString()` method previously returned `false` if a string was not provided for parsing, or the string was empty after trimming. Since the signature calls for a string, we won't check for this anymore. If the string is empty, an empty string will be returned.
+- The `markdown.beforeParse` event in the `Markdown` class sent a single `MarkdownData` instance as a parameter to the listeners. It now sends an array with the `MarkdownData` instance as the only value, to meet the signature requirements for events.
+- The `Syntax\FieldParser` class constructor has been made `final` to prevent unsafe static calls to the `parse` statuc method.
+- The `$template` parameter for the `Syntax\FieldParser` class constructor was originally optional. Since there is no purpose for this, and no way to populate the template after the fact, this has been made required.
+- The `Syntax\Parser` class constructor has been made `final` to prevent unsafe static calss to the `parse` static method.
+- The `$template` parameter for the `Syntax\Parser` class constructor was originally optional. Since there is no purpose for this, and no way to populate the template after the fact, this has been made required.
+
+<a name="storm-support-testing"></a>
+#### Support\Testing
+
+- The `Winter\Storm\Support\Testing\Fakes\MailFake::queue()` method has had its signature re-arranged to remain compatible with Laravel's `MailFake` class, with the `$queue` parameter being moved to the second parameter. The new signature is `($view, $queue, $data, $callback)`.
 
 
 
