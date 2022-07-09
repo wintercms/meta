@@ -66,7 +66,7 @@ There are various code changes that may be required, including code found in plu
     - See https://twig.symfony.com/doc/2.x/deprecated.html#tags
     - Use the [`| filter` filter](https://twig.symfony.com/doc/3.x/filters/filter.html) or a conditional check inside of the loop block if the variable is affected by the contents of the loop.
     - This is most likely to affect users of the Winter.Pages plugin, simply update `{% for item in items if not item.viewBag.isHidden %}` to `{% for item in items | filter(item => not item.viewBag.isHidden) %}` in your custom partials.
-- The str_contains() helper provided by Laravel has a slight signature mismatch compared to the one provided by the PHP 8.0 internals.
+- The `str_contains()` helper provided by Laravel has a slight signature mismatch compared to the one provided by the PHP 8.0 internals.
 
 <a name="upgrade-required-changes"></a>
 ## Required code changes:
