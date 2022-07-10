@@ -54,7 +54,7 @@ The following first party plugins were released / revamped:
 - [Winter.TailwindUI](https://github.com/wintercms/wn-tailwindui-plugin) - TailwindUI-based skin for the backend.
 - [Winter.Search](https://github.com/wintercms/wn-search-plugin) - Enables full-text search capabilities in Winter.
 - [Winter.Redirect](https://github.com/wintercms/wn-redirect-plugin) - Manage redirects.
-- [Winter.Docs]((https://github.com/wintercms/wn-docs-plugin)) - Manages & displays documentation from various sources within your Winter projects.
+- [Winter.Docs](https://github.com/wintercms/wn-docs-plugin) - Manages & displays documentation from various sources within your Winter projects.
 - [Winter.Matomo](https://github.com/wintercms/wn-matomo-plugin) - Integrates the open source Matomo Analytics platform into Winter.
 - [Winter.DriverAWS](https://github.com/wintercms/wn-driveraws-plugin) - Driver plugin that adds support for AWS to Winter.
 - [Winter.DriverMailgun](https://github.com/wintercms/wn-drivermailgun-plugin) - Driver plugin that adds support for Mailgun to Winter.
