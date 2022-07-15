@@ -14,6 +14,7 @@
 - Added helper methods for Snowboard event listening - the `on` method registers a simple listener for a Snowboard event, the `off` de-registers the listener. The `ready` method is a shortcut method that registers a listener for when the DOM is ready, synonymous with `$(document).ready()` in jQuery.
 - Added an Asset Loader component for Snowboard, which is now included in the extras and allows simple loading of script, style and image assets on the fly.
 - Added a Data Configuration component for Snowboard, which is now included in the extras and allows widgets to retrieve configuration from an element's data attributes, similar to the current widgets within Winter CMS.
+- Added the public flag `trimStringAttributes` to `Winter\Storm\Database\Model` to make it possible to disable the default behaviour of automatically trimming string attribute values on model instances.
 
 ## Bug Fixes
 - Improved support for read-only filesystems by using the Storage facade to handle the disabled plugins cache file instead of directly interacting with the local disk and checking if the local filesystem is writable before attempting to create the temporary directory required by the `UpdateManager`.
