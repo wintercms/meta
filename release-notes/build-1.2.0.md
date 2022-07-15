@@ -1,4 +1,4 @@
-# Build 1.2.0 (WIP)
+# Build 1.2.0
 
 See the [Upgrade Guide](https://github.com/wintercms/meta/blob/master/l9-upgrade-notes.md) for a quick highlight of any potentially required changes in your code in order to be compatible with Winter CMS v1.2+. Although the upgrade should be relatively painless it is still worth taking a quick look to verify that you are not affected by any of the relatively few breaking changes.
 
