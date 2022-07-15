@@ -201,6 +201,7 @@ A number of improvements have been made to the console commands available out of
 - Fixed support for morphOne/hasOne relations in FormModelSaver
 - Fixed issue where paths returned by the UploadableWidget could have two leading directory separators.
 - Improved German translation.
+- Improved Russian translation.
 
 
 
