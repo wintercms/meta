@@ -37,7 +37,7 @@ There are various code changes that may be required, including code found in plu
 
 <a name="testing-instructions"></a>
 ## Testing instructions:
-1. Change your composer.json requirements to the following and then run `composer update`:
+1. Change the following composer.json requirements:
 ```json
     "require": {
         "php": "^8.0.2",
@@ -57,7 +57,19 @@ There are various code changes that may be required, including code found in plu
         "dms/phpunit-arraysubset-asserts": "^0.1.0|^0.2.1"
     },
 ```
-2. If `config/app.php` makes reference to `Illuminate\Http\Request::HEADER_X_FORWARDED_ALL`, change it to `'HEADER_X_FORWARDED_ALL'`
+2. If you have the following lines in your `composer.json` file, please remove these:
+```json
+    "autoload-dev": {
+        "classmap": [
+            "tests/concerns/InteractsWithAuthentication.php",
+            "tests/fixtures/backend/models/UserFixture.php",
+            "tests/TestCase.php",
+            "tests/PluginTestCase.php"
+        ]
+    },
+```
+3. Run `composer update`.
+4. If `config/app.php` makes reference to `Illuminate\Http\Request::HEADER_X_FORWARDED_ALL`, change it to `'HEADER_X_FORWARDED_ALL'`
 
 <a name="upgrade-known-issues"></a>
 ## Known issues:
