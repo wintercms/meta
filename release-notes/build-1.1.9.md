@@ -1,4 +1,4 @@
-# Build 1.1.9 (WIP)
+# Build 1.1.9
 
 ## UX/UI Improvements
 - The base Snowboard framework has been included in the Backend by default, allowing people to use Snowboard requests and included functionality in their plugin's backend pages if they wish. Please see https://github.com/wintercms/winter/pull/548 for more information on what is included.
@@ -34,14 +34,12 @@
 
 ## Security Improvements
 - Improved reliability of the CMS Safe Mode feature. See https://github.com/wintercms/winter/security/advisories/GHSA-q37h-jhf3-85cj for more information
+- Improved reliability of `Winter\Storm\Database\Attach\File->fromData()`. See https://github.com/octobercms/october/security/advisories/GHSA-8v7h-cpc2-r8jp for more information.
 
 ## Translation Improvements
 - Improved German translation
 - Improved Spanish translation
 - Improved Farsi translation
-
-## Performance Improvements
--
 
 ## Community Improvements
 - Fixed file language hinting for backend controller views for VS Code
