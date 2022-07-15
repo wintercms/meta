@@ -41,10 +41,10 @@ There are various code changes that may be required, including code found in plu
 ```json
     "require": {
         "php": "^8.0.2",
-        "winter/storm": "dev-wip/1.2 as 1.2",
-        "winter/wn-system-module": "dev-wip/1.2",
-        "winter/wn-backend-module": "dev-wip/1.2",
-        "winter/wn-cms-module": "dev-wip/1.2",
+        "winter/storm": "~1.2.0",
+        "winter/wn-system-module": "~1.2.0",
+        "winter/wn-backend-module": "~1.2.0",
+        "winter/wn-cms-module": "~1.2.0",
         "laravel/framework": "^9.1",
         "wikimedia/composer-merge-plugin": "~2.0.1"
     },
