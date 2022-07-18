@@ -68,6 +68,7 @@ There are various code changes that may be required, including code found in plu
         ]
     },
 ```
+3. You may also delete the `tests` folder completely, as these testing files now reside in the modules, unless you have your own tests within this folder.
 3. Run `composer update`.
 4. If `config/app.php` makes reference to `Illuminate\Http\Request::HEADER_X_FORWARDED_ALL`, change it to `'HEADER_X_FORWARDED_ALL'`
 
@@ -204,7 +205,37 @@ The version of Laravel has been changed from 6.x LTS to 9.x LTS. If you are usin
 
 If you are running unit testing for Winter CMS development, you will need to make some changes to your composer.json file and remove the `tests` folder from your installation to get the updates to the unit tests.
 
+This block of code is no longer required in your `composer.json` file:
 
+```json
+    "autoload-dev": {
+        "classmap": [
+            "tests/concerns/InteractsWithAuthentication.php",
+            "tests/fixtures/backend/models/UserFixture.php",
+            "tests/TestCase.php",
+            "tests/PluginTestCase.php"
+        ]
+    },
+```
+
+Since the testing files now reside within the modules folder, you may need to update your `phpunit.xml` configuration files and test cases if they make reference to any files in their old locations. To help ease the transition, you may use the `php artisan winter:test -p <your plugin code>` command, which will use the correct bootstrap file for Winter 1.2 testing. You may keep the old `bootstrap` configuration in your `phpunit.xml` file if you wish to test both Winter 1.1 and 1.2.
+
+Since the base `PluginTestCase` class has also been moved, any test case files that are extending this class will need to either update the reference to `\System\Tests\Bootstrap\PluginTestCase`, or alternatively, you can use the following code to support testing on both Winter 1.1 and 1.2:
+
+```php
+// Create a stub BaseTestCase that extends the correct plugin test case file depending on Winter version
+if (class_exists('System\Tests\Bootstrap\PluginTestCase')) {
+    class BaseTestCase extends \System\Tests\Bootstrap\PluginTestCase
+    {
+    }
+} else {
+    class BaseTestCase extends \PluginTestCase
+    {
+    }
+}
+
+class MyTestCase extends BaseTestCase
+```
 
 <a name="upgrade-storm-internals"></a>
 ### Storm Library Internals
