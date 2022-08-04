@@ -22,6 +22,7 @@
 - Fixed issue when attempting to generate a TailwindCSS theme scaffold on a case sensitive file system.
 - Fixed mismatching method signature on AutoDatasource->lastModified() that could cause issues when using DatabaseTemplates in v1.2.
 - Fixed issue where MorphedByMany relationships would use the wrong class name when building queries.
+- Removed an override to the `Input::all()` facade method, which prevented files from being included in the result, breaking previous behaviour.
 
 ## Security Improvements
 -
