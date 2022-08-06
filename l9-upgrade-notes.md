@@ -123,7 +123,7 @@ Review the changes to the [default configuration files](https://github.com/winte
     - Removed support for `database.useConfigForTesting`, use `config/testing/database.php` to override testing defaults instead.
     - Setting a `varcharmax` on `mysql` database connections is no longer supported as the minimum required version of MySQL now supports 255 character UTF8 strings by default.
 - `config/mail.php`:
-    - The structure has changed, update your local copy to match the one [now provided on the 1.2 branch](https://github.com/wintercms/winter/blob/wip/1.2/config/mail.php). The old one should continue working but it is recommended to update it to reflect the new structure.
+    - The structure has changed, update your local copy to match the one [now provided on the develop branch](https://github.com/wintercms/winter/blob/develop/config/mail.php). The old one should continue working but it is recommended to update it to reflect the new structure.
 - `config/filesystems.php`:
     - The `local` disk currently needs a `visibility => 'public'` setting in order for the files/folders under `/storage/app/resized` to be publicly accessible when using the image resizer.
 
