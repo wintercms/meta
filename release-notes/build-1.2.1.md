@@ -27,6 +27,8 @@
 - Fixed issue where MorphedByMany relationships would use the wrong class name when building queries.
 - Removed an override to the `Input::all()` facade method, which prevented files from being included in the result, breaking previous behaviour.
 - Removed an extra `0` that was left over in `numberrange` filter partials.
+- Fixed an issue where only the last component would be saved in a CMS template due to the framework not correctly processing arrayed POST data.
+- Fixed an issue with the `winter:fresh` command where the demo plugin was not removed and an error message was shown.
 
 ## Security Improvements
 -
