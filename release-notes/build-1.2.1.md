@@ -17,6 +17,7 @@
     - `model.relation.beforeDisassociate($relationName)`
     - `model.relation.afterDisassociate($relationName)`
 - The AJAX framework and Snowboard framework now both enforce either a class name dot (`.`) or an ID hash (`#`) to be prefixed to any partials that are to be updated in an AJAX response. This includes any mapped selectors.
+- A new `mix:run` Artisan command has been added to allow scripts defined in the `package.json` file of a Mix package to be run easily through the CLI. You can find the [documentation here](https://wintercms.com/docs/console/asset-compilation#mix-run).
 
 ## Bug Fixes
 - The `winter:test` command now automatically uses the correct bootstrap file for unit testing, irrespective of the `bootstrap` configuration in any plugin or module's `phpunit.xml` file, to assist users migrating their unit tests to Winter 1.2.
@@ -31,7 +32,7 @@
 - Fixed an issue with the `winter:fresh` command where the demo plugin was not removed and an error message was shown.
 
 ## Security Improvements
--
+- Prototype hardening has been implemented on the Snowboard framework to prevent prototype pollution. You may [read the security advisory for more information](https://github.com/wintercms/winter/security/advisories/GHSA-3fh5-q6fg-w28q).
 
 ## Translation Improvements
 - Fixed a misnamed language string for the custom editor HTML styles input.
