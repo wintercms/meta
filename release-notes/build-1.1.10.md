@@ -10,7 +10,7 @@
 - 
 
 ## Security Improvements
--
+- Prototype hardening has been implemented on the Snowboard framework to prevent prototype pollution. You may [read the security advisory for more information](https://github.com/wintercms/winter/security/advisories/GHSA-3fh5-q6fg-w28q).
 
 ## Translation Improvements
 -
