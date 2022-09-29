@@ -38,7 +38,7 @@
 - Fixed a misnamed language string for the custom editor HTML styles input.
 
 ## Performance Improvements
--
+- Slightly optimised searching for used slugs with models using the Sluggable trait by runnning an "exists" query as opposed to a "count" query.
 
 ## Community Improvements
 - The Winter CMS module sub-split is now automated, ensuring that the module repositories are now kept up-to-date with the latest changes soon after they are committed to the main repository.
