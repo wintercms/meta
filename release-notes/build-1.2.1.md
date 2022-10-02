@@ -4,6 +4,7 @@
 - Made the composer merge plugin less greedy by default, previously it would merge in all plugin composer.json files that existed in your project, now it will only merge in specific plugin paths defined in your project's `composer.json`. Copy [the changes](https://github.com/wintercms/winter/commit/e05a20eddc28b0cb4eb6fa8b048fc319cca467ae) from GitHub in order to apply it to your projects.
 - Clicking the label of a `switch` field will now toggle the switch.
 - Increased the width of the crop dimension inputs when cropping or resizing an image in the Media widget.
+- Standard HTML flash messages that are converted to JavaScript flash messages through Snowboard are now removed once converted, to prevent the original message from remaining even after the flash message is dismissed.
 
 ## API Changes
 - The `twig.environment.cms` Twig environment is no longer provided as a singleton, instead being generated on each request to `App::make()`. This helps to avoid conflicts when calling the CMS controller multiple times in the same request.
