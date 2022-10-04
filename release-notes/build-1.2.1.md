@@ -31,6 +31,7 @@
 - Removed an extra `0` that was left over in `numberrange` filter partials.
 - Fixed an issue where only the last component would be saved in a CMS template due to the framework not correctly processing arrayed POST data.
 - Fixed an issue with the `winter:fresh` command where the demo plugin was not removed and an error message was shown.
+- The Array Source trait will no longer attempt to save a temporary SQLite DB if storage is disabled via setting `$cacheArray` to `false`.
 
 ## Security Improvements
 - Prototype hardening has been implemented on the Snowboard framework to prevent prototype pollution. You may [read the security advisory for more information](https://github.com/wintercms/winter/security/advisories/GHSA-3fh5-q6fg-w28q).
