@@ -19,6 +19,7 @@
     - `model.relation.afterDisassociate($relationName)`
 - The AJAX framework and Snowboard framework now both enforce either a class name dot (`.`) or an ID hash (`#`) to be prefixed to any partials that are to be updated in an AJAX response. This includes any mapped selectors.
 - A new `mix:run` Artisan command has been added to allow scripts defined in the `package.json` file of a Mix package to be run easily through the CLI. You can find the [documentation here](https://wintercms.com/docs/console/asset-compilation#mix-run).
+- Snowboard JavaScript AJAX requests now accept two or three parameters, similar to the old framework. When using two parameters, the user only needs to specify the handler and options - it is assumed in this case that the AJAX requests is detached and not tied to an element.
 
 ## Bug Fixes
 - The `winter:test` command now automatically uses the correct bootstrap file for unit testing, irrespective of the `bootstrap` configuration in any plugin or module's `phpunit.xml` file, to assist users migrating their unit tests to Winter 1.2.
@@ -32,6 +33,7 @@
 - Fixed an issue where only the last component would be saved in a CMS template due to the framework not correctly processing arrayed POST data.
 - Fixed an issue with the `winter:fresh` command where the demo plugin was not removed and an error message was shown.
 - The Array Source trait will no longer attempt to save a temporary SQLite DB if storage is disabled via setting `$cacheArray` to `false`.
+- Fixed an issue where custom AJAX error responses were being mangled by the Snowboard Request class, before sending off to the error handlers. If an error does not appear to be a PHP exception with an exception class and message, it will now pass through the response untouched (but still be considered an error response).
 
 ## Security Improvements
 - Prototype hardening has been implemented on the Snowboard framework to prevent prototype pollution. You may [read the security advisory for more information](https://github.com/wintercms/winter/security/advisories/GHSA-3fh5-q6fg-w28q).
