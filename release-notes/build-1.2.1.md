@@ -87,6 +87,7 @@
 - Fixed issue when attempting to preview a CSV column with the ImportExportController behavior.
 - Fixed issue where the `codeeditor` and `richeditor` fields were not properly triggering change events when their contents were changed.
 - Fixed issue where custom error messages sent via AJAX and processed by Snowboard would not be properly handled.
+- Fixed issue where the `jobs` / `failed_jobs` table structure did not match that of Laravel 9.
 
 ## Security Improvements
 - Prototype hardening has been implemented on the Snowboard framework to prevent prototype pollution. You may [read the security advisory for more information](https://github.com/wintercms/winter/security/advisories/GHSA-3fh5-q6fg-w28q).
