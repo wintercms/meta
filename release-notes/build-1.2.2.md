@@ -1,4 +1,4 @@
-# Build 1.2.# (WIP)
+# Build 1.2.2 (WIP)
 
 ## UX/UI Improvements
 -

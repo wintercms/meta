@@ -1,4 +1,4 @@
-# Build 1.2.1 - WIP
+# Build 1.2.1
 
 ## UX/UI Improvements
 - Added support for streaming file uploads directly to S3 storage disks via the `stream_uploads` option on the disk configuration. Requires the [Winter.DriverAWS](https://github.com/wintercms/wn-driveraws-plugin) plugin.
