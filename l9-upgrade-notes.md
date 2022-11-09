@@ -114,7 +114,7 @@ If you are using any of the following functionality it's highly recommended that
 
 <a name="upgrade-config"></a>
 ### Configuration Files
-Review the changes to the [default configuration files](https://github.com/wintercms/winter/tree/wip/1.2/config) and implement any changes as desired; the following items are called out as potentially having an impact:
+Review the changes to the [default configuration files](https://github.com/wintercms/winter/tree/1.2/config) and implement any changes as desired; the following items are called out as potentially having an impact:
 
 - `config/app.php`:
     - An application key is no longer provided by default, if your application does not yet have one set, run `artisan key:generate`.
