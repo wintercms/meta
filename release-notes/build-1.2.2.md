@@ -3,6 +3,7 @@
 ## UX/UI Improvements
 - Component assets stored in an `assets` directory within the component directory will now be mirrored by the `winter:mirror` command.
 - The AJAX form validation feature [documented in Snowboard](https://wintercms.com/docs/snowboard/extras#ajax-validation) that was missed during the initial implementation of Snowboard is now included by default with the `extras` package.
+- Lists can now be sorted by invisible columns.
 
 ## API Changes
 - A new configuration, `develop.debugSnowboard`, has been added to `config/develop.php`, to allow overriding if Snowboard debugging and console logging is enabled, independent of the `app.debug` setting.
