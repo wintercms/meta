@@ -78,10 +78,10 @@ If you are using composer you will need to make the following changes to your co
 ```json
 "require": {
     "php": "^7.2",
-    "winter/rain": "~1.1",
-    "winter/system": "~1.1",
-    "winter/backend": "~1.1",
-    "winter/cms": "~1.1",
+    "winter/rain": "~1.1.1",
+    "winter/system": "~1.1.1",
+    "winter/backend": "~1.1.1",
+    "winter/cms": "~1.1.1",
     "laravel/framework": "~6.0",
     "wikimedia/composer-merge-plugin": "1.4.1"
 },
