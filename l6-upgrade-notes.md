@@ -44,28 +44,6 @@ If you are using any of the following functionality it's highly recommended that
 
 - If using RainLab.Translate, ensure you update to v1.6.x (currently unreleased, manually apply [3e31ce](https://github.com/rainlab/translate-plugin/commit/3e31cee945f3cde55cab0ebd0fa278555207302e)) to resolve `Missing required parameters for [Route: ] [URI: en/{slug}].")`
 
-## Testing instructions:
-
-If you would like to help with the upgrade process please make the following changes in your composer.json file and then run `composer update`.
-
-```json
-"require": {
-    "php": "^7.2",
-    "winter/rain": "dev-develop as 1.1",
-    "winter/system": "dev-develop",
-    "winter/backend": "dev-develop",
-    "winter/cms": "dev-develop",
-    "laravel/framework": "~6.0",
-    "wikimedia/composer-merge-plugin": "1.4.1"
-},
-"config": {
-    "preferred-install": "dist",
-    "platform": {
-        "php": "7.2.9"
-    }
-},
-```
-
 ## Required code changes:
 
 Any required code changes are described below in sections based on related functionality that you may or may not be using. If you are using the described functionality, please review the section and make the required changes.
