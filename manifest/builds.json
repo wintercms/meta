@@ -1,6 +1,6 @@
 {
     "_description": "This is the source manifest of changes to Winter CMS for each version. This is used to determine which version of Winter CMS is in use, via the \"winter:version\" Artisan command.",
-    "_created": "2023-06-03T13:06:49+00:00",
+    "_created": "2023-07-11T02:04:37+00:00",
     "manifest": [
         {
             "build": "1.0.420",
@@ -10085,6 +10085,65 @@
                     "\/modules\/backend\/formwidgets\/colorpicker\/assets\/vendor\/pickr\/LICENSE",
                     "\/modules\/backend\/formwidgets\/colorpicker\/assets\/vendor\/pickr\/pickr-nano.min.css",
                     "\/modules\/backend\/formwidgets\/colorpicker\/assets\/vendor\/pickr\/pickr.min.js"
+                ]
+            }
+        },
+        {
+            "build": "1.2.3",
+            "parent": "1.2.2",
+            "modules": {
+                "system": "1c8710679e6b11113fea9bdeae3dcc22e31481fd952802c6cd1768cdadde5ad8",
+                "backend": "7c6cbf8eece5c68ba531c5205291d6cf901c046640d531eb85fc3b00488d946d",
+                "cms": "985311b8f4bd94a7b5e0b490dc126a841b214e1be74c75476ce98cd4b11c5ddb"
+            },
+            "files": {
+                "added": {
+                    "\/modules\/system\/tests\/bootstrap\/PluginManagerTestCase.php": "ce26343eb5bb92e4114a366eefd4f0c9861aa15ce36fc496c6eeb8b5cd10c17b",
+                    "\/modules\/system\/tests\/classes\/PluginBaseTest.php": "95371f82047274e1a68da04a85b55a366e9d798e1c97525c3051e91b471100aa"
+                },
+                "modified": {
+                    "\/modules\/system\/assets\/ui\/js\/datepicker.js": "bedf6bda71d60dfed397cf695ab06bed02d54d71644a18dca933629434e00c1e",
+                    "\/modules\/system\/assets\/ui\/less\/form.less": "59819c09d2c2c5876de5d37894646cfdf3a1fe55aa7352492c8fa3400421be44",
+                    "\/modules\/system\/assets\/ui\/storm-min.js": "2c7d422254df6e3b77dc8976ec5b315a1cd301599d0d07e933a04c939feb4277",
+                    "\/modules\/system\/assets\/ui\/storm.css": "c0fade0e304f99e15a0909a450dc86cdcaddcffdd7e15dd7507aee691d4aaa49",
+                    "\/modules\/system\/classes\/MixAssets.php": "83f8ca57a6e8050ceb7d04851cd337366d8e5d52e3712424dbed522f6848ac29",
+                    "\/modules\/system\/classes\/PluginBase.php": "1ea8df39fe572c7e848c03cd85a459769b3725d84fa6f3746c7b841c6903f369",
+                    "\/modules\/system\/classes\/UpdateManager.php": "cd13f7cfa8ab3bc1f734ce7fa0a1c394968be44e0cf9c1f93fac3cf6c6491ac9",
+                    "\/modules\/system\/console\/BaseScaffoldCommand.php": "171673cca84af649832c94ea51bfffb53b86664f7eb1cfd4c8a5c594cbb5be96",
+                    "\/modules\/system\/console\/CreateCommand.php": "065b50a233553ba17e7c84e27041887afaa6d78c7ccce4a2d669c7946e212880",
+                    "\/modules\/system\/console\/CreateJob.php": "00d445bbb865c29f68a8f664fe06483ef53cc1b0060d40aaf5e3ffee6787a05f",
+                    "\/modules\/system\/console\/CreateMigration.php": "4f54d32e532f82d1b9c7c6544ab0501347e0ee7b48559ab759fc9d2624a19b2b",
+                    "\/modules\/system\/console\/CreateModel.php": "7aa9c2670046bed0675946f50c6ceb394d1b19200fd660540eacea631faf6cba",
+                    "\/modules\/system\/console\/CreatePlugin.php": "4c5b7a7bd5308f37086cce6691434b0ffa5526eef89c81403a3254ee54101adb",
+                    "\/modules\/system\/console\/CreateSettings.php": "f4f9144f134aa28fb2c64b42117495df4d70247e3c8e72201c97fb703791d25e",
+                    "\/modules\/system\/console\/MixList.php": "4f327c374e95b566b888f56c51c5ae403427964bf7c04528b72e478c81c7c96f",
+                    "\/modules\/system\/console\/traits\/HasPluginArgument.php": "90b1916d87aa4520de9681a120beaed5c48eabbf7ce844ee5adce61df73aa23a",
+                    "\/modules\/system\/controllers\/Updates.php": "0982e6911bee6cc9c63b902256b2bf2d4e9b42b1c87cb908a6de0b9d72c2eecf",
+                    "\/modules\/system\/lang\/hu\/lang.php": "d5025181c04dffa1813c60af89c18ee065d1c14868f09ec2950e82e8a16e8e97",
+                    "\/modules\/system\/tests\/classes\/PluginManagerTest.php": "75df0b0cc526db080484aa48b9089bc1d617609ebdf846d8dace2dc195bd0c4a",
+                    "\/modules\/backend\/console\/CreateController.php": "8348b2543551cc4d69db79206714d1dad8b202108f456fd006a700622810d1ec",
+                    "\/modules\/backend\/console\/CreateFormWidget.php": "e4efb1eb29f7a4f358db8d2c750d5bde2102029fe34613309fabcf5f7d6a53f2",
+                    "\/modules\/backend\/console\/CreateReportWidget.php": "da523d5e452bd8642b89baf57e4e3df99efe77791d7aea75173a6380b809fc9d",
+                    "\/modules\/backend\/formwidgets\/FileUpload.php": "93eefe52abf120cc4b29c834c304a577824f5afc7bbf4bc7430d74fe68aaa566",
+                    "\/modules\/backend\/formwidgets\/NestedForm.php": "777ee63f0bb96b05a6cf8241b52de07ecfbd2e97938a9c816c8edc91eb127ad7",
+                    "\/modules\/backend\/formwidgets\/recordfinder\/partials\/_recordfinder.php": "cdf282388c67f0da9b8a1740232c169dba313f5696a8ae5f77fbdadeef1936b2",
+                    "\/modules\/backend\/formwidgets\/repeater\/assets\/js\/repeater.js": "2f39598f7aff12035081354cef8a0574e92aacb9916d4a01f59a275613fc37b8",
+                    "\/modules\/backend\/lang\/hu\/lang.php": "5a4830c1981ecd3c5a09efd6560e4dbd652e04f32701fcc3601f31f664c98fe1",
+                    "\/modules\/backend\/models\/brandsetting\/fields.yaml": "6dfd9c2af0434cff53e83a9926a4d149597292e423ff4e4f90c1def1476bc574",
+                    "\/modules\/backend\/traits\/UploadableWidget.php": "9d24b62d10a29817ab91497c6b6be6f89ff7b4e43c05f9d87ad082ba587b2f74",
+                    "\/modules\/backend\/widgets\/mediamanager\/assets\/js\/mediamanager-browser-min.js": "e6987f3f0cba60bdbb80377f2821093e8db5b50e725ee72948500f7ff5aadf79",
+                    "\/modules\/cms\/classes\/Controller.php": "285858507ef7814b727db3f12c3e209bb3ede28f32f9e97ae34b38ea51f97f74",
+                    "\/modules\/cms\/classes\/Theme.php": "638e29d82eee67e0ab20ef7b94f10b0daba8e9f8b71c7d65b711982a27a1cef1",
+                    "\/modules\/cms\/classes\/theme\/fields.yaml": "c5fe953491541188311e512ba4fa51f8be4ed8e6476bc422f6a36fecc3c19958",
+                    "\/modules\/cms\/console\/CreateComponent.php": "d54bb77a49d4e9625d52b22c400fbe9eee601d9d3df3419d565b402166231b9a",
+                    "\/modules\/cms\/console\/CreateTheme.php": "cf22cf3d9e16bbc9914a40db59b8f1295809965ccaa452b934b49928e59381e0",
+                    "\/modules\/cms\/controllers\/Themes.php": "3b9e52232dd3d0bf6c071ddecfcbe2b314fc7d4dc490ee56388e00d5b0a3a5bc",
+                    "\/modules\/cms\/lang\/en\/lang.php": "e8272092bd6957bf76a122746aaf550b76e57b3c2cb154f85ce2dd2609b51cfb",
+                    "\/modules\/cms\/lang\/hu\/lang.php": "23122addcb949044533333716744830e225952efe5b4a6b8464ee943ff560742",
+                    "\/modules\/cms\/routes.php": "071a525bb92cba28e29b85087945706c8ab4342e54fe702e812ccf2746aa7cad"
+                },
+                "removed": [
+                    "\/modules\/system\/tests\/classes\/UpdatesControllerTest.php"
                 ]
             }
         }
