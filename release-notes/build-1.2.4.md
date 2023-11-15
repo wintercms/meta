@@ -38,6 +38,7 @@
 - Model event methods (i.e. `afterSave()`, etc) will now be bound to and fired by the event dispatcher instead of firing directly. This allows for more flexibility in the order of event listeners and allows for the event to be cancelled before reaching the original model listener method.
 - Added new `Encryptable` database behavior that functions the same as the existing trait but can be dynamically applied to models.
 - Improved automatic detaching / deletion of relations. Adds support for `deletedAtColumn` to relation pivot configurations.
+- Added support for job batches (originally introduced in Laravel 8).
 
 ## Bug Fixes
 - Fixed an issue when attempting to access a `SettingsModel` after the database exists but before any migrations have been run.
