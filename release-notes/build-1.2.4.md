@@ -15,6 +15,7 @@
 - Improved progress bar styling within List widgets.
 - Added support for populating migrations created via `create:migration` with columns defined from the field configuration for the provided model.
 - Added support for `showSetup` in list views of the RelationController.
+- Added support for scaffolding tests in plugins via the `create:test` command.
 
 ## API Changes
 - Added the `bootstrap/cache` folder to the `wintercms/winter` repo as it is expected to exist by Laravel core commands related to caching.
@@ -39,6 +40,8 @@
 - Added new `Encryptable` database behavior that functions the same as the existing trait but can be dynamically applied to models.
 - Improved automatic detaching / deletion of relations. Adds support for `deletedAtColumn` to relation pivot configurations.
 - Added support for job batches (originally introduced in Laravel 8).
+- Made `Winter\Storm\Support\Svg::sanitize()` a public method.
+- Added support for `Throwable` exceptions to the `SystemException` base class.
 
 ## Bug Fixes
 - Fixed an issue when attempting to access a `SettingsModel` after the database exists but before any migrations have been run.
@@ -56,6 +59,16 @@
 - Fixed issue where the `showTree` config value would be cleared when the search term was cleared instead of being preserved.
 - Fixed issue where installing Winter in certain directories would fail to work.
 - The in-memory DB cache will now be cleared when an upsert is performed.
+- Improved support for PHP 8.3 with the `Extendable` trait.
+
+## Security Improvements
+- Added validation to the ColorPicker FormWidget to prevent non-color values from being saved.
+- Stored values in the ColorPicker FormWidget will now be escaped before rendering to prevent XSS attacks.
+- Files in the Media Manager will now be passed through the `Svg::sanitize()` method before being renamed to `.svg` files to prevent potential stored XSS attacks.
+
+## Translation Improvements
+- Improved Turkish translation.
+- Improved Russian translation.
 
 ## Performance Improvements
 - Added indexes to the `sessions` table.
