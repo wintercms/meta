@@ -67,8 +67,9 @@
 - Files in the Media Manager will now be passed through the `Svg::sanitize()` method before being renamed to `.svg` files to prevent potential stored XSS attacks.
 
 ## Translation Improvements
-- Improved Turkish translation.
+- Improved Latvian translation.
 - Improved Russian translation.
+- Improved Turkish translation.
 
 ## Performance Improvements
 - Added indexes to the `sessions` table.
