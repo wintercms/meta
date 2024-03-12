@@ -1,6 +1,6 @@
 {
     "_description": "This is the source manifest of changes to Winter CMS for each version. This is used to determine which version of Winter CMS is in use, via the \"winter:version\" Artisan command.",
-    "_created": "2023-12-28T20:23:12+00:00",
+    "_created": "2024-03-12T00:14:44+00:00",
     "manifest": [
         {
             "build": "1.0.420",
@@ -10303,6 +10303,52 @@
                     "\/modules\/cms\/tests\/classes\/CmsObjectQueryTest.php": "e62c44c193e88bc88b3a1ed2119093cec7123e3d26d8d3a4c2f57774e66916f6",
                     "\/modules\/cms\/tests\/classes\/ControllerTest.php": "569d2edd9891c118396386b00d4bcf14f39c7f4ab4a3d7c056dd041f209a91be",
                     "\/modules\/cms\/twig\/SnowboardNode.php": "53c84a3242d6711b69dc83932154b07c5834b918bd6a0ce5fcd43e76271b5560"
+                }
+            }
+        },
+        {
+            "build": "1.2.5",
+            "parent": "1.2.4",
+            "modules": {
+                "system": "a7802cb8a4f51e543c6ca165b33d5d3b173717c29ca65ad02d3c24300f0d4525",
+                "backend": "b0d014108754b651419d701a362d75f2a3b976e807fcdcc14074d6690cd296c7",
+                "cms": "54011a2b42b1e090223fd3b6dc7e3d214d516c7c8d74402d9e4851b511826548"
+            },
+            "files": {
+                "modified": {
+                    "\/modules\/system\/ServiceProvider.php": "697db9aac9008306ceb5a8c4b942fe7d5bb6eef28a89785bb3e1ecab9a2aefe4",
+                    "\/modules\/system\/assets\/ui\/js\/select.js": "4ca1f458cf7da580c7045361c566e0fea3b73f09c2ccd9093e485a378917dd9c",
+                    "\/modules\/system\/assets\/ui\/less\/button.less": "950da7a9d275db227ce2a8362c0e2b02383f313ab5b27192347a945f564c6ef3",
+                    "\/modules\/system\/assets\/ui\/less\/checkbox.less": "0ed565233c2ca7506198eee77f6cd3f017140c29d5f3d7eedb9d07829bbc1766",
+                    "\/modules\/system\/assets\/ui\/storm-min.js": "159fd0c5b3f9a985c368003fcdd16b1a867c8b20e51a01137dbaff73548025a5",
+                    "\/modules\/system\/assets\/ui\/storm.css": "851b53968a2481e3ced6716eacb48de06fb58abcc211384aac84eb0322b175c7",
+                    "\/modules\/system\/classes\/CombineAssets.php": "39c136a52fd53c2b498d8f537f490c64f38ba0be9df5f49cd6c1177d75093e03",
+                    "\/modules\/system\/classes\/UpdateManager.php": "e7c86f855364db2a0bce109662b6c8b67a746296e2627c8609c106d27727313a",
+                    "\/modules\/system\/classes\/VersionManager.php": "2194a849f08fdbe70d5073dd9913aed8727e5feaa7ada6467e38fc5d999d2c99",
+                    "\/modules\/system\/console\/WinterUtil.php": "a30e12334122eb97ef8b6db7b165de6750ceea4d8f2480a2dc6f2989d99237a2",
+                    "\/modules\/system\/helpers\/DateTime.php": "e24e85860bcb3a1512ac5bafe05da6c01d47f3734f1afb753fcd032fc4d16c13",
+                    "\/modules\/system\/lang\/en\/lang.php": "6f239610b5188a4e69f5403b604235566d692085e5a665626c0d1fa1cf040a2b",
+                    "\/modules\/system\/tests\/twig\/FilterTest.php": "276cc9e34a25e9777e4127cf291a23ef9bd1427cb2f1a18ba3e8f8629b79cb5e",
+                    "\/modules\/system\/views\/mail\/partial-button.php": "70897f7ff4594283047d6d0b40f78af9ebc2f1c3a77d14503b65137ea3e99c06",
+                    "\/modules\/backend\/assets\/js\/vendor\/jquery-and-migrate.min.js": "4dcc0aae2dd23ff00cf68e7bf08a4370ecc408f64b51aba39153c0b42c797020",
+                    "\/modules\/backend\/assets\/js\/vendor\/jquery-migrate.min.js": "bfb3d8a7590de55701653e40aa185037768f7ae91229be0b693b24fa4ed7c0b7",
+                    "\/modules\/backend\/assets\/js\/vendor\/jquery.min.js": "49f3bc094b964bfd27880cb95d876362fb1cc66a6269fb4eb72c3616b5b799b7",
+                    "\/modules\/backend\/behaviors\/reordercontroller\/assets\/js\/winter.reorder.js": "a88908f62bcdd552a0e358dcabd450fb10b371e84d2c1c74786a367a373a9fe0",
+                    "\/modules\/backend\/classes\/FormField.php": "1b96b4b6200cc7b658f395221c187b0fd9781cbb28d67293e9bfdb6a64eb67a2",
+                    "\/modules\/backend\/console\/scaffold\/controller\/update.stub": "6e273036703089f05030ec02fca8f86516cf7f8548eac677f365a3cdf12cce69",
+                    "\/modules\/backend\/formwidgets\/permissioneditor\/assets\/css\/permissioneditor.css": "f458ce208844486646a8b622a92ba42b5cf6d1cdacb6a20afedaff917939dabc",
+                    "\/modules\/backend\/formwidgets\/permissioneditor\/assets\/js\/permissioneditor.js": "90203d3dc2fc7140e5ac93bde083fea4ed267ff0cf3d157de42011f9d81425d1",
+                    "\/modules\/backend\/formwidgets\/repeater\/assets\/js\/repeater.js": "77d5410a470c9d7bcc6e528cd0e4010258b746506c928ed48f8996c06b1d2a3b",
+                    "\/modules\/backend\/widgets\/form\/assets\/js\/winter.form.js": "76da4b36289cb2b344813fbb856fb5939da761bfdd14f11a1a90ab4e9de5efab",
+                    "\/modules\/backend\/widgets\/form\/partials\/_field_dropdown.php": "5929ccdedf5bd48188b40cd18bc9d1df2860bb5a06b585e6749be50fad3ac7ae",
+                    "\/modules\/backend\/widgets\/form\/partials\/_field_switch.php": "a3a522f24de95692815bbbd62b3e3e2577058a4021597d2bc0af4c10bcfca54a",
+                    "\/modules\/backend\/widgets\/mediamanager\/assets\/css\/mediamanager.css": "2db8a2236b679cc9b9f084384cd61c842334f46361707ec40fecc362cf3b9f66",
+                    "\/modules\/backend\/widgets\/mediamanager\/assets\/js\/mediamanager-browser-min.js": "836376ba856f1307c3fd404d0c0af4c2063a7d11ec76355358b35dbc8dd047cc",
+                    "\/modules\/backend\/widgets\/mediamanager\/assets\/js\/mediamanager.js": "cb6951d3a434c94d9301f488bd60681c5947913990abe435e4477166e36be418",
+                    "\/modules\/backend\/widgets\/mediamanager\/assets\/less\/mediamanager.less": "e376995ad4363291fb23a81690f36de63c630b1245bf50edf0af9eaa6a149bc1",
+                    "\/modules\/backend\/widgets\/mediamanager\/partials\/_item-icon.php": "932f5032f086c8cb12a31e93b79353dfde16bbf7373d3b110e51a43acb249e06",
+                    "\/modules\/backend\/widgets\/mediamanager\/partials\/_item-sidebar-preview.php": "b20cdda50c0b5ec861ae393f70fe4cdf83d96ffdea2f473747a66baff500cfca",
+                    "\/modules\/cms\/twig\/FrameworkNode.php": "5343d8685bd24a600d7bae803523f6ff5f2e5058d25a870dfec8d5f391c20b33"
                 }
             }
         }
