@@ -2,6 +2,7 @@
 
 ## UX/UI Improvements
 - Improved UX when invalid dates are present in a datepicker field by displaying a warning message and allowing the user to edit those values. Also improved support for date values that use `.` as a separator.
+- Removed the encryption setting from the backend Mail Settings page as it is redundant now.
 
 ## API Changes
 - The `Illuminate\Http\Middleware\HandleCors` middleware is now included in the core HTTP kernel by default. In order to start using the CORS support added by this change add the `config/cors.php` file to your project and configure it accordingly.
@@ -14,6 +15,7 @@
 ## Bug Fixes
 - Fixed an issue where `HasOneThrough` and `HasManyThrough` relationships were not taking the `count` and `scope` relationship configuration options into account.
 - Fixed an issue where `ignore_missing` wasn't being respected in the `source()` Twig function.
+- Hidden / disabled fields are no longer excluded from the form data in the Form's `onRefresh` handler.
 
 ## Dependencies
 - Twig has been locked to 3.8 as 3.9 introduces a breaking change. 3.9+ will be supported in the next release.
