@@ -29,6 +29,7 @@
 - Fixed issue where the `RelationManager` FormWidget was overriding the default configuration of the `RelationController` even when the overrides were not explicitly set on the field instance.
 - Fixed issue where creating themes from the backend using the `blank` scaffold would fail.
 - Fixed issue where custom File models could not use string keys (i.e. UUIDs) as their primary key when using the default backend partials.
+- Fixed issue where Pivot models were not being properly initialized with their attributes causing problems when the pivot record contained `jsonable` attributes used by repeaters / nested forms.
 
 ## Security Improvements
 -
