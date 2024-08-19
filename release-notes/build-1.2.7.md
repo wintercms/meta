@@ -9,6 +9,7 @@
 - Improved the UX of drag and drop sorting of tree views.
 - Disabled autocomplete on `password` and `sensitive` field types by default.
 - Added new `user:create` CLI command to create a new backend user from the CLI.
+- Added new `winter:util purge resized` CLI command to delete all previously cached images from the resizer.
 - Added support for "asset prioritization / load ordering" to the `AssetMaker` trait through the use of a new `order` system attribute that can be provided.
 
 ## API Changes
