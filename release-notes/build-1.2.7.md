@@ -77,6 +77,7 @@
 - Fixed issue where the Mix webpack config wasn't being removed after it was no longer required.
 - Fixed issue where sometimes event listeners for model events would be bound multiple times.
 - Disabled the `--relative` flag for `winter:mirror` on Windows because Windows doesn't support relative symlinks.
+- Properly escape the SQLite database path when running `winter:env` on Windows.
 
 ## Security Improvements
 - Added the `$requiredPermissions` property to the default controller stub used by `create:controller`.
