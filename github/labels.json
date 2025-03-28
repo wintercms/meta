@@ -1,152 +1,87 @@
 [
-	{
-		"name": "Type: Unconfirmed Bug",
-		"color": "F7C6C7",
-		"description": ""
+    {
+        "name": "accepted",
+        "color": "009800",
+        "description": "Issues that have been accepted by the maintainers for inclusion"
     },
     {
-		"name": "Type: Bug",
-		"color": "E11D21",
-		"description": ""
+        "name": "blocked",
+        "color": "cccccc",
+        "description": "Issues/PRs that cannot proceed at this point in time"
     },
     {
-		"name": "Type: Conceptual Enhancement",
-		"color": "BFE5BF",
-		"description": ""
+        "name": "duplicate",
+        "color": "BFD4F2",
+        "description": "Issues that are a duplicate of another reported issue"
     },
     {
-		"name": "Type: Enhancement",
-		"color": "84B6EB",
-		"description": ""
+        "name": "enhancement",
+        "color": "84B6EB",
+        "description": "PRs that implement a new feature or substantial change"
     },
     {
-		"name": "Type: Maintenance",
-		"color": "FBCA04",
-		"description": ""
+        "name": "hacktoberfest",
+        "color": "EB6420",
+        "description": "PRs to be included in Hacktoberfest"
     },
     {
-		"name": "Type: Discussion",
-		"color": "006b75",
-		"description": ""
+        "name": "hacktoberfest-acccepted",
+        "color": "F9D0C4",
+        "description": "PRs that are accepted by the maintainers as valid Hacktoberfest entries"
     },
     {
-		"name": "Type: Question",
-		"color": "CC317C",
-		"description": ""
-    },
-
-
-    {
-		"name": "Status: Archived",
-		"color": "000000",
-		"description": ""
+        "name": "help wanted",
+        "color": "61d8af",
+        "description": "Issues/PRs that are good candidates for new contributors to look into"
     },
     {
-		"name": "Status: Accepted",
-		"color": "009800",
-		"description": ""
+        "name": "high priority",
+        "color": "B60205",
+        "description": "Issues that need to be more critically actioned"
     },
     {
-		"name": "Status: Blocked",
-		"color": "E11D21",
-		"description": ""
+        "name": "low priority",
+        "color": "1D76DB",
+        "description": "Issues that are backlogged for when things are less busy"
     },
     {
-		"name": "Status: Completed",
-		"color": "006B75",
-		"description": ""
+        "name": "maintenance",
+        "color": "FEF2C0",
+        "description": "PRs that fix bugs, are translation changes or make only minor changes"
     },
     {
-		"name": "Status: In Progress",
-		"color": "CCCCCC",
-		"description": ""
+        "name": "needs docs",
+        "color": "5319e7",
+        "description": "Issues/PRs that require changes to the documentation to be completed"
     },
     {
-		"name": "Status: On Hold",
-		"color": "E11D21",
-		"description": ""
+        "name": "needs pr",
+        "color": "5319E7",
+        "description": "Issues that are awaiting a PR to be submitted"
     },
     {
-		"name": "Status: Response Needed",
-		"color": "b60205",
-		"description": ""
+        "name": "needs response",
+        "color": "5319E7",
+        "description": "Issues/PRs where a maintainer is awaiting a response from the submitter"
     },
     {
-		"name": "Status: Review Needed",
-		"color": "FBCA04",
-		"description": ""
+        "name": "needs review",
+        "color": "FBCA04",
+        "description": "Issues/PRs that require a review from a maintainer"
     },
     {
-		"name": "Status: Revision Needed",
-		"color": "E11D21",
-		"description": ""
+        "name": "needs test case",
+        "color": "7941F5",
+        "description": "Issues/PRs that need a test case to be implemented"
     },
     {
-		"name": "Status: Testing Needed",
-		"color": "7e45ef",
-        "description": "",
-        "aliases": [
-            "testing needed"
-        ]
-    },
-
-
-    {
-		"name": "Priority: Critical",
-		"color": "E11D21",
-		"description": ""
+        "name": "stale",
+        "color": "000000",
+        "description": "Issues/PRs that have had no activity and may be archived"
     },
     {
-		"name": "Priority: High",
-		"color": "EB6420",
-		"description": ""
-    },
-    {
-		"name": "Priority: Medium",
-		"color": "FBCA04",
-		"description": ""
-    },
-    {
-		"name": "Priority: Low",
-		"color": "009800",
-		"description": ""
-    },
-
-
-    {
-		"name": "duplicate",
-		"color": "BFD4F2",
-		"description": ""
-    },
-    {
-		"name": "good first issue",
-		"color": "fef2c0",
-		"description": ""
-    },
-    {
-		"name": "hacktoberfest",
-		"color": "EB6420",
-		"description": ""
-    },
-    {
-		"name": "help wanted",
-		"color": "61d8af",
-		"description": ""
-    },
-    {
-		"name": "third party",
-		"color": "CCCCCC",
-		"description": ""
-    },
-	{
-		"name": "invalid",
-		"color": "e4e669",
-		"description": ""
-	},
-	{
-		"name": "wontfix",
-		"color": "333333",
-		"description": ""
-	}
+        "name": "third party",
+        "color": "C5DEF5",
+        "description": "Issues/PRs that are dependent on changes made to a third-party library"
+    }
 ]
-

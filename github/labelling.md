@@ -1,50 +1,40 @@
-The Winter CMS, WinterRain, & RainLab GitHub organizations use the following system of labels for managing issues and pull requests. Every issue  / pull request should generally at least have a Type label and Status label assigned to them. Priority & Miscellaneous labels can be assigned as applicable.
+The Winter CMS organisation uses the following system of labels and issue types for managing issues and/or pull requests.
 
-## Types
-| Label                        | Description / Purpose                                                                              |
-|------------------------------|----------------------------------------------------------------------------------------------------|
-| Type: Unconfirmed Bug        | Report that hasn't been verified / reproduced by a maintainer or trusted community member yet      |
-| Type: Bug                    | Report that has been identified / verified as an issue requiring resolution                        |
-| Type: Conceptual Enhancement | Proposed enhancement that has not been implemented yet but is still in the discussion stage        |
-| Type: Enhancement            | Proposed enhancement that has been accepted / implemented                                          |
-| Type: Maintenance            | Minor maintenance to the code base (i.e. minor bug fixes, styling fixes, translation improvements) |
-| Type: Discussion             | Issue that is meant for discussion between members of the community                                |
-| Type: Question               | Issue that is actually just a question                                                             |
+## Issue Types
 
+These are assigned to issues based on the type of issue being reported.
 
-## Statuses
-| Label                        | Description / Purpose                                                                                |
-|------------------------------|------------------------------------------------------------------------------------------------------|
-| Status: Archived             | Has not seen any activity in 60 days, used to prompt stakeholders to take action. After 3 days, archived issues/PRs are automatically closed. |
-| Status: Accepted             | Enhancement that has been approved in theory.                                                        |
-| Status: Blocked              | Blocked from progressing by something (usually another related issue / PR)                           |
-| Status: Completed            | Fix is completed and merged into the main development branch |
-| Status: In Progress          | Currently being worked on                                                                            |
-| Status: On Hold              | Put on hold for now but will be worked on again in the future                                        |
-| Status: Response Needed      | Requires / is waiting on a response from at least one of the participants                            |
-| Status: Review Needed        | Requires review from a maintainer or trusted community member                                        |
-| Status: Revision Needed      | Requires changes before it can be accepted                                                           |
-| Status: Testing Needed       | Requires testing before it can be accepted                                                           |
+| Issue Type | Description |
+| ---------- | ----------- |
+| Bug | A reported bug that has been confirmed by the maintainers and is awaiting a fix. |
+| Enhancement | A new feature or substantial change that has been accepted by the maintainers for future implementation. |
+| Unconfirmed Bug | A reported bug that has not yet been confirmed by the maintainers. |
+| Proposal | A proposed enhancement, maintenance or feature. (ie. a pre-pull request discussion) |
+| Maintenance | Minor maintenance (ie. bug fix, styling fix, small improvement or language tweak) |
+| Discussion | An issue that is used for discussion. This can be for pre-pull requests or if the maintainers are seeking comment. |
 
+> **NOTE:** In general, we recommend using GitHub Discussions for proposals and discussion.
 
-## Priorities
-| Label                        | Description / Purpose                                                                             |
-|------------------------------|---------------------------------------------------------------------------------------------------|
-| Priority: Critical           | Critical issue that needs to get addressed immediately - breaking build, composer issue, security |
-| Priority: High               | Issue that should be resolved for inclusion in the next build                                     |
-| Priority: Medium             | Issue that is on the horizon to be addressed at some point                                        |
-| Priority: Low                | Issue / PR that in theory would be accepted, but maintainers aren't planning on working on it.    |
+## Labels
 
+Labels can be assigned to issues and pull requests, and summarise the statuses of each. Some labels we intend to only use for a single type of submission.
 
-## Miscellaneous Labels
-
-| Label                        | Description / Purpose                                                                    |
-|------------------------------|------------------------------------------------------------------------------------------|
-| duplicate                    | Duplicate of another issue / PR and is being closed in favour of the other               |
-| good first issue             | Good candidate for newcomers to the project to begin contributing on                     |
-| hacktoberfest                | Good fit for Hacktoberfest contributions                                                 |
-| help wanted                  | Makes the issue / PR show up in GitHub's list of Help Wanted issues / PRs                |
-| PostgreSQL                   | Issue / PR is related to PostgreSQL compatibility                                        |
-| third party                  | Not related to the repository, it must be handled by a third party instead               |
-| wrong branch                 | Should not be used anymore as maintainers can edit the branch a PR is made to themselves |
-| Website / Marketplace / Docs | Issue is related to the Winter CMS.com marketplace or documentation                      |
+| Label | Issues? | Pull Requests? | Description |
+| ----- | ------- | -------------- | ----------- |
+| accepted | Yes | No | Issues that have been accepted by the maintainers for inclusion. Used generally for pre-pull request discussions or proposals. |
+| blocked | Yes | Yes | Issues and pull requests that cannot proceed at this point. The reason for this will be found in the issue or PR's comments. |
+| duplicate | Yes | No | Issues that are a duplicate of another reported issue. |
+| enhancement | No | Yes | Pull requests that implement a new feature or make a substantial change. This is at the determination of the maintainers. |
+| hacktoberfest | No | Yes | The pull request is requested by the submitter to be included in [Hacktoberfest](https://hacktoberfest.com/), of which Winter is a supporter of. |
+| hacktoberfest-accepted | No | Yes | The pull request is accepted as a valid Hacktoberfest entry. |
+| help wanted | Yes | Yes | The maintainers have requested help with this issue or pull request. These are good candidates for new contributers to the project. |
+| high priority | Yes | No | The maintainers have deemed that this issue needs to be more critically actioned. |
+| low priority | Yes | No | The maintainers have deemed that this issue should be back-logged until things are less busy. We are still very much happy to accept pull requests should an external contributor wish to action this issue. |
+| maintenance | No | Yes | Pull requests that fix bugs, update language files or make only minor changes. |
+| needs docs | Yes | Yes | Issues or pull requests that require documentation changes in order to be completed. These can be actioned by the maintainers or external contributors. |
+| needs pr | Yes | No | Issues that require a pull request to be completed. This is used by the maintainers when they accept a reported issue but need an external contributor to provide the pull request. |
+| needs response | Yes | Yes | Issues or pull requests in which a maintainer is seeking more information regarding the submission. This is only used for questions asked in the comments - if a pull request needs changes to the code itself, this will be done through code review instead. |
+| needs review | Yes | Yes | Issues or pull requests that require a review from a maintainer. |
+| needs test case | Yes | Yes | Issues or pull requests in which a maintainer requires a test case to be submitted in order to further investigate or resolve the issue or pull request. |
+| stale | Yes | Yes | Issues and pull requests that have had no recent activity and may be archived by the maintainers at any time. |
+| third party | Yes | Yes | Issues and pull requests that are dependent on changes being made to a third-party library or system. |
