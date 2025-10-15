@@ -1,6 +1,6 @@
 {
     "_description": "This is the source manifest of changes to Winter CMS for each version. This is used to determine which version of Winter CMS is in use, via the \"winter:version\" Artisan command.",
-    "_created": "2025-06-26T01:33:49+00:00",
+    "_created": "2025-10-15T20:53:58+00:00",
     "manifest": [
         {
             "build": "1.0.420",
@@ -10964,6 +10964,59 @@
                     "\/modules\/backend\/controllers\/users\/create.php",
                     "\/modules\/backend\/controllers\/users\/index.php"
                 ]
+            }
+        },
+        {
+            "build": "1.2.9",
+            "parent": "1.2.8",
+            "modules": {
+                "system": "8df8e288cf8e3488b9a7dc8c05107217f17774d6707b761e76cbbaed3447d16d",
+                "backend": "b797b07604fc5edd4d29f53a2d86cc85c462f6c6e033e9331f45cebf138effa0",
+                "cms": "eb1ddac3c5c0c14aeb8a85cc89245420f8e5ac71d18c0964a0ec493e701ccac9"
+            },
+            "files": {
+                "modified": {
+                    "\/modules\/system\/ServiceProvider.php": "ba7d3b32524897ed6480ed231e11664339587bae55b2db88923154104ebbf017",
+                    "\/modules\/system\/assets\/js\/snowboard\/ajax\/Request.js": "2c9f53f92e453326d53f0f1d7f4f82d30c68f6200496840c985b2171125c72eb",
+                    "\/modules\/system\/classes\/PluginManager.php": "ca80755bc62e626abd9f574fd4b34fab0c2ae9ea9a265a57aefea3614c2970ca",
+                    "\/modules\/system\/classes\/UpdateManager.php": "ace91f39443fa0efae42b9ab4add1f1788a69d8ae35d91e8263294a0045bd5bd",
+                    "\/modules\/system\/console\/CreateCommand.php": "efa467ab5c3620fe52fde512ef661bfcd80f1d2e1268d19d2b190558517b2139",
+                    "\/modules\/system\/console\/WinterUtil.php": "440404f4f94edf2fec9fd1d8546a3b79d5c8cae7884c2e2588b3a87b49a68a94",
+                    "\/modules\/system\/console\/asset\/AssetCompile.php": "895d1f22e8171278a2451682355933eb3da07d6097ccc6d9a8ad292d9e25355f",
+                    "\/modules\/system\/console\/asset\/fixtures\/config\/vite\/vite.config.mjs.fixture": "f337fdb6c92d066839ec7c97e50a0ad7be613ef0fda778d40aaa0d7fdb12391f",
+                    "\/modules\/system\/console\/asset\/vite\/ViteCompile.php": "c75eb6d759ef4493b3028502c35620bccc535aaedde5e243a6507dc1057386a8",
+                    "\/modules\/system\/console\/scaffold\/command\/command.stub": "7c790aca1215ccefc2faef1f19cd390f954673b02f7c322db525e1232160ccdd",
+                    "\/modules\/system\/lang\/en\/lang.php": "896518d3c8057b6cb1edf745c69ab3a0a1fa2e83c9c885bc51d7d4e19611be33",
+                    "\/modules\/system\/models\/MailSetting.php": "0ef8fae74d0e8db8946c6f052b0cd02fcf9f5d45c17b1125b30a5d351e93c5b9",
+                    "\/modules\/system\/models\/mailsetting\/fields.yaml": "6038866a61f4ce24969da19914f8fcbb3541fc52ed93b096bbda27e1b90a8724",
+                    "\/modules\/system\/traits\/AssetMaker.php": "69793d5fe34adb508e3f46e48a1c5906a2e58aacbcb16e6806fd9f96fbd79036",
+                    "\/modules\/system\/traits\/ViewMaker.php": "4b2297c8258bdf21042924efd9917d106d1e14d9513d2ae6691fe8e55214a75c",
+                    "\/modules\/backend\/ServiceProvider.php": "6819f89dbbb7eeb434c63d829a66588b1ba2be238e1974e82e933bb536eb369d",
+                    "\/modules\/backend\/behaviors\/RelationController.php": "ddf588fe45c4e6faf63f60df6a7069ba622ef681d5e2a946eacbcad2a6f085f7",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/create\/_fancy.php": "bc52c2e1075dcb4a2dd3b653ff63318598745d3a48c6c850f9b9692b3d142aca",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/create\/_sidebar.php": "3787dd6b9dd1e1f2c64c53997b6876d4493b6a584771a3fcd5722fa34d5e2874",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/create\/_standard.php": "49eb63881f15872e8900c93c3c9fe99daa07ba64d36ff82d343bf0ad41ab4291",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/preview\/_fancy.php": "acfc807957f47652d740b19b35fbfb68eceb2a32dd0c8b006bd9eba01cf0291f",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/preview\/_sidebar.php": "419ce16c7524a70ef3fdaaba16e1afaeba31501591707169c21f5af1f6fdb7e0",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/update\/_fancy.php": "bc52c2e1075dcb4a2dd3b653ff63318598745d3a48c6c850f9b9692b3d142aca",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/update\/_sidebar.php": "cdcc623d6aeab2f63348f1a6aa4654af8add0c8cff2e5e81b7b80fab84279612",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/update\/_standard.php": "49eb63881f15872e8900c93c3c9fe99daa07ba64d36ff82d343bf0ad41ab4291",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/update\/fancy\/_toolbar.php": "a3def9f6ba6ab8deb3cf37ea7f6c75e2c79df82801bebfd8ee69e878910d9ee9",
+                    "\/modules\/backend\/console\/scaffold\/controller\/fancy\/create.stub": "bc52c2e1075dcb4a2dd3b653ff63318598745d3a48c6c850f9b9692b3d142aca",
+                    "\/modules\/backend\/console\/scaffold\/controller\/fancy\/preview.stub": "1898c198c7df76f55037b1429f859b485c850aa2a31b0bcead46a90dda8bbead",
+                    "\/modules\/backend\/console\/scaffold\/controller\/fancy\/update.stub": "bc52c2e1075dcb4a2dd3b653ff63318598745d3a48c6c850f9b9692b3d142aca",
+                    "\/modules\/backend\/console\/scaffold\/controller\/sidebar\/create.stub": "79eea3303c20bf62c93d712c75ac79a4fa85d0d24a12105de89b906ef572d2bd",
+                    "\/modules\/backend\/console\/scaffold\/controller\/sidebar\/preview.stub": "4f17887a6ba7c25336dfd7c8d2a9fa11491411b77cc9caf7a9c910dc2cc9730a",
+                    "\/modules\/backend\/console\/scaffold\/controller\/sidebar\/update.stub": "15d95d9353b6f92e11c25c0e201634c3ac3a2a1db2a87efdad7d1bb5debf8795",
+                    "\/modules\/backend\/console\/scaffold\/controller\/standard\/create.stub": "7d0cd964f4fc56c2424c143e3765b1b98968cfdd677cc2759f3f19437287e0f0",
+                    "\/modules\/backend\/console\/scaffold\/controller\/standard\/update.stub": "b483277f581c624b25496cca1a107ec237e17d1f1d6514e3f10dbb79da5b4af4",
+                    "\/modules\/backend\/formwidgets\/FileUpload.php": "95c72f927bd9eef29ca11bff890a0074629b7c6ed9f0bbcf98fb4fffb2b2a947",
+                    "\/modules\/backend\/formwidgets\/fileupload\/partials\/_file_single.php": "3dddf0f9598848c0a605f5f3b725f2d445d2d6c5e6b9f836660a6e7646b30152",
+                    "\/modules\/backend\/traits\/ErrorMaker.php": "b1ed0551824d64268ce30ea86558fc44cde4f527d586b7cf691ea0497614d7cf",
+                    "\/modules\/backend\/widgets\/table\/assets\/js\/build-min.js": "5ce3223ef5e3cc703adc3296000687cac53088c2ce79463cedfaf41e0e8f4c06",
+                    "\/modules\/backend\/widgets\/table\/assets\/js\/table.js": "23c1da353b88d88949d722964bbd4c254e68c3efac390308d93e53fc6c72b9cd",
+                    "\/modules\/cms\/classes\/CmsObject.php": "5644eda659ebb57d2dd80631401b56a918e1074f37517e012f3adc226d454059"
+                }
             }
         }
     ]
