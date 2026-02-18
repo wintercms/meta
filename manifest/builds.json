@@ -1,6 +1,6 @@
 {
     "_description": "This is the source manifest of changes to Winter CMS for each version. This is used to determine which version of Winter CMS is in use, via the \"winter:version\" Artisan command.",
-    "_created": "2026-02-04T20:39:11+00:00",
+    "_created": "2026-02-18T23:12:36+00:00",
     "manifest": [
         {
             "build": "1.0.420",
@@ -11318,6 +11318,38 @@
                     "\/modules\/backend\/formwidgets\/codeeditor\/assets\/vendor\/ace\/worker-php.js",
                     "\/modules\/backend\/formwidgets\/codeeditor\/assets\/vendor\/emmet\/emmet.js",
                     "\/modules\/backend\/controllers\/preferences\/_field_editor_preview.php"
+                ]
+            }
+        },
+        {
+            "build": "1.2.11",
+            "parent": "1.2.10",
+            "modules": {
+                "system": "49b9b09707f3794de87e5a10ed9f893611812e24ce0d025ec8406b1fd27360c9",
+                "backend": "8c53cec29ef9deb2baf25f036f2bb3f1f2174c0ee2686f0b6110e6e56c0a43f2",
+                "cms": "472d4bddcf4eaf6ba56d561f7a8ffcaa5cff98331e2e5efc015bcef3eb5c1a9e"
+            },
+            "files": {
+                "added": {
+                    "\/modules\/backend\/controllers\/users\/config_relation.yaml": "f0d6f5d100b7a787e6ceaa0c1deeef8d3af1ec801ef387ec39a30c53e48e1f4e"
+                },
+                "modified": {
+                    "\/modules\/system\/controllers\/Updates.php": "3e50e59fa017fa4eefe5c08ec35bb6f54e426e72118f761f672994cf9bbdd972",
+                    "\/modules\/backend\/ServiceProvider.php": "2b1df05460e8b66d53089ae64aa428e411da0d44424f883f4e32c6ff4ff9af9c",
+                    "\/modules\/backend\/controllers\/Users.php": "5042ec0b94be9370ebc1bb5270154630852086e90d84a426af719c867c09855a",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/README.md": "658d5b080f346ad0f0d6910ae6762acd02fcd0531c6b03a3ab3b255f7ddc2349",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle.js": "a96a8662b3aa4ac7ddd37cca81c9545e9ed8ddefeae0aa21ab8b4c1447ddba8d",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/codeeditor.js": "ebf757f8d1fbbc0838a5c35fd5635fca6d733c04712385f6b90a81ca784c8f30",
+                    "\/modules\/backend\/lang\/en\/lang.php": "01d578ae412ce8de5effabfd508d6d4da6c05248b15b0610b62c2fe0e9bbe139",
+                    "\/modules\/backend\/models\/User.php": "6597ac8f98ff02531efd5e1f9b60146523d6289b512886bff10f6dca190d004b",
+                    "\/modules\/backend\/models\/user\/fields.yaml": "ddbfe96401dbbba063898cd85ae05a48926bc09f805da4f9201c6104a1130f61",
+                    "\/modules\/backend\/tests\/widgets\/FormTest.php": "fb7a0f47843818685869983b7a8556ba0897d58af583b5b76682d1f465303fa6",
+                    "\/modules\/backend\/widgets\/form\/partials\/_field_dropdown.php": "c2f5d21c59ba035d3a28c177654b91a6c9185401cc7f753310e57df0bda691e5",
+                    "\/modules\/cms\/controllers\/Index.php": "ee65a45ad84c4b244fc5535edff0468cf87c528dc0668f8792a30e7b9a0867ce",
+                    "\/modules\/cms\/widgets\/AssetList.php": "a72a1b8017b60b0166f978bad29151005e3e789685daa7d9fb60aa29f284e648"
+                },
+                "removed": [
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/847.js"
                 ]
             }
         }
