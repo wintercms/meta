@@ -1,6 +1,6 @@
 {
     "_description": "This is the source manifest of changes to Winter CMS for each version. This is used to determine which version of Winter CMS is in use, via the \"winter:version\" Artisan command.",
-    "_created": "2026-02-18T23:12:36+00:00",
+    "_created": "2026-02-20T20:58:32+00:00",
     "manifest": [
         {
             "build": "1.0.420",
@@ -11351,6 +11351,41 @@
                 "removed": [
                     "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/847.js"
                 ]
+            }
+        },
+        {
+            "build": "1.2.12",
+            "parent": "1.2.11",
+            "modules": {
+                "system": "d0d8d911c758942fcca730b3781455e8236639d65d355d261a45b6b3b02a5ae9",
+                "backend": "8240b67fad99dc2fa88d7cf6c13b9277b1bf05d1c9a0ebcd3ea81c204dace4d5",
+                "cms": "730bc3837dd91b6c8b173b3cecbbea2837aadeed3fc66870730a0c5c54c95781"
+            },
+            "files": {
+                "added": {
+                    "\/modules\/backend\/tests\/models\/UserTest.php": "2e2c9f61ac8a6ad1d4b7a7f07759b3a50e8b2c22ced2bb5ed2dec8e6c8cbf8ae",
+                    "\/modules\/backend\/widgets\/form\/partials\/_field_tel.php": "680dacaf60dd41d6f4cab537739e8bcc0c4242f7bc8edd2010de0526ff85053b"
+                },
+                "modified": {
+                    "\/modules\/system\/assets\/js\/build\/system.debug.js": "d152718f45f2ee277c94cb16dec2620638cf83ea471590e124b400ade62e8456",
+                    "\/modules\/system\/assets\/js\/build\/system.js": "3311797b41a065521bf2e557d2ba6fb23c30d8cf9984138426cc538cf331ce48",
+                    "\/modules\/system\/assets\/js\/snowboard\/build\/snowboard.base.debug.js": "49749bb82cd09d5d0e49c6b59cb6e5ef4d3b19bbd5c8a26f2fafc56aa1de9af8",
+                    "\/modules\/system\/assets\/js\/snowboard\/build\/snowboard.base.js": "7b7d9ff76b59ce55d99fe29213033b24f2b0fb51eb3dceaa06f2d1053d34a8d6",
+                    "\/modules\/system\/assets\/js\/snowboard\/build\/snowboard.data-attr.js": "74bfc9ece2ff435d1ad72edb027708985d61f2dfda2f02a4d8144a4b5c653f04",
+                    "\/modules\/system\/assets\/js\/snowboard\/build\/snowboard.extras.js": "8b14211aed83066aa5be373581689561e13dd517504f717129d364154e62dfc3",
+                    "\/modules\/system\/assets\/js\/snowboard\/build\/snowboard.request.js": "eec54dcb89f758bf2624fb14063f9d7466a1cd6adababc3b4cf5920fef529881",
+                    "\/modules\/system\/assets\/ui\/less\/form.less": "12afaf9ccdbea0c1b1e0697c97628a3bd78cfa79c04f8414aebeb7ee98e31573",
+                    "\/modules\/system\/assets\/ui\/less\/select.less": "9ad52371bdc5761c636b2b757ffed63d1b34ae9666f9dc36404bbff81c5d642f",
+                    "\/modules\/system\/assets\/ui\/storm.css": "605de62d6bf1bb1e5e6896b53dd5ae4c011a893c0d5b932d99caf14d98ff9541",
+                    "\/modules\/system\/assets\/ui\/vendor\/select2\/css\/select2.css": "fda66bf18d107818615e649b109d041fc7e081f5fe8e6de22fe4d4af8e01b9bf",
+                    "\/modules\/backend\/behaviors\/FormController.php": "311827734db77c3fc401fc382f61f9be408b1e6dfaf29db1e5580044672bf7db",
+                    "\/modules\/backend\/classes\/FormField.php": "52ec6692cc6885b8bfda15b53d491053b0cd76c28bae1e067c807e40565739f0",
+                    "\/modules\/backend\/lang\/en\/lang.php": "53bae6052688d2e7f9ac421b33e33c71ca83d868d5d93837dbaf2ee4358ffd10",
+                    "\/modules\/backend\/models\/User.php": "710d603e0672151ba5f04bb78b07b280540fd63f6f687961669d6faa33c3c955",
+                    "\/modules\/backend\/widgets\/form\/partials\/_field_url.php": "40647b7fd59725029fe9753f91d11846a3a79bc912047ea57bb4c16f7d02c2b5",
+                    "\/modules\/cms\/twig\/ScriptsNode.php": "3db09f826b9a5b2f04bf34c55868408abbf912bee4dce91b1aba6f90d60dcd53",
+                    "\/modules\/cms\/twig\/StylesNode.php": "2e81c150b5e80dff817af8e7edfe6528c37c0b9a3e8e1e035584e9ad1f000b08"
+                }
             }
         }
     ]
