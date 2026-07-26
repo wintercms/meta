@@ -21,6 +21,7 @@
 ## API Changes
 - Added support for the `schema:dump` command.
 - Enhanced `HasSortableRelations` for the new inline drag-and-drop sorting provided by the `RelationController`.
+- Resizer URLs now respond with a 301 redirect instead of a 302 redirect to the resized image.
 
 ## Bug Fixes
 - Improved handling of terminal signals on Windows.
@@ -32,10 +33,11 @@
 - Improved support for PHP 8.4 & 8.5.
 - Fixed issue where Monaco editor was triggering false dirty state on forms.
 - Fixed issue introduced in 1.2.10 where saving a relation with a User model could trigger authorization checks which could result in a 403 error if the user didn't have permission to update the User model.
+- Improved compatibility with managed hosts that restrict modifying the nginx configuration file by double encoding the dots in resizer URLs.
 
 ## Security Improvements
 - Fixed issue where environment variables could be leaked through the parsing of INI configuration values (CVE-2026-25125).
-- Improved LESS import security functionality.
+- Improved security of LESS & Javascript imports through the AssetCombiner.
 - Improved escaping of BrandSetting & EditorSetting custom CSS settings.
 - Fixed potential SQL injection with the backend Filter widgets.
 - Fixed potential user account bypasses by moving the My Account page to a dedicated controller.
