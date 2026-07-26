@@ -31,6 +31,7 @@
 - Fix infinite loop in form widget with circular dependsOn declarations.
 - Improved support for PHP 8.4 & 8.5.
 - Fixed issue where Monaco editor was triggering false dirty state on forms.
+- Fixed issue introduced in 1.2.10 where saving a relation with a User model could trigger authorization checks which could result in a 403 error if the user didn't have permission to update the User model.
 
 ## Security Improvements
 - Fixed issue where environment variables could be leaked through the parsing of INI configuration values (CVE-2026-25125).
@@ -43,6 +44,7 @@
 - Improved permission checking in the CMS / Theme Editor backend page.
 - Ensured FileUpload formwidget only ever looks at related file records.
 - Hardened Twig Security Policy / Safe Mode logic.
+- Improved user management protection checks by blocking changes to core relationships (avatar, groups, throttle) at the model level.
 
 ## Translation Improvements
 - Improved Ukranian translations.
