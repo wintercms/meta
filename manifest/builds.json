@@ -1,6 +1,6 @@
 {
     "_description": "This is the source manifest of changes to Winter CMS for each version. This is used to determine which version of Winter CMS is in use, via the \"winter:version\" Artisan command.",
-    "_created": "2026-02-20T20:58:32+00:00",
+    "_created": "2026-08-07T05:47:37+00:00",
     "manifest": [
         {
             "build": "1.0.420",
@@ -6126,6 +6126,22 @@
             }
         },
         {
+            "build": "1.0.477",
+            "parent": "1.0.476",
+            "modules": {
+                "system": "ee2cc3559d4836edcb2da0f49cb840f9a32e4ac0b532d370fdfa1297b8d03c34",
+                "backend": "c6f1f8c48f09b0e119ba164a666b08e668f5d7c1983d0bcbe6b85004e27d6213",
+                "cms": "305cfe97a52e43df45ff82692c293a39c3771fa83d9e910bc83ad212022de359"
+            },
+            "files": {
+                "modified": {
+                    "\/modules\/backend\/behaviors\/FormController.php": "e61568ed6f678410d1dc6510c1c8738493de8760c1b5fff2053012e55e4f7192",
+                    "\/modules\/backend\/lang\/en\/lang.php": "c54a152500748d704e61afb4f10de97430b27cc3f94d1ab64baf636d60909719",
+                    "\/modules\/backend\/models\/User.php": "f4d01bd6ae61c5233230504e5c821e7721de9105ab6ff018879f70976963ce37"
+                }
+            }
+        },
+        {
             "build": "1.1.0",
             "parent": "1.0.473",
             "modules": {
@@ -8432,6 +8448,22 @@
                 "modified": {
                     "\/modules\/system\/twig\/SecurityPolicy.php": "a5f5db3a05b132fcc1f732874b954f9c96f5b69e6c4f3bd79bb7977a5d133040",
                     "\/modules\/cms\/classes\/Theme.php": "2049d367e64b7773418a7c4e1f55d4941c8e175cbbb8607c798334a3e0f9e1b6"
+                }
+            }
+        },
+        {
+            "build": "1.1.12",
+            "parent": "1.1.11",
+            "modules": {
+                "system": "ac007e45b7cba16b79439efe6c2a1eb06525f3506908c86c1e78f7b8b5a4218c",
+                "backend": "cba4bde429504e65f71d403dad014722b26771765be4303ac931c9ae4c03ee0f",
+                "cms": "89da8932d548e6a6f1aa445f5b82ac9b7ad69d91c15ced1d17439ccfefda30d7"
+            },
+            "files": {
+                "modified": {
+                    "\/modules\/backend\/behaviors\/FormController.php": "eddecdc9f735f98fdda89c63789c6094ca2e937117f4aca82c90b7362b569c42",
+                    "\/modules\/backend\/lang\/en\/lang.php": "c9540202e85440225cfc5d84b01b2334b6ce2bbbad92cc74d20e38f5c690ce15",
+                    "\/modules\/backend\/models\/User.php": "27110618d8e13565f81019dbb32702d47198786612fdfbe672c8fc4adab0eaf3"
                 }
             }
         },
@@ -11386,6 +11418,170 @@
                     "\/modules\/cms\/twig\/ScriptsNode.php": "3db09f826b9a5b2f04bf34c55868408abbf912bee4dce91b1aba6f90d60dcd53",
                     "\/modules\/cms\/twig\/StylesNode.php": "2e81c150b5e80dff817af8e7edfe6528c37c0b9a3e8e1e035584e9ad1f000b08"
                 }
+            }
+        },
+        {
+            "build": "1.2.13",
+            "parent": "1.2.12",
+            "modules": {
+                "system": "10bdcdc3035c892b0a9cdf1c8aca540e5d50113966c7270677a991635a8bcc9f",
+                "backend": "e0a78e857217b0da11a7625e8d5865bdd6923463df60325135944c0afde2bc7f",
+                "cms": "4708cb53634ea9d1a0bb343d8538a9067f57c23d0aa74e6f1f441b8bd7ee4625"
+            },
+            "files": {
+                "added": {
+                    "\/modules\/system\/tests\/js\/cases\/framework\/FormWidgetDependants.test.js": "2e86a04021b7b0461e5c13287f1735d92ec15e57047ff43757a93caa5921b9b5",
+                    "\/modules\/system\/tests\/js\/fixtures\/formWidget\/FormWidgetStubs.js": "9cf2ee5425632e7b0b140f28487eecd789b9f5a75790880d4dcd76c19b4b66e3",
+                    "\/modules\/system\/tests\/models\/MailBrandSettingTest.php": "68a84035fb0623fb0d79abd4dd56d1616b2193b2c24531fa2eb66e64b2fd74a9",
+                    "\/modules\/system\/twig\/GetAttrAdjuster.php": "787c31f9f523f4a97a2d8803ef3524f02233b36bff38fb9f3babf6c9cd4b4f14",
+                    "\/modules\/system\/twig\/node\/GetAttrNode.php": "18b91d0917ce01bc0410471ff23a20eac48d244909056556f71c94cbecdc058b",
+                    "\/modules\/system\/twig\/securitypolicy\/SafeCollection.php": "06413f0658c5c8f0fe8bc96f597aeb15970a26112db2d47803f1b9a8677fb863",
+                    "\/modules\/system\/twig\/securitypolicy\/SafePaginator.php": "84f06a95bb569acc3b53735bbc039fe4e7acf2718cdd4fc64ad6e69ef1b7c824",
+                    "\/modules\/backend\/controllers\/MyAccount.php": "aa75e6a269718005b2aeb87606516978b24f3f1beae0435e2d52222f729f6b8d",
+                    "\/modules\/backend\/controllers\/myaccount\/config_form.yaml": "b1152cf59c8abd4f6142d67757e621477a3116c6b82bbc89845e73f762bbbae9",
+                    "\/modules\/backend\/controllers\/myaccount\/index.php": "14edeb3d2a47c6f883925386697b71fabc94a3d7a159d5a7f8d14b9ccb16873e",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/2.js": "6766f5c775140958acc7a4ee1f218467a74e365a012340e3d64d15f478d36cb4",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/39.js": "c142801d90f3cd0668a33d2a65228897becec55eede83057658f2bbb31941e4e",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/54.js": "5294fc62d2afb62812a927a7baec2d45ebaecfcade5f545188afbd0ab38d3397",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/70.js": "25f8845cc233173ff1bc76218ef6067a049fb2106f252800cc0a938b8d45ed6d",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/114.js": "72c760bdee0d84c29a97b00318cc0c6f4882545f0d7565f7332c177055658306",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/133.js": "54ee6bd9714737950e810c2fcd4389ef8a3a6d346deafb031fba498cc573fa93",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/134.js": "5eff44fc4599c99837b09950de798bdaa1c2ec04ab617c8bf36ec1d2d704e860",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/202.js": "ff50fe58ceea60e903dede0e4d4ab7855b1addf3d8d87a9005dc0225ce4c76c8",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/257.js": "8e937b8fcd3d2f5b8d88698caf3fdb63f3775da11a662cb5f15aff44cc1780f9",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/294.js": "80b4d6ebe98acea1f5e59af76d408f53eadd74c9760608eac5b2ce5a935a8167",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/326.js": "ebf4b554e9088a5ce879eba2c1b89abe9ce49e2efb04831e7f7bb634ee5ef4bc",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/342.js": "23f72c691600e833dfe42510f2b0e3f11f9d5f4563b38f631dc4d8a297be11c7",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/726.js": "a56f1d8656db667b29aaa7d002b975ad199300025004192e99dc1c70bb3abf4f",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/832.js": "61a15bacac587c49ec306b25e898fca4645c4483a7cd86cacce1496f2c7166ae",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/851.js": "487c7e3e91af4f8636b79762446fd41e741efeb8a92258bc4078f5f7763a9216",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/910.js": "890a18b5dfc409256ea0ffee18e8bd56bfc4658d70b39ec1891acc4381942289",
+                    "\/modules\/backend\/tests\/behaviors\/RelationControllerPivotTest.php": "8a946b4dfd7cc9dac49b7c8024117336c7d8ea42ac50c8efa49309317d63bf08",
+                    "\/modules\/backend\/tests\/classes\/ControllerPostbackTest.php": "d051a5884da134df67c901201794044f17086af8cda2b40ed44adcf64522876b",
+                    "\/modules\/backend\/tests\/controllers\/MyAccountTest.php": "3e2d1c8edf936357fc0f1760a691d35a0cef425775239fc3fcc244242d96b1f2",
+                    "\/modules\/backend\/tests\/fixtures\/models\/PivotRelationFixture.php": "dcefd2b3caa3b587d13fb45c0997e13e7adf94fc486e07b34e97305b60fd6660",
+                    "\/modules\/backend\/tests\/fixtures\/models\/SortableFixture.php": "3c7e4daddf2a2234946178d5f1fcb5dd2ec5fc929c7ed30206f5308782ebec41",
+                    "\/modules\/backend\/tests\/formwidgets\/FileUploadScopingTest.php": "f0f93b06d0074535825fc7b37199c1200270cfd4bd2047091b4e2b50e552d48b",
+                    "\/modules\/backend\/tests\/models\/BrandSettingTest.php": "805afeb5aa76fdde8cb48b771a50cb94be33a26bb85482deaeaba38d1a27dde9",
+                    "\/modules\/backend\/tests\/models\/EditorSettingTest.php": "a4c411fa0b563fc27e5a604262f179c67d4bc659af4ebae7f8c35177f83a814b",
+                    "\/modules\/backend\/tests\/models\/UserAuthorizationTest.php": "4dfc66b7587562701a0ee2f5409a50375abfc06b97d8b6bf77151b031866b950",
+                    "\/modules\/backend\/tests\/widgets\/ListsSortableTest.php": "f969d856cb327bd6eaf08231458de815331a4b7a4d52a15cf031160837a0cb72",
+                    "\/modules\/backend\/widgets\/lists\/assets\/css\/winter.list.sortable.css": "033359e0e2a9f3ad97ea47f0a199299ba4b8588a2611be934bedaa2ed0cf7a2e",
+                    "\/modules\/backend\/widgets\/lists\/assets\/js\/dist\/winter.list.sortable.js": "b0f520dd768ebf476ca0b1c581387bd6113ad6c54dc359661f52c414bf3fe34e",
+                    "\/modules\/backend\/widgets\/lists\/assets\/js\/src\/winter.list.sortable.js": "4dd20350482b66f31d674732b3b4f8cc5b08087f85105ba4f2b572a1e1ef840e",
+                    "\/modules\/cms\/tests\/classes\/ControllerPostbackTest.php": "f893a52577e6aec60b0e68980bdc8b7aaaa387d4fbb1b76fc08fbcee2254bffd",
+                    "\/modules\/cms\/tests\/controllers\/IndexPermissionTest.php": "6d780dfe757761a320a2c7c8d8474ab1fbe928dc88c1845cc1c9c67b56aa2ad1",
+                    "\/modules\/cms\/tests\/widgets\/AssetListPermissionTest.php": "a5ee6effee7a18b135b7900c669124a72ee49dfd045dfd2dacb903f22b7bb8f1"
+                },
+                "modified": {
+                    "\/modules\/system\/classes\/CombineAssets.php": "06b2d710cbc7ae39b9a4c53cf2c23f0cbbf160a606ea56743cbaff2db87210e4",
+                    "\/modules\/system\/classes\/FileManifest.php": "89fdad6ff6c885ab5b19a86ae5b186279ac877f9c379648bff5c39129cfc308d",
+                    "\/modules\/system\/classes\/ImageResizer.php": "42fde560934abdd8bfe45b097905a2d2ff587584de251b92b0c33cf440e230b7",
+                    "\/modules\/system\/classes\/MarkupManager.php": "7e6b5f14ea7a4ef7b78a78955ccf0e3e1153068722afbac0d5e86bc294742ca0",
+                    "\/modules\/system\/classes\/SourceManifest.php": "0bf2e341f7d14c9e5fc1c2875b8929ed4d6064221933b0b1d089ba41e8674bfe",
+                    "\/modules\/system\/classes\/SystemController.php": "4f5f8ffc96c1d1d53790f8725655b19ab8889cd1bfd9b66cc435d2080c6ec480",
+                    "\/modules\/system\/classes\/UpdateManager.php": "e761af59364d198ccdf547f52bbc6dea09856ceac9158b150db49cc78a3564d3",
+                    "\/modules\/system\/console\/PluginRemove.php": "b1c904bea053179ca8f06f1c52486dac5f5345e4aee0ea269c4a57b4840663c1",
+                    "\/modules\/system\/console\/PluginRollback.php": "28e6932b5959486815dfc66466377b060ffca19bd6d4b13702bbe3fc4068036b",
+                    "\/modules\/system\/controllers\/eventlogs\/_field_details.php": "c539be90ee4bed1593168a018e6fd393560f1e058f93d20587beba22a83872b7",
+                    "\/modules\/system\/lang\/en\/lang.php": "8232e5525bff8b978244e8b9ad3d20db4401252d25715191a8c5b7a27bebbb83",
+                    "\/modules\/system\/lang\/uk\/lang.php": "fcd35a4eef5bf538f78818bbab2a27922cabc2b195a999db33f63d251617c177",
+                    "\/modules\/system\/models\/MailBrandSetting.php": "0e36bd4e2a7809bc92d8102dc8882ab5b124cdd8f614e545d9ecbca290b40aad",
+                    "\/modules\/system\/tests\/classes\/CombineAssetsTest.php": "ba96b215b194e5afea3b724167d0d4016e7bb9f49b2063dc6d4e39a5ff220fc1",
+                    "\/modules\/system\/tests\/classes\/ImageResizerTest.php": "ed260ab7ff0caffbde5ef47a66181b1145d3ccb08a9fec5b0bb603408cfa5497",
+                    "\/modules\/system\/tests\/fixtures\/plugins\/winter\/tester\/components\/Categories.php": "fc4d443aa48b2ef6cc579424f2a1c63f23e37bc05e8d57b476ad8d9787b2e4d7",
+                    "\/modules\/system\/tests\/fixtures\/plugins\/winter\/tester\/components\/Comments.php": "565b94296f5339143519b8cbeb8ab0a9ec18f4b30dc7c79971338fba29926097",
+                    "\/modules\/system\/tests\/traits\/AssetMakerTest.php": "9bb0c1cc6c59752b11569dd62f96e2faef136bdfd86cc1f9b687d470470034ca",
+                    "\/modules\/system\/tests\/twig\/SecurityPolicyTest.php": "c333fd2776ae8808e504a941a87d0293d1721fe8fafebad1e5d06929333fc525",
+                    "\/modules\/system\/traits\/AssetMaker.php": "09fc5f2d84a0e8d8dce38dffab7e69b4f2a398e14a1b37547159637d7e11cf6e",
+                    "\/modules\/system\/twig\/SecurityPolicy.php": "973a2e1f9d6e9b88afd082769f8a74a3964707292a1c888555d883df5bdacdbf",
+                    "\/modules\/backend\/ServiceProvider.php": "8994e5ab9cd267278b2d48c2ee86f1a6bedf0bf47e4028749d81e1b206bb180d",
+                    "\/modules\/backend\/behaviors\/ListController.php": "bb214e10744f3060d149783dea8b2e9f471c262991e9082f4c0a96532b3d8eb6",
+                    "\/modules\/backend\/behaviors\/RelationController.php": "b8d9808d23925c75aee001d157205b699893f8d44d1ac27f7db72453dd88ff96",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/create\/_fancy.php": "1c82d9bc27ecca7980ea8dff420c6cd74e8ca6d048dbcab255f4c6ec45c30e40",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/create\/_sidebar.php": "cdcc623d6aeab2f63348f1a6aa4654af8add0c8cff2e5e81b7b80fab84279612",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/create\/_standard.php": "e7d6644563ca33e775cf3f35e01b65667147de3e7d98e9bf3e7d2e9c01dc74dc",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/preview\/_fancy.php": "dba5c14dfa053247fa6dfb49c77e66bda3bc622ca0376be79e2f210040780189",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/preview\/_sidebar.php": "43aa333b6d8532295b8893285480dea21f491692ad326e9ab413632ef5278582",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/preview\/_standard.php": "4128ed9bc13f4586b2ee3e4394f4d503fa218b6e27fca714e35aad1fd15eb246",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/update\/_fancy.php": "1c82d9bc27ecca7980ea8dff420c6cd74e8ca6d048dbcab255f4c6ec45c30e40",
+                    "\/modules\/backend\/behaviors\/formcontroller\/views\/update\/_standard.php": "e7d6644563ca33e775cf3f35e01b65667147de3e7d98e9bf3e7d2e9c01dc74dc",
+                    "\/modules\/backend\/classes\/Controller.php": "1a6e6c847e844ad91a2d31522972cbdedf8213b21ece5422710da60b3638b751",
+                    "\/modules\/backend\/controllers\/Index.php": "65f30cf5c6cca0778ecfe87712c90eaf6dc435f7bf06a939ce3f0aa77a0a89a6",
+                    "\/modules\/backend\/controllers\/Users.php": "2896be6ed8cbd3d15425d604aa4d3b3a9474fdc7c308b734f1e2c71e5715acaf",
+                    "\/modules\/backend\/facades\/Backend.php": "ab75deaf7f672ed52a817402c4f0b067c8894047ed5912aa82f991d3a0c638a0",
+                    "\/modules\/backend\/formwidgets\/FileUpload.php": "a5f4790f972217dcf47a3ff49370596df0a173d98f69446626078112efc64a36",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/css\/codeeditor.css": "042884207e146f6003f5cbb6745801feaef4650640bd6acde3f8b9f4d8c8b699",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle.js": "a6aabc89c8c2055012aaaa0fee7374b3d4dfae21dbdddf3b7028a2783e63dbaa",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/css.worker.js": "aebd99ab9d383999573b8c29111a511ef789f0548d3f23605d85e082d1fe92d9",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/editor.worker.js": "cdb53de6818195710296b9d385095e0c5998debe27f217b74fe73becedee989b",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/html.worker.js": "c3acbdb602355cc01ea617a35d6bed90343a906b6fe12c96c53064ff2aa30057",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/json.worker.js": "3821ac4c35f73d9c621527d37665177050843b599e3d89d7acc3b93e456ccf2a",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/ts.worker.js": "31d0b2f6b76d02616a6227bbeb9758c99b90e19bfe19a01e422eba1a5a75e9dc",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/codeeditor.js": "3f1d94aa439290cb9d20265508d9411ccb2a38dd4418ec06b309e95b552e7283",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/themes\/twilight.tmTheme": "b171c1f1523ab855e63c01aa9280a86d31a6a9310221b6cd14e6a2e056d18867",
+                    "\/modules\/backend\/formwidgets\/permissioneditor\/assets\/css\/permissioneditor.css": "47882cd74d6cb1d3d85e6d25b8a4e0221e83dc60715a1a3126eae799fda9aad7",
+                    "\/modules\/backend\/formwidgets\/permissioneditor\/assets\/js\/permissioneditor.js": "ad8ee0a41258869e9d8d9444e3f720cb4c76c1dbef2ae37dbcbc48bbb78f6689",
+                    "\/modules\/backend\/formwidgets\/permissioneditor\/assets\/less\/permissioneditor.less": "54e54eec81b8553cbf6061f0440a7e8a6781ee98cc8a9afab9a1ab5fb92a8758",
+                    "\/modules\/backend\/formwidgets\/permissioneditor\/partials\/_permissioneditor.php": "975c2b7e6e10c9ad6598e740462181c4ff6c914729015c3220030b756a94ead9",
+                    "\/modules\/backend\/lang\/en\/lang.php": "df462442176472e21bc8280d96cb33a6aac24a3a122b030134d2f72c95c5343c",
+                    "\/modules\/backend\/lang\/uk\/lang.php": "56f6e4074261b38fd6e8d7651d8b02ed0a98ff6b7728fd474405be4c3203cf75",
+                    "\/modules\/backend\/models\/BrandSetting.php": "63ace6a14203ab4f1b14919f1d40127a84dcfff774fdba80d9a0cd075241d57e",
+                    "\/modules\/backend\/models\/EditorSetting.php": "d89e0fba2d340d94db83da5dbc0eceecdb1ed18456ffe3b1f864ee1d200bd586",
+                    "\/modules\/backend\/models\/User.php": "44b3455bc5e59ea6175e9c97c2f93d8b0f405cbc77946e0a047dbddc1dff24e1",
+                    "\/modules\/backend\/package.json": "269fba667c02b36d058199a21bdae15c605cd203f6e1c54d6b37ed47f13bdc93",
+                    "\/modules\/backend\/tests\/widgets\/FilterWidgetTest.php": "1f5dd766bf92352df15ebb64514d3caacfff1ee270073fe5a893a0cc71bcae04",
+                    "\/modules\/backend\/traits\/FormModelWidget.php": "5d11acba6ebce7b7f51f64f46f0d282f5cb8c9fa0f832917612094595a140925",
+                    "\/modules\/backend\/traits\/PreferenceMaker.php": "d1fe332eef2090a1eaf886c76d3faa22c7f95eaabd7ade75b0aede89ced33d8c",
+                    "\/modules\/backend\/widgets\/Filter.php": "1b958c90fe7bae527714020bd23a45ab8582bd618eeef1b97aecd43340dadddd",
+                    "\/modules\/backend\/widgets\/Lists.php": "0943c1f16f43709f88e48c09c9d8548bfa921c7c4137bd2e647da90265ce1b94",
+                    "\/modules\/backend\/widgets\/MediaManager.php": "f4942702c8a11b304c053acdf540a15d427982f49873e8e3c281c280367b0560",
+                    "\/modules\/backend\/widgets\/form\/assets\/js\/winter.form.js": "3548ee30d9c641fef4628eced9eeb3f1d7bd6e507c8fa7ca2ef0e15da9fa1593",
+                    "\/modules\/backend\/widgets\/lists\/partials\/_list.php": "5c3fa978982cb47b10915cc723d4d9f11f802e8582c657f7018bc39d4bef2935",
+                    "\/modules\/backend\/widgets\/lists\/partials\/_list_body_row.php": "e1720911b6ce0e8e21cca4f9cd3a8473e3ac091fbb2823f3d47aaf210aca8cfb",
+                    "\/modules\/backend\/widgets\/lists\/partials\/_list_head_row.php": "9feb7a94156ffa8adec08ed00a3330303cd6360b47711057eadb704dfada87c4",
+                    "\/modules\/backend\/winter.mix.js": "766080f86095aae790a82886a97d8affa283016291eb7ffe628e1ed7cbc7362d",
+                    "\/modules\/cms\/ServiceProvider.php": "a6f3665256ea117ceb1b7343e1f661e3c399f831eab95ade97a9d8628ee303b8",
+                    "\/modules\/cms\/assets\/js\/winter.dragcomponents.js": "5f9403b79579d9b5560deff6fd1d8fccb9b2f75616d07c1f8819a15031fc452c",
+                    "\/modules\/cms\/classes\/CmsException.php": "3f7d976b90616f06fa38506dc309490b1580e08dac256710b4f30c401dfe536a",
+                    "\/modules\/cms\/classes\/ComponentBase.php": "109df7cb7bfe8abab93d821ff9130806bd496a3d41d0d3c8a581a64bace150c6",
+                    "\/modules\/cms\/classes\/Controller.php": "3a26a5a65e4876359b064b63538ed23657d893214569e1807fbbe9a8f4bac0f9",
+                    "\/modules\/cms\/classes\/Page.php": "2840376e0721cbfb59f9b7433667d8708b7ec77391ebe40d9f41fd96dbaf98c0",
+                    "\/modules\/cms\/classes\/Theme.php": "6221aeb3af076639604363154bb345f683b4bdf80b5d3a8b07c83e52c3a074c1",
+                    "\/modules\/cms\/console\/ThemeInstall.php": "2b8e3230f10a1c0b10c7a509a00e4ed604fc7246a9a5e20f49f89eca6671679f",
+                    "\/modules\/cms\/controllers\/Index.php": "024c670309ccd0a5a001ad9c34c3b500aa89a9fabaf50312f37b55e9f0965f7d",
+                    "\/modules\/cms\/controllers\/ThemeOptions.php": "ad2ef089efec533606d9d46b53a1025d3963905d335d960bb6e41807f1daae3f",
+                    "\/modules\/cms\/controllers\/Themes.php": "a20155b63eacc498ff9a6b220015d0481543e83ce3ca4ae0b81940d21092adcd",
+                    "\/modules\/cms\/controllers\/index\/_sidepanel.php": "16d55842578327702d18dc90aa3524c002979d9c32c66a46abe3b91e84ffea82",
+                    "\/modules\/cms\/facades\/Cms.php": "ea38a1b073bf207039971aab2b29f8278a0cee0c920ab21aac5ba26101863943",
+                    "\/modules\/cms\/lang\/en\/lang.php": "c0829a38ea7a4e4bb0b1b95657cbc3a085c43b6c215c38d9b95e58b51684cd71",
+                    "\/modules\/cms\/lang\/uk\/lang.php": "43953ed4989c8287ea289eeb46901bd274dbca006c7360d97802fa54ef120f42",
+                    "\/modules\/cms\/models\/ThemeExport.php": "6fa6db04bdbcfa8fc30377fbe7b127708f737b37b16ce99deed3c362dbdb006d",
+                    "\/modules\/cms\/models\/ThemeImport.php": "8dd94798587f4024cbfde52af5601cb933ee4e40a86d554eaabe1e692b39479c",
+                    "\/modules\/cms\/tests\/classes\/ThemeTest.php": "1ea83cbd8e11ad0071888e996ac8c5e0f5e2faa0f549571c037dfeb317114b8d",
+                    "\/modules\/cms\/tests\/classes\/TwigExtensionTest.php": "03acce2074547e5661b27c870773073f15e373b04773594c5ef26b9fbd5ec81a",
+                    "\/modules\/cms\/twig\/Extension.php": "6eb789c90d76d2fdec4d97ded2020e90716af6eaa9b3cd10f8dc7015c269e288",
+                    "\/modules\/cms\/twig\/StylesNode.php": "c47eb9764cacf7400782a267916bb3844b30159e4d47b7fd7f8a425557637fbd",
+                    "\/modules\/cms\/widgets\/AssetList.php": "fa7e1dbeefbdc5fac1fa21bb05ae696d1baca6298d639c0cddf5c98c1720202f"
+                },
+                "removed": [
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/74.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/99.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/129.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/237.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/309.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/504.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/566.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/612.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/641.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/683.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/744.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/754.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/758.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/897.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/919.js",
+                    "\/modules\/backend\/formwidgets\/codeeditor\/assets\/js\/build\/codeeditor.bundle\/952.js"
+                ]
             }
         }
     ]
