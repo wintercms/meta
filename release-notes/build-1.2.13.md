@@ -37,7 +37,7 @@
 
 ## Security Improvements
 - Fixed issue where environment variables could be leaked through the parsing of INI configuration values (CVE-2026-25125).
-- Improved security of LESS & Javascript imports through the AssetCombiner.
+- Improved security of LESS & Javascript imports through the AssetCombiner by restricting access to only allowed paths.
 - Improved escaping of BrandSetting & EditorSetting custom CSS settings.
 - Fixed potential SQL injection with the backend Filter widgets.
 - Fixed potential user account bypasses by moving the My Account page to a dedicated controller.
