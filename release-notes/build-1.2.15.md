@@ -1,4 +1,4 @@
-# Build 1.2.15 (WIP)
+# Build 1.2.15
 
 ## UX/UI Improvements
 - Added expand / collapse controls to the `Relation` FormWidget.
@@ -11,7 +11,7 @@
 - Added accessible names to the datepicker and single file upload widgets.
 
 ## API Changes
-- Removed Winter's override of the `e()` helper, so `e()` now behaves as Laravel defines it. Code that relied on the override's handling of non-string values should pass a string, or cast before calling.
+- Removed Winter's override of the `e()` helper, so `e()` now behaves as Laravel defines it (with `$doubleEncode` defaulting to true). Code that relied on the override's handling of non-string values should pass a string, or cast before calling.
 - `Ini` parsing now returns values as they are written in the file instead of substituting PHP constants of the same name.
 
 ## Bug Fixes
